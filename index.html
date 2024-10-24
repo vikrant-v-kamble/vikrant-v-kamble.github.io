@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vikrant V Kamble - Economics PhD Student">
   <title>Vikrant V Kamble</title>
   <style>
     body {
@@ -10,36 +11,46 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      background-color: #f4f4f4;
     }
     .navbar {
       background-color: #0a3d62;
       overflow: hidden;
       display: flex;
       justify-content: space-between;
+      padding: 0 20px;
     }
     .navbar-left {
       color: white;
-      padding: 14px 16px;
-      display: inline-block;
+      padding: 14px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
     .navbar-right a {
       color: white;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
+      font-size: 1rem;
       display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
     }
     .navbar a:hover {
       background-color: #ddd;
       color: black;
     }
     .content {
-      margin: 40px 7cm; /* Increased margin to 7 cm */
+      margin: 40px auto;
+      width: 75%;
     }
     .header {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     .profile-photo {
       width: 150px;
@@ -49,22 +60,46 @@
       margin-right: 20px;
       border: 2px solid #0a3d62;
     }
-    .header-text {
-      flex-grow: 1;
+    .header-text h1 {
+      margin: 0 0 10px 0;
+      color: #0a3d62;
     }
-    h1, h2 {
+    .header-text p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+    h2 {
+      color: #0a3d62;
+      margin-bottom: 20px;
+    }
+    h3 {
+      margin: 15px 0 10px 0;
       color: #333;
     }
     p {
       margin: 10px 0;
+      line-height: 1.6;
+    }
+    ul {
+      margin: 10px 0;
+      padding-left: 20px;
     }
     .section {
       margin-bottom: 40px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     .social-links a {
       margin-right: 10px;
       text-decoration: none;
       color: #0a3d62;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #f39c12;
     }
     .hidden {
       display: none;
@@ -72,6 +107,7 @@
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <div class="navbar">
     <div class="navbar-left">
       Vikrant Vilas Kamble
@@ -80,29 +116,33 @@
       <a href="#home" onclick="showSection('home')">Home</a>
       <a href="#research" onclick="showSection('research')">Research</a>
       <a href="#teaching" onclick="showSection('teaching')">Teaching</a>
+      <a href="#resources" onclick="showSection('resources')">Resources</a> <!-- Added Resources section in Navbar -->
     </div>
   </div>
   
+  <!-- Content -->
   <div class="content">
+    <!-- Home Section -->
     <div id="home" class="header">
-      <img src="pic1.png" alt="Vikrant Vilas Kamble" class="profile-photo">
+      <img src="pic1.png" alt="Profile photo of Vikrant Vilas Kamble" class="profile-photo">
       <div class="header-text">
-        <h1>Hello, My name is Vikrant.</h1>
+        <h1>Welcome! My name is Vikrant.</h1>
         <p>I am an Economics PhD student at the University of Delaware. My research focuses on labor and health economics in both the USA and India. I am currently a fourth-year economics PhD student.</p>
         <p>Email: <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a></p>
         <div class="social-links">
+          <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en" target="_blank">Google Scholar</a>
           <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">LinkedIn</a>
           <a href="https://x.com/Vikrant_V_" target="_blank">Twitter</a>
-          <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en" target="_blank">Google Scholar</a>
         </div>
       </div>
     </div>
     
+    <!-- Research Section -->
     <div id="research" class="section hidden">
       <h2>Research</h2>
-      <h3>PUBLICATIONS</h3>
+      <h3>Publications</h3>
       <p>"Noncustodial parents, instrumental networks, and child support compliance" with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger. <i>Social Science Research</i>, Volume 110, February 2023, 102850</p>
-      <h3>RESEARCH IN PROGRESS</h3>
+      <h3>Research in Progress</h3>
       <ul>
         <li>Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (USA) (co-authored)</li>
         <li>Labor Market Consequences of Cycling Program using DiD (Non-USA)</li>
@@ -111,6 +151,7 @@
       </ul>
     </div>
 
+    <!-- Teaching Section -->
     <div id="teaching" class="section hidden">
       <h2>Teaching</h2>
       <h3>Instructor</h3>
@@ -128,11 +169,25 @@
         <li>ECON422 | Econometric Methods and Models | Fall 2022, Fall 2023, Spring 2024, Fall 2024</li>
       </ul>
     </div>
+
+    <!-- Resources Section -->
+    <div id="resources" class="section hidden">
+      <h2>Resources</h2>
+      <h3>Stata Resources</h3>
+      <ul>
+        <li><a href="https://ssc.wisc.edu/sscc/pubs/stat/StataResources.pdf" target="_blank">University of Wisconsin - Madison</a>: Stata resources guide</li>
+        <li><a href="https://dss.princeton.edu/online_help/stats_packages/stata/" target="_blank">Princeton University</a>: Comprehensive Stata tutorials</li>
+        <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a>: Stata learning resources</li>
+        <li><a href="https://www.bc.edu/content/bc-web/schools/mcas/departments/economics/research/data-center/stata.html" target="_blank">Boston College</a>: Stata resources for economics</li>
+        <li><a href="https://help.hmdc.harvard.edu/book/export/html/119802" target="_blank">Harvard University IQSS</a>: Stata guides for social science research</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- JavaScript for Section Navigation -->
   <script>
     function showSection(section) {
-      const sections = ['home', 'research', 'teaching'];
+      const sections = ['home', 'research', 'teaching', 'resources'];
       sections.forEach(s => {
         document.getElementById(s).classList.add('hidden');
       });
