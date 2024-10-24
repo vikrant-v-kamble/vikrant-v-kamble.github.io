@@ -11,46 +11,36 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-color: #f4f4f4;
     }
     .navbar {
       background-color: #0a3d62;
       overflow: hidden;
       display: flex;
       justify-content: space-between;
-      padding: 0 20px;
     }
     .navbar-left {
       color: white;
-      padding: 14px 0;
-      font-size: 1.2rem;
-      font-weight: bold;
+      padding: 14px 16px;
+      display: inline-block;
     }
     .navbar-right a {
       color: white;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-      font-size: 1rem;
       display: inline-block;
-      transition: background-color 0.3s, color 0.3s;
     }
     .navbar a:hover {
       background-color: #ddd;
       color: black;
     }
     .content {
-      margin: 40px auto;
-      width: 75%;
+      margin: 40px 7cm; /* Increased margin to 7 cm */
     }
     .header {
       display: flex;
       align-items: center;
-      margin-bottom: 30px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
     }
     .profile-photo {
       width: 150px;
@@ -60,46 +50,22 @@
       margin-right: 20px;
       border: 2px solid #0a3d62;
     }
-    .header-text h1 {
-      margin: 0 0 10px 0;
-      color: #0a3d62;
+    .header-text {
+      flex-grow: 1;
     }
-    .header-text p {
-      margin: 5px 0;
-      font-size: 1rem;
-    }
-    h2 {
-      color: #0a3d62;
-      margin-bottom: 20px;
-    }
-    h3 {
-      margin: 15px 0 10px 0;
+    h1, h2 {
       color: #333;
     }
     p {
       margin: 10px 0;
-      line-height: 1.6;
-    }
-    ul {
-      margin: 10px 0;
-      padding-left: 20px;
     }
     .section {
       margin-bottom: 40px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     .social-links a {
       margin-right: 10px;
       text-decoration: none;
       color: #0a3d62;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-    .social-links a:hover {
-      color: #f39c12;
     }
     .hidden {
       display: none;
@@ -116,7 +82,7 @@
       <a href="#home" onclick="showSection('home')">Home</a>
       <a href="#research" onclick="showSection('research')">Research</a>
       <a href="#teaching" onclick="showSection('teaching')">Teaching</a>
-      <a href="#resources" onclick="showSection('resources')">Resources</a> <!-- Added Resources section in Navbar -->
+      <a href="#resources" onclick="showSection('resources')">Resources</a> <!-- Resources section in Navbar -->
     </div>
   </div>
   
@@ -175,11 +141,14 @@
       <h2>Resources</h2>
       <h3>Stata Resources</h3>
       <ul>
-        <li><a href="https://ssc.wisc.edu/sscc/pubs/stat/StataResources.pdf" target="_blank">University of Wisconsin - Madison</a>: Stata resources guide</li>
-        <li><a href="https://dss.princeton.edu/online_help/stats_packages/stata/" target="_blank">Princeton University</a>: Comprehensive Stata tutorials</li>
+        <li><a href="https://www.sscc.wisc.edu/statistics/stata/" target="_blank">University of Wisconsin - Madison</a>: Stata resources guide</li>
+        <li><a href="https://www.princeton.edu/~otorres/Stata/" target="_blank">Princeton University</a>: Comprehensive Stata tutorials</li>
         <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a>: Stata learning resources</li>
-        <li><a href="https://www.bc.edu/content/bc-web/schools/mcas/departments/economics/research/data-center/stata.html" target="_blank">Boston College</a>: Stata resources for economics</li>
-        <li><a href="https://help.hmdc.harvard.edu/book/export/html/119802" target="_blank">Harvard University IQSS</a>: Stata guides for social science research</li>
+        <li><a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank">Harvard University IQSS</a>: Stata guides for social science research</li>
+      </ul>
+      <h3>LaTeX Resources</h3>
+      <ul>
+        <li><a href="https://www.overleaf.com/latex/templates" target="_blank">Overleaf Templates</a></li>
       </ul>
     </div>
   </div>
