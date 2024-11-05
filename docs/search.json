@@ -1,0 +1,33 @@
+{
+  "articles": [
+    {
+      "path": "index.html",
+      "title": "Vikrant V Kamble",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n\r\n\r\nWelcome! My name is Vikrant.\r\nI am an economics PhD student at the University of Delaware.\r\nLink to CV: CV\r\nEmail: vvkamble@udel.edu\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2024-02-13T10:46:46-08:00"
+    },
+    {
+      "path": "research.html",
+      "title": "Research",
+      "author": [],
+      "contents": "\r\n\r\nPublished papers\r\npaper name 1\r\n.Working papers\r\nwrite here\r\n\r\n\r\n\r\n",
+      "last_modified": "2024-02-13T10:46:49-08:00"
+    },
+    {
+      "path": "teaching.html",
+      "title": "Teaching",
+      "author": [],
+      "contents": "\r\nI will be teaching this course\r\n\r\n\r\n\r\n",
+      "last_modified": "2024-02-13T10:46:52-08:00"
+    },
+    {
+      "path": "resources.html",
+      "title": "Resources",
+      "author": [],
+      "contents": "\r\n\r\nstata resources\r\n\r\n\r\n\r\n",
+      "last_modified": "2024-02-13T10:46:49-08:00"
+    }
+  ],
+  "collections": []
+}
