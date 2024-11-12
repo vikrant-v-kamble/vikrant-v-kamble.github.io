@@ -10,34 +10,30 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      margin-top: 2cm;
     }
 
-    /* Title and Subtitle Section */
+    /* Header Title Section */
     .title-section {
       text-align: center;
+      margin-top: 40px;
       font-size: 1.8em;
       font-weight: bold;
       color: #333;
-      margin-top: 2cm;
     }
     .subtitle-section {
       text-align: center;
       font-size: 1em;
       color: #777;
-      margin-top: 0;
+      margin-top: 8px;
     }
 
     /* Navbar Styles */
     .navbar {
-      background-color: #1E2A47;
+      background-color: #2F3E56; /* Updated color */
       color: #ffffff;
       display: flex;
       justify-content: center;
       padding: 10px 0;
-      margin-left: 8cm;
-      margin-right: 8cm;
-      margin-top: 2cm;
     }
     .navbar a {
       color: #ffffff;
@@ -53,31 +49,25 @@
     /* Content Section */
     .content {
       padding: 20px;
-      text-align: justify;
-      margin-left: 8cm;
-      margin-right: 8cm;
+      text-align: justify; /* Ensures text justification */
+      margin-left: 7cm; /* Adds left and right margins */
+      margin-right: 7cm;
     }
 
     /* Profile Photo */
     .profile-photo {
       display: block;
       margin: 20px auto;
-      width: 250px;
+      width: 250px; /* Increased width */
       height: auto;
     }
 
     /* Section Styles */
     .section {
-      display: none;
-      margin-top: 2cm;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      display: none; /* Hidden by default */
     }
     .section.active {
       display: block;
-      opacity: 1;
-      transform: translateY(0);
     }
 
     /* Social Links */
@@ -91,50 +81,11 @@
       color: #2F3E56;
       font-weight: bold;
     }
-
-    /* Mobile Layout Adjustments */
-    @media (max-width: 768px) {
-      .title-section {
-        font-size: 1.5em;
-      }
-      .subtitle-section {
-        font-size: 0.9em;
-      }
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 0;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      .navbar a {
-        margin: 10px 0;
-        font-size: 1em;
-      }
-      .content {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 15px;
-        width: 100%;
-      }
-      .profile-photo {
-        width: 200px;
-      }
-      .social-links a {
-        font-size: 0.9em;
-      }
-    }
-
-    /* Remove bold from content text */
-    .content p, .content ul {
-      font-weight: normal;
-    }
-
   </style>
 </head>
 <body>
   <!-- Title and Subtitle -->
-  <div class="title-section">Vikrant V. Kamble</div>
+  <div class="title-section">Vikrant V Kamble</div>
   <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
 
   <!-- Navbar -->
@@ -149,7 +100,7 @@
   <div class="content">
     <!-- Home Section -->
     <div id="home" class="section active">
-      <img src="pic_t.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+      <img src="pic1.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
       <h1>Welcome! My name is Vikrant.</h1>
       <p>I am a 4th-year PhD candidate in Economics at the University of Delaware, specializing in Labor, Health, Education, Crime, and Policy Evaluation across the USA and India. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime. My work has been published in Social Science Research. I use STATA, R, and Python for analysis.</p>
       <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
@@ -190,11 +141,13 @@
       <ul>
         <li>ECON301 | Intermediate Micro with Calculus | Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></li>
         <li>ECON304 | Quantitative Macroeconomic Theory | Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></li>
+        <li>ECON422 | Econometric Methods and Models | Fall 2022, Fall 2023, Spring 2024, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></li>
       </ul>
-
+    </div>
 
     <!-- Resources Section -->
     <div id="resources" class="section">
+      <h2>Resources</h2>
       <h3>Stata Resources</h3>
       <ul>
         <li><a href="https://www.sscc.wisc.edu/statistics/stata/" target="_blank">University of Wisconsin - Madison</a></li>
@@ -202,16 +155,24 @@
         <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a></li>
         <li><a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank">Harvard University IQSS</a></li>
       </ul>
+      <h3>LaTeX Resources</h3>
+      <ul>
+        <li><a href="https://www.overleaf.com/latex/templates" target="_blank">Overleaf Templates</a></li>
+      </ul>
+      <h3>Data Resources</h3>
+      <ul>
+        <li><a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank">National Health Interview Survey (NHIS)</a></li>
+        <li><a href="https://www.cdc.gov/brfss/index.html" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a></li>
+        <li><a href="https://fred.stlouisfed.org/" target="_blank">Federal Reserve Economic Data (FRED)</a></li>
+      </ul>
     </div>
   </div>
 
-  <!-- JavaScript for Navigation -->
+  <!-- JavaScript for Tab Navigation -->
   <script>
     function showSection(sectionId) {
       const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
+      sections.forEach(section => section.classList.remove('active'));
       document.getElementById(sectionId).classList.add('active');
     }
   </script>
