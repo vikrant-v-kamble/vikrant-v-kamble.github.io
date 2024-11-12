@@ -91,6 +91,7 @@
       }
       .content {
         margin: 20px;
+        text-align: justify; /* Ensure text is justified on mobile */
       }
       .profile-photo {
         width: 100px;
@@ -193,8 +194,7 @@
         <li><a href="https://www.overleaf.com/latex/templates" target="_blank">Overleaf Templates</a></li>
       </ul>
 
-      <h3><u>Data Resources</u></h3>
-
+<h3><u>Data Resources</u></h3>
       <h4>Surveys</h4>
       <ul>
         <li><a href="https://www.ipums.org/" target="_blank">IPUMS</a></li>
@@ -204,47 +204,41 @@
 
       <h4>Health-related Surveys</h4>
       <ul>
-        <li><a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank">National Health Interview Survey (NHIS)</a></li>
-        <li><a href="https://www.cdc.gov/brfss/index.html" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a></li>
-        <li><a href="https://www.cdc.gov/nchs/nhanes/index.htm" target="_blank">National Health and Nutrition Examination Survey (NHANES)</a></li>
-        <li><a href="https://www.meps.ahrq.gov/mepsweb/" target="_blank">Medical Expenditure Panel Survey (MEPS)</a></li>
-        <li><a href="https://nsduhweb.rti.org/respweb/homepage.cfm" target="_blank">National Survey on Drug Use and Health (NSDUH)</a></li>
-        <li><a href="https://www.cdc.gov/healthyyouth/data/yrbs/index.htm" target="_blank">Youth Risk Behavior Surveillance System (YRBSS)</a></li>
-        <li><a href="https://www.cdc.gov/nchs/namcs/about/?CDC_AAref_Val=https://www.cdc.gov/nchs/ahcd/about_ahcd.htm" target="_blank">National Ambulatory Medical Care Survey (NAMCS)</a></li>
-        <li><a href="https://www.cdc.gov/nchs/nhamcs/about/?CDC_AAref_Val=https://www.cdc.gov/nchs/ahcd/about_ahcd.htm" target="_blank">National Hospital Ambulatory Medical Care Survey (NHAMCS)</a></li>
-        <li><a href="https://www.hcup-us.ahrq.gov/" target="_blank">Healthcare Cost and Utilization Project (HCUP)</a></li>
-        <li><a href="https://www.cdc.gov/nchs/nvss/index.htm" target="_blank">National Vital Statistics System (NVSS)</a></li>
-        <li><a href="https://www.bls.gov/tus/" target="_blank">American Time Use Survey (ATUS)</a></li>
-        <li><a href="https://seer.cancer.gov/" target="_blank">Surveillance, Epidemiology, and End Results Program (SEER)</a></li>
-        <li><a href="https://www.niaaa.nih.gov/research/nesarc-iii" target="_blank">National Epidemiologic Survey on Alcohol and Related Conditions (NESARC)</a></li>
+      <li><a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank">National Health Interview Survey (NHIS)</a></li>
+      <li><a href="https://www.cdc.gov/brfss/index.html" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a></li>
+      <li><a href="https://www.cdc.gov/nchs/nhanes/index.htm" target="_blank">National Health and Nutrition Examination Survey (NHANES)</a></li>
+      <li><a href="https://www.meps.ahrq.gov/mepsweb/" target="_blank">Medical Expenditure Panel Survey (MEPS)</a></li>
+      <li><a href="https://nsduhweb.rti.org/respweb/homepage.cfm" target="_blank">National Survey on Drug Use and Health (NSDUH)</a></li>
+      <li><a href="https://www.cdc.gov/healthyyouth/data/yrbs/index.htm" target="_blank">Youth Risk Behavior Surveillance System (YRBSS)</a></li>
+      <li><a href="https://www.cdc.gov/nchs/namcs/about/?CDC_AAref_Val=https://www.cdc.gov/nchs/ahcd/about_ahcd.htm" target="_blank">National Ambulatory Medical Care Survey (NAMCS)</a></li>
+      <li><a href="https://www.cdc.gov/nchs/nhamcs/about/?CDC_AAref_Val=https://www.cdc.gov/nchs/ahcd/about_ahcd.htm" target="_blank">National Hospital Ambulatory Medical Care Survey (NHAMCS)</a></li>
+      <li><a href="https://www.hcup-us.ahrq.gov/" target="_blank">Healthcare Cost and Utilization Project (HCUP)</a></li>
+      <li><a href="https://www.cdc.gov/nchs/nvss/index.htm" target="_blank">National Vital Statistics System (NVSS)</a></li>
+      <li><a href="https://www.bls.gov/tus/" target="_blank">American Time Use Survey (ATUS)</a></li>
+      <li><a href="https://seer.cancer.gov/" target="_blank">Surveillance, Epidemiology, and End Results Program (SEER)</a></li>
+      <li><a href="https://www.niaaa.nih.gov/research/nesarc-iii" target="_blank">National Epidemiologic Survey on Alcohol and Related Conditions (NESARC)</a></li>
       </ul>
+
     </div>
   </div>
 
-  <!-- Last Updated Section -->
-  <div class="last-updated" id="last-updated">
-    Last updated on: <span id="update-date"></span>
+  <!-- Last Updated -->
+  <div class="last-updated">
+    Last updated: <span id="last-updated-time"></span>
   </div>
 
-  <!-- JavaScript for Section Navigation and Last Updated Date -->
   <script>
+    // Function to show/hide sections
     function showSection(section) {
-      const sections = ['home', 'research', 'teaching', 'resources'];
-      sections.forEach(s => {
-        document.getElementById(s).classList.add('hidden');
+      var sections = document.querySelectorAll('.section');
+      sections.forEach(function (sec) {
+        sec.classList.add('hidden');
       });
       document.getElementById(section).classList.remove('hidden');
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      showSection('home');
-      const lastUpdatedDate = new Date(document.lastModified);
-      document.getElementById('update-date').textContent = lastUpdatedDate.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-    });
+    // Set last updated time
+    document.getElementById("last-updated-time").textContent = new Date().toLocaleString();
   </script>
 </body>
 </html>
