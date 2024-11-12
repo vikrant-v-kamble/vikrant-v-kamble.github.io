@@ -10,32 +10,30 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
       color: #333;
+      text-align: center;
     }
     .navbar {
       background-color: #1c3b57;
       color: white;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       padding: 15px;
       font-weight: bold;
     }
-    .navbar-left {
-      margin-left: 20px;
-    }
-    .navbar-right a {
+    .navbar a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 20px;
+      font-size: 18px;
     }
-    .navbar-right a:hover {
+    .navbar a:hover {
       color: #ddd;
     }
     .content {
       margin: 20px auto;
       max-width: 800px;
-      text-align: left;
+      text-align: justify;
       line-height: 1.6;
     }
     .header {
@@ -43,7 +41,6 @@
     }
     .profile-photo {
       max-width: 150px;
-      border-radius: 50%;
       margin: 20px;
     }
     h1, h2, h3 {
@@ -73,7 +70,9 @@
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
-        text-align: center;
+      }
+      .navbar a {
+        margin: 10px 0;
       }
     }
   </style>
@@ -81,15 +80,10 @@
 <body>
   <!-- Navbar -->
   <div class="navbar">
-    <div class="navbar-left">
-      Vikrant V Kamble
-    </div>
-    <div class="navbar-right">
-      <a href="#home" onclick="showSection('home')">Home</a>
-      <a href="#research" onclick="showSection('research')">Research</a>
-      <a href="#teaching" onclick="showSection('teaching')">Teaching</a>
-      <a href="#resources" onclick="showSection('resources')">Resources</a>
-    </div>
+    <a href="#home" onclick="showSection('home')">Home</a>
+    <a href="#research" onclick="showSection('research')">Research</a>
+    <a href="#teaching" onclick="showSection('teaching')">Teaching</a>
+    <a href="#resources" onclick="showSection('resources')">Resources</a>
   </div>
   
   <!-- Content -->
