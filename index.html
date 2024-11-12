@@ -10,9 +10,9 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      margin-top: 2cm; /* Top margin for the body */
       height: 100%;
       overflow-x: hidden; /* Prevent horizontal overflow */
-      padding-top: 2cm; /* Top margin for the body */
     }
 
     /* Title and Subtitle Section */
@@ -21,12 +21,13 @@
       font-size: 1.8em;
       font-weight: bold;
       color: #333;
+      margin-top: 2cm; /* Consistent 2cm gap from the top */
     }
-
     .subtitle-section {
       text-align: center;
       font-size: 1em;
       color: #777;
+      margin-top: 0; /* Subtitle has no extra margin */
     }
 
     /* Navbar Styles */
@@ -36,13 +37,8 @@
       display: flex;
       justify-content: center;
       padding: 10px 0;
-      position: fixed;
-      top: 2cm; /* Fixed navbar */
-      left: 0;
-      right: 0;
-      z-index: 10;
+      margin-top: 2cm; /* Navbar should have a top margin of 2cm */
     }
-
     .navbar a {
       color: #ffffff;
       text-decoration: none;
@@ -50,7 +46,6 @@
       font-weight: bold;
       font-size: 1.1em;
     }
-
     .navbar a:hover {
       text-decoration: underline;
     }
@@ -59,22 +54,27 @@
     .content {
       padding: 20px;
       text-align: justify;
-      margin-top: 6cm; /* To avoid overlap with the fixed navbar */
+      margin-left: 8cm;
+      margin-right: 8cm;
+      margin-top: 2cm;
       overflow-y: auto;
-      height: calc(100vh - 6cm); /* Ensure content fits within the screen */
+      max-height: 70vh; /* Limit content section height */
     }
 
-    /* Social Links */
-    .social-links {
+    /* Profile Photo (Fixed) */
+    .profile-container {
+      position: fixed;
+      top: 2cm; /* Fixed position with 2cm top margin */
+      left: 50%;
+      transform: translateX(-50%);
       text-align: center;
-      margin-top: 20px;
+      width: 250px;
     }
 
-    .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #2F3E56;
-      font-weight: bold;
+    .profile-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
     }
 
     /* Section Styles */
@@ -89,6 +89,18 @@
       display: block;
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Social Links */
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #2F3E56;
+      font-weight: bold;
     }
 
     /* Mobile Layout Adjustments */
@@ -108,7 +120,6 @@
         margin-left: 0;
         margin-right: 0;
       }
-
       .navbar a {
         margin: 10px 0;
         font-size: 1em;
@@ -119,6 +130,10 @@
         margin-right: 0;
         padding: 15px;
         width: 100%; /* Ensure content fits the screen */
+      }
+
+      .profile-photo {
+        width: 200px; /* Smaller profile photo for mobile */
       }
 
       .social-links a {
@@ -135,8 +150,14 @@
 </head>
 <body>
   <!-- Title and Subtitle -->
-  <div class="title-section">Vikrant V_ Kamble</div>
+  <div class="title-section">Vikrant V Kamble</div>
   <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
+
+  <!-- Profile Section (Fixed) -->
+  <div class="profile-container">
+    <img src="pic_t.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+    <h1>Welcome! My name is Vikrant.</h1>
+  </div>
 
   <!-- Navbar -->
   <div class="navbar">
