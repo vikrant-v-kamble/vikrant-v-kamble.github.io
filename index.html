@@ -70,9 +70,14 @@
     .section {
       display: none; /* Hidden by default */
       margin-top: 2cm; /* 2 cm top margin for each section */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade and slide effect */
     }
     .section.active {
       display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Social Links */
@@ -134,7 +139,7 @@
 </head>
 <body>
   <!-- Title and Subtitle -->
-  <div class="title-section">Vikrant V.. Kamble</div>
+  <div class="title-section">Vikrant .V. Kamble</div>
   <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
 
   <!-- Navbar -->
@@ -190,7 +195,7 @@
       <ul>
         <li>ECON301 | Intermediate Micro with Calculus | Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></li>
         <li>ECON304 | Quantitative Macroeconomic Theory | Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></li>
-        <li>ECON422 | Econometric Methods and Models | Fall 2022, Fall 2023, Spring 2024, Fall 2024 | <a href="https://www.bowenxiang.com/" target="_blank">Dr. Bowen Xiang</a></li>
+        <li>ECON422 | Econometric Methods and Models | Fall 2022 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></li>
       </ul>
       <h3>Guest Lectures</h3>
       <ul>
@@ -220,7 +225,7 @@
     </div>
   </div>
 
-  <!-- JavaScript for Tab Navigation -->
+  <!-- JavaScript for Tab Navigation with Smooth Transition -->
   <script>
     function showSection(sectionId) {
       const sections = document.querySelectorAll('.section');
