@@ -10,7 +10,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      margin-top: 2cm; /* Top margin for the body */
+      margin-top: 2cm;
     }
 
     /* Title and Subtitle Section */
@@ -19,25 +19,25 @@
       font-size: 1.8em;
       font-weight: bold;
       color: #333;
-      margin-top: 2cm; /* Consistent 2cm gap from the top */
+      margin-top: 2cm;
     }
     .subtitle-section {
       text-align: center;
       font-size: 1em;
       color: #777;
-      margin-top: 0; /* Subtitle has no extra margin */
+      margin-top: 0;
     }
 
     /* Navbar Styles */
     .navbar {
-      background-color: #1E2A47; /* Slightly darker blue (almost black) */
+      background-color: #1E2A47;
       color: #ffffff;
       display: flex;
       justify-content: center;
       padding: 10px 0;
       margin-left: 8cm;
       margin-right: 8cm;
-      margin-top: 2cm; /* Navbar should have a top margin of 2cm */
+      margin-top: 2cm;
     }
     .navbar a {
       color: #ffffff;
@@ -68,11 +68,11 @@
 
     /* Section Styles */
     .section {
-      display: none; /* Hidden by default */
-      margin-top: 2cm; /* 2 cm top margin for each section */
+      display: none;
+      margin-top: 2cm;
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade and slide effect */
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
     .section.active {
       display: block;
@@ -97,14 +97,12 @@
       .title-section {
         font-size: 1.5em;
       }
-
       .subtitle-section {
         font-size: 0.9em;
       }
-
       .navbar {
         flex-direction: column;
-        align-items: center; /* Center the navbar items */
+        align-items: center;
         padding: 15px 0;
         margin-left: 0;
         margin-right: 0;
@@ -113,18 +111,15 @@
         margin: 10px 0;
         font-size: 1em;
       }
-
       .content {
         margin-left: 0;
         margin-right: 0;
         padding: 15px;
-        width: 100%; /* Ensure content fits the screen */
+        width: 100%;
       }
-
       .profile-photo {
-        width: 200px; /* Smaller profile photo for mobile */
+        width: 200px;
       }
-
       .social-links a {
         font-size: 0.9em;
       }
@@ -211,24 +206,16 @@
         <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a></li>
         <li><a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank">Harvard University IQSS</a></li>
       </ul>
-      <h3>LaTeX Resources</h3>
-      <ul>
-        <li><a href="https://www.overleaf.com/latex/templates" target="_blank">Overleaf Templates</a></li>
-      </ul>
-      <h3>Data Resources</h3>
-      <ul>
-        <li><a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank">National Health Interview Survey (NHIS)</a></li>
-        <li><a href="https://www.cdc.gov/brfss/index.html" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a></li>
-        <li><a href="https://fred.stlouisfed.org/" target="_blank">Federal Reserve Economic Data (FRED)</a></li>
-      </ul>
     </div>
   </div>
 
-  <!-- JavaScript for Tab Navigation with Smooth Transition -->
+  <!-- JavaScript for Navigation -->
   <script>
     function showSection(sectionId) {
       const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.classList.remove('active'));
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
       document.getElementById(sectionId).classList.add('active');
     }
   </script>
