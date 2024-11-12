@@ -29,7 +29,7 @@
 
     /* Navbar Styles */
     .navbar {
-      background-color: #2F3E56; /* Updated color */
+      background-color: #ADD8E6; /* Light Blue */
       color: #ffffff;
       display: flex;
       justify-content: center;
@@ -49,8 +49,8 @@
     /* Content Section */
     .content {
       padding: 20px;
-      text-align: justify; /* Ensures text justification */
-      margin-left: 8cm; /* Adds left and right margins */
+      text-align: justify;
+      margin-left: 8cm;
       margin-right: 8cm;
     }
 
@@ -58,7 +58,7 @@
     .profile-photo {
       display: block;
       margin: 20px auto;
-      width: 250px; /* Increased width */
+      width: 250px;
       height: auto;
     }
 
@@ -80,6 +80,39 @@
       text-decoration: none;
       color: #2F3E56;
       font-weight: bold;
+    }
+
+    /* Mobile Layout Adjustments */
+    @media (max-width: 768px) {
+      .title-section {
+        font-size: 1.5em;
+      }
+
+      .subtitle-section {
+        font-size: 0.9em;
+      }
+
+      .navbar {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+      .navbar a {
+        margin: 10px 0;
+        font-size: 1em;
+      }
+
+      .content {
+        margin-left: 2cm;
+        margin-right: 2cm;
+      }
+
+      .profile-photo {
+        width: 200px; /* Smaller profile photo for mobile */
+      }
+
+      .social-links a {
+        font-size: 0.9em;
+      }
     }
   </style>
 </head>
