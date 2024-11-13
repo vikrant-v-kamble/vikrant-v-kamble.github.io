@@ -12,11 +12,17 @@
       padding: 0;
     }
 
-    /* Header Title Section */
-    .title-container {
-      margin-top: 2cm;
+    /* Fixed Header Container */
+    .header-container {
+      position: fixed;
+      top: 2cm;
+      left: 0;
+      right: 0;
+      background-color: white;
+      z-index: 1000;
     }
 
+    /* Title Section */
     .title-section {
       text-align: center;
       font-size: 1.8em;
@@ -61,6 +67,8 @@
       text-align: justify;
       width: 70%;
       margin: 0 auto;
+      /* Add top margin to account for fixed header */
+      margin-top: calc(2cm + 200px);
     }
 
     /* Profile Photo */
@@ -95,8 +103,8 @@
 
     /* Mobile Responsive Design */
     @media (max-width: 768px) {
-      .title-container {
-        margin-top: 4cm;
+      .header-container {
+        top: 1cm;
       }
 
       .navbar {
@@ -106,6 +114,7 @@
       .content {
         width: 90%;
         padding: 10px;
+        margin-top: calc(1cm + 200px);
       }
 
       .profile-photo {
@@ -120,18 +129,17 @@
   </style>
 </head>
 <body>
-  <!-- Title Container -->
-  <div class="title-container">
-    <div class="title-section">Vikrant V. Kamble</div>
+  <!-- Fixed Header Container -->
+  <div class="header-container">
+    <div class="title-section">Vikrant V Kamble</div>
     <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
-  </div>
-
-  <!-- Navbar -->
-  <div class="navbar">
-    <a href="#home" onclick="showSection('home')">Home</a>
-    <a href="#research" onclick="showSection('research')">Research</a>
-    <a href="#teaching" onclick="showSection('teaching')">Teaching</a>
-    <a href="#resources" onclick="showSection('resources')">Resources</a>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="#home" onclick="showSection('home')">Home</a>
+      <a href="#research" onclick="showSection('research')">Research</a>
+      <a href="#teaching" onclick="showSection('teaching')">Teaching</a>
+      <a href="#resources" onclick="showSection('resources')">Resources</a>
+    </div>
   </div>
 
   <!-- Content -->
