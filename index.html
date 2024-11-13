@@ -40,12 +40,12 @@
 
     /* Navbar Styles */
     .navbar {
-      background-color: #2F3E56;
+      background-color: #1a1a2e; /* Updated to bluish black */
       color: #ffffff;
       display: flex;
       justify-content: center;
       padding: 15px 0;
-      width: 70%;
+      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
       margin: 0 auto;
     }
 
@@ -65,16 +65,15 @@
     .content {
       padding: 20px;
       text-align: justify;
-      width: 70%;
+      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
       margin: 0 auto;
-      /* Add top margin to account for fixed header */
-      margin-top: calc(2cm + 200px);
+      margin-top: calc(2cm + 200px); /* Space for fixed header */
     }
 
     /* Profile Photo */
     .profile-photo {
       display: block;
-      margin: 20px auto;
+      margin: 1.5cm auto 20px auto; /* Fixed 1.5cm top margin */
       width: 250px;
       height: auto;
     }
@@ -119,6 +118,7 @@
 
       .profile-photo {
         width: 200px;
+        margin-top: 1.5cm;
       }
 
       .navbar a {
@@ -131,7 +131,7 @@
 <body>
   <!-- Fixed Header Container -->
   <div class="header-container">
-    <div class="title-section">Vikrant V Kamble</div>
+    <div class="title-section">Vikrant V. Kamble</div>
     <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
     <!-- Navbar -->
     <div class="navbar">
