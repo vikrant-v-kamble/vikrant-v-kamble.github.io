@@ -13,28 +13,36 @@
     }
 
     /* Header Title Section */
+    .title-container {
+      margin-top: 12cm;
+    }
+
     .title-section {
       text-align: center;
-      margin-top: 40px;
       font-size: 1.8em;
       font-weight: bold;
       color: #333;
     }
+
     .subtitle-section {
       text-align: center;
       font-size: 1em;
       color: #777;
       margin-top: 8px;
+      margin-bottom: 1cm;
     }
 
     /* Navbar Styles */
     .navbar {
-      background-color: #2F3E56; /* Updated color */
+      background-color: #2F3E56;
       color: #ffffff;
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      padding: 15px 0;
+      width: 70%;
+      margin: 0 auto;
     }
+
     .navbar a {
       color: #ffffff;
       text-decoration: none;
@@ -42,6 +50,7 @@
       font-weight: bold;
       font-size: 1.1em;
     }
+
     .navbar a:hover {
       text-decoration: underline;
     }
@@ -49,23 +58,24 @@
     /* Content Section */
     .content {
       padding: 20px;
-      text-align: justify; /* Ensures text justification */
-      margin-left: 7cm; /* Adds left and right margins */
-      margin-right: 7cm;
+      text-align: justify;
+      width: 70%;
+      margin: 0 auto;
     }
 
     /* Profile Photo */
     .profile-photo {
       display: block;
       margin: 20px auto;
-      width: 250px; /* Increased width */
+      width: 250px;
       height: auto;
     }
 
     /* Section Styles */
     .section {
-      display: none; /* Hidden by default */
+      display: none;
     }
+
     .section.active {
       display: block;
     }
@@ -75,18 +85,46 @@
       text-align: center;
       margin-top: 20px;
     }
+
     .social-links a {
       margin: 0 10px;
       text-decoration: none;
       color: #2F3E56;
       font-weight: bold;
     }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 768px) {
+      .title-container {
+        margin-top: 4cm;
+      }
+
+      .navbar {
+        width: 100%;
+      }
+
+      .content {
+        width: 90%;
+        padding: 10px;
+      }
+
+      .profile-photo {
+        width: 200px;
+      }
+
+      .navbar a {
+        margin: 0 10px;
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Title and Subtitle -->
-  <div class="title-section">Vikrant V Kamble</div>
-  <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
+  <!-- Title Container -->
+  <div class="title-container">
+    <div class="title-section">Vikrant V. Kamble</div>
+    <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
+  </div>
 
   <!-- Navbar -->
   <div class="navbar">
