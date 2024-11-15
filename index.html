@@ -12,71 +12,74 @@
       padding: 0;
     }
 
-    /* Fixed Header Container */
-    .header-container {
-      position: fixed;
-      top: 2cm;
-      left: 0;
-      right: 0;
-      background-color: white;
-      z-index: 1000;
-    }
+/* Fixed Header Container */
+.header-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  padding: 1.5cm 0; /* Add space around header */
+  margin: 0 auto;
+}
 
-    /* Title Section */
-    .title-section {
-      text-align: center;
-      font-size: 1.8em;
-      font-weight: bold;
-      color: #333;
-    }
+/* Title Section */
+.title-section {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+}
 
-    .subtitle-section {
-      text-align: center;
-      font-size: 1em;
-      color: #777;
-      margin-top: 8px;
-      margin-bottom: 1cm;
-    }
+.subtitle-section {
+  text-align: center;
+  font-size: 1em;
+  color: #777;
+  margin-top: 8px;
+  margin-bottom: 1cm;
+}
 
-    /* Navbar Styles */
-    .navbar {
-      background-color: #1a1a2e; /* Updated to bluish black */
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
-      margin: 0 auto;
-    }
+/* Navbar Styles */
+.navbar {
+  background-color: #1a1a2e; /* Updated to bluish black */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
+  margin: 0 auto;
+}
 
-    .navbar a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
 
-    .navbar a:hover {
-      text-decoration: underline;
-    }
+.navbar a:hover {
+  text-decoration: underline;
+}
 
-    /* Content Section */
-    .content {
-      padding: 20px;
-      text-align: justify;
-      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
-      margin: 0 auto;
-      margin-top: calc(2cm + 200px); /* Space for fixed header */
-    }
+/* Content Section */
+.content {
+  padding: 20px;
+  text-align: justify;
+  width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
+  margin: 0 auto;
+  margin-top: 200px; /* Extra margin for the header */
+}
 
 /* Profile Photo */
 .profile-photo {
   float: left;
-  margin: 1.5cm 20px 20px 0; /* 1.5cm top margin, 20px right margin, and 20px bottom margin */
+  margin: 1.5cm 20px 20px 0; /* Fixed 1.5cm top margin */
   width: 250px;
   height: auto;
 }
+
 
 
     /* Section Styles */
