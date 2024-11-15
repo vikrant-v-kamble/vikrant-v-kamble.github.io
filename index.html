@@ -10,19 +10,21 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Fixed Header Container */
 .header-container {
-  position: sticky;
+  position: fixed; /* Changed from sticky to fixed for better mobile control */
   top: 0;
   left: 0;
   right: 0;
   background-color: white;
   z-index: 1000;
-  padding: 0.2cm 0; /* Reduced from 0.3cm */
+  padding: 0.2cm 0;
   margin: 0 auto;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
 /* Title Section */
@@ -31,15 +33,17 @@ body {
   font-size: 1.8em;
   font-weight: bold;
   color: #333;
-  margin-bottom: 0.3cm; /* Added small margin at bottom */
+  margin-bottom: 0.3cm;
+  padding: 0 10px; /* Added padding for mobile */
 }
 
 .subtitle-section {
   text-align: center;
   font-size: 1em;
   color: #777;
-  margin-top: 0.2cm; /* Reduced from 5px */
-  margin-bottom: 0.2cm; /* Reduced from 0.5cm */
+  margin-top: 0.2cm;
+  margin-bottom: 0.2cm;
+  padding: 0 10px; /* Added padding for mobile */
 }
 
 /* Navbar Styles */
@@ -48,22 +52,9 @@ body {
   color: #ffffff;
   display: flex;
   justify-content: center;
-  padding: 2px 0; /* Reduced from 3px */
+  padding: 2px 0;
   width: calc(100% - 16cm);
   margin: 0 auto;
-}
-
-.navbar a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 20px;
-  font-weight: bold;
-  font-size: 1.1em;
-  padding: 0.2cm 0; /* Added padding for better clickability */
-}
-
-.navbar a:hover {
-  text-decoration: underline;
 }
 
 /* Content Section */
@@ -72,68 +63,106 @@ body {
   text-align: justify;
   width: calc(100% - 16cm);
   margin: 0 auto;
-  margin-top: 2cm; /* Reduced from 180px to 2cm */
-}
-
-/* Profile Photo */
-.profile-photo {
-  float: left;
-  margin: 0 20px 20px 0;
-  width: 250px;
-  height: auto;
-}
-
-/* Section Styles */
-.section {
-  display: none;
-  margin-top: 0.5cm; /* Added small margin between sections */
-}
-
-.section.active {
-  display: block;
-}
-
-/* Social Links */
-.social-links {
-  text-align: center;
-  margin-top: 1cm; /* Reduced from 20px */
-}
-
-.social-links a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #2F3E56;
-  font-weight: bold;
+  margin-top: 2cm;
+  position: relative; /* Added for better positioning */
 }
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
+  body {
+    padding-top: calc(4.5em + 40px); /* Added padding to account for fixed header */
+  }
+
   .header-container {
-    top: 0.5cm; /* Reduced from 1cm */
-    padding: 0.2cm 0; /* Reduced from 0.4cm */
+    top: 0;
+    position: fixed;
+    height: auto;
+    min-height: fit-content;
+  }
+
+  .title-section {
+    font-size: 1.4em; /* Reduced font size for mobile */
+    margin-bottom: 0.2cm;
+    padding: 0.2cm 10px;
+  }
+
+  .subtitle-section {
+    font-size: 0.9em;
+    padding: 0 10px;
   }
   
   .navbar {
     width: 100%;
-    padding: 1px 0; /* Reduced from 2px */
+    padding: 1px 0;
+    position: relative;
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    white-space: nowrap; /* Keep nav items in single line */
   }
   
-  .content {
-    width: 90%;
-    padding: 2px;
-    margin-top: 2cm; /* Changed to maintain 2cm spacing */
-  }
-  
-  .profile-photo {
-    width: 200px;
-    margin-top: 0.5cm; /* Reduced from 1.5cm */
-    margin-bottom: 0.5cm;
+  .navbar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for cleaner look */
   }
   
   .navbar a {
     margin: 0 10px;
-    font-size: 1em;
-    padding: 0.15cm 0; /* Slightly reduced padding for mobile */
+    font-size: 0.9em;
+    padding: 0.15cm 0;
+    display: inline-block;
+  }
+  
+  .content {
+    width: 90%;
+    padding: 10px;
+    margin-top: 0; /* Reset margin as we're using body padding */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+  
+  .profile-photo {
+    width: 150px; /* Further reduced for mobile */
+    margin: 0.5cm auto;
+    display: block;
+    float: none;
+  }
+
+  /* Section adjustments for mobile */
+  .section {
+    margin-top: 0.3cm;
+    overflow-x: hidden;
+  }
+
+  /* Fix for iOS momentum scrolling */
+  .section.active {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Additional fixes for very small screens */
+@media (max-width: 360px) {
+  body {
+    padding-top: calc(5em + 40px); /* Slightly more padding for smaller screens */
+  }
+
+  .title-section {
+    font-size: 1.2em;
+  }
+
+  .subtitle-section {
+    font-size: 0.8em;
+  }
+
+  .navbar a {
+    font-size: 0.8em;
+    margin: 0 8px;
+  }
+}
+
+/* Fix for notched phones */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .header-container {
+    padding-top: max(0.2cm, env(safe-area-inset-top));
   }
 }
 
