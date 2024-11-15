@@ -20,7 +20,7 @@
   right: 0;
   background-color: white;
   z-index: 1000;
-  padding: 1.5cm 0; /* Add space around header */
+  padding: 1cm 0; /* Reduced padding to bring elements closer */
   margin: 0 auto;
 }
 
@@ -36,8 +36,8 @@
   text-align: center;
   font-size: 1em;
   color: #777;
-  margin-top: 8px;
-  margin-bottom: 1cm;
+  margin-top: 5px; /* Reduced margin to close the gap */
+  margin-bottom: 0.5cm; /* Reduced space at the bottom */
 }
 
 /* Navbar Styles */
@@ -46,7 +46,7 @@
   color: #ffffff;
   display: flex;
   justify-content: center;
-  padding: 15px 0;
+  padding: 10px 0; /* Reduced padding to make it more compact */
   width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
   margin: 0 auto;
 }
@@ -69,67 +69,69 @@
   text-align: justify;
   width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
   margin: 0 auto;
-  margin-top: 200px; /* Extra margin for the header */
+  margin-top: 180px; /* Reduced top margin to bring content closer */
 }
 
 /* Profile Photo */
 .profile-photo {
   float: left;
-  margin: 1.5cm 20px 20px 0; /* Fixed 1.5cm top margin */
+  margin: 0 20px 20px 0; /* Removed top margin, set 20px right margin */
   width: 250px;
   height: auto;
 }
 
+/* Section Styles */
+.section {
+  display: none;
+}
 
+.section.active {
+  display: block;
+}
 
-    /* Section Styles */
-    .section {
-      display: none;
-    }
+/* Social Links */
+.social-links {
+  text-align: center;
+  margin-top: 20px;
+}
 
-    .section.active {
-      display: block;
-    }
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #2F3E56;
+  font-weight: bold;
+}
 
-    /* Social Links */
-    .social-links {
-      text-align: center;
-      margin-top: 20px;
-    }
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    top: 1cm;
+    padding: 0.8cm 0; /* Reduced padding for mobile */
+  }
 
-    .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #2F3E56;
-      font-weight: bold;
-    }
+  .navbar {
+    width: 100%;
+    padding: 10px 0; /* Reduced padding */
+  }
 
-    /* Mobile Responsive Design */
-    @media (max-width: 768px) {
-      .header-container {
-        top: 1cm;
-      }
+  .content {
+    width: 90%; /* Adjusted content width */
+    padding: 10px;
+    margin-top: 140px; /* Adjusted to bring content closer to header */
+  }
 
-      .navbar {
-        width: 100%;
-      }
+  .profile-photo {
+    width: 200px; /* Smaller image for mobile */
+    margin-top: 1.5cm; /* Space for mobile view */
+    margin-bottom: 20px;
+  }
 
-      .content {
-        width: 90%;
-        padding: 10px;
-        margin-top: calc(1cm + 200px);
-      }
+  .navbar a {
+    margin: 0 10px;
+    font-size: 1em;
+  }
+}
 
-      .profile-photo {
-        width: 200px;
-        margin-top: 1.5cm;
-      }
-
-      .navbar a {
-        margin: 0 10px;
-        font-size: 1em;
-      }
-    }
   </style>
 </head>
 <body>
