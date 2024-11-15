@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vikrant Kamble</title>
   <style>
-    /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
 /* Fixed Header Container */
 .header-container {
@@ -20,8 +20,9 @@
   right: 0;
   background-color: white;
   z-index: 1000;
-  padding: 0.3cm 0; /* Reduced padding to bring elements closer */
+  padding: 0.2cm 0; /* Reduced from 0.3cm */
   margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Title Section */
@@ -30,24 +31,25 @@
   font-size: 1.8em;
   font-weight: bold;
   color: #333;
+  margin-bottom: 0.3cm; /* Added small margin at bottom */
 }
 
 .subtitle-section {
   text-align: center;
   font-size: 1em;
   color: #777;
-  margin-top: 5px; /* Reduced margin to close the gap */
-  margin-bottom: 0.5cm; /* Reduced space at the bottom */
+  margin-top: 0.2cm; /* Reduced from 5px */
+  margin-bottom: 0.2cm; /* Reduced from 0.5cm */
 }
 
 /* Navbar Styles */
 .navbar {
-  background-color: #1a1a2e; /* Updated to bluish black */
+  background-color: #1a1a2e;
   color: #ffffff;
   display: flex;
   justify-content: center;
-  padding: 3px 0; /* Reduced padding to make it more compact */
-  width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
+  padding: 2px 0; /* Reduced from 3px */
+  width: calc(100% - 16cm);
   margin: 0 auto;
 }
 
@@ -57,6 +59,7 @@
   margin: 0 20px;
   font-weight: bold;
   font-size: 1.1em;
+  padding: 0.2cm 0; /* Added padding for better clickability */
 }
 
 .navbar a:hover {
@@ -67,15 +70,15 @@
 .content {
   padding: 2px;
   text-align: justify;
-  width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
+  width: calc(100% - 16cm);
   margin: 0 auto;
-  margin-top: 180px; /* Reduced top margin to bring content closer */
+  margin-top: 2cm; /* Reduced from 180px to 2cm */
 }
 
 /* Profile Photo */
 .profile-photo {
   float: left;
-  margin: 0 20px 20px 0; /* Removed top margin, set 20px right margin */
+  margin: 0 20px 20px 0;
   width: 250px;
   height: auto;
 }
@@ -83,6 +86,7 @@
 /* Section Styles */
 .section {
   display: none;
+  margin-top: 0.5cm; /* Added small margin between sections */
 }
 
 .section.active {
@@ -92,7 +96,7 @@
 /* Social Links */
 .social-links {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1cm; /* Reduced from 20px */
 }
 
 .social-links a {
@@ -105,30 +109,31 @@
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
   .header-container {
-    top: 1cm;
-    padding: 0.4cm 0; /* Reduced padding for mobile */
+    top: 0.5cm; /* Reduced from 1cm */
+    padding: 0.2cm 0; /* Reduced from 0.4cm */
   }
-
+  
   .navbar {
     width: 100%;
-    padding: 2px 0; /* Reduced padding */
+    padding: 1px 0; /* Reduced from 2px */
   }
-
+  
   .content {
-    width: 90%; /* Adjusted content width */
+    width: 90%;
     padding: 2px;
-    margin-top: 140px; /* Adjusted to bring content closer to header */
+    margin-top: 2cm; /* Changed to maintain 2cm spacing */
   }
-
+  
   .profile-photo {
-    width: 200px; /* Smaller image for mobile */
-    margin-top: 1.5cm; /* Space for mobile view */
-    margin-bottom: 20px;
+    width: 200px;
+    margin-top: 0.5cm; /* Reduced from 1.5cm */
+    margin-bottom: 0.5cm;
   }
-
+  
   .navbar a {
     margin: 0 10px;
     font-size: 1em;
+    padding: 0.15cm 0; /* Slightly reduced padding for mobile */
   }
 }
 
