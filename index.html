@@ -4,131 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vikrant Kamble</title>
-  <style>
-    /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+  /* Global Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 
-    /* Fixed Header Container */
-    .header-container {
-      position: fixed;
-      top: 0; /* Stick to the very top */
-      left: 0;
-      right: 0;
-      background-color: white;
-      z-index: 1000;
-      padding: 10px 0; /* Optional: adjust padding for better spacing */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow */
-    }
+  /* Fixed Header Container */
+  .header-container {
+    position: fixed;
+    top: 0; /* Stick to the very top */
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow */
+  }
 
-    /* Title Section */
-    .title-section {
-      text-align: center;
-      font-size: 1.8em;
-      font-weight: bold;
-      color: #333;
-    }
+  /* Home Container */
+  .home-container {
+    display: flex; /* Align items side-by-side */
+    align-items: center; /* Vertically align items */
+    gap: 20px; /* Add spacing between image and text */
+    margin-top: 20px;
+  }
 
-    .subtitle-section {
-      text-align: center;
-      font-size: 1em;
-      color: #777;
-      margin-top: 8px;
-      margin-bottom: 1cm;
-    }
+  /* Profile Photo */
+  .profile-photo {
+    width: 200px; /* Adjust the image width */
+    height: auto;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  }
 
-    /* Navbar Styles */
-    .navbar {
-      background-color: #1a1a2e; /* Updated to bluish black */
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
-      margin: 0 auto;
-    }
+  /* Home Text */
+  .home-text {
+    flex: 1; /* Allow text to take up remaining space */
+    text-align: left; /* Align text to the left */
+  }
 
-    .navbar a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
+  .home-text h1 {
+    margin-top: 0; /* Remove extra space */
+  }
 
-    .navbar a:hover {
-      text-decoration: underline;
-    }
+  .home-text p {
+    margin-bottom: 10px; /* Add spacing between paragraphs */
+  }
 
-    /* Content Section */
-    .content {
-      padding: 20px;
-      text-align: justify;
-      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
-      margin: 0 auto;
-      margin-top: 100px; /* Adjusted for fixed header height */
-    }
+  /* Other existing styles remain unchanged */
+</style>
 
-    /* Profile Photo */
-    .profile-photo {
-      display: block;
-      margin: 1.5cm auto 20px auto; /* Fixed 1.5cm top margin */
-      width: 250px;
-      height: auto;
-    }
-
-    /* Section Styles */
-    .section {
-      display: none;
-    }
-
-    .section.active {
-      display: block;
-    }
-
-    /* Social Links */
-    .social-links {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #2F3E56;
-      font-weight: bold;
-    }
-
-    /* Mobile Responsive Design */
-    @media (max-width: 768px) {
-      .header-container {
-        top: 0; /* Stick to the very top */
-      }
-
-      .navbar {
-        width: 100%;
-      }
-
-      .content {
-        width: 90%;
-        padding: 10px;
-        margin-top: 100px; /* Adjusted for fixed header height */
-      }
-
-      .profile-photo {
-        width: 200px;
-        margin-top: 1.5cm;
-      }
-
-      .navbar a {
-        margin: 0 10px;
-        font-size: 1em;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -146,10 +75,10 @@
   </div>
 
   <!-- Content -->
-  <div class="content">
-    <!-- Home Section -->
-    <div id="home" class="section active">
-      <img src="pic_t.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+<div id="home" class="section active">
+  <div class="home-container">
+    <img src="pic_t.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+    <div class="home-text">
       <h1>Welcome! My name is Vikrant.</h1>
       <p>I am a 4th-year PhD candidate in Economics at the University of Delaware, specializing in Labor, Health, Education, Crime, and Policy Evaluation across the USA and India. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime. My work has been published in Social Science Research. I use STATA, R, and Python for analysis.</p>
       <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
@@ -160,6 +89,9 @@
         <a href="https://x.com/Vikrant_V_" target="_blank">Twitter</a>
       </div>
     </div>
+  </div>
+</div>
+
     
     <!-- Research Section -->
     <div id="research" class="section">
