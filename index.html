@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vikrant Kamble</title>
-  <style>
+<style>
 /* Global Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f9f9f9; /* Soft background color */
+  color: #333; /* Slightly lighter than pure black */
 }
 
 /* Fixed Header Container */
@@ -18,11 +20,11 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: white;
+  background-color: #ffffff; /* Ensures clean white header */
   z-index: 1000;
-  padding: 0.2cm 0; /* Reduced from 0.3cm */
+  padding: 0.2cm 0;
   margin: 0 auto;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow effect */
 }
 
 /* Title Section */
@@ -30,43 +32,43 @@ body {
   text-align: center;
   font-size: 1.8em;
   font-weight: bold;
-  color: #333;
-  margin-bottom: 0.3cm; /* Added small margin at bottom */
+  color: #333; /* Dark gray for title */
+  margin-bottom: 0.3cm;
 }
 
 .subtitle-section {
   text-align: center;
   font-size: 1em;
-  color: #777;
-  margin-top: 0.2cm; /* Reduced from 5px */
-  margin-bottom: 0.2cm; /* Reduced from 0.5cm */
+  color: #555; /* Medium gray for subtitle */
+  margin-top: 0.2cm;
+  margin-bottom: 0.2cm;
 }
 
 /* Navbar Styles */
 .navbar {
-  background-color: #007BFF; /* Blue color */
+  background-color: #0056b3; /* Darker blue for a softer contrast */
   color: #ffffff;
   display: flex;
   justify-content: center;
-  padding: 2px 0;
-  width: calc(100% - 20cm); /* Ensures 10cm margin on both sides */
-  margin: 0 auto; /* Centers the navbar */
+  padding: 5px 0; /* Slightly increased for spacing */
+  width: calc(100% - 20cm);
+  margin: 0 auto;
+  border-radius: 5px; /* Rounded corners for style */
 }
 
 .navbar a {
   color: #ffffff;
   text-decoration: none;
   margin: 0 10px;
-  font-weight: normal; /* Reduced boldness */
+  font-weight: normal;
   font-size: 1.1em;
-  padding: 0.2cm 0; /* Added padding for better clickability */
+  padding: 0.3cm 0; /* Improved padding for clickability */
 }
 
 .navbar a:hover {
   text-decoration: underline;
+  color: #dfe6f1; /* Lighter hover effect */
 }
-
-
 
 /* Content Section */
 .content {
@@ -74,7 +76,9 @@ body {
   text-align: justify;
   width: calc(100% - 16cm);
   margin: 0 auto;
-  margin-top: 2cm; /* Reduced from 180px to 2cm */
+  margin-top: 2cm;
+  color: #444; /* Medium gray for text */
+  line-height: 1.6; /* Improved readability */
 }
 
 /* Profile Photo */
@@ -83,12 +87,14 @@ body {
   margin: 0 20px 20px 0;
   width: 250px;
   height: auto;
+  border-radius: 8px; /* Adds a modern look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for effect */
 }
 
 /* Section Styles */
 .section {
   display: none;
-  margin-top: 0.5cm; /* Added small margin between sections */
+  margin-top: 0.5cm;
 }
 
 .section.active {
@@ -98,53 +104,57 @@ body {
 /* Social Links */
 .social-links {
   text-align: center;
-  margin-top: 1cm; /* Reduced from 20px */
+  margin-top: 1cm;
 }
 
 .social-links a {
   margin: 0 10px;
   text-decoration: none;
-  color: #2F3E56;
+  color: #2f3e56; /* Dark blue-gray */
   font-weight: bold;
+}
+
+.social-links a:hover {
+  color: #0056b3; /* Matches navbar color */
 }
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
   .header-container {
-    top: 0.5cm; /* Reduced from 1cm */
-    padding: 0.2cm 0; /* Reduced from 0.4cm */
+    top: 0.5cm;
+    padding: 0.2cm 0;
   }
-  
+
   .navbar {
     width: 100%;
-    padding: 1px 0; /* Reduced from 2px */
+    padding: 4px 0; /* Increased slightly for touch devices */
   }
-  
+
   .content {
     width: 90%;
-    padding: 2px;
-    margin-top: 2cm; /* Changed to maintain 2cm spacing */
+    padding: 4px;
+    margin-top: 2cm;
   }
-  
+
   .profile-photo {
     width: 200px;
-    margin-top: 0.5cm; /* Reduced from 1.5cm */
+    margin-top: 0.5cm;
     margin-bottom: 0.5cm;
   }
-  
+
   .navbar a {
-    margin: 0 10px;
+    margin: 0 8px;
     font-size: 1em;
-    padding: 0.15cm 0; /* Slightly reduced padding for mobile */
+    padding: 0.15cm 0;
   }
 }
+</style>
 
-  </style>
 </head>
 <body>
   <!-- Fixed Header Container -->
   <div class="header-container">
-    <div class="title-section">Vikrant V. Kamble</div>
+    <div class="title-section">Vikrant V Kamble</div>
     <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
     <!-- Navbar -->
     <div class="navbar">
