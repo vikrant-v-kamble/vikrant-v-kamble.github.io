@@ -14,8 +14,8 @@
 
 /* Fixed Header Container */
 .header-container {
-  position: sticky; /* Changed from fixed to sticky */
-  top: 0; /* Stick at the top of the viewport */
+  position: sticky; /* Sticks at the top of the viewport */
+  top: 0; /* Always sticks to the top */
   left: 0;
   right: 0;
   background-color: white;
@@ -29,14 +29,14 @@
   font-size: 1.8em;
   font-weight: bold;
   color: #333;
-  margin: 10px 0; /* Reduce spacing to fit sticky behavior */
+  margin: 10px 0;
 }
 
 .subtitle-section {
   text-align: center;
   font-size: 1em;
   color: #777;
-  margin: 0 0 10px; /* Adjusted for spacing within sticky container */
+  margin: 0 0 10px;
 }
 
 /* Navbar Styles */
@@ -46,8 +46,8 @@
   display: flex;
   justify-content: center;
   padding: 15px 0;
-  width: 100%; /* Ensure navbar spans the entire width */
-  margin: 0;
+  width: calc(100% - 16cm); /* Matches content margin on desktop */
+  margin: 0 auto;
 }
 
 .navbar a {
@@ -66,68 +66,46 @@
 .content {
   padding: 20px;
   text-align: justify;
-  width: 90%; /* Adjusted for responsiveness */
+  width: calc(100% - 16cm); /* Maintains consistent margins on both sides */
   margin: 0 auto;
-  margin-top: 20px; /* Adjust spacing as the header will no longer be fixed */
+  margin-top: 20px; /* Adjusted to avoid overlap with sticky header */
 }
 
+/* Profile Photo */
+.profile-photo {
+  display: block;
+  margin: 1.5cm auto 20px auto;
+  width: 450px;
+  height: auto;
+}
 
-    /* Profile Photo */
-    .profile-photo {
-      display: block;
-      margin: 1.5cm auto 20px auto; /* Fixed 1.5cm top margin */
-      width: 450px;
-      height: auto;
-    }
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    top: 0; /* Sticks to the top of the mobile viewport */
+  }
 
-    /* Section Styles */
-    .section {
-      display: none;
-    }
+  .navbar {
+    width: calc(100% - 4cm); /* Adjusted for mobile with smaller margins */
+  }
 
-    .section.active {
-      display: block;
-    }
+  .content {
+    width: calc(100% - 4cm); /* Matches navbar margins */
+    margin-top: 20px; /* Space below the sticky header */
+  }
 
-    /* Social Links */
-    .social-links {
-      text-align: center;
-      margin-top: 20px;
-    }
+  .profile-photo {
+    width: 100%; /* Adjusts photo size to be responsive */
+    max-width: 250px; /* Limits the max size for small screens */
+    margin-top: 1.5cm;
+  }
 
-    .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #2F3E56;
-      font-weight: bold;
-    }
+  .navbar a {
+    margin: 0 10px; /* Reduces spacing between links */
+    font-size: 1em; /* Slightly smaller font for smaller screens */
+  }
+}
 
-    /* Mobile Responsive Design */
-    @media (max-width: 768px) {
-      .header-container {
-        top: 1cm;
-      }
-
-      .navbar {
-        width: 100%;
-      }
-
-      .content {
-        width: 90%;
-        padding: 10px;
-        margin-top: calc(1cm + 200px);
-      }
-
-      .profile-photo {
-        width: 200px;
-        margin-top: 1.5cm;
-      }
-
-      .navbar a {
-        margin: 0 10px;
-        font-size: 1em;
-      }
-    }
   </style>
 </head>
 <body>
