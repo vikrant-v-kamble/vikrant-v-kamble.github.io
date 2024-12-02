@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vikrant V Kamble</title>
+
   <style>
     /* Global Styles */
     body {
@@ -47,71 +48,52 @@
       padding: 0.1cm 0;
     }
 
-/* Navbar Styles */
-.navbar {
-  background-color: #0056b3; /* Darker blue for contrast */
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  padding: 8px 10px; /* Adjusted padding */
-  max-width: 800px; /* Restrict navbar width */
-  margin: 0 auto; /* Center-align navbar on large screens */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-}
+    /* Navbar Styles */
+    .navbar {
+      background-color: #0056b3; /* Darker blue for contrast */
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      padding: 8px 10px; /* Adjusted padding */
+      max-width: 800px; /* Restrict navbar width */
+      margin: 0 auto; /* Center-align navbar on large screens */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    }
 
-.navbar a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 8px; /* Adjust spacing between links */
-  font-weight: normal;
-  font-size: 1em; /* Slightly smaller for mobile */
-  padding: 4px 8px; /* Increase click area */
-}
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 8px; /* Adjust spacing between links */
+      font-weight: normal;
+      font-size: 1em; /* Slightly smaller for mobile */
+      padding: 4px 8px; /* Increase click area */
+    }
 
-.navbar a:hover {
-  text-decoration: underline;
-  color: #dfe6f1; /* Lighter hover effect */
-}
-
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
-  .profile-photo {
-    float: none; /* Disable floating */
-    display: block; /* Treat as a block element */
-    margin: 0 auto 20px auto; /* Center the image and add spacing below */
-    width: 80%; /* Adjust width for mobile screens */
-  }
-
-  .content {
-    text-align: justify;
-    width: 90%; /* Full width with some padding */
-    margin: 0 auto; /* Center-align content */
-  }
-}
-
+    .navbar a:hover {
+      text-decoration: underline;
+      color: #dfe6f1; /* Lighter hover effect */
+    }
 
     /* Content Section */
     .content {
       padding: 2px;
       text-align: justify;
-      width: calc(100% - 16cm);
-      margin: 0 auto;
-      margin-top: 4cm; /* Increased to account for fixed header */
+      width: 90%; /* Adjusted width */
+      margin: 4.5cm auto 0 auto; /* Center content and allow space for header */
       color: #444; /* Medium gray for text */
       line-height: 1.6; /* Improved readability */
     }
 
-/* Profile Photo */
-.profile-photo {
-  float: left; /* Default behavior for larger screens */
-  margin: 0 20px 20px 0;
-  width: 250px;
-  height: auto;
-  border-radius: 8px; /* Adds a modern look */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for effect */
-}
-
+    /* Profile Photo */
+    .profile-photo {
+      display: block;
+      margin: 0 auto 20px auto; /* Center image and add spacing below */
+      width: 250px;
+      height: auto;
+      border-radius: 8px; /* Adds a modern look */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for effect */
+    }
 
     /* Section Styles */
     .section {
@@ -145,29 +127,36 @@
       .header-container {
         padding: 0.1cm 0;
       }
-      
+
       .navbar {
         width: 100%;
         padding: 4px 0;
       }
-      
+
       .content {
         width: 90%;
         margin-top: 4.5cm; /* Adjusted for mobile */
       }
-      
+
       .navbar a {
         margin: 0 8px;
         font-size: 1em;
         padding: 0.15cm 0;
       }
+
+      .profile-photo {
+        width: 80%; /* Adjust width for mobile screens */
+      }
     }
-  </style>
+  </style>  
+  
 </head>
 <body>
-  <!-- Header Container with Title and Navbar -->
-  <div class="header-container">
-    <div class="title-section">Vikrant V Kamble</div>
+  <div class="content">
+    <!-- Home Section -->
+    <div id="home" class="section active">
+      <img src="pic_new.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+      <p>Welcome! My name is Vikrant.</p>
     <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
     <!-- Navbar -->
     <div class="navbar">
@@ -177,6 +166,7 @@
       <a href="#resources" onclick="showSection('resources')">Resources</a>
     </div>
   </div>
+
 
   <!-- Content -->
 <div class="content">
