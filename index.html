@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vikrant Kamble</title>
+  <title>Vikrant V Kamble</title>
   <style>
     /* Global Styles */
     body {
@@ -144,90 +144,9 @@
       }
     }
   </style>
-
-  
 </head>
 <body>
   <!-- Header Container with Title and Navbar -->
-  <div class="header-container">
-    <div class="title-section">
-      Vikrant Kamble
-    </div>
-    <div class="subtitle-section">
-      Full Stack Developer | Tech Enthusiast
-    </div>
-    <nav class="navbar">
-      <a href="#" onclick="showSection('about')">About</a>
-      <a href="#" onclick="showSection('skills')">Skills</a>
-      <a href="#" onclick="showSection('projects')">Projects</a>
-      <a href="#" onclick="showSection('contact')">Contact</a>
-    </nav>
-  </div>
-
-  <!-- Main Content Sections -->
-  <div class="content">
-    <div id="about" class="section active">
-      <img src="/api/placeholder/250/300" alt="Profile" class="profile-photo">
-      <h2>About Me</h2>
-      <p>Hello! I'm Vikrant V Kamble, a passionate full stack developer with expertise in web technologies. I love creating innovative solutions and exploring new technologies.</p>
-    </div>
-
-    <div id="skills" class="section">
-      <h2>Skills</h2>
-      <p>Programming Languages: JavaScript, Python, Java</p>
-      <p>Web Technologies: React, Node.js, Express</p>
-      <p>Database: MongoDB, MySQL</p>
-    </div>
-
-    <div id="projects" class="section">
-      <h2>Projects</h2>
-      <p>1. E-commerce Platform</p>
-      <p>2. Task Management Application</p>
-      <p>3. Social Media Dashboard</p>
-    </div>
-
-    <div id="contact" class="section">
-      <h2>Contact Me</h2>
-      <div class="social-links">
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
-        <a href="#">Email</a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function showSection(sectionId) {
-      // Hide all sections
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.classList.remove('active'));
-      
-      // Show selected section
-      const selectedSection = document.getElementById(sectionId);
-      selectedSection.classList.add('active');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const headerContainer = document.querySelector('.header-container');
-      let lastScrollTop = 0;
-
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-          // Scrolling down and past the initial 100px
-          headerContainer.classList.add('hide');
-        } else {
-          // Scrolling up
-          headerContainer.classList.remove('hide');
-        }
-        
-        lastScrollTop = scrollTop;
-      });
-    });
-  </script>
-
-  <!-- Fixed Header Container -->
   <div class="header-container">
     <div class="title-section">Vikrant V Kamble</div>
     <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
@@ -249,7 +168,6 @@
       <p>I am a 4th-year PhD candidate in Economics at the University of Delaware, specializing in Labor, Health, Education, Crime, and Policy Evaluation across the USA and India. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime. My work has been published in Social Science Research. I use STATA, R, and Python for analysis.</p>
       <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
      
-      
       <p>Email: <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a></p>
       <div class="social-links">
         <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en" target="_blank">Google Scholar</a>
@@ -314,13 +232,32 @@
     </div>
   </div>
 
-  <!-- JavaScript for Tab Navigation -->
+  <!-- JavaScript for Tab Navigation and Scrolling -->
   <script>
     function showSection(sectionId) {
       const sections = document.querySelectorAll('.section');
       sections.forEach(section => section.classList.remove('active'));
       document.getElementById(sectionId).classList.add('active');
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const headerContainer = document.querySelector('.header-container');
+      let lastScrollTop = 0;
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          // Scrolling down and past the initial 100px
+          headerContainer.classList.add('hide');
+        } else {
+          // Scrolling up
+          headerContainer.classList.remove('hide');
+        }
+        
+        lastScrollTop = scrollTop;
+      });
+    });
   </script>
 </body>
 </html>
