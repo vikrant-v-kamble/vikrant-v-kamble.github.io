@@ -76,15 +76,17 @@
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
-    max-width: 100%; /* Full width for mobile */
-    padding: 6px 8px; /* Reduced padding */
+  .profile-photo {
+    float: none; /* Disable floating */
+    display: block; /* Treat as a block element */
+    margin: 0 auto 20px auto; /* Center the image and add spacing below */
+    width: 80%; /* Adjust width for mobile screens */
   }
 
-  .navbar a {
-    margin: 4px; /* Less spacing between links */
-    font-size: 0.9em; /* Adjust font size */
+  .content {
+    text-align: justify;
+    width: 90%; /* Full width with some padding */
+    margin: 0 auto; /* Center-align content */
   }
 }
 
@@ -100,15 +102,15 @@
       line-height: 1.6; /* Improved readability */
     }
 
-    /* Profile Photo */
-    .profile-photo {
-      float: left;
-      margin: 0 20px 20px 0;
-      width: 250px;
-      height: auto;
-      border-radius: 8px; /* Adds a modern look */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for effect */
-    }
+/* Profile Photo */
+.profile-photo {
+  float: left; /* Default behavior for larger screens */
+  margin: 0 20px 20px 0;
+  width: 250px;
+  height: auto;
+  border-radius: 8px; /* Adds a modern look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for effect */
+}
 
     /* Section Styles */
     .section {
