@@ -12,63 +12,65 @@
       padding: 0;
     }
 
-    /* Fixed Header Container */
-    .header-container {
-      position: fixed;
-      top: 2cm;
-      left: 0;
-      right: 0;
-      background-color: white;
-      z-index: 1000;
-    }
+/* Fixed Header Container */
+.header-container {
+  position: sticky; /* Changed from fixed to sticky */
+  top: 0; /* Stick at the top of the viewport */
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+}
 
-    /* Title Section */
-    .title-section {
-      text-align: center;
-      font-size: 1.8em;
-      font-weight: bold;
-      color: #333;
-    }
+/* Title Section */
+.title-section {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0; /* Reduce spacing to fit sticky behavior */
+}
 
-    .subtitle-section {
-      text-align: center;
-      font-size: 1em;
-      color: #777;
-      margin-top: 8px;
-      margin-bottom: 1cm;
-    }
+.subtitle-section {
+  text-align: center;
+  font-size: 1em;
+  color: #777;
+  margin: 0 0 10px; /* Adjusted for spacing within sticky container */
+}
 
-    /* Navbar Styles */
-    .navbar {
-      background-color: #1a1a2e; /* Updated to bluish black */
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
-      margin: 0 auto;
-    }
+/* Navbar Styles */
+.navbar {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  width: 100%; /* Ensure navbar spans the entire width */
+  margin: 0;
+}
 
-    .navbar a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
 
-    .navbar a:hover {
-      text-decoration: underline;
-    }
+.navbar a:hover {
+  text-decoration: underline;
+}
 
-    /* Content Section */
-    .content {
-      padding: 20px;
-      text-align: justify;
-      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
-      margin: 0 auto;
-      margin-top: calc(2cm + 200px); /* Space for fixed header */
-    }
+/* Content Section */
+.content {
+  padding: 20px;
+  text-align: justify;
+  width: 90%; /* Adjusted for responsiveness */
+  margin: 0 auto;
+  margin-top: 20px; /* Adjust spacing as the header will no longer be fixed */
+}
+
 
     /* Profile Photo */
     .profile-photo {
