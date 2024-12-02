@@ -47,31 +47,47 @@
       padding: 0.1cm 0;
     }
 
-    /* Navbar Styles */
-    .navbar {
-      background-color: #0056b3; /* Darker blue for a softer contrast */
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      padding: 5px 0; /* Slightly increased for spacing */
-      width: calc(100% - 20cm);
-      margin: 0 auto;
-      border-radius: 5px; /* Rounded corners for style */
-    }
+/* Navbar Styles */
+.navbar {
+  background-color: #0056b3; /* Darker blue for contrast */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 8px 10px; /* Adjusted padding */
+  max-width: 800px; /* Restrict navbar width */
+  margin: 0 auto; /* Center-align navbar on large screens */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
 
-    .navbar a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: normal;
-      font-size: 1.1em;
-      padding: 0.3cm 0; /* Improved padding for clickability */
-    }
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 8px; /* Adjust spacing between links */
+  font-weight: normal;
+  font-size: 1em; /* Slightly smaller for mobile */
+  padding: 4px 8px; /* Increase click area */
+}
 
-    .navbar a:hover {
-      text-decoration: underline;
-      color: #dfe6f1; /* Lighter hover effect */
-    }
+.navbar a:hover {
+  text-decoration: underline;
+  color: #dfe6f1; /* Lighter hover effect */
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+    max-width: 100%; /* Full width for mobile */
+    padding: 6px 8px; /* Reduced padding */
+  }
+
+  .navbar a {
+    margin: 4px; /* Less spacing between links */
+    font-size: 0.9em; /* Adjust font size */
+  }
+}
+
 
     /* Content Section */
     .content {
