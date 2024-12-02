@@ -10,165 +10,55 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9; /* Soft background color */
-      color: #333; /* Slightly lighter than pure black */
+      background-color: #f9f9f9;
+      color: #333;
     }
-
-    /* Header and Navbar Container */
-    .header-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: #ffffff; /* Ensures clean white header */
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow effect */
-      transition: transform 0.3s ease-in-out;
-    }
-
-    /* Scrolling Header Behavior */
-    .header-container.hide {
-      transform: translateY(-100%);
-    }
-
-    /* Title Section */
-    .title-section {
-      text-align: center;
-      font-size: 1.8em;
-      font-weight: bold;
-      color: #333; /* Dark gray for title */
-      padding: 0.2cm 0;
-    }
-
-    .subtitle-section {
-      text-align: center;
-      font-size: 1em;
-      color: #555; /* Medium gray for subtitle */
-      padding: 0.1cm 0;
-    }
-
-/* Navbar Styles */
-.navbar {
-  background-color: #0056b3; /* Darker blue for contrast */
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  padding: 8px 10px; /* Adjusted padding */
-  max-width: 800px; /* Restrict navbar width */
-  margin: 0 auto; /* Center-align navbar on large screens */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-}
-
-.navbar a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 8px; /* Adjust spacing between links */
-  font-weight: normal;
-  font-size: 1em; /* Slightly smaller for mobile */
-  padding: 4px 8px; /* Increase click area */
-}
-
-.navbar a:hover {
-  text-decoration: underline;
-  color: #dfe6f1; /* Lighter hover effect */
-}
-
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
-  .profile-photo {
-    float: none; /* Disable floating */
-    display: block; /* Treat as a block element */
-    margin: 0 auto 20px auto; /* Center the image and add spacing below */
-    width: 80%; /* Adjust width for mobile screens */
-  }
-
-  .content {
-    text-align: justify;
-    width: 90%; /* Full width with some padding */
-    margin: 0 auto; /* Center-align content */
-  }
-}
-
 
     /* Content Section */
     .content {
-      padding: 2px;
+      padding: 16px;
       text-align: justify;
-      width: calc(100% - 16cm);
-      margin: 0 auto;
-      margin-top: 4cm; /* Increased to account for fixed header */
-      color: #444; /* Medium gray for text */
-      line-height: 1.6; /* Improved readability */
+      max-width: 900px;
+      margin: 100px auto; /* Space for fixed header */
+      display: flex; /* Flex layout for desktop */
+      gap: 20px; /* Space between photo and text */
     }
 
-/* Profile Photo */
-.profile-photo {
-  float: left; /* Default behavior for larger screens */
-  margin: 0 20px 20px 0;
-  width: 250px;
-  height: auto;
-  border-radius: 8px; /* Adds a modern look */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for effect */
-}
-
-    /* Section Styles */
-    .section {
-      display: none;
-      margin-top: 0.5cm;
+    .profile-photo {
+      flex-shrink: 0;
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .section.active {
-      display: block;
-    }
-
-    /* Social Links */
-    .social-links {
-      text-align: center;
-      margin-top: 1cm;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #2f3e56; /* Dark blue-gray */
-      font-weight: bold;
-    }
-
-    .social-links a:hover {
-      color: #0056b3; /* Matches navbar color */
+    .text-content {
+      flex-grow: 1;
     }
 
     /* Mobile Responsive Design */
     @media (max-width: 768px) {
-      .header-container {
-        padding: 0.1cm 0;
-      }
-      
-      .navbar {
-        width: 100%;
-        padding: 4px 0;
-      }
-      
       .content {
-        width: 90%;
-        margin-top: 4.5cm; /* Adjusted for mobile */
+        display: block; /* Stacks elements on smaller screens */
       }
-      
-      .navbar a {
-        margin: 0 8px;
-        font-size: 1em;
-        padding: 0.15cm 0;
+
+      .profile-photo {
+        display: block;
+        margin: 0 auto 20px auto;
+        width: 80%; /* Adjust width for mobile screens */
+      }
+
+      .text-content {
+        text-align: justify;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Header Container with Title and Navbar -->
+  <!-- Header Container -->
   <div class="header-container">
     <div class="title-section">Vikrant V Kamble</div>
     <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
-    <!-- Navbar -->
     <div class="navbar">
       <a href="#home" onclick="showSection('home')">Home</a>
       <a href="#research" onclick="showSection('research')">Research</a>
@@ -179,13 +69,11 @@
 
   <!-- Content -->
   <div class="content">
-    <!-- Home Section -->
-    <div id="home" class="section active">
-      <img src="pic_new.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+    <img src="pic_new.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+    <div class="text-content">
       <p>Welcome! My name is Vikrant.</p>
       <p>I am a 4th-year PhD candidate in Economics at the University of Delaware, specializing in Labor, Health, Education, Crime, and Policy Evaluation across the USA and India. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime. My work has been published in Social Science Research. I use STATA, R, and Python for analysis.</p>
       <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
-     
       <p>Email: <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a></p>
       <div class="social-links">
         <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en" target="_blank">Google Scholar</a>
