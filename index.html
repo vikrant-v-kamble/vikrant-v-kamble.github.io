@@ -104,13 +104,15 @@
 
 /* Profile Photo */
 .profile-photo {
-  float: left; /* Default behavior for larger screens */
+  float: left;
   margin: 0 20px 20px 0;
   width: 250px;
   height: auto;
-  border-radius: 8px; /* Adds a modern look */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for effect */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px dashed red; /* Debugging border */
 }
+
 
     /* Section Styles */
     .section {
@@ -178,10 +180,9 @@
   </div>
 
   <!-- Content -->
-  <div class="content">
-    <!-- Home Section -->
-    <div id="home" class="section active">
-      <img src="pic_new.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+<div class="content">
+    <div id="home" class="section active" style="border: 1px solid blue;">
+      <img src="pic_new.png" alt="Profile photo of Vikrant Kamble" class="profile-photo" style="border: 1px solid red;">
       <p>Welcome! My name is Vikrant.</p>
       <p>I am a 4th-year PhD candidate in Economics at the University of Delaware, specializing in Labor, Health, Education, Crime, and Policy Evaluation across the USA and India. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime. My work has been published in Social Science Research. I use STATA, R, and Python for analysis.</p>
       <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
