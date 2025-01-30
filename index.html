@@ -41,42 +41,39 @@
       padding: 0;
     }
 
+    /* Navbar Layout */
+    header {
+      margin: 0;
+      padding: 0;
+    }
 
-/* Navbar Layout */
-header {
-  margin: 0;
-  padding: 0;
-}
+    .navbar {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      box-shadow: none;
+      position: relative;
+    }
 
-.navbar {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  box-shadow: none;
-  position: relative;
-}
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: normal;
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      padding: 5px 10px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
 
-.navbar a {
-  color: #000;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: normal;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  padding: 5px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-}
-
-img {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-}
-
-
+    img {
+      display: block;
+      margin: 0 auto;
+      padding: 0;
+    }
 
     /* Header Container */
     .header-container {
@@ -86,12 +83,13 @@ img {
       padding: 0;
       box-shadow: none;
       height: var(--header-height);
+      margin-bottom: 0; /* Remove bottom margin */
     }
 
     /* Content Layout */
     .content {
       width: var(--content-width);
-      margin: var(--header-height) auto 0;
+      margin: 0 auto;
       padding: clamp(1rem, 3vw, 2rem);
     }
 
@@ -127,24 +125,21 @@ img {
     }
 
     /* Profile Image Styling */
-.profile-photo {
-  display: block;
-  width: min(350px, 80vw);
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  vertical-align: middle; /* Prevents extra space */
-}
+    .profile-photo {
+      display: block;
+      width: min(350px, 80vw);
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      vertical-align: middle; /* Prevents extra space */
+    }
 
-.profile-photo:hover {
-  transform: scale(1.05);
-}
-
-
-
+    .profile-photo:hover {
+      transform: scale(1.05);
+    }
 
     /* Social Links */
     .social-links {
@@ -214,8 +209,6 @@ img {
       }
     }
   </style>
-
-  
 </head>
 <body>
   <!-- Header Container -->
@@ -230,6 +223,9 @@ img {
     <a href="#teaching">Teaching</a>
     <a href="#resources">Resources</a>
   </nav>
+
+  <img class="profile-photo" src="path-to-your-image.jpg" alt="Profile Picture">
+  
 
   <!-- Content -->
   <div class="content">
