@@ -42,32 +42,58 @@
     }
 
     /* Navbar Layout */
-    .navbar {
-      background-color: transparent;
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      box-shadow: none;
-      position: relative; /* Ensures no additional spacing issues */
-    }
+/* Reset default margins and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
-    .navbar a {
-      color: #000000;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: normal;
-      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      padding: 5px 10px;
-      border-radius: 3px;
-      white-space: nowrap;
-    }
+/* Navbar Layout */
+.navbar {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-shadow: none;
+  position: fixed; /* Ensures navbar stays at the top */
+  top: 0;         /* Removes any space above */
+  left: 0;
+  right: 0;
+  z-index: 1000;  /* Ensures navbar stays above other elements */
+}
 
-    .navbar a:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: translateY(-1px);
-    }
+/* Navbar links */
+.navbar a {
+  color: #000000;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: normal;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  padding: 5px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Remove space above the first image */
+img {
+  margin-top: 0;
+  padding-top: 0;
+  display: block; /* Prevents unwanted extra space */
+}
+
+/* If the image is inside a container, remove any extra space */
+.image-container, .content {
+  margin: 0;
+  padding: 0;
+}
+
 
     /* Header Container */
     .header-container {
@@ -132,12 +158,6 @@
       transform: scale(1.05);
     }
 
-/* Remove margin and padding from the image */
-img {
-  margin-top: 0;  /* Remove space above image */
-  padding-top: 0; /* Remove space above image */
-  display: block; /* Prevents extra space below the image */
-}
 
 
     /* Social Links */
