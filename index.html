@@ -28,7 +28,7 @@
     html {
       font-size: 16px;
       scroll-behavior: smooth;
-      scroll-padding-top: var(--header-height); /* Avoid overlapping with fixed header */
+      scroll-padding-top: var(--header-height);
     }
 
     body {
@@ -87,7 +87,12 @@
 
     /* Section Styling */
     section {
-      margin-bottom: 3rem; /* Add space between sections */
+      display: none; /* Hide all sections by default */
+      margin-bottom: 3rem;
+    }
+
+    section.active {
+      display: block; /* Show only the active section */
     }
 
     h1, h2, h3 {
