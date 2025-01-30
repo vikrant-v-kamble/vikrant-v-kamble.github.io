@@ -56,20 +56,15 @@
 
     /* Header Container */
 .header-container {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%); /* Center the container horizontally */
-  background-color: var(--background-color);
+  background-color: transparent; /* Remove background color */
   padding: 0; /* Remove any padding */
   box-shadow: none; /* No shadow */
-  z-index: 1000;
   height: var(--header-height);
   transition: all 0.3s ease;
 }
 
 .navbar {
-  background-color: transparent;
+  background-color: transparent; /* Ensure the navbar background is also transparent */
   display: flex;
   flex-direction: row;
   justify-content: center; /* Center the navbar items */
@@ -79,6 +74,7 @@
   box-shadow: none;
   overflow-x: auto;
 }
+
 
 
     /* Navbar Links */
