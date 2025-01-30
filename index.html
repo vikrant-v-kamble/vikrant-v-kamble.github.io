@@ -42,7 +42,7 @@
     }
 
     /* Navbar Layout */
-/* Reset default margins and padding */
+/* Reset default browser styles */
 html, body {
   margin: 0;
   padding: 0;
@@ -57,14 +57,12 @@ html, body {
   margin: 0;
   width: 100%;
   box-shadow: none;
-  position: fixed; /* Ensures navbar stays at the top */
-  top: 0;         /* Removes any space above */
-  left: 0;
-  right: 0;
-  z-index: 1000;  /* Ensures navbar stays above other elements */
+  position: relative;
+  margin-bottom: 0 !important;  /* Ensure no space below navbar */
+  padding-bottom: 0 !important;
 }
 
-/* Navbar links */
+/* Navbar Links */
 .navbar a {
   color: #000000;
   text-decoration: none;
@@ -81,18 +79,20 @@ html, body {
   transform: translateY(-1px);
 }
 
-/* Remove space above the first image */
+/* Ensure no space above the image */
 img {
-  margin-top: 0;
-  padding-top: 0;
-  display: block; /* Prevents unwanted extra space */
+  display: block; /* Prevents extra inline spacing */
+  margin: 0 !important;  /* Force removal of any space */
+  padding: 0 !important;
+  width: 100%; /* Optional: Adjust based on your design */
 }
 
-/* If the image is inside a container, remove any extra space */
-.image-container, .content {
+/* Ensure no extra space from parent containers */
+.container, .image-wrapper {
   margin: 0;
   padding: 0;
 }
+
 
 
     /* Header Container */
