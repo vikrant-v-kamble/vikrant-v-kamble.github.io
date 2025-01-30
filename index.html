@@ -55,31 +55,31 @@
     }
 
     /* Header Container */
-    .header-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: var(--background-color);
-      padding: 0; /* Remove any padding */
-      box-shadow: none; /* No shadow */
-      z-index: 1000;
-      height: var(--header-height);
-      transition: all 0.3s ease;
-    }
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the container horizontally */
+  background-color: var(--background-color);
+  padding: 0; /* Remove any padding */
+  box-shadow: none; /* No shadow */
+  z-index: 1000;
+  height: var(--header-height);
+  transition: all 0.3s ease;
+}
 
-    /* Navbar Styles */
-    .navbar {
-      background-color: transparent; /* No background color */
-      display: flex;
-      flex-direction: row; /* Make navbar items horizontal */
-      justify-content: flex-start; /* Align items to the left */
-      padding: 0; /* Remove padding */
-      margin: 0; /* Remove margin */
-      width: 100%;
-      box-shadow: none; /* No box-shadow */
-      overflow-x: auto; /* Allow horizontal scrolling if navbar items overflow */
-    }
+.navbar {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Center the navbar items */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-shadow: none;
+  overflow-x: auto;
+}
+
 
     /* Navbar Links */
     .navbar a {
