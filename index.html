@@ -127,19 +127,22 @@ img {
     }
 
     /* Profile Image Styling */
-    .profile-photo {
-      display: block;
-      width: min(350px, 80vw);
-      height: auto;
-      margin: 0 auto 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
+.profile-photo {
+  display: block;
+  width: min(350px, 80vw);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  vertical-align: middle; /* Prevents extra space */
+}
 
-    .profile-photo:hover {
-      transform: scale(1.05);
-    }
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
 
 
 
