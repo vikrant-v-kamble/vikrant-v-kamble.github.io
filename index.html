@@ -3,149 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vikrant Kamble</title>
+  <title>Vikrant Kamble - Economics PhD Candidate</title>
   <style>
-    /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
+    /* Previous styles remain the same until content section */
+    :root {
+      --primary-color: #2F3E56;
+      --secondary-color: #4A6FA5;
+      --text-color: #2C3E50;
+      --background-color: #FFFFFF;
+      --nav-color: #1a1a2e;
+      --link-color: #3498db;
+      --header-height: 180px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    /* Fixed Header Container */
-    .header-container {
-      position: fixed;
-      top: 2cm;
-      left: 0;
-      right: 0;
-      background-color: white;
-      z-index: 1000;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-height);
     }
 
-    /* Title Section */
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+    }
+
+    .header-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--background-color);
+      padding: 1.5cm 0 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      height: var(--header-height);
+    }
+
     .title-section {
       text-align: center;
-      font-size: 1.8em;
-      font-weight: bold;
-      color: #333;
+      font-size: 2em;
+      font-weight: 700;
+      color: var(--primary-color);
+      letter-spacing: 0.5px;
     }
 
     .subtitle-section {
       text-align: center;
-      font-size: 1em;
-      color: #777;
-      margin-top: 8px;
-      margin-bottom: 1cm;
+      font-size: 1.1em;
+      color: var(--secondary-color);
+      margin: 8px 0 1cm;
+      letter-spacing: 0.3px;
     }
 
-    /* Navbar Styles */
     .navbar {
-      background-color: #1a1a2e; /* Updated to bluish black */
-      color: #ffffff;
+      background-color: var(--nav-color);
       display: flex;
       justify-content: center;
       padding: 15px 0;
-      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
+      width: min(calc(100% - 16cm), 1200px);
       margin: 0 auto;
+      border-radius: 4px;
     }
 
     .navbar a {
       color: #ffffff;
       text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
+      margin: 0 25px;
+      font-weight: 600;
       font-size: 1.1em;
+      transition: all 0.3s ease;
+      padding: 5px 10px;
+      border-radius: 3px;
     }
 
     .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* Modified Content Section for Scrolling */
+    .content {
+      max-width: min(calc(100% - 16cm), 1200px);
+      margin: var(--header-height) auto 0;
+      padding: 20px 40px;
+    }
+
+    /* Modified Section Display for Scrolling */
+    .section {
+      min-height: calc(100vh - var(--header-height));
+      padding: 2rem 0;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Profile Section */
+    .profile-photo {
+      display: block;
+      margin: 0 auto 2cm;
+      width: 250px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.02);
+    }
+
+    /* Typography remains the same */
+    h1 {
+      color: var(--primary-color);
+      font-size: 2em;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.8em;
+      margin: 1.5em 0 1em;
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 0.3em;
+    }
+
+    h3 {
+      color: var(--secondary-color);
+      font-size: 1.4em;
+      margin: 1.2em 0 0.8em;
+    }
+
+    p {
+      margin-bottom: 1.2em;
+      line-height: 1.8;
+      color: var(--text-color);
+    }
+
+    /* Links and other styles remain the same */
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--secondary-color);
       text-decoration: underline;
     }
 
-    /* Content Section */
-    .content {
-      padding: 20px;
-      text-align: justify;
-      width: calc(100% - 16cm); /* Adjusted for 8cm margins on each side */
-      margin: 0 auto;
-      margin-top: calc(2cm + 200px); /* Space for fixed header */
+    ul {
+      margin: 1em 0;
+      padding-left: 2em;
     }
 
-    /* Profile Photo */
-    .profile-photo {
-      display: block;
-      margin: 1.5cm auto 20px auto; /* Fixed 1.5cm top margin */
-      width: 250px;
-      height: auto;
+    li {
+      margin-bottom: 0.8em;
+      line-height: 1.6;
     }
 
-    /* Section Styles */
-    .section {
-      display: none;
-    }
-
-    .section.active {
-      display: block;
-    }
-
-    /* Social Links */
     .social-links {
       text-align: center;
-      margin-top: 20px;
+      margin: 2em 0;
+      padding: 1em 0;
+      border-top: 1px solid #eee;
     }
 
     .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #2F3E56;
-      font-weight: bold;
+      display: inline-block;
+      margin: 0 15px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
 
-    /* Mobile Responsive Design */
+    .social-links a:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    /* Responsive Design */
     @media (max-width: 768px) {
+      :root {
+        --header-height: 220px;
+      }
+
       .header-container {
-        top: 1cm;
+        padding-top: 1cm;
       }
 
       .navbar {
-        width: 100%;
+        width: 95%;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        margin: 5px 10px;
       }
 
       .content {
-        width: 90%;
-        padding: 10px;
-        margin-top: calc(1cm + 200px);
+        width: 95%;
+        padding: 15px;
       }
 
       .profile-photo {
         width: 200px;
-        margin-top: 1.5cm;
       }
 
-      .navbar a {
-        margin: 0 10px;
-        font-size: 1em;
-      }
+      h1 { font-size: 1.8em; }
+      h2 { font-size: 1.6em; }
+      h3 { font-size: 1.3em; }
     }
   </style>
 </head>
 <body>
-  <!-- Fixed Header Container -->
+  <!-- Header Container -->
   <div class="header-container">
     <div class="title-section">Vikrant V. Kamble</div>
     <div class="subtitle-section">PhD Student, Department of Economics, University of Delaware</div>
-    <!-- Navbar -->
-    <div class="navbar">
-      <a href="#home" onclick="showSection('home')">Home</a>
-      <a href="#research" onclick="showSection('research')">Research</a>
-      <a href="#teaching" onclick="showSection('teaching')">Teaching</a>
-      <a href="#resources" onclick="showSection('resources')">Resources</a>
-    </div>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#resources">Resources</a>
+    </nav>
   </div>
 
   <!-- Content -->
   <div class="content">
     <!-- Home Section -->
-    <div id="home" class="section active">
+    <section id="home" class="section">
       <img src="pic1.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
       <h1>Welcome! My name is Vikrant.</h1>
       <p>I am a 4th-year PhD candidate in Economics at the University of Delaware, specializing in Labor, Health, Education, Crime, and Policy Evaluation across the USA and India. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime. My work has been published in Social Science Research. I use STATA, R, and Python for analysis.</p>
@@ -156,10 +253,10 @@
         <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">LinkedIn</a>
         <a href="https://x.com/Vikrant_V_" target="_blank">Twitter</a>
       </div>
-    </div>
+    </section>
     
     <!-- Research Section -->
-    <div id="research" class="section">
+    <section id="research" class="section">
       <h2>Research</h2>
       <h3>Publications</h3>
       <p>"Noncustodial parents, instrumental networks, and child support compliance" with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger. <i>Social Science Research</i>, Volume 110, February 2023, 102850</p>
@@ -170,10 +267,10 @@
         <li>Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (USA) (co-authored)</li>
         <li>Effect of Medicaid Expansion on Crime in Big Cities (USA) (co-authored)</li>
       </ul>
-    </div>
+    </section>
 
     <!-- Teaching Section -->
-    <div id="teaching" class="section">
+    <section id="teaching" class="section">
       <h2>Teaching</h2>
       <h3>Instructor</h3>
       <p>I will be teaching ECON101: Introduction to Microeconomics in Winter 2025.</p>
@@ -189,10 +286,10 @@
         <li>ECON304 | Quantitative Macroeconomic Theory | Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></li>
         <li>ECON422 | Econometric Methods and Models | Fall 2022, Fall 2023, Spring 2024, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></li>
       </ul>
-    </div>
+    </section>
 
     <!-- Resources Section -->
-    <div id="resources" class="section">
+    <section id="resources" class="section">
       <h2>Resources</h2>
       <h3>Stata Resources</h3>
       <ul>
@@ -211,16 +308,7 @@
         <li><a href="https://www.cdc.gov/brfss/index.html" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a></li>
         <li><a href="https://fred.stlouisfed.org/" target="_blank">Federal Reserve Economic Data (FRED)</a></li>
       </ul>
-    </div>
+    </section>
   </div>
-
-  <!-- JavaScript for Tab Navigation -->
-  <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
-    }
-  </script>
 </body>
 </html>
