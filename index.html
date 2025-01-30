@@ -55,41 +55,38 @@
     }
 
     /* Header Container */
+    .header-container {
+      position: relative;
+      background-color: transparent;
+      padding: 0;
+      margin: 0; /* Remove any margin */
+      height: var(--header-height);
+      transition: all 0.3s ease;
+      text-align: center; /* Center header text */
+    }
 
-.header-container {
-  position: relative; /* Let it scroll with the page */
-  left: 50%;
-  transform: translateX(-50%); /* Center the header horizontally */
-  background-color: transparent; /* Remove background color */
-  padding: 0; /* Remove any padding */
-  box-shadow: none; /* No shadow */
-  height: var(--header-height);
-  transition: all 0.3s ease;
-}
-
-.navbar {
-  background-color: transparent; /* Ensure the navbar background is also transparent */
-  display: flex;
-  flex-direction: row;
-  justify-content: center; /* Center the navbar items */
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  box-shadow: none;
-  overflow-x: auto;
-}
-
+    .navbar {
+      background-color: transparent;
+      display: flex;
+      flex-direction: row;
+      justify-content: center; /* Center the navbar items */
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      box-shadow: none;
+      overflow-x: auto;
+    }
 
     /* Navbar Links */
     .navbar a {
-      color: #000000; /* Black color for text */
+      color: #000000;
       text-decoration: none;
-      margin: 0 10px; /* Adjust horizontal spacing */
-      font-weight: normal; /* Remove bold */
+      margin: 0 10px;
+      font-weight: normal;
       font-size: clamp(0.9rem, 2.5vw, 1.1rem);
       padding: 5px 10px;
       border-radius: 3px;
-      white-space: nowrap; /* Prevent text wrapping */
+      white-space: nowrap;
     }
 
     .navbar a:hover {
@@ -100,163 +97,37 @@
     /* Profile Image Styles */
     .profile-photo {
       display: block;
-      width: min(350px, 80vw); /* Ensure image is responsive */
-      height: auto; /* Maintain aspect ratio */
-      margin: 0 auto; /* Remove top and bottom margin */
-      border-radius: 10px; /* Optional: Rounded corners */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Box shadow */
-      transition: transform 0.3s ease;
-    }
-
-    .profile-photo:hover {
-      transform: scale(1.05); /* Slight scale effect on hover */
-    }
-
-    /* Content Layout */
-    .content {
-      width: var(--content-width);
-      margin: var(--header-height) auto 0;
-      padding: clamp(1rem, 3vw, 2rem);
-    }
-
-    /* Prevent overlap of content below header */
-    body {
-      margin-top: var(--header-height); /* Add margin to the body to avoid overlap */
-    }
-
-    /* For smaller screens, adjust the navbar layout */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column; /* Stack items vertically on small screens */
-        width: 100%; /* Ensure navbar takes full width on small screens */
-      }
-    }
-
-    /* Profile Image Styles */
-    .profile-photo {
-      display: block;
-      width: min(350px, 80vw); /* Adjust image size */
+      width: min(350px, 80vw);
       height: auto;
-      margin: 0 auto clamp(1rem, 4vw, 2cm);
+      margin: 0 auto; /* Remove margin between profile and navbar */
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
 
-    /* Hover effect for profile image */
     .profile-photo:hover {
-      transform: scale(1.05); /* Slight scale effect */
+      transform: scale(1.05);
     }
 
-    /* Typography */
-    h1 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      margin-bottom: clamp(1rem, 3vw, 1.5rem);
-      text-align: center;
-      color: var(--primary-color);
+    /* Content Layout */
+    .content {
+      width: var(--content-width);
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2rem);
     }
 
-    h2 {
-      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-      margin: clamp(1rem, 3vw, 1.5rem) 0;
-      color: var(--primary-color);
-      border-bottom: 2px solid var(--secondary-color);
-      padding-bottom: 0.3em;
-    }
-
-    h3 {
-      font-size: clamp(1.1rem, 3vw, 1.4rem);
-      margin: clamp(0.8rem, 2vw, 1.2rem) 0;
-      color: var(--secondary-color);
-    }
-
-    p {
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      margin-bottom: 1rem;
-      line-height: 1.8;
-    }
-
-    /* Lists */
-    ul {
-      margin: 1rem 0;
-      padding-left: clamp(1rem, 4vw, 2rem);
-    }
-
-    li {
-      margin-bottom: clamp(0.5rem, 2vw, 0.8rem);
-      line-height: 1.6;
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-    }
-
-    /* Links */
-    a {
-      color: var(--link-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--secondary-color);
-      text-decoration: underline;
-    }
-
-    /* Social Links */
-    .social-links {
-      text-align: center;
-      margin: clamp(1rem, 4vw, 2rem) 0;
-      padding: clamp(0.5rem, 2vw, 1rem) 0;
-      border-top: 1px solid #eee;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: clamp(0.5rem, 2vw, 1rem);
-    }
-
-    .social-links a {
-      display: inline-block;
-      padding: clamp(0.5rem, 2vw, 0.8rem) clamp(0.8rem, 3vw, 1rem);
-      border-radius: 4px;
-      background-color: var(--primary-color);
-      color: white;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: clamp(0.8rem, 2vw, 1rem);
-    }
-
-    .social-links a:hover {
-      background-color: var(--secondary-color);
-      transform: translateY(-2px);
-      text-decoration: none;
-    }
-
-    /* Device-specific adjustments */
-    @media (max-width: 1024px) {
-      :root {
-        --content-width: min(calc(100% - 4rem), 800px);
-      }
+    body {
+      margin-top: var(--header-height); /* Ensure there's no overlap */
     }
 
     @media (max-width: 768px) {
-      :root {
-        --header-height: 220px;
-        --content-width: calc(100% - 2rem);
-      }
-
       .navbar {
-        padding: 0.5rem;
-      }
-
-      .social-links {
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
+        width: 100%;
       }
     }
 
     @media (max-width: 480px) {
-      :root {
-        --header-height: 200px;
-      }
-
       .navbar a {
         padding: 4px 8px;
         margin: 4px;
