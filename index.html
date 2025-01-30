@@ -89,24 +89,22 @@
 .navbar {
   background-color: transparent; /* No background color */
   display: flex;
-  flex-direction: column; /* Stacks items vertically */
-  justify-content: flex-start; /* Align items to the top */
+  flex-direction: row; /* Make navbar items horizontal */
+  justify-content: flex-start; /* Align items to the left */
   padding: clamp(0.5rem, 2vw, 15px) 0;
   margin: 0;
   border-radius: 4px;
-  position: sticky; /* Sticky navbar stays on top */
+  position: sticky; /* Sticky navbar stays at the top */
   top: 0; /* Aligns it to the top of the page */
-  left: 0; /* Aligns it to the left side of the page */
-  height: auto; /* Adjust height */
-  width: 200px; /* Width of the navbar */
-  z-index: 1000; /* Ensures navbar is on top of content */
-  overflow-y: auto; /* Allows vertical scrolling if content overflows */
+  width: 100%; /* Ensure it spans the full width */
+  z-index: 1000; /* Ensure navbar is on top of content */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+  overflow: hidden; /* Ensures no unwanted scrollbars */
 }
 
 /* Navbar Links */
 .navbar a {
-  color: #000000; /* Black text color */
+  color: #000000; /* Black color for text */
   text-decoration: none;
   margin: clamp(0.25rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 25px);
   font-weight: normal; /* Remove bold */
@@ -122,25 +120,19 @@
   transform: translateY(-1px);
 }
 
-/* Add margin to prevent content from overlapping */
+/* Add margin to the content to avoid overlap with the navbar */
 body {
-  margin-left: 220px; /* Adjust to match the navbar width */
-  padding-top: 60px; /* Prevent overlap with header */
+  margin-top: 60px; /* Add space at the top to avoid overlap */
 }
 
-/* For smaller screens, adjust layout */
+/* For smaller screens, adjust the navbar layout */
 @media (max-width: 768px) {
   .navbar {
-    width: 100%; /* Full-width on smaller screens */
-    position: relative; /* Navbar scrolls with the page on smaller screens */
-    height: auto; /* Adjust height as needed */
-  }
-
-  body {
-    margin-left: 0; /* Remove left margin for smaller screens */
-    padding-top: 20px; /* Adjust top padding for mobile */
+    flex-direction: column; /* Stack items vertically on small screens */
+    width: 100%; /* Ensure navbar takes full width on small screens */
   }
 }
+
 
     /* Content Layout */
     .content {
