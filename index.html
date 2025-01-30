@@ -37,6 +37,8 @@
       color: var(--text-color);
       background-color: var(--background-color);
       overflow-x: hidden;
+      margin: 0; /* Remove body margin to avoid space */
+      padding: 0; /* Remove any padding */
     }
 
     /* Responsive Typography */
@@ -52,142 +54,64 @@
       }
     }
 
-/* Remove margin/padding from body */
-body {
-  margin: 0; /* Remove body margin to avoid space */
-  padding: 0; /* Remove any padding */
-}
-
-/* Header Container */
-.header-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--background-color);
-  padding: 0; /* Remove any padding */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  height: var(--header-height);
-  transition: all 0.3s ease;
-}
-
-/* Adjust navbar to prevent spacing */
-.navbar {
-  background-color: transparent;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  overflow-x: auto;
-}
-
-/* Profile Image Styles */
-.profile-photo {
-  display: block;
-  width: min(350px, 80vw);
-  height: auto;
-  margin: 0 auto clamp(1rem, 4vw, 2cm); /* Adjust margin, remove unnecessary space */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-/* Add a little padding below the image if needed */
-.profile-photo:hover {
-  transform: scale(1.05);
-}
-
-
-    .title-section {
-      text-align: center;
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      font-weight: 700;
-      color: var(--primary-color);
-      letter-spacing: 0.5px;
-      padding: 0 1rem;
+    /* Header Container */
+    .header-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--background-color);
+      padding: 0; /* Remove any padding */
+      box-shadow: none; /* No shadow */
+      z-index: 1000;
+      height: var(--header-height);
+      transition: all 0.3s ease;
     }
 
-    .subtitle-section {
-      text-align: center;
+    /* Navbar Styles */
+    .navbar {
+      background-color: transparent; /* No background color */
+      display: flex;
+      flex-direction: row; /* Make navbar items horizontal */
+      justify-content: flex-start; /* Align items to the left */
+      padding: 0; /* Remove padding */
+      margin: 0; /* Remove margin */
+      width: 100%;
+      box-shadow: none; /* No box-shadow */
+      overflow-x: auto; /* Allow horizontal scrolling if navbar items overflow */
+    }
+
+    /* Navbar Links */
+    .navbar a {
+      color: #000000; /* Black color for text */
+      text-decoration: none;
+      margin: 0 10px; /* Adjust horizontal spacing */
+      font-weight: normal; /* Remove bold */
       font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      color: var(--secondary-color);
-      margin: 8px 0 clamp(0.5rem, 2vw, 1cm);
-      letter-spacing: 0.3px;
-      padding: 0 1rem;
+      padding: 5px 10px;
+      border-radius: 3px;
+      white-space: nowrap; /* Prevent text wrapping */
     }
 
-    /* Responsive Navigation */
-/* Navbar Styles */
-.navbar {
-  background-color: transparent; /* No background color */
-  display: flex;
-  flex-direction: row; /* Make navbar items horizontal */
-  justify-content: flex-start; /* Align items to the left */
-  padding: clamp(0.5rem, 2vw, 15px) 0;
-  margin: 0;
-  border-radius: 4px;
-  width: 100%; /* Ensure it spans the full width */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
-  overflow-x: auto; /* Allow horizontal scrolling if navbar items overflow */
-}
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
 
-/* Navbar Links */
-.navbar a {
-  color: #000000; /* Black color for text */
-  text-decoration: none;
-  margin: clamp(0.25rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 25px);
-  font-weight: normal; /* Remove bold */
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  transition: all 0.3s ease;
-  padding: 5px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-}
+    /* Profile Image Styles */
+    .profile-photo {
+      display: block;
+      width: min(350px, 80vw); /* Ensure image is responsive */
+      height: auto; /* Maintain aspect ratio */
+      margin: 0 auto; /* Remove top and bottom margin */
+      border-radius: 10px; /* Optional: Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Box shadow */
+      transition: transform 0.3s ease;
+    }
 
-.navbar a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-1px);
-}
-
-/* Content Layout */
-.content {
-  width: var(--content-width);
-  margin: var(--header-height) auto 0;
-  padding: clamp(1rem, 3vw, 2rem);
-}
-
-/* Header Styles - Fixed position */
-.header-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--background-color);
-  padding: clamp(1rem, 3vw, 1.5cm) 0 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  height: var(--header-height);
-  transition: all 0.3s ease;
-}
-
-/* Prevent overlap of content below header */
-body {
-  margin-top: var(--header-height); /* Add margin to the body to avoid overlap */
-}
-
-/* For smaller screens, adjust the navbar layout */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* Stack items vertically on small screens */
-    width: 100%; /* Ensure navbar takes full width on small screens */
-    overflow-y: auto; /* Allow vertical scrolling if needed */
-  }
-}
-
+    .profile-photo:hover {
+      transform: scale(1.05); /* Slight scale effect on hover */
+    }
 
     /* Content Layout */
     .content {
@@ -196,32 +120,34 @@ body {
       padding: clamp(1rem, 3vw, 2rem);
     }
 
-    /* Responsive Sections */
-    .section {
-      min-height: calc(100vh - var(--header-height));
-      padding: clamp(1rem, 3vw, 2rem) 0;
-      opacity: 1;
-      transition: opacity 0.3s ease;
+    /* Prevent overlap of content below header */
+    body {
+      margin-top: var(--header-height); /* Add margin to the body to avoid overlap */
     }
 
-    /* Responsive Profile Photo */
-/* Profile Image Styles */
-.profile-photo {
-  display: block;
-  width: min(350px, 80vw); /* Increase the width of the profile image */
-  height: auto; /* Maintain aspect ratio */
-  margin: 0 auto clamp(1rem, 4vw, 2cm);
-  border-radius: 10px; /* Optionally, adjust the border-radius for rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
+    /* For smaller screens, adjust the navbar layout */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column; /* Stack items vertically on small screens */
+        width: 100%; /* Ensure navbar takes full width on small screens */
+      }
+    }
 
-/* Hover effect for profile image */
-.profile-photo:hover {
-  transform: scale(1.05); /* Slight scale effect on hover */
-}
+    /* Profile Image Styles */
+    .profile-photo {
+      display: block;
+      width: min(350px, 80vw); /* Adjust image size */
+      height: auto;
+      margin: 0 auto clamp(1rem, 4vw, 2cm);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-
+    /* Hover effect for profile image */
+    .profile-photo:hover {
+      transform: scale(1.05); /* Slight scale effect */
+    }
 
     /* Typography */
     h1 {
@@ -302,11 +228,6 @@ body {
       background-color: var(--secondary-color);
       transform: translateY(-2px);
       text-decoration: none;
-    }
-
-    /* Publications and Italics */
-    i {
-      font-style: italic;
     }
 
     /* Device-specific adjustments */
