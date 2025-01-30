@@ -112,11 +112,9 @@
     }
 
     /* Content Layout */
-    .content {
-      width: var(--content-width);
-      margin: var(--header-height) auto 0;
-      padding: clamp(1rem, 3vw, 2rem);
-    }
+.content {
+  margin-top: 0; /* Remove any margin that might push content down */
+}
 
     /* Prevent overlap of content below header */
     body {
