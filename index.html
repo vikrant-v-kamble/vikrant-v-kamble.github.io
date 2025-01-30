@@ -95,7 +95,6 @@
   margin: 0;
   border-radius: 4px;
   width: 100%; /* Ensure it spans the full width */
-  z-index: 1000; /* Ensure navbar is on top of content */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
   overflow-x: auto; /* Allow horizontal scrolling if navbar items overflow */
 }
@@ -118,9 +117,30 @@
   transform: translateY(-1px);
 }
 
-/* Body Margin for No Overlap */
+/* Content Layout */
+.content {
+  width: var(--content-width);
+  margin: var(--header-height) auto 0;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* Header Styles - Fixed position */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  padding: clamp(1rem, 3vw, 1.5cm) 0 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: var(--header-height);
+  transition: all 0.3s ease;
+}
+
+/* Prevent overlap of content below header */
 body {
-  margin-top: 0; /* Remove top margin to avoid content overlap */
+  margin-top: var(--header-height); /* Add margin to the body to avoid overlap */
 }
 
 /* For smaller screens, adjust the navbar layout */
