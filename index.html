@@ -85,14 +85,21 @@
     }
 
     /* Responsive Navigation */
-.navbar {
+    .navbar {
   background-color: transparent; /* No background color */
-  display: flex; /* Switch to flex layout */
+  display: flex;
   flex-direction: column; /* Stacks items vertically */
   justify-content: flex-start; /* Align items to the start (top) */
   padding: clamp(0.5rem, 2vw, 15px) 0;
-  margin: 0 auto;
+  margin: 0;
   border-radius: 4px;
+  position: fixed; /* Fixes the navbar position */
+  top: 0; /* Aligns it to the top of the page */
+  left: 0; /* Aligns it to the left side of the page */
+  height: 100vh; /* Ensures the navbar takes full height of the viewport */
+  width: 200px; /* Adjust the width as needed */
+  z-index: 1000; /* Ensures the navbar is on top of other content */
+  overflow-y: auto; /* Allows scrolling within the navbar if needed */
 }
 
 .navbar a {
@@ -110,6 +117,11 @@
 .navbar a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-1px);
+}
+
+/* Adjust the body content to not overlap with the navbar */
+body {
+  margin-left: 220px; /* Adjust the left margin to account for the navbar's width */
 }
 
     /* Content Layout */
