@@ -85,28 +85,31 @@
     }
 
     /* Responsive Navigation */
-    .navbar {
+/* Navbar Styles */
+.navbar {
   background-color: transparent; /* No background color */
   display: flex;
   flex-direction: column; /* Stacks items vertically */
-  justify-content: flex-start; /* Align items to the start (top) */
+  justify-content: flex-start; /* Align items to the top */
   padding: clamp(0.5rem, 2vw, 15px) 0;
   margin: 0;
   border-radius: 4px;
-  position: fixed; /* Fixes the navbar position */
+  position: sticky; /* Sticky navbar stays on top */
   top: 0; /* Aligns it to the top of the page */
   left: 0; /* Aligns it to the left side of the page */
-  height: 100vh; /* Ensures the navbar takes full height of the viewport */
-  width: 200px; /* Adjust the width as needed */
-  z-index: 1000; /* Ensures the navbar is on top of other content */
-  overflow-y: auto; /* Allows scrolling within the navbar if needed */
+  height: auto; /* Adjust height */
+  width: 200px; /* Width of the navbar */
+  z-index: 1000; /* Ensures navbar is on top of content */
+  overflow-y: auto; /* Allows vertical scrolling if content overflows */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
 }
 
+/* Navbar Links */
 .navbar a {
-  color: #000000; /* Black color for the text */
+  color: #000000; /* Black text color */
   text-decoration: none;
   margin: clamp(0.25rem, 1vw, 0.8rem) clamp(0.5rem, 2vw, 25px);
-  font-weight: normal; /* Remove boldness */
+  font-weight: normal; /* Remove bold */
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   transition: all 0.3s ease;
   padding: 5px 10px;
@@ -119,9 +122,24 @@
   transform: translateY(-1px);
 }
 
-/* Adjust the body content to not overlap with the navbar */
+/* Add margin to prevent content from overlapping */
 body {
-  margin-left: 220px; /* Adjust the left margin to account for the navbar's width */
+  margin-left: 220px; /* Adjust to match the navbar width */
+  padding-top: 60px; /* Prevent overlap with header */
+}
+
+/* For smaller screens, adjust layout */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%; /* Full-width on smaller screens */
+    position: relative; /* Navbar scrolls with the page on smaller screens */
+    height: auto; /* Adjust height as needed */
+  }
+
+  body {
+    margin-left: 0; /* Remove left margin for smaller screens */
+    padding-top: 20px; /* Adjust top padding for mobile */
+  }
 }
 
     /* Content Layout */
