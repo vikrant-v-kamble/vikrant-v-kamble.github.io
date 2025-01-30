@@ -52,19 +52,55 @@
       }
     }
 
-    /* Header Styles */
-    .header-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: var(--background-color);
-      padding: clamp(1rem, 3vw, 1.5cm) 0 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      height: var(--header-height);
-      transition: all 0.3s ease;
-    }
+/* Remove margin/padding from body */
+body {
+  margin: 0; /* Remove body margin to avoid space */
+  padding: 0; /* Remove any padding */
+}
+
+/* Header Container */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  padding: 0; /* Remove any padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: var(--header-height);
+  transition: all 0.3s ease;
+}
+
+/* Adjust navbar to prevent spacing */
+.navbar {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  overflow-x: auto;
+}
+
+/* Profile Image Styles */
+.profile-photo {
+  display: block;
+  width: min(350px, 80vw);
+  height: auto;
+  margin: 0 auto clamp(1rem, 4vw, 2cm); /* Adjust margin, remove unnecessary space */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Add a little padding below the image if needed */
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
 
     .title-section {
       text-align: center;
