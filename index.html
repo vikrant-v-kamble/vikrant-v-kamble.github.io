@@ -55,30 +55,27 @@
     }
 
     /* Header Container */
+    .header-container {
+      position: relative; /* Let it scroll with the page */
+      text-align: center; /* Center the header text */
+      background-color: transparent; /* Remove background color */
+      padding: 0; /* Remove any padding */
+      box-shadow: none; /* No shadow */
+      height: var(--header-height);
+      transition: all 0.3s ease;
+    }
 
-.header-container {
-  position: relative; /* Let it scroll with the page */
-  left: 50%;
-  transform: translateX(-50%); /* Center the header horizontally */
-  background-color: transparent; /* Remove background color */
-  padding: 0; /* Remove any padding */
-  box-shadow: none; /* No shadow */
-  height: var(--header-height);
-  transition: all 0.3s ease;
-}
-
-.navbar {
-  background-color: transparent; /* Ensure the navbar background is also transparent */
-  display: flex;
-  flex-direction: row;
-  justify-content: center; /* Center the navbar items */
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  box-shadow: none;
-  overflow-x: auto;
-}
-
+    .navbar {
+      background-color: transparent; /* Ensure the navbar background is also transparent */
+      display: flex;
+      flex-direction: row;
+      justify-content: center; /* Center the navbar items */
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      box-shadow: none;
+      overflow-x: auto;
+    }
 
     /* Navbar Links */
     .navbar a {
