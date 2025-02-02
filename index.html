@@ -13,7 +13,7 @@
       --background-color: #FFFFFF;
       --nav-color: #1a1a2e;
       --link-color: #3498db;
-      --header-height: 180px;
+      --header-height: 120px; /* Reduced from 180px */
       --content-width: min(calc(100% - 2rem), 1200px);
       --spacing-unit: 1rem;
     }
@@ -28,7 +28,7 @@
     html {
       font-size: 16px;
       scroll-behavior: smooth;
-      scroll-padding-top: var(--header-height); /* Avoid overlapping with fixed header */
+      scroll-padding-top: var(--header-height);
     }
 
     body {
@@ -49,7 +49,7 @@
 
     .navbar {
       margin: 0;
-      padding: 0;
+      padding: 0.5rem 0; /* Added small padding */
       width: 100%;
       background-color: transparent;
       display: flex;
@@ -80,10 +80,10 @@
       position: relative;
       text-align: center;
       background-color: transparent;
-      padding: 0;
+      padding: 0.5rem 0; /* Added small padding */
       box-shadow: none;
       height: var(--header-height);
-      margin-bottom: 0; /* Remove bottom margin */
+      margin: 0; /* Removed all margins */
     }
 
     /* Content Layout */
@@ -95,7 +95,7 @@
 
     /* Section Styling */
     section {
-      margin-bottom: 3rem; /* Add space between sections */
+      margin-bottom: 3rem;
     }
 
     h1, h2, h3 {
@@ -134,7 +134,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
-      vertical-align: middle; /* Prevents extra space */
+      vertical-align: middle;
     }
 
     .profile-photo:hover {
@@ -147,7 +147,7 @@
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-top: 2rem;
+      margin-top: 1rem; /* Reduced from 2rem */
     }
 
     .social-links a {
@@ -209,6 +209,7 @@
       }
     }
   </style>
+
 </head>
 <body>
   <!-- Header Container -->
