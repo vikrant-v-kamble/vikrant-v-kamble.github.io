@@ -14,12 +14,12 @@
       --nav-color: #1a1a2e;
       --link-color: #3498db;
       --header-height: 120px;
-      /* Modified content width to reduce side margins by 2cm (approximately 75.6px) on each side */
-      --content-width: min(calc(100% - 4cm), 1351.2px);
+      /* Added 6cm margins on each side (12cm total = ~453.6px) */
+      --content-width: min(calc(100% - 12cm), 1000px);
       --spacing-unit: 0.75rem;
     }
 
-    /* Rest of the CSS remains the same */
+    /* Rest of the styles remain the same */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -92,6 +92,8 @@
       width: var(--content-width);
       margin: 0 auto;
       padding: clamp(0.75rem, 2vw, 1.5rem);
+      /* Added max-width for better reading length on very wide screens */
+      max-width: 1000px;
     }
 
     /* Section Styling */
@@ -171,6 +173,11 @@
 
     /* Responsive Styles */
     @media (max-width: 768px) {
+      :root {
+        /* Adjust margins for tablet screens */
+        --content-width: min(calc(100% - 4cm), 1000px);
+      }
+      
       .navbar {
         flex-direction: column;
         width: 100%;
@@ -183,6 +190,11 @@
     }
 
     @media (max-width: 480px) {
+      :root {
+        /* Reduce margins further for mobile screens */
+        --content-width: min(calc(100% - 2cm), 1000px);
+      }
+      
       .navbar a {
         padding: 3px 6px;
         margin: 3px;
@@ -213,6 +225,7 @@
       }
     }
   </style>
+
 
 
 <!-- ***********   MAIN CONTENT STARTS  ************ -->
