@@ -41,24 +41,15 @@
     }
 
     /* Header and Navigation */
-    header {
-      margin: 0;
-      padding: 0;
-    }
-
     .header-container {
-      position: relative;
-      text-align: center;
-      background-color: transparent;
-      padding: 0;
-      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       height: var(--header-height);
-      margin: 0;
-    }
-
-    .header-title {
-      padding: 2rem 0;
       text-align: center;
+      padding: 2rem 0;
+      margin: 0;
     }
 
     .header-name {
@@ -73,18 +64,15 @@
       font-size: clamp(1.5rem, 3vw, 2rem);
       color: var(--secondary-color);
       font-weight: 500;
-      margin-top: 0.5rem;
     }
 
     .navbar {
-      margin: 0;
-      padding: 0.25rem 0;
       width: 100%;
       background-color: transparent;
       display: flex;
       justify-content: center;
-      box-shadow: none;
-      position: relative;
+      padding: 0.25rem 0;
+      margin: 0;
     }
 
     .navbar a {
@@ -198,7 +186,7 @@
         width: 100%;
       }
 
-      .header-title {
+      .header-container {
         padding: 1.5rem 0;
       }
 
@@ -219,7 +207,7 @@
         margin: 3px;
       }
 
-      .header-title {
+      .header-container {
         padding: 1rem 0;
       }
 
@@ -258,10 +246,8 @@
 <body>
   <!-- Header Container -->
   <header class="header-container">
-    <div class="header-title">
-      <h1 class="header-name">Vikrant V. Kamble</h1>
-      <h2 class="header-role">Economics PhD Candidate</h2>
-    </div>
+    <h1 class="header-name">Vikrant V. Kamble</h1>
+    <h2 class="header-role">Economics PhD Candidate</h2>
   </header>
 
   <nav class="navbar">
