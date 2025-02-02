@@ -13,8 +13,9 @@
       --background-color: #FFFFFF;
       --nav-color: #1a1a2e;
       --link-color: #3498db;
-      --header-height: 120px; /* Reduced from 180px */
-      --content-width: min(calc(100% - 2rem), 1200px);
+      --header-height: 120px;
+      /* Modified content width to reduce margins */
+      --content-width: min(calc(100% - 1rem), 1300px);
       --spacing-unit: 1rem;
     }
 
@@ -49,7 +50,7 @@
 
     .navbar {
       margin: 0;
-      padding: 0.5rem 0; /* Added small padding */
+      padding: 0.5rem 0;
       width: 100%;
       background-color: transparent;
       display: flex;
@@ -80,17 +81,18 @@
       position: relative;
       text-align: center;
       background-color: transparent;
-      padding: 0.5rem 0; /* Added small padding */
+      padding: 0.5rem 0;
       box-shadow: none;
       height: var(--header-height);
-      margin: 0; /* Removed all margins */
+      margin: 0;
     }
 
     /* Content Layout */
     .content {
       width: var(--content-width);
       margin: 0 auto;
-      padding: clamp(1rem, 3vw, 2rem);
+      /* Reduced padding for content */
+      padding: clamp(0.5rem, 2vw, 1.5rem);
     }
 
     /* Section Styling */
@@ -147,7 +149,7 @@
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-top: 1rem; /* Reduced from 2rem */
+      margin-top: 1rem;
     }
 
     .social-links a {
@@ -185,7 +187,7 @@
       }
 
       .content {
-        padding: 1rem;
+        padding: 0.75rem;
       }
     }
 
