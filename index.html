@@ -56,12 +56,11 @@
       height: var(--header-height);
       text-align: center;
       padding: 2rem 0;
-      margin: 0;
     }
 
     .header-name {
-      font-size: clamp(2.3rem, 4.5vw, 3.2rem); /* Slightly reduced size */
-      font-weight: normal; /* Removed bold */
+      font-size: clamp(2.3rem, 4.5vw, 3.2rem);
+      font-weight: normal;
       color: var(--primary-color);
       margin-bottom: 0.5rem;
       line-height: 1.2;
@@ -79,7 +78,6 @@
       display: flex;
       justify-content: center;
       padding: 0.25rem 0;
-      margin: 0;
     }
 
     .navbar a {
@@ -132,6 +130,16 @@
       font-size: clamp(0.9rem, 2.5vw, 1rem);
       margin-bottom: 0.75rem;
       line-height: 1.6;
+    }
+
+    /* Research Paper Formatting */
+    .research-section p {
+      margin-bottom: 1rem;
+    }
+
+    /* New Paper Formatting */
+    .new-paper {
+      text-indent: 1.5em;
     }
 
     /* Remove Bullet Points */
@@ -196,7 +204,6 @@
       
       .navbar {
         flex-direction: column;
-        width: 100%;
       }
 
       .header-container {
@@ -290,20 +297,24 @@
         <a href="https://x.com/Vikrant_V_" target="_blank">Twitter</a>
       </div>
     </section>
+
     
-    <!-- Research Section -->
-    <section id="research" class="section">
-      <h2>Research</h2>
-      <h3>Publications</h3>
-      <p>"Noncustodial parents, instrumental networks, and child support compliance" with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger. <i>Social Science Research</i>, Volume 110, February 2023, 102850</p>
-      <h3>Research in Progress</h3>
-      <ul>
-        <li>Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (USA) (co-authored)</li>
-        <li>Labor Market Consequences of Cycling Program using DiD (Non-USA)</li>
-        <li>Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (USA) (co-authored)</li>
-        <li>Effect of Medicaid Expansion on Crime in Big Cities (USA) (co-authored)</li>
-      </ul>
-    </section>
+<!-- Research Section -->
+<section id="research" class="section">
+  <h2>Research</h2>
+  
+  <h3>Publications</h3>
+  <p>"Noncustodial parents, instrumental networks, and child support compliance" with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger. <i>Social Science Research</i>, Volume 110, February 2023, 102850</p>
+
+  <h3>Research in Progress</h3>
+  <ul>
+    <li class="new-paper">Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (USA) (co-authored)</li>
+    <li>Labor Market Consequences of Cycling Program using DiD (Non-USA)</li>
+    <li class="new-paper">Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (USA) (co-authored)</li>
+    <li>Effect of Medicaid Expansion on Crime in Big Cities (USA) (co-authored)</li>
+  </ul>
+</section>
+
 
     <!-- Teaching Section -->
 <section id="teaching" class="section">
