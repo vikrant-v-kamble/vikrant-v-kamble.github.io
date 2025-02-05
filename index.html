@@ -48,7 +48,7 @@
       height: var(--header-height);
       text-align: center;
       padding: 3rem 0 2rem;
-      border-bottom: 1px solid var(--secondary-color); /* Reduced border thickness */
+      border-bottom: 1px solid var(--secondary-color);
     }
 
     .header-name {
@@ -125,7 +125,7 @@
 
     h2 {
       font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-      border-bottom: 1px solid var(--secondary-color); /* Reduced border thickness */
+      border-bottom: 1px solid var(--secondary-color);
       padding-bottom: 0.2em;
       margin-bottom: 0.75rem;
     }
@@ -142,20 +142,20 @@
       line-height: 1.6;
     }
 
-    /* Research Papers Section */
-    .research-paper {
-      margin-bottom: 1rem; /* Added space between paper titles */
-    }
-
-    /* Teaching Section Semester */
-    .semester {
-      font-style: italic; /* Italicized semester and year */
-    }
-
     /* Remove Bullet Points */
     ul {
       list-style-type: none;
       padding-left: 0;
+    }
+
+    /* Research Section Spacing */
+    #research ul li {
+      margin-bottom: 1rem;
+    }
+
+    /* Semester in Teaching Section */
+    .indent {
+      font-style: italic;
     }
 
     /* Profile Photo */
@@ -260,6 +260,7 @@
 
 
 
+
 <!-- ***********   MAIN CONTENT STARTS  ************ -->
 
 </head>
@@ -299,70 +300,67 @@
     </section>
 
     
-<!-- Research Section -->
-<section id="research" class="section">
-  <h2>Research</h2>
-  
-  <h3>Publications</h3>
-  <p>"Noncustodial parents, instrumental networks, and child support compliance" with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger. <i>Social Science Research</i>, Volume 110, February 2023, 102850</p>
-
-  <h3>Research in Progress</h3>
-<ul>
-  <li>
-    Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (USA) (co-authored with
-    <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a>
-
-  </li>
-  <li>
-    Labor Market Consequences of Cycling Program using DiD (on India) 
-  </li>
-  <li>
-    Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (USA) (co-authored with 
-    <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank"> Dr. Kenneth Shores</a> and
-    <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank"> Jesse Eze</a>)
-  </li>
-  <li>
-    Effect of Medicaid Expansion on Crime in Big Cities (USA) (co-authored with 
-    <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Usman Taj</a>)
-  </li>
-</ul>
-
-</section>
-
+    <!-- Research Section -->
+    <section id="research" class="section">
+      <h2>Research</h2>
+      
+      <h3>Publications</h3>
+      <p>"Noncustodial parents, instrumental networks, and child support compliance" with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger. <i>Social Science Research</i>, Volume 110, February 2023, 102850</p>
+      
+      <h3>Research in Progress</h3>
+      <ul>
+        <li>
+          Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (USA) (co-authored with
+          <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a>)
+        </li>
+        <li>
+          Labor Market Consequences of Cycling Program using DiD (on India) 
+        </li>
+        <li>
+          Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (USA) (co-authored with 
+          <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank"> Dr. Kenneth Shores</a> and
+          <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank"> Jesse Eze</a>)
+        </li>
+        <li>
+          Effect of Medicaid Expansion on Crime in Big Cities (USA) (co-authored with 
+          <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Usman Taj</a>)
+        </li>
+      </ul>
+    </section>
 
     <!-- Teaching Section -->
-<section id="teaching" class="section">
-  <h2>Teaching Experience</h2>
-  
-  <h3>Instructor</h3>
-  <ul>
-    <li>ECON101: Introduction to Microeconomics</li>
-    <p class="indent">Winter 2025</p>
-  </ul>
-  
-  <h3>Graduate Courses (Teaching Assistant)</h3>
-  <ul>
-    <li>ECON814: Macroeconomics Theory II
-      <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
-    </li>
-    <li>ECON824: Econometrics of Cross-Section and Panel Data
-      <p class="indent">Fall 2023, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a></p>
-    </li>
-  </ul>
-  
-  <h3>Undergraduate Courses (Teaching Assistant)</h3>
-  <ul>
-    <li>ECON301: Intermediate Microeconomics with Calculus
-      <p class="indent">Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></p>
-    </li>
-    <li>ECON304: Quantitative Macroeconomic Theory
-      <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
-    </li>
-    <li>ECON422: Econometric Methods and Models
-      <p class="indent">Fall 2022, Fall 2023, Spring 2024, Fall 2024, Spring 2025 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></p>
-    </li>
-  </ul>
-</section>
+    <section id="teaching" class="section">
+      <h2>Teaching Experience</h2>
+      
+      <h3>Instructor</h3>
+      <ul>
+        <li>ECON101: Introduction to Microeconomics</li>
+        <p class="indent">Winter 2025</p>
+      </ul>
+      
+      <h3>Graduate Courses (Teaching Assistant)</h3>
+      <ul>
+        <li>ECON814: Macroeconomics Theory II
+          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+        </li>
+        <li>ECON824: Econometrics of Cross-Section and Panel Data
+          <p class="indent">Fall 2023, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a></p>
+        </li>
+      </ul>
+      
+      <h3>Undergraduate Courses (Teaching Assistant)</h3>
+      <ul>
+        <li>ECON301: Intermediate Microeconomics with Calculus
+          <p class="indent">Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></p>
+        </li>
+        <li>ECON304: Quantitative Macroeconomic Theory
+          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+        </li>
+        <li>ECON422: Econometric Methods and Models
+          <p class="indent">Fall 2022, Fall 2023, Spring 2024, Fall 2024, Spring 2025 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></p>
+        </li>
+      </ul>
+    </section>
 
 
 <!-- Resources Section -->
