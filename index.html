@@ -20,7 +20,7 @@
       --background-color: #FFFFFF;
       --nav-color: #1a1a2e;
       --link-color: #3498db;
-      --header-height: 160px;
+      --header-height: 180px;
       --content-width: min(calc(100% - 12cm), 1000px);
       --spacing-unit: 0.75rem;
     }
@@ -70,6 +70,22 @@
       font-size: clamp(1.5rem, 3vw, 2rem);
       color: var(--secondary-color);
       font-weight: 500;
+    }
+
+    .header-email {
+      font-size: 1rem;
+      color: var(--text-color);
+      margin-top: 0.5rem;
+    }
+
+    .header-email a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .header-email a:hover {
+      text-decoration: underline;
     }
 
     .navbar {
@@ -132,26 +148,6 @@
       line-height: 1.6;
     }
 
-    /* Research Paper Formatting */
-    .research-section p {
-      margin-bottom: 1rem;
-    }
-
-            /* Add this CSS code here */
-    #research ul li {
-      margin-bottom: 1rem; /* Adjust the space between research topics */
-    }
-
-    #research p {
-      margin-bottom: 1.5rem; /* Adjust space between publications */
-    }
-
-
-    /* New Paper Formatting */
-    .new-paper {
-      text-indent: 1.5em;
-    }
-
     /* Remove Bullet Points */
     ul {
       list-style-type: none;
@@ -159,12 +155,6 @@
     }
 
     /* Image Styling */
-    img {
-      display: block;
-      margin: 0 auto;
-      padding: 0;
-    }
-
     .profile-photo {
       display: block;
       width: min(350px, 80vw);
@@ -181,30 +171,6 @@
       transform: scale(1.05);
     }
 
-    /* Social Links */
-    .social-links {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-top: 0.75rem;
-    }
-
-    .social-links a {
-      display: inline-block;
-      padding: 0.4rem 0.8rem;
-      background-color: var(--primary-color);
-      color: white;
-      font-weight: 600;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-
-    .social-links a:hover {
-      background-color: var(--secondary-color);
-      transform: translateY(-2px);
-    }
-
     /* Responsive Styles */
     @media (max-width: 768px) {
       :root {
@@ -218,11 +184,6 @@
 
       .header-container {
         padding: 1.5rem 0;
-      }
-
-      .social-links {
-        flex-direction: row;
-        justify-content: center;
       }
     }
 
@@ -260,12 +221,10 @@
       .content {
         margin-top: 0;
       }
-
-      .social-links {
-        display: none;
-      }
     }
   </style>
+
+
 
 
 
@@ -279,7 +238,8 @@
   <!-- Header Container -->
   <header class="header-container">
     <h1 class="header-name">Vikrant V. Kamble</h1>
-    <h2 class="header-role">Economics PhD Candidate</h2>
+    <p class="header-role">Economics PhD Candidate</p>
+    <p class="header-email">Email: <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a></p>
   </header>
 
   <nav class="navbar">
