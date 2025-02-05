@@ -47,8 +47,8 @@
       justify-content: center;
       height: var(--header-height);
       text-align: center;
-      padding: 3rem 0 2rem; /* Added space above name */
-      border-bottom: 2px solid var(--secondary-color); /* Restored line below header */
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--secondary-color); /* Reduced border thickness */
     }
 
     .header-name {
@@ -125,7 +125,7 @@
 
     h2 {
       font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-      border-bottom: 2px solid var(--secondary-color);
+      border-bottom: 1px solid var(--secondary-color); /* Reduced border thickness */
       padding-bottom: 0.2em;
       margin-bottom: 0.75rem;
     }
@@ -140,6 +140,16 @@
       font-size: clamp(0.9rem, 2.5vw, 1rem);
       margin-bottom: 0.75rem;
       line-height: 1.6;
+    }
+
+    /* Research Papers Section */
+    .research-paper {
+      margin-bottom: 1rem; /* Added space between paper titles */
+    }
+
+    /* Teaching Section Semester */
+    .semester {
+      font-style: italic; /* Italicized semester and year */
     }
 
     /* Remove Bullet Points */
@@ -230,6 +240,11 @@
       }
     }
   </style>
+
+
+
+
+
 
 
 
