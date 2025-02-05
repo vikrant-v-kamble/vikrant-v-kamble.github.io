@@ -47,7 +47,7 @@
       justify-content: center;
       height: var(--header-height);
       text-align: center;
-      padding: 3rem 0 2rem;
+      padding: 5rem 0 2rem; /* Increased top padding */
       border-bottom: 1px solid var(--secondary-color);
     }
 
@@ -158,45 +158,24 @@
       font-style: italic;
     }
 
-    /* Profile Photo */
-    .profile-photo {
-      display: block;
-      width: min(350px, 80vw);
-      max-width: 100%;
-      height: auto;
-      margin: 0.75rem auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      vertical-align: middle;
-    }
-
-    .profile-photo:hover {
-      transform: scale(1.05);
-    }
-
     /* Social Links */
     .social-links {
       text-align: center;
       display: flex;
       justify-content: center;
       gap: 0.75rem;
-      margin-top: 0.75rem;
+      margin-top: 1rem;
     }
 
     .social-links a {
-      display: inline-block;
-      padding: 0.4rem 0.8rem;
-      background-color: var(--primary-color);
-      color: white;
-      font-weight: 600;
-      border-radius: 4px;
-      transition: all 0.3s ease;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
 
     .social-links a:hover {
-      background-color: var(--secondary-color);
-      transform: translateY(-2px);
+      color: var(--secondary-color);
     }
 
     /* Responsive Styles */
@@ -293,9 +272,9 @@
       <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
       <p>Email: <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a></p>
       <div class="social-links">
-        <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">LinkedIn</a>
-        <a href="https://x.com/Vikrant_V_" target="_blank">Twitter</a>
+      <a href="https://scholar.google.com/your-profile" target="_blank">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+      <a href="https://twitter.com/your-handle" target="_blank">Twitter</a>
       </div>
     </section>
 
