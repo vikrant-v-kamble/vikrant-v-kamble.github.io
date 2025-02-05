@@ -12,7 +12,7 @@
   <link rel="manifest" href="favicon_io/site.webmanifest">
   
   <style>
-    /* Root Variables with Breakpoints */
+    /* Root Variables */
     :root {
       --primary-color: #2F3E56;
       --secondary-color: #4A6FA5;
@@ -55,7 +55,7 @@
       justify-content: center;
       height: var(--header-height);
       text-align: center;
-      padding: 2rem 0;
+      padding: 3rem 0 2rem; /* Increased top padding for space above name */
     }
 
     .header-name {
@@ -88,6 +88,13 @@
       text-decoration: underline;
     }
 
+    .header-divider {
+      width: 50%;
+      height: 2px;
+      background-color: var(--secondary-color);
+      margin-top: 1rem;
+    }
+
     .navbar {
       width: 100%;
       background-color: transparent;
@@ -107,122 +114,21 @@
       white-space: nowrap;
     }
 
-    /* Main Content */
-    .content {
-      width: var(--content-width);
-      margin: 0 auto;
-      padding: clamp(0.75rem, 2vw, 1.5rem);
-      max-width: 1000px;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    h1, h2, h3 {
-      text-align: left;
-      color: var(--primary-color);
-    }
-
-    h1 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      margin-bottom: 0.75rem;
-    }
-
-    h2 {
-      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-      border-bottom: 2px solid var(--secondary-color);
-      padding-bottom: 0.2em;
-      margin-bottom: 0.75rem;
-    }
-
-    h3 {
-      font-size: clamp(1.1rem, 3vw, 1.4rem);
-      color: var(--secondary-color);
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      margin-bottom: 0.75rem;
-      line-height: 1.6;
-    }
-
-    /* Remove Bullet Points */
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    /* Image Styling */
-    .profile-photo {
-      display: block;
-      width: min(350px, 80vw);
-      max-width: 100%;
-      height: auto;
-      margin: 0.75rem auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      vertical-align: middle;
-    }
-
-    .profile-photo:hover {
-      transform: scale(1.05);
-    }
-
     /* Responsive Styles */
     @media (max-width: 768px) {
-      :root {
-        --content-width: min(calc(100% - 4cm), 1000px);
-        --header-height: 140px;
-      }
-      
-      .navbar {
-        flex-direction: column;
-      }
-
       .header-container {
-        padding: 1.5rem 0;
+        padding: 2.5rem 0;
       }
     }
 
     @media (max-width: 480px) {
-      :root {
-        --content-width: min(calc(100% - 2cm), 1000px);
-        --header-height: 120px;
-      }
-      
-      .navbar a {
-        padding: 3px 6px;
-        margin: 3px;
-      }
-
       .header-container {
-        padding: 1rem 0;
-      }
-
-      .content {
-        padding: 0.5rem;
-      }
-    }
-
-    /* Print Styles */
-    @media print {
-      .header-container {
-        position: static;
-        box-shadow: none;
-      }
-
-      .navbar {
-        display: none;
-      }
-
-      .content {
-        margin-top: 0;
+        padding: 2rem 0;
       }
     }
   </style>
+
+
 
 
 
@@ -240,6 +146,7 @@
     <h1 class="header-name">Vikrant V. Kamble</h1>
     <p class="header-role">Economics PhD Candidate</p>
     <p class="header-email">Email: <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a></p>
+    <div class="header-divider"></div> <!-- Line below the header -->
   </header>
 
   <nav class="navbar">
