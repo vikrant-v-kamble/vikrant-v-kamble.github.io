@@ -240,14 +240,23 @@
       }
     }
 
-    .social-links a {
-    text-decoration: underline;
-    color: black;
-    margin-right: 20px;
+.social-links {
+    display: flex;
+    gap: 20px;  /* Space between links */
 }
 
+.social-links a {
+    background: transparent;
+    color: #000000;  /* Black text */
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Optional: add a subtle hover effect */
 .social-links a:hover {
-    color: #555;
+    text-decoration: underline;
 }
   </style>
 
@@ -298,8 +307,10 @@
     <!-- Home Section -->
     <section id="home" class="section">
       <img src="pic_new.jpg" alt="Profile photo of Vikrant Kamble" class="profile-photo">
-      <p>Welcome to my website! My name is Vikrant.</p>
-      <p>I am a 4th-year Economics PhD candidate at the University of Delaware. I work on labor and health topics. I also do Policy Evaluation across the USA and India. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime. My work has been published in Social Science Research. </p>
+      <p>Welcome to my website! </p>
+      <p>My name is Vikrant. I am a 4th-year Economics PhD candidate at the University of Delaware. I work on labor and health topics. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime. </p> 
+        
+      <p>My work has been published in Social Science Research. </p>
       <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
 
     <div class="social-links">
