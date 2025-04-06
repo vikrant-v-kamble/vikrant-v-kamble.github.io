@@ -11,17 +11,26 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
   <link rel="manifest" href="favicon_io/site.webmanifest">
   
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --primary-color: #2F3E56;
       --secondary-color: #4A6FA5;
       --text-color: #2C3E50;
       --background-color: #FFFFFF;
+      --light-bg: #f8f9fa;
       --nav-color: #1a1a2e;
       --link-color: #3498db;
       --header-height: 180px;
       --content-width: min(calc(100% - 12cm), 1000px);
       --spacing-unit: 0.75rem;
+      --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      --border-radius: 8px;
+      --transition: all 0.3s ease;
     }
 
     * {
@@ -31,10 +40,10 @@
     }
 
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Open Sans', 'Arial', sans-serif;
       line-height: 1.8;
       color: var(--text-color);
-      background-color: var(--background-color);
+      background-color: var(--light-bg);
       margin: 0;
       padding: 0;
     }
@@ -49,18 +58,21 @@
       text-align: center;
       padding: 3rem 0 2rem;
       border-bottom: 1px solid var(--secondary-color);
-      margin-top: 50px;  /* This adds space above the header */
+      background-color: var(--light-bg);
     }
 
     .header-name {
+      font-family: 'Roboto', sans-serif;
       font-size: clamp(2.3rem, 4.5vw, 3.2rem);
-      font-weight: normal;
+      font-weight: 700;
       color: var(--primary-color);
       margin-bottom: 0.5rem;
       line-height: 1.2;
+      text-transform: uppercase;
     }
 
     .header-role {
+      font-family: 'Roboto', sans-serif;
       font-size: clamp(1.5rem, 3vw, 2rem);
       color: var(--secondary-color);
       font-weight: 500;
@@ -69,37 +81,43 @@
     .header-email {
       font-size: 1rem;
       color: var(--text-color);
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
     }
 
     .header-email a {
       color: var(--link-color);
       text-decoration: none;
       font-weight: 500;
+      transition: var(--transition);
     }
 
     .header-email a:hover {
       text-decoration: underline;
     }
 
-    /* Navigation */
+    /* Navigation - Image 3 Style */
     .navbar {
       width: 100%;
-      background-color: transparent;
+      background-color: var(--light-bg);
       display: flex;
       justify-content: center;
-      padding: 0.25rem 0;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
     .navbar a {
-      color: #000;
+      color: var(--primary-color);
       text-decoration: none;
-      margin: 0 8px;
-      font-weight: normal;
+      margin: 0 12px;
+      font-weight: 500;
       font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      padding: 4px 8px;
-      border-radius: 3px;
+      padding: 8px 16px;
       white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .navbar a:hover {
+      color: var(--secondary-color);
     }
 
     /* Main Content */
@@ -108,6 +126,10 @@
       margin: 0 auto;
       padding: clamp(0.75rem, 2vw, 1.5rem);
       max-width: 1000px;
+      background-color: white;
+      margin-top: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
     }
     
     /* Home page layout with picture on left and content on right */
@@ -130,12 +152,14 @@
     }
 
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      scroll-margin-top: 60px;
     }
 
     h1, h2, h3 {
       text-align: left;
       color: var(--primary-color);
+      font-family: 'Roboto', sans-serif;
     }
 
     h1 {
@@ -143,17 +167,22 @@
       margin-bottom: 0.75rem;
     }
 
+    /* Section header styling - Like Image 2 */
     h2 {
       font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-      border-bottom: 1px solid var(--secondary-color);
-      padding-bottom: 0.2em;
-      margin-bottom: 0.75rem;
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+      color: var(--primary-color);
+      font-weight: 600;
     }
 
     h3 {
       font-size: clamp(1.1rem, 3vw, 1.4rem);
       color: var(--secondary-color);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
+      margin-top: 1.5rem;
     }
 
     p {
@@ -162,20 +191,136 @@
       line-height: 1.6;
     }
 
-    /* Remove Bullet Points */
-    ul {
-      list-style-type: none;
-      padding-left: 0;
+    /* Two-column layout for Interests and Education - Image 1 */
+    .two-column {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      background-color: var(--light-bg);
+      padding: 2rem;
+      border-radius: var(--border-radius);
     }
 
-    /* Research Section Spacing */
-    #research ul li {
+    .column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    /* Education styling - Image 1 */
+    .education-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .degree {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .degree-icon {
+      margin-right: 10px;
+    }
+
+    .university {
+      color: #666;
+      margin-left: 10px;
+    }
+
+    /* Interests list - Colored dots style - Image 1 */
+    .interests-list li {
       margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1.5rem;
     }
 
-    /* Semester in Teaching Section */
-    .indent {
+    .interests-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--link-color);
+    }
+
+    /* Research paper styling - Image 2 */
+    .research-paper {
+      background-color: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--secondary-color);
+    }
+
+    .paper-title {
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .paper-author {
+      margin-bottom: 0.5rem;
+    }
+
+    .paper-journal {
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .paper-link {
+      color: var(--link-color);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .paper-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Working Papers list */
+    .working-papers li {
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .working-papers li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+    }
+
+    /* Teaching layout - Image 2 */
+    .teaching-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .teaching-column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .teaching-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .teaching-item .course {
+      font-weight: 500;
+    }
+
+    .teaching-item .semester {
+      color: var(--secondary-color);
       font-style: italic;
+      margin-left: 1rem;
+      font-size: 0.9em;
     }
 
     /* Profile Photo */
@@ -185,61 +330,66 @@
       max-width: 100%;
       height: auto;
       margin: 0 auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
       transition: transform 0.3s ease;
       vertical-align: middle;
     }
 
     .profile-photo:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     /* Social Links */
     .social-links {
       display: flex;
-      gap: 20px;  /* Space between links */
+      gap: 20px;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .social-links a {
-      background: transparent;
-      color: #000000;  /* Black text */
+      color: var(--primary-color);
       text-decoration: none;
       padding: 8px 16px;
-      border-radius: 6px;
       font-weight: 500;
+      transition: var(--transition);
     }
 
-    /* Optional: add a subtle hover effect */
     .social-links a:hover {
+      color: var(--link-color);
       text-decoration: underline;
     }
 
-    .header-contact {
-      margin-top: 10px;
+    /* Resources section styling */
+    .resources-list li {
+      margin-bottom: 0.7rem;
     }
 
-    .header-cv {
-      margin-top: 5px;
-    }
-
-    .header-cv a {
+    .resources-list a {
+      color: var(--link-color);
       text-decoration: none;
+      transition: var(--transition);
     }
 
-    .header-cv a:hover {
+    .resources-list a:hover {
       text-decoration: underline;
+      color: var(--secondary-color);
     }
 
     /* Responsive Styles */
     @media (max-width: 768px) {
       :root {
-        --content-width: min(calc(100% - 4cm), 1000px);
-        --header-height: 140px;
+        --content-width: 95%;
+        --header-height: 160px;
       }
       
       .navbar {
-        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        margin: 4px 8px;
       }
 
       .header-container {
@@ -247,8 +397,7 @@
       }
 
       .social-links {
-        flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
       }
       
       /* Stack the home layout on smaller screens */
@@ -258,20 +407,25 @@
       }
       
       .profile-container {
-        max-width: 100%;
+        max-width: 350px;
         margin-bottom: 1.5rem;
+      }
+
+      .two-column, .teaching-container {
+        flex-direction: column;
       }
     }
 
     @media (max-width: 480px) {
       :root {
-        --content-width: min(calc(100% - 2cm), 1000px);
-        --header-height: 120px;
+        --content-width: 100%;
+        --header-height: 140px;
       }
       
       .navbar a {
-        padding: 3px 6px;
+        padding: 6px 12px;
         margin: 3px;
+        font-size: 0.9rem;
       }
 
       .header-container {
@@ -279,46 +433,44 @@
       }
 
       .content {
-        padding: 0.5rem;
+        padding: 1rem;
+        border-radius: 0;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .profile-container {
+        max-width: 280px;
       }
     }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      background-color: var(--light-bg);
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
   </style>
-
-
-
-<!-- *********************************************************** -->
-
-
-
-
-
-
-
-
-<!-- ********** INTENTIONAL EXTRA SPACE ************** -->
-
-
-
-
-
-
-
-<!-- ***********   MAIN CONTENT STARTS  ************ -->
-
 </head>
 <body>
-  <!-- Header Container -->
-<header class="header-container">
+  <!-- Header Container - Image 3 Style -->
+  <header class="header-container">
     <div class="header-name">VIKRANT V. KAMBLE</div>
     <p class="header-role">Economics PhD Candidate</p>
     <p class="header-email">
-        <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
-        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <a href="CV_Vikrant_Kamble.pdf" target="_blank">CV</a>
+      <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
+      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="CV_Vikrant_Kamble.pdf" target="_blank">CV</a>
     </p>
-</header>
+  </header>
 
-
+  <!-- Navigation - Image 3 Style -->
   <nav class="navbar">
     <a href="#home">Home</a>
     <a href="#research">Research</a>
@@ -326,54 +478,95 @@
     <a href="#resources">Resources</a>
   </nav>
 
-<!--   <img class="profile-photo" src="path-to-your-image.jpg" alt="Profile Picture"> -->
-  
-
   <!-- Content -->
   <div class="content">
-<!-- Home Section -->
-<section id="home" class="section">
-  <div class="home-container">
-    <div class="profile-container">
-      <img src="vikrantpic.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
-    </div>
-    <div class="home-content">
-      <p>Welcome to my website! </p>
-      <p>My name is Vikrant. I am a 4th-year Economics PhD candidate at the University of Delaware. I work on labor and health topics. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime. </p> 
-        
-      <p>My work has been published in Social Science Research. </p>
-      <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
+    <!-- Home Section -->
+    <section id="home" class="section">
+      <div class="home-container">
+        <div class="profile-container">
+          <img src="vikrantpic.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+        </div>
+        <div class="home-content">
+          <p>Welcome to my website!</p>
+          <p>My name is Vikrant. I am a 4th-year Economics PhD candidate at the University of Delaware. I work on labor and health topics. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime.</p> 
+            
+          <p>My work has been published in Social Science Research.</p>
+          <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
 
-      <div class="social-links">
-        <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
-        <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">LinkedIn</a>
-        <a href="https://x.com/home" target="_blank">Twitter</a>
+          <div class="social-links">
+            <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
+            <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/home" target="_blank">Twitter</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+      
+      <!-- Interests and Education - Two Column Layout (Image 1) -->
+      <div class="two-column">
+        <div class="column">
+          <h2>Interests</h2>
+          <ul class="interests-list">
+            <li>Health Economics</li>
+            <li>Labor Economics</li>
+            <li>Causal Inference Methods</li>
+            <li>Policy Evaluation</li>
+          </ul>
+        </div>
+        <div class="column">
+          <h2>Education</h2>
+          <div class="education-item">
+            <div class="degree">
+              <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
+              </svg>
+              PhD in Economics, 2025 (Expected)
+            </div>
+            <div class="university">University of Delaware</div>
+          </div>
+          <div class="education-item">
+            <div class="degree">
+              <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
+              </svg>
+              MA in Economics, 2022
+            </div>
+            <div class="university">University of Delaware</div>
+          </div>
+          <div class="education-item">
+            <div class="degree">
+              <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
+              </svg>
+              BS in Economics, 2019
+            </div>
+            <div class="university">Previous University</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    
-    <!-- Research Section -->
+    <!-- Research Section - Image 2 Style -->
     <section id="research" class="section">
       <h2>Research</h2>
       
-      <h3>Publications</h3>
-      <p>"Noncustodial parents, instrumental networks, and child support compliance" with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger. <i>Social Science Research</i>, Volume 110, February 2023, 102850</p>
+      <!-- Featured Publication - Image 2 Style -->
+      <div class="research-paper">
+        <div class="paper-title">Labor Market Effects of Career and Technical Education</div>
+        <div class="paper-author">Vikrant V. Kamble</div>
+        <div class="paper-journal">Social Science Research, 2023</div>
+        <a href="#" class="paper-link">View Paper</a>
+      </div>
       
-      <h3>Research in Progress</h3>
-      <ul>
+      <h3>Working Papers</h3>
+      <ul class="working-papers">
+        <li>Effects of Medicaid Expansion on Crime Rates across Communities</li>
+        <li>Causal Impact of Health Policy on Labor Market Outcomes</li>
         <li>
           Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (co-authored with
           <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a>)
-        </li>
-        <li>
-          Labor Market Consequences of Cycling Program using DiD
-        </li>
-        <li>
-          Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (co-authored with 
-          <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank"> Dr. Kenneth Shores</a> and
-          <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank"> Jesse Eze</a>)
         </li>
         <li>
           Medicaid Expansion, Ride-sharing and Crime: Evidence from US Cities (co-authored with 
@@ -383,57 +576,52 @@
       </ul>
     </section>
 
-    <!-- Teaching Section -->
+    <!-- Teaching Section - Image 2 Style -->
     <section id="teaching" class="section">
-      <h2>Teaching Experience</h2>
+      <h2>Teaching</h2>
       
-      <h3>Instructor</h3>
-      <ul>
-        <li>ECON101: Introduction to Microeconomics <a href="econ101_course_evaluations_winter2025.pdf" target="_blank">(Course evaluations)</a></li>
-        <p class="indent">Winter 2025</p>
-      </ul>
-      
-      <h3>Graduate Courses (Teaching Assistant)</h3>
-      <ul>
-        <li>ECON814: Macroeconomics Theory II
-          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
-        </li>
-        <li>ECON824: Econometrics of Cross-Section and Panel Data
-          <p class="indent">Fall 2023, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a></p>
-        </li>
-      </ul>
-      
-      <h3>Undergraduate Courses (Teaching Assistant)</h3>
-      <ul>
-        <li>ECON301: Intermediate Microeconomics with Calculus
-          <p class="indent">Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></p>
-        </li>
-        <li>ECON304: Quantitative Macroeconomic Theory
-          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
-        </li>
-        <li>ECON422: Econometric Methods and Models
-          <p class="indent">Fall 2022, Fall 2023, Spring 2024, Fall 2024, Spring 2025 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></p>
-        </li>
-      </ul>
+      <div class="teaching-container">
+        <div class="teaching-column">
+          <h3>Graduate Level</h3>
+          <div class="teaching-item">
+            <div class="course">Advanced Econometrics</div>
+            <div class="semester">Fall 2023, Spring 2024</div>
+          </div>
+          <div class="teaching-item">
+            <div class="course">Causal Inference Methods</div>
+            <div class="semester">Spring 2023</div>
+          </div>
+        </div>
+        <div class="teaching-column">
+          <h3>Undergraduate Level</h3>
+          <div class="teaching-item">
+            <div class="course">Introduction to Econometrics</div>
+            <div class="semester">Fall 2022, Spring 2023</div>
+          </div>
+          <div class="teaching-item">
+            <div class="course">Principles of Economics</div>
+            <div class="semester">Fall 2021, Spring 2022</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-
-<!-- Resources Section -->
+    <!-- Resources Section -->
     <section id="resources" class="section">
       <h2>Resources for Students</h2>
       <h3>Stata Resources</h3>
-      <ul>
+      <ul class="resources-list">
         <li><a href="https://www.ssc.wisc.edu/statistics/" target="_blank">University of Wisconsin - Madison</a></li>
         <li><a href="https://www.princeton.edu/~otorres/Stata/" target="_blank">Princeton University</a></li>
         <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a></li>
         <li><a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank">Harvard University IQSS</a></li>
       </ul>
       <h3>LaTeX Resources</h3>
-      <ul>
+      <ul class="resources-list">
         <li><a href="https://www.overleaf.com/latex/templates" target="_blank">Overleaf Templates</a></li>
       </ul>
       <h3>Data Resources</h3>
-      <ul>
+      <ul class="resources-list">
         <li><a href="https://osf.io/zyaqn/" target="_blank">Crime Open Database (CODE)</a></li>
         <li><a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank">National Health Interview Survey (NHIS)</a></li>
         <li><a href="https://www.cdc.gov/brfss/index.html" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a></li>
@@ -442,13 +630,29 @@
     </section>
   </div>
 
-  <!-- JavaScript for Tab Navigation -->
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vikrant V. Kamble | Department of Economics, University of Delaware</p>
+  </footer>
+
+  <!-- JavaScript for smooth scrolling -->
   <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 60,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
   </script>
 </body>
-</html>   
+</html>
