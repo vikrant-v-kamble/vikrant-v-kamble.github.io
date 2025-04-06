@@ -29,7 +29,7 @@
       --content-width: min(calc(100% - 12cm), 1000px);
       --spacing-unit: 0.75rem;
       --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      --border-radius: 8px;
+      --border-radius: 10px;
       --transition: all 0.3s ease;
     }
 
@@ -43,7 +43,7 @@
       font-family: 'Open Sans', 'Arial', sans-serif;
       line-height: 1.8;
       color: var(--text-color);
-      background-color: var(--light-bg);
+      background-color: var(--background-color);
       margin: 0;
       padding: 0;
     }
@@ -58,30 +58,30 @@
       text-align: center;
       padding: 3rem 0 2rem;
       border-bottom: 1px solid var(--secondary-color);
-      background-color: var(--light-bg);
+      margin-top: 50px;  /* This adds space above the header */
     }
 
     .header-name {
-      font-family: 'Roboto', sans-serif;
       font-size: clamp(2.3rem, 4.5vw, 3.2rem);
-      font-weight: 700;
+      font-weight: normal;
       color: var(--primary-color);
       margin-bottom: 0.5rem;
       line-height: 1.2;
       text-transform: uppercase;
+      font-family: 'Roboto', sans-serif;
     }
 
     .header-role {
-      font-family: 'Roboto', sans-serif;
       font-size: clamp(1.5rem, 3vw, 2rem);
       color: var(--secondary-color);
       font-weight: 500;
+      font-family: 'Roboto', sans-serif;
     }
 
     .header-email {
       font-size: 1rem;
       color: var(--text-color);
-      margin-top: 0.8rem;
+      margin-top: 0.5rem;
     }
 
     .header-email a {
@@ -95,23 +95,24 @@
       text-decoration: underline;
     }
 
-    /* Navigation - Image 3 Style */
+    /* Navigation */
     .navbar {
       width: 100%;
-      background-color: var(--light-bg);
+      background-color: transparent;
       display: flex;
       justify-content: center;
-      padding: 0.5rem 0;
+      padding: 0.25rem 0;
       border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
     .navbar a {
-      color: var(--primary-color);
+      color: #000;
       text-decoration: none;
-      margin: 0 12px;
-      font-weight: 500;
+      margin: 0 8px;
+      font-weight: normal;
       font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      padding: 8px 16px;
+      padding: 4px 8px;
+      border-radius: 3px;
       white-space: nowrap;
       transition: var(--transition);
     }
@@ -126,10 +127,6 @@
       margin: 0 auto;
       padding: clamp(0.75rem, 2vw, 1.5rem);
       max-width: 1000px;
-      background-color: white;
-      margin-top: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
     }
     
     /* Home page layout with picture on left and content on right */
@@ -152,8 +149,8 @@
     }
 
     section {
-      margin-bottom: 3rem;
-      scroll-margin-top: 60px;
+      margin-bottom: 2rem;
+      scroll-margin-top: 50px;
     }
 
     h1, h2, h3 {
@@ -167,22 +164,19 @@
       margin-bottom: 0.75rem;
     }
 
-    /* Section header styling - Like Image 2 */
     h2 {
       font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-      border-bottom: 2px solid var(--secondary-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      margin-top: 1.5rem;
-      color: var(--primary-color);
-      font-weight: 600;
+      border-bottom: 1px solid var(--secondary-color);
+      padding-bottom: 0.2em;
+      margin-bottom: 0.75rem;
+      margin-top: 1rem;
     }
 
     h3 {
       font-size: clamp(1.1rem, 3vw, 1.4rem);
       color: var(--secondary-color);
-      margin-bottom: 0.7rem;
-      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      margin-top: 1.2rem;
     }
 
     p {
@@ -191,136 +185,48 @@
       line-height: 1.6;
     }
 
-    /* Two-column layout for Interests and Education - Image 1 */
-    .two-column {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      margin: 2rem 0;
-      flex-wrap: wrap;
-      background-color: var(--light-bg);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-    }
-
-    .column {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    /* Education styling - Image 1 */
-    .education-item {
-      margin-bottom: 1.5rem;
-    }
-
-    .degree {
-      display: flex;
-      align-items: center;
-      font-weight: 500;
-      margin-bottom: 0.3rem;
-    }
-
-    .degree-icon {
-      margin-right: 10px;
-    }
-
-    .university {
-      color: #666;
-      margin-left: 10px;
-    }
-
-    /* Interests list - Colored dots style - Image 1 */
+    /* Interests List - Blue dots only */
     .interests-list li {
       margin-bottom: 1rem;
       position: relative;
-      padding-left: 1.5rem;
+      padding-left: 2.5rem;
     }
 
     .interests-list li::before {
       content: "";
       position: absolute;
-      left: 0;
-      top: 0.5rem;
-      width: 8px;
-      height: 8px;
+      left: 1.2rem;
+      top: 0.6rem;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background-color: var(--link-color);
     }
-
-    /* Research paper styling - Image 2 */
-    .research-paper {
-      background-color: var(--light-bg);
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      margin-bottom: 2rem;
-      border-left: 4px solid var(--secondary-color);
+    
+    /* Remove Bullet Points for other lists */
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
 
-    .paper-title {
-      font-weight: 600;
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-
-    .paper-author {
-      margin-bottom: 0.5rem;
-    }
-
-    .paper-journal {
-      color: var(--secondary-color);
-      margin-bottom: 0.5rem;
-    }
-
-    .paper-link {
-      color: var(--link-color);
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
-
-    .paper-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Working Papers list */
-    .working-papers li {
+    /* Research Section Spacing */
+    #research ul li {
       margin-bottom: 1rem;
       position: relative;
-      padding-left: 1.2rem;
+      padding-left: 1rem;
     }
 
-    .working-papers li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--secondary-color);
+    /* Working Papers - No bullet points */
+    .working-papers li {
+      margin-bottom: 1rem;
+      padding-left: 0;
     }
 
-    /* Teaching layout - Image 2 */
-    .teaching-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .teaching-column {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .teaching-item {
-      margin-bottom: 1.2rem;
-    }
-
-    .teaching-item .course {
-      font-weight: 500;
-    }
-
-    .teaching-item .semester {
-      color: var(--secondary-color);
+    /* Semester in Teaching Section */
+    .indent {
       font-style: italic;
-      margin-left: 1rem;
-      font-size: 0.9em;
+      color: #666;
+      margin-left: 0.5rem;
     }
 
     /* Profile Photo */
@@ -339,29 +245,116 @@
     .profile-photo:hover {
       transform: scale(1.03);
     }
+    
+    /* Research paper styling */
+    .research-paper {
+      background-color: var(--light-bg);
+      padding: 1.5rem 2rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--secondary-color);
+    }
+    
+    .paper-title {
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .paper-author {
+      margin-bottom: 0.5rem;
+    }
+    
+    .paper-journal {
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .paper-link {
+      color: var(--link-color);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    
+    .paper-link:hover {
+      text-decoration: underline;
+    }
 
     /* Social Links */
     .social-links {
       display: flex;
-      gap: 20px;
+      gap: 20px;  /* Space between links */
       margin-top: 1.5rem;
-      flex-wrap: wrap;
     }
 
     .social-links a {
-      color: var(--primary-color);
+      background: transparent;
+      color: #000000;  /* Black text */
       text-decoration: none;
       padding: 8px 16px;
+      border-radius: 6px;
       font-weight: 500;
       transition: var(--transition);
     }
 
+    /* Optional: add a subtle hover effect */
     .social-links a:hover {
-      color: var(--link-color);
       text-decoration: underline;
+      color: var(--secondary-color);
     }
 
-    /* Resources section styling */
+    /* Two-column layout for Education */
+    .two-column {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      background-color: var(--light-bg);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    /* Education styling */
+    .education-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .degree {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .degree-icon {
+      margin-right: 10px;
+    }
+
+    .university {
+      color: #666;
+      margin-left: 0;
+    }
+
+    /* Teaching layout */
+    .teaching-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .teaching-column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    /* Resources section */
     .resources-list li {
       margin-bottom: 0.7rem;
     }
@@ -380,16 +373,12 @@
     /* Responsive Styles */
     @media (max-width: 768px) {
       :root {
-        --content-width: 95%;
-        --header-height: 160px;
+        --content-width: min(calc(100% - 4cm), 1000px);
+        --header-height: 140px;
       }
       
       .navbar {
-        flex-wrap: wrap;
-      }
-
-      .navbar a {
-        margin: 4px 8px;
+        flex-direction: column;
       }
 
       .header-container {
@@ -397,7 +386,8 @@
       }
 
       .social-links {
-        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: center;
       }
       
       /* Stack the home layout on smaller screens */
@@ -407,10 +397,10 @@
       }
       
       .profile-container {
-        max-width: 350px;
+        max-width: 100%;
         margin-bottom: 1.5rem;
       }
-
+      
       .two-column, .teaching-container {
         flex-direction: column;
       }
@@ -418,14 +408,13 @@
 
     @media (max-width: 480px) {
       :root {
-        --content-width: 100%;
-        --header-height: 140px;
+        --content-width: min(calc(100% - 2cm), 1000px);
+        --header-height: 120px;
       }
       
       .navbar a {
-        padding: 6px 12px;
+        padding: 3px 6px;
         margin: 3px;
-        font-size: 0.9rem;
       }
 
       .header-container {
@@ -433,16 +422,7 @@
       }
 
       .content {
-        padding: 1rem;
-        border-radius: 0;
-      }
-
-      .social-links {
-        justify-content: center;
-      }
-
-      .profile-container {
-        max-width: 280px;
+        padding: 0.5rem;
       }
     }
 
@@ -459,7 +439,7 @@
   </style>
 </head>
 <body>
-  <!-- Header Container - Image 3 Style -->
+  <!-- Header Container -->
   <header class="header-container">
     <div class="header-name">VIKRANT V. KAMBLE</div>
     <p class="header-role">Economics PhD Candidate</p>
@@ -470,7 +450,6 @@
     </p>
   </header>
 
-  <!-- Navigation - Image 3 Style -->
   <nav class="navbar">
     <a href="#home">Home</a>
     <a href="#research">Research</a>
@@ -488,7 +467,7 @@
         </div>
         <div class="home-content">
           <p>Welcome to my website!</p>
-          <p>My name is Vikrant. I am a 4th-year Economics PhD candidate at the University of Delaware. I work on labor and health topics. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime.</p> 
+          <p>My name is Vikrant. I am a 4th-year Economics PhD candidate at the University of Delaware. I work on labor and health topics. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime.</p>
             
           <p>My work has been published in Social Science Research.</p>
           <p>As a teaching assistant for undergraduate and graduate courses, I focus on causal inference methods, particularly advanced difference-in-differences (DiD) techniques. This experience has enhanced both my teaching abilities and technical expertise in causal methods.</p>
@@ -501,7 +480,7 @@
         </div>
       </div>
       
-      <!-- Interests and Education - Two Column Layout (Image 1) -->
+      <!-- Interests and Education -->
       <div class="two-column">
         <div class="column">
           <h2>Interests</h2>
@@ -548,25 +527,31 @@
       </div>
     </section>
 
-    <!-- Research Section - Image 2 Style -->
+    <!-- Research Section -->
     <section id="research" class="section">
       <h2>Research</h2>
       
-      <!-- Featured Publication - Image 2 Style -->
+      <h3>Publications</h3>
       <div class="research-paper">
-        <div class="paper-title">Labor Market Effects of Career and Technical Education</div>
-        <div class="paper-author">Vikrant V. Kamble</div>
-        <div class="paper-journal">Social Science Research, 2023</div>
+        <div class="paper-title">"Noncustodial parents, instrumental networks, and child support compliance"</div>
+        <div class="paper-author">with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger</div>
+        <div class="paper-journal">Social Science Research, Volume 110, February 2023, 102850</div>
         <a href="#" class="paper-link">View Paper</a>
       </div>
       
-      <h3>Working Papers</h3>
+      <h3>Research in Progress</h3>
       <ul class="working-papers">
-        <li>Effects of Medicaid Expansion on Crime Rates across Communities</li>
-        <li>Causal Impact of Health Policy on Labor Market Outcomes</li>
         <li>
           Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (co-authored with
           <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a>)
+        </li>
+        <li>
+          Labor Market Consequences of Cycling Program using DiD
+        </li>
+        <li>
+          Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (co-authored with 
+          <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank"> Dr. Kenneth Shores</a> and
+          <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank"> Jesse Eze</a>)
         </li>
         <li>
           Medicaid Expansion, Ride-sharing and Crime: Evidence from US Cities (co-authored with 
@@ -576,34 +561,39 @@
       </ul>
     </section>
 
-    <!-- Teaching Section - Image 2 Style -->
+    <!-- Teaching Section -->
     <section id="teaching" class="section">
-      <h2>Teaching</h2>
+      <h2>Teaching Experience</h2>
       
-      <div class="teaching-container">
-        <div class="teaching-column">
-          <h3>Graduate Level</h3>
-          <div class="teaching-item">
-            <div class="course">Advanced Econometrics</div>
-            <div class="semester">Fall 2023, Spring 2024</div>
-          </div>
-          <div class="teaching-item">
-            <div class="course">Causal Inference Methods</div>
-            <div class="semester">Spring 2023</div>
-          </div>
-        </div>
-        <div class="teaching-column">
-          <h3>Undergraduate Level</h3>
-          <div class="teaching-item">
-            <div class="course">Introduction to Econometrics</div>
-            <div class="semester">Fall 2022, Spring 2023</div>
-          </div>
-          <div class="teaching-item">
-            <div class="course">Principles of Economics</div>
-            <div class="semester">Fall 2021, Spring 2022</div>
-          </div>
-        </div>
-      </div>
+      <h3>Instructor</h3>
+      <ul>
+        <li>ECON101: Introduction to Microeconomics <a href="econ101_course_evaluations_winter2025.pdf" target="_blank">(Course evaluations)</a>
+          <p class="indent">Winter 2025</p>
+        </li>
+      </ul>
+      
+      <h3>Graduate Courses (Teaching Assistant)</h3>
+      <ul>
+        <li>ECON814: Macroeconomics Theory II
+          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+        </li>
+        <li>ECON824: Econometrics of Cross-Section and Panel Data
+          <p class="indent">Fall 2023, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a></p>
+        </li>
+      </ul>
+      
+      <h3>Undergraduate Courses (Teaching Assistant)</h3>
+      <ul>
+        <li>ECON301: Intermediate Microeconomics with Calculus
+          <p class="indent">Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></p>
+        </li>
+        <li>ECON304: Quantitative Macroeconomic Theory
+          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+        </li>
+        <li>ECON422: Econometric Methods and Models
+          <p class="indent">Fall 2022, Fall 2023, Spring 2024, Fall 2024, Spring 2025 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></p>
+        </li>
+      </ul>
     </section>
 
     <!-- Resources Section -->
