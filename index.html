@@ -502,6 +502,101 @@
   .abstract-content.show {
     display: block;
   }
+
+    /* Resources section - new interactive cards */
+.resources-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.resource-category {
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 200px;
+}
+
+.resource-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.resource-category.active {
+  height: auto;
+  min-height: 300px;
+}
+
+.resource-icon {
+  margin-bottom: 1rem;
+}
+
+.resource-category h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.resource-preview {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.resource-content {
+  display: none;
+  margin-top: 1.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+.resource-category.active .resource-content {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+.resource-category.active .resource-preview {
+  display: none;
+}
+
+.resources-list {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.resources-list li {
+  margin-bottom: 0.7rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.resources-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+}
+
+.resources-list a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.resources-list a:hover {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
   </style>
 </head>
 <body>
@@ -677,89 +772,35 @@ Crime rates in the U.S. have fallen over the past two decades, though periods li
 <!-- Resources Section -->
 <section id="resources" class="section">
   <h2>Resources for Students</h2>
-  <div class="two-column">
-    <div class="column">
+  
+  <!-- Interactive Resource Cards -->
+  <div class="resources-container">
+    <!-- Resource Category Cards -->
+    <div class="resource-category" id="stata-card">
+      <div class="resource-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+          <path fill="#4A6FA5" d="M17 3H7C4.79 3 3 4.79 3 7v10c0 2.21 1.79 4 4 4h10c2.21 0 4-1.79 4-4V7c0-2.21-1.79-4-4-4zm-2 12h-2v2h-2v-2H9v-2h2V9h2v4h2v2z"/>
+        </svg>
+      </div>
       <h3>Stata Resources</h3>
-      <ul class="resources-list">
-        <li><a href="https://www.ssc.wisc.edu/statistics/" target="_blank">University of Wisconsin - Madison</a></li>
-        <li><a href="https://www.princeton.edu/~otorres/Stata/" target="_blank">Princeton University</a></li>
-        <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a></li>
-        <li><a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank">Harvard University IQSS</a></li>
-      </ul>
+      <div class="resource-preview">Click to view resources</div>
+      <div class="resource-content">
+        <ul class="resources-list">
+          <li><a href="https://www.ssc.wisc.edu/statistics/" target="_blank">University of Wisconsin - Madison</a></li>
+          <li><a href="https://www.princeton.edu/~otorres/Stata/" target="_blank">Princeton University</a></li>
+          <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a></li>
+          <li><a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank">Harvard University IQSS</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="resource-category" id="latex-card">
+      <div class="resource-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+          <path fill="#4A6FA5" d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 9V3.5L18.5 9H13c-.55 0-1-.45-1-1z"/>
+        </svg>
+      </div>
       <h3>LaTeX Resources</h3>
-      <ul class="resources-list">
-        <li><a href="https://www.overleaf.com/latex/templates" target="_blank">Overleaf Templates</a></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h3>Data Resources</h3>
-      <ul class="resources-list">
-        <li><a href="https://osf.io/zyaqn/" target="_blank">Crime Open Database (CODE)</a></li>
-        <li><a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank">National Health Interview Survey (NHIS)</a></li>
-        <li><a href="https://www.cdc.gov/brfss/index.html" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a></li>
-        <li><a href="https://fred.stlouisfed.org/" target="_blank">Federal Reserve Economic Data (FRED)</a></li>
-      </ul>
-      <h3>Additional Resources</h3>
-      <ul class="resources-list">
-        <li><a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank">Diff-in-Diff course: Clement De Chaisemartin</a></li>
-        <li><a href="https://asjadnaqvi.github.io/DiD/" target="_blank">Staggered DiD software packages: Asjad Naqvi </a></li>
-        <li><a href="https://neilhe.com/stata-packages" target="_blank">Synthetic Control Method Stata packages: Jialun (Neil) He</a></li>
-        <li><a href="https://jenniferdoleac.com/resources/" target="_blank">Resources: Jennifer Doleac </a></li>
-        <li><a href="https://sebastiantellotrillo.com/resources" target="_blank">Resources: Sebastian Tello Trillo</a></li>
-        <li><a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank">Coding resources: Moshi Alam</a></li>
-      </ul>
-    </div>
-  </div>
-</section>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Vikrant V. Kamble</p>
-  </footer>
-
-<!-- Combined JavaScript for section navigation and abstract toggles -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Navigation functionality
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
-    
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        // Remove active class from all links and sections
-        navLinks.forEach(l => l.classList.remove('active'));
-        sections.forEach(s => s.classList.remove('active'));
-        
-        // Add active class to clicked link
-        this.classList.add('active');
-        
-        // Show corresponding section
-        const sectionId = this.getAttribute('data-section');
-        document.getElementById(sectionId).classList.add('active');
-        
-        // Scroll to top for better UX
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-    });
-    
-    // Abstract toggle functionality
-    const toggles = document.querySelectorAll('.abstract-toggle');
-    
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', function() {
-        // Toggle active class
-        this.classList.toggle('active');
-        
-        // Find and toggle the abstract content
-        const content = this.nextElementSibling;
-        content.classList.toggle('show');
-      });
-    });
-  });
-</script>
-</body>
-</html>
+      <div class="resource-preview">Click to view resources</div>
+      <div class="resource-content">
+        <ul class="resources-list">
