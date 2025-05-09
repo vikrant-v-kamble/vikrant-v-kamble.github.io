@@ -379,20 +379,320 @@
       min-width: 300px;
     }
 
-    /* Resources section */
-    .resources-list li {
-      margin-bottom: 0.7rem;
+    /* Styles for the abstract toggle */
+    .abstract-toggle {
+      display: inline-flex;
+      align-items: center;
+      color: #555;
+      cursor: pointer;
+      margin-top: 8px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .abstract-toggle:hover {
+      color: #3498db;
+    }
+    
+    .abstract-toggle .arrow {
+      display: inline-block;
+      margin-right: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .abstract-toggle.active .arrow {
+      transform: rotate(90deg);
+    }
+    
+    .abstract-content {
+      display: none;
+      padding: 12px 15px;
+      margin-top: 8px;
+      margin-bottom: 12px;
+      background-color: #f8f9fa;
+      border-left: 3px solid #3498db;
+      font-style: italic;
+      color: #555;
+      border-radius: 0 5px 5px 0;
+    }
+    
+    .abstract-content.show {
+      display: block;
     }
 
-    .resources-list a {
-      color: var(--link-color);
-      text-decoration: none;
-      transition: var(--transition);
+    /* NEW: Enhanced Resources Section Styling */
+    /* Resource Search */
+    .search-container {
+      position: relative;
+      margin-bottom: 1.5rem;
+      max-width: 500px;
     }
 
-    .resources-list a:hover {
-      text-decoration: underline;
+    .resource-search {
+      width: 100%;
+      padding: 10px 40px 10px 15px;
+      border: 2px solid #e1e4e8;
+      border-radius: 30px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .resource-search:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+    }
+
+    .search-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #777;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .search-btn:hover {
       color: var(--secondary-color);
+    }
+
+    /* Resource Tabs */
+    .resource-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e1e4e8;
+      padding-bottom: 0.5rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #555;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn:hover {
+      background-color: #f0f2f5;
+      color: var(--secondary-color);
+    }
+
+    .tab-btn.active {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    /* Resource Categories */
+    .resource-category {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .resource-category.active {
+      display: block;
+    }
+
+    /* Resource Cards */
+    .resource-card {
+      margin-bottom: 1.5rem;
+      border-radius: var(--border-radius);
+      background-color: var(--light-bg);
+      box-shadow: var(--box-shadow);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .resource-header {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .resource-header h3 {
+      color: white;
+      margin: 0;
+    }
+
+    .toggle-icon {
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .resource-card.expanded .toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .resource-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .resource-card.expanded .resource-content {
+      max-height: 1000px;
+    }
+
+    /* Resource Links */
+    .resource-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: var(--text-color);
+      transition: background-color 0.3s ease;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .resource-link:hover {
+      background-color: rgba(74, 111, 165, 0.1);
+    }
+
+    .resource-title {
+      flex: 1;
+    }
+
+    .resource-link .external-icon {
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+      margin-left: 10px;
+    }
+
+    .resource-link:hover .external-icon {
+      opacity: 1;
+      color: var(--secondary-color);
+    }
+
+    /* Copy Link Button */
+    .copy-btn {
+      background: none;
+      border: none;
+      color: #666;
+      cursor: pointer;
+      margin-left: 10px;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .copy-btn:hover {
+      background-color: rgba(74, 111, 165, 0.1);
+      color: var(--secondary-color);
+    }
+
+    .copy-icon {
+      margin-right: 4px;
+    }
+
+    /* Resource List */
+    .resources-list {
+      padding: 10px;
+    }
+
+    .resources-list li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .resource-description {
+      padding: 0 20px 12px;
+      font-size: 0.9rem;
+      color: #666;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* Toast notification for copy */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Popular tag */
+    .popular-tag {
+      display: inline-block;
+      background-color: #ff6b6b;
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* New tag */
+    .new-tag {
+      display: inline-block;
+      background-color: #51cf66;
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* No results message */
+    .no-results {
+      text-align: center;
+      padding: 2rem;
+      color: #777;
+      font-style: italic;
+      display: none;
+    }
+
+    /* Resource counter */
+    .resource-counter {
+      margin-bottom: 1rem;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      background-color: var(--light-bg);
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
     }
 
     /* Responsive Styles */
@@ -429,6 +729,16 @@
       .two-column, .teaching-container {
         flex-direction: column;
       }
+      
+      /* Responsive resource tabs */
+      .resource-tabs {
+        justify-content: center;
+      }
+      
+      .tab-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -449,154 +759,15 @@
       .content {
         padding: 0.5rem;
       }
+      
+      .resource-header {
+        padding: 0.75rem 1rem;
+      }
+      
+      .resource-link {
+        padding: 10px 15px;
+      }
     }
-
-    /* Footer styling */
-    footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      background-color: var(--light-bg);
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-      border-top: 1px solid rgba(0,0,0,0.1);
-    }
-
-  /* Styles for the abstract toggle */
-  .abstract-toggle {
-    display: inline-flex;
-    align-items: center;
-    color: #555;
-    cursor: pointer;
-    margin-top: 8px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .abstract-toggle:hover {
-    color: #3498db;
-  }
-  
-  .abstract-toggle .arrow {
-    display: inline-block;
-    margin-right: 8px;
-    transition: transform 0.3s ease;
-  }
-  
-  .abstract-toggle.active .arrow {
-    transform: rotate(90deg);
-  }
-  
-  .abstract-content {
-    display: none;
-    padding: 12px 15px;
-    margin-top: 8px;
-    margin-bottom: 12px;
-    background-color: #f8f9fa;
-    border-left: 3px solid #3498db;
-    font-style: italic;
-    color: #555;
-    border-radius: 0 5px 5px 0;
-  }
-  
-  .abstract-content.show {
-    display: block;
-  }
-
-    /* Resources section - new interactive cards */
-.resources-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.resource-category {
-  background-color: var(--light-bg);
-  border-radius: var(--border-radius);
-  padding: 1.5rem;
-  box-shadow: var(--box-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 200px;
-}
-
-.resource-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.resource-category.active {
-  height: auto;
-  min-height: 300px;
-}
-
-.resource-icon {
-  margin-bottom: 1rem;
-}
-
-.resource-category h3 {
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
-}
-
-.resource-preview {
-  color: var(--secondary-color);
-  font-size: 0.9rem;
-  font-style: italic;
-  margin-top: 1rem;
-}
-
-.resource-content {
-  display: none;
-  margin-top: 1.5rem;
-  text-align: left;
-  width: 100%;
-}
-
-.resource-category.active .resource-content {
-  display: block;
-  animation: fadeIn 0.5s ease;
-}
-
-.resource-category.active .resource-preview {
-  display: none;
-}
-
-.resources-list {
-  padding-left: 0;
-  list-style-type: none;
-}
-
-.resources-list li {
-  margin-bottom: 0.7rem;
-  position: relative;
-  padding-left: 1.2rem;
-}
-
-.resources-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--secondary-color);
-}
-
-.resources-list a {
-  color: var(--link-color);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.resources-list a:hover {
-  text-decoration: underline;
-  color: var(--secondary-color);
-}
   </style>
 </head>
 <body>
@@ -640,41 +811,41 @@
         </div>
       </div>
       
-<!-- Interests and Education -->
-<div class="two-column">
-  <div class="column">
-    <h2>Research Interests</h2>
-    <ul class="interests-list">
-      <li>Health Economics</li>
-      <li>Labor Economics</li>
-      <li>Development Economics</li>
-      <li>Environmental Economics</li>
-    </ul>
-  </div>
-  <div class="column">
-    <h2>Education</h2>
-    <div class="education-item">
-      <div class="degree">
-        <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
-          <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
-        </svg>
-        PhD in Economics, 2021-
+      <!-- Interests and Education -->
+      <div class="two-column">
+        <div class="column">
+          <h2>Research Interests</h2>
+          <ul class="interests-list">
+            <li>Health Economics</li>
+            <li>Labor Economics</li>
+            <li>Development Economics</li>
+            <li>Environmental Economics</li>
+          </ul>
+        </div>
+        <div class="column">
+          <h2>Education</h2>
+          <div class="education-item">
+            <div class="degree">
+              <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
+              </svg>
+              PhD in Economics, 2021-
+            </div>
+            <div class="university">University of Delaware</div>
+          </div>
+          <div class="education-item">
+            <div class="degree">
+              <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
+              </svg>
+              MS in Economics, 2021
+            </div>
+            <div class="university">University of Wisconsin-Madison</div>
+          </div>
+        </div>
       </div>
-      <div class="university">University of Delaware</div>
-    </div>
-    <div class="education-item">
-      <div class="degree">
-        <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
-          <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
-        </svg>
-        MS in Economics, 2021
-      </div>
-      <div class="university">University of Wisconsin-Madison</div>
-    </div>
-  </div>
-</div>
     </section>
 
     <!-- Research Section -->
@@ -689,50 +860,51 @@
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" class="paper-link" target="_blank">View Paper</a>
       </div>
       
-
-  <h3>Research in Progress</h3>
-  <ul class="working-papers">
-    <li>
-      Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (co-authored with
-      <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a>)
-      <div class="abstract-toggle">
-        <span class="arrow">▶</span> Abstract
-      </div>
-      <div class="abstract-content">
-        This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We find the positive intertemporal elasticity of labor supply for taxicab drivers.
-      </div>
-    </li>
-    <li>
-      Labor Market Consequences of Cycling Program using DiD
-      <div class="abstract-toggle">
-        <span class="arrow">▶</span> Abstract
-      </div>
-      <div class="abstract-content">
-        This study investigates the long term causal effect of cycling program on labor market outcomes using a DDD approach. Preliminary results suggest significant improvements in labor market outcomes.
-      </div>
-    </li>
-    <li>
-      Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (co-authored with 
-      <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank"> Dr. Kenneth Shores</a> and
-      <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank"> Jesse Eze</a>)
-      <div class="abstract-toggle">
-        <span class="arrow">▶</span> Abstract
-      </div>
-      <div class="abstract-content">
-        This research evaluates how different career and technical education (CTE) pathways affect student outcomes across secondary and postsecondary levels. Using Delaware administrative data, we examine heterogeneous effects across different career clusters.
-      </div>
-    </li>
-    <li>
-      Medicaid Expansion, Ride-sharing and Crime: Evidence from US Cities (co-authored with 
-      <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Usman Taj</a>)  
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank">SSRN Link</a>
-      <div class="abstract-toggle">
-        <span class="arrow">▶</span> Abstract
-      </div>
-      <div class="abstract-content">
-Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion and ride-sharing services have influenced crime in major cities, using daily data from the 21 largest U.S. cities. We provide the first causal analysis linking these policies to urban crime trends.    </li>
-  </ul>
-</section>
+      <h3>Research in Progress</h3>
+      <ul class="working-papers">
+        <li>
+          Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (co-authored with
+          <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a>)
+          <div class="abstract-toggle">
+            <span class="arrow">▶</span> Abstract
+          </div>
+          <div class="abstract-content">
+            This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We find the positive intertemporal elasticity of labor supply for taxicab drivers.
+          </div>
+        </li>
+        <li>
+          Labor Market Consequences of Cycling Program using DiD
+          <div class="abstract-toggle">
+            <span class="arrow">▶</span> Abstract
+          </div>
+          <div class="abstract-content">
+            This study investigates the long term causal effect of cycling program on labor market outcomes using a DDD approach. Preliminary results suggest significant improvements in labor market outcomes.
+          </div>
+        </li>
+        <li>
+          Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (co-authored with 
+          <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank"> Dr. Kenneth Shores</a> and
+          <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank"> Jesse Eze</a>)
+          <div class="abstract-toggle">
+            <span class="arrow">▶</span> Abstract
+          </div>
+          <div class="abstract-content">
+            This research evaluates how different career and technical education (CTE) pathways affect student outcomes across secondary and postsecondary levels. Using Delaware administrative data, we examine heterogeneous effects across different career clusters.
+          </div>
+        </li>
+        <li>
+          Medicaid Expansion, Ride-sharing and Crime: Evidence from US Cities (co-authored with 
+          <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Usman Taj</a>)  
+          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank">SSRN Link</a>
+          <div class="abstract-toggle">
+            <span class="arrow">▶</span> Abstract
+          </div>
+          <div class="abstract-content">
+            Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion and ride-sharing services have influenced crime in major cities, using daily data from the 21 largest U.S. cities. We provide the first causal analysis linking these policies to urban crime trends.
+          </div>
+        </li>
+      </ul>
+    </section>
 
     <!-- Teaching Section -->
     <section id="teaching" class="section">
@@ -769,38 +941,709 @@ Crime rates in the U.S. have fallen over the past two decades, though periods li
       </ul>
     </section>
 
-<!-- Resources Section -->
-<section id="resources" class="section">
-  <h2>Resources for Students</h2>
-  
-  <!-- Interactive Resource Cards -->
-  <div class="resources-container">
-    <!-- Resource Category Cards -->
-    <div class="resource-category" id="stata-card">
-      <div class="resource-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
-          <path fill="#4A6FA5" d="M17 3H7C4.79 3 3 4.79 3 7v10c0 2.21 1.79 4 4 4h10c2.21 0 4-1.79 4-4V7c0-2.21-1.79-4-4-4zm-2 12h-2v2h-2v-2H9v-2h2V9h2v4h2v2z"/>
-        </svg>
+    <!-- Resources Section - Enhanced interactive version -->
+    <section id="resources" class="section">
+      <h2>Resources for Students</h2>
+      
+      <!-- Search bar for resources -->
+      <div class="search-container">
+        <input type="text" id="resourceSearch" class="resource-search" placeholder="Search resources...">
+        <button id="searchButton" class="search-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       </div>
-      <h3>Stata Resources</h3>
-      <div class="resource-preview">Click to view resources</div>
-      <div class="resource-content">
-        <ul class="resources-list">
-          <li><a href="https://www.ssc.wisc.edu/statistics/" target="_blank">University of Wisconsin - Madison</a></li>
-          <li><a href="https://www.princeton.edu/~otorres/Stata/" target="_blank">Princeton University</a></li>
-          <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a></li>
-          <li><a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank">Harvard University IQSS</a></li>
-        </ul>
+      
+      <div class="resource-counter">
+        Showing <span id="resourceCount">16</span> resources
       </div>
-    </div>
+      
+      <!-- Resource type tabs -->
+      <div class="resource-tabs">
+        <button class="tab-btn active" data-tab="all">All Resources</button>
+        <button class="tab-btn" data-tab="stata">Stata</button>
+        <button class="tab-btn" data-tab="latex">LaTeX</button>
+        <button class="tab-btn" data-tab="data">Data</button>
+        <button class="tab-btn" data-tab="methods">Methods</button>
+      </div>
+      
+      <!-- All resources container -->
+      <div id="all" class="resource-category active">
+        <!-- Stata Resources Card -->
+        <div class="resource-card" data-category="stata">
+          <div class="resource-header">
+            <h3>Stata Resources</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="resource-content">
+            <div class="resource-description">
+              Essential Stata resources for data analysis in economics research.
+            </div>
+            <ul class="resources-list">
+              <li>
+                <a href="https://www.ssc.wisc.edu/statistics/" target="_blank" class="resource-link">
+                  <span class="resource-title">Resources: Jennifer Doleac <span class="popular-tag">Popular</span></span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://jenniferdoleac.com/resources/">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://sebastiantellotrillo.com/resources" target="_blank" class="resource-link">
+                  <span class="resource-title">Resources: Sebastian Tello Trillo</span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://sebastiantellotrillo.com/resources">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank" class="resource-link">
+                  <span class="resource-title">Coding resources: Moshi Alam <span class="new-tag">New</span></span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://moshialam.github.io/morepages/resourcesforugstudents.html">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Filtered resource categories -->
+      <div id="stata" class="resource-category"></div>
+      <div id="latex" class="resource-category"></div>
+      <div id="data" class="resource-category"></div>
+      <div id="methods" class="resource-category"></div>
+      
+      <!-- No results message -->
+      <div class="no-results">
+        <p>No resources found matching your search. Try different keywords or clear the search.</p>
+      </div>
+      
+      <!-- Toast notification for link copying -->
+      <div class="toast" id="copyToast">
+        Link copied to clipboard!
+      </div>
+    </section>
+  </div>
 
-    <div class="resource-category" id="latex-card">
-      <div class="resource-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
-          <path fill="#4A6FA5" d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 9V3.5L18.5 9H13c-.55 0-1-.45-1-1z"/>
-        </svg>
-      </div>
-      <h3>LaTeX Resources</h3>
-      <div class="resource-preview">Click to view resources</div>
-      <div class="resource-content">
-        <ul class="resources-list">
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Vikrant V. Kamble | Last updated: May 9, 2025</p>
+  </footer>
+
+  <!-- Combined JavaScript for section navigation, abstract toggles, and resources functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Navigation functionality
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('.section');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Remove active class from all links and sections
+          navLinks.forEach(l => l.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
+          
+          // Add active class to clicked link
+          this.classList.add('active');
+          
+          // Show corresponding section
+          const sectionId = this.getAttribute('data-section');
+          document.getElementById(sectionId).classList.add('active');
+          
+          // Scroll to top for better UX
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Abstract toggle functionality
+      const abstractToggles = document.querySelectorAll('.abstract-toggle');
+      
+      abstractToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          // Toggle active class
+          this.classList.toggle('active');
+          
+          // Find and toggle the abstract content
+          const content = this.nextElementSibling;
+          content.classList.toggle('show');
+        });
+      });
+      
+      // Resource section functionality
+      // Toggle resource cards
+      const resourceHeaders = document.querySelectorAll('.resource-header');
+      
+      resourceHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const card = this.parentElement;
+          const content = card.querySelector('.resource-content');
+          
+          // Toggle expanded class
+          card.classList.toggle('expanded');
+          
+          // Update toggle icon
+          const icon = this.querySelector('.toggle-icon');
+          icon.textContent = card.classList.contains('expanded') ? '−' : '+';
+          
+          // Set content height
+          if (card.classList.contains('expanded')) {
+            content.style.padding = '10px 0';
+            content.style.maxHeight = content.scrollHeight + 'px';
+          } else {
+            content.style.padding = '0';
+            content.style.maxHeight = '0';
+          }
+        });
+      });
+      
+      // Filter resources by tab
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const resourceCards = document.querySelectorAll('.resource-card');
+      const resourceCategories = document.querySelectorAll('.resource-category');
+      const resourceCount = document.getElementById('resourceCount');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Hide all resource categories
+          resourceCategories.forEach(category => category.classList.remove('active'));
+          
+          const tabName = this.getAttribute('data-tab');
+          
+          if (tabName === 'all') {
+            // Show all resources
+            document.getElementById('all').classList.add('active');
+            updateResourceCount(resourceCards.length);
+          } else {
+            // Clone the cards with the matching category to the specific tab
+            const tabContainer = document.getElementById(tabName);
+            tabContainer.innerHTML = ''; // Clear previous content
+            
+            // Filter and clone cards
+            const matchingCards = Array.from(resourceCards).filter(card => 
+              card.getAttribute('data-category') === tabName
+            );
+            
+            matchingCards.forEach(card => {
+              const cardClone = card.cloneNode(true);
+              tabContainer.appendChild(cardClone);
+              
+              // Re-attach event listener to the header in the clone
+              const headerClone = cardClone.querySelector('.resource-header');
+              headerClone.addEventListener('click', function() {
+                const cardParent = this.parentElement;
+                const contentParent = cardParent.querySelector('.resource-content');
+                
+                // Toggle expanded class
+                cardParent.classList.toggle('expanded');
+                
+                // Update toggle icon
+                const iconParent = this.querySelector('.toggle-icon');
+                iconParent.textContent = cardParent.classList.contains('expanded') ? '−' : '+';
+                
+                // Set content height
+                if (cardParent.classList.contains('expanded')) {
+                  contentParent.style.padding = '10px 0';
+                  contentParent.style.maxHeight = contentParent.scrollHeight + 'px';
+                } else {
+                  contentParent.style.padding = '0';
+                  contentParent.style.maxHeight = '0';
+                }
+              });
+              
+              // Re-attach copy button event listeners
+              const copyButtons = cardClone.querySelectorAll('.copy-btn');
+              copyButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                  e.stopPropagation();
+                  const linkToCopy = this.getAttribute('data-link');
+                  navigator.clipboard.writeText(linkToCopy).then(() => {
+                    showToast();
+                  });
+                });
+              });
+            });
+            
+            // Show this specific category
+            tabContainer.classList.add('active');
+            updateResourceCount(matchingCards.length);
+          }
+          
+          // Determine if search should be re-applied
+          const searchQuery = document.getElementById('resourceSearch').value.trim().toLowerCase();
+          if (searchQuery) {
+            filterResources(searchQuery);
+          }
+        });
+      });
+      
+      // Search functionality
+      const searchInput = document.getElementById('resourceSearch');
+      const searchButton = document.getElementById('searchButton');
+      const noResults = document.querySelector('.no-results');
+      
+      function filterResources(query) {
+        // Get active resource category
+        const activeCategory = document.querySelector('.resource-category.active');
+        const links = activeCategory.querySelectorAll('.resource-link');
+        let visibleCount = 0;
+        
+        links.forEach(link => {
+          const title = link.querySelector('.resource-title').textContent.toLowerCase();
+          const listItem = link.parentElement;
+          const card = findAncestor(listItem, 'resource-card');
+          
+          if (title.includes(query)) {
+            listItem.style.display = 'block';
+            if (card && !card.classList.contains('expanded')) {
+              // Auto-expand card with matches
+              card.classList.add('expanded');
+              const content = card.querySelector('.resource-content');
+              const icon = card.querySelector('.toggle-icon');
+              icon.textContent = '−';
+              content.style.padding = '10px 0';
+              content.style.maxHeight = content.scrollHeight + 'px';
+            }
+            visibleCount++;
+          } else {
+            listItem.style.display = 'none';
+          }
+        });
+        
+        // Show no results message if needed
+        if (visibleCount === 0) {
+          noResults.style.display = 'block';
+        } else {
+          noResults.style.display = 'none';
+        }
+        
+        updateResourceCount(visibleCount);
+      }
+      
+      function findAncestor(element, className) {
+        while (element && !element.classList.contains(className)) {
+          element = element.parentElement;
+        }
+        return element;
+      }
+      
+      searchInput.addEventListener('keyup', function(e) {
+        const query = this.value.trim().toLowerCase();
+        if (e.key === 'Enter' && query) {
+          filterResources(query);
+        } else if (!query) {
+          // Clear search
+          resetSearch();
+        }
+      });
+      
+      searchButton.addEventListener('click', function() {
+        const query = searchInput.value.trim().toLowerCase();
+        if (query) {
+          filterResources(query);
+        } else {
+          resetSearch();
+        }
+      });
+      
+      function resetSearch() {
+        // Clear search field
+        searchInput.value = '';
+        
+        // Show all resources in active category
+        const activeCategory = document.querySelector('.resource-category.active');
+        const links = activeCategory.querySelectorAll('.resource-link');
+        links.forEach(link => {
+          const listItem = link.parentElement;
+          listItem.style.display = 'block';
+        });
+        
+        // Hide no results message
+        noResults.style.display = 'none';
+        
+        // Update count
+        updateResourceCount(links.length);
+      }
+      
+      // Update resource counter
+      function updateResourceCount(count) {
+        resourceCount.textContent = count;
+      }
+      
+      // Copy link functionality
+      const copyButtons = document.querySelectorAll('.copy-btn');
+      const toast = document.getElementById('copyToast');
+      
+      copyButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.stopPropagation(); // Prevent card toggle
+          const linkToCopy = this.getAttribute('data-link');
+          navigator.clipboard.writeText(linkToCopy).then(() => {
+            showToast();
+          });
+        });
+      });
+      
+      function showToast() {
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2000);
+      }
+      
+      // Expand first card in each category by default
+      const firstCards = document.querySelectorAll('.resource-category .resource-card:first-child');
+      firstCards.forEach(card => {
+        card.classList.add('expanded');
+        const content = card.querySelector('.resource-content');
+        const icon = card.querySelector('.toggle-icon');
+        icon.textContent = '−';
+        content.style.padding = '10px 0';
+        setTimeout(() => {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }, 10);
+      });
+      
+      // Count initial resources
+      updateResourceCount(document.querySelectorAll('#all .resource-link').length);
+    });
+  </script>
+</body>
+</html>="resource-title">University of Wisconsin - Madison <span class="popular-tag">Popular</span></span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://www.ssc.wisc.edu/statistics/">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://www.princeton.edu/~otorres/Stata/" target="_blank" class="resource-link">
+                  <span class="resource-title">Princeton University</span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://www.princeton.edu/~otorres/Stata/">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://stats.oarc.ucla.edu/stata/" target="_blank" class="resource-link">
+                  <span class="resource-title">UCLA Statistical Consulting Group <span class="popular-tag">Popular</span></span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://stats.oarc.ucla.edu/stata/">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank" class="resource-link">
+                  <span class="resource-title">Harvard University IQSS</span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://sociology.fas.harvard.edu/need-help-basic-stata">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- LaTeX Resources Card -->
+        <div class="resource-card" data-category="latex">
+          <div class="resource-header">
+            <h3>LaTeX Resources</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="resource-content">
+            <div class="resource-description">
+              Resources for creating professional academic documents with LaTeX.
+            </div>
+            <ul class="resources-list">
+              <li>
+                <a href="https://www.overleaf.com/latex/templates" target="_blank" class="resource-link">
+                  <span class="resource-title">Overleaf Templates <span class="popular-tag">Popular</span></span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://www.overleaf.com/latex/templates">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://www.latex-project.org/help/documentation/" target="_blank" class="resource-link">
+                  <span class="resource-title">LaTeX Project Documentation <span class="new-tag">New</span></span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://www.latex-project.org/help/documentation/">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Data Resources Card -->
+        <div class="resource-card" data-category="data">
+          <div class="resource-header">
+            <h3>Data Resources</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="resource-content">
+            <div class="resource-description">
+              High-quality data sources for economic research and analysis.
+            </div>
+            <ul class="resources-list">
+              <li>
+                <a href="https://osf.io/zyaqn/" target="_blank" class="resource-link">
+                  <span class="resource-title">Crime Open Database (CODE)</span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://osf.io/zyaqn/">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank" class="resource-link">
+                  <span class="resource-title">National Health Interview Survey (NHIS) <span class="popular-tag">Popular</span></span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://www.cdc.gov/nchs/nhis/index.htm">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://www.cdc.gov/brfss/index.html" target="_blank" class="resource-link">
+                  <span class="resource-title">Behavioral Risk Factor Surveillance System (BRFSS)</span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://www.cdc.gov/brfss/index.html">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://fred.stlouisfed.org/" target="_blank" class="resource-link">
+                  <span class="resource-title">Federal Reserve Economic Data (FRED) <span class="popular-tag">Popular</span></span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://fred.stlouisfed.org/">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Methods Resources Card -->
+        <div class="resource-card" data-category="methods">
+          <div class="resource-header">
+            <h3>Econometric Methods Resources</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="resource-content">
+            <div class="resource-description">
+              Advanced econometric methods and tools for economic research.
+            </div>
+            <ul class="resources-list">
+              <li>
+                <a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank" class="resource-link">
+                  <span class="resource-title">Diff-in-Diff course: Clement De Chaisemartin <span class="new-tag">New</span></span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://asjadnaqvi.github.io/DiD/" target="_blank" class="resource-link">
+                  <span class="resource-title">Staggered DiD software packages: Asjad Naqvi</span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://asjadnaqvi.github.io/DiD/">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://neilhe.com/stata-packages" target="_blank" class="resource-link">
+                  <span class="resource-title">Synthetic Control Method Stata packages: Jialun (Neil) He</span>
+                  <span class="external-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </a>
+                <button class="copy-btn" data-link="https://neilhe.com/stata-packages">
+                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </li>
+              <li>
+                <a href="https://jenniferdoleac.com/resources/" target="_blank" class="resource-link">
+                  <span class
