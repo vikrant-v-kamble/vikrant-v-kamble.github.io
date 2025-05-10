@@ -1054,6 +1054,7 @@ Crime rates in the U.S. have fallen over the past two decades, though periods li
   }
 </style>
 
+<!-- This is just the JavaScript part you need to make the abstracts work correctly -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Navigation functionality for the entire site
@@ -1081,17 +1082,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Resources section interactivity
-  const searchInput = document.getElementById('resourceSearch');
-  const searchButton = document.getElementById('searchButton');
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const resourceCards = document.querySelectorAll('.resource-card');
-  const resourceCategories = document.querySelectorAll('.resource-category');
-  const expandCollapseButtons = document.querySelectorAll('.expand-collapse-btn');
-  const noResultsMessage = document.getElementById('noResults');
+  // Abstract toggle functionality for Research section
+  const abstractToggles = document.querySelectorAll('.abstract-toggle');
   
-  // Only proceed with resources interactions if elements exist
-  if (searchInput && resourceCards.length > 0) {
+  abstractToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      // Toggle active class
+      this.classList.toggle('active');
+      
+      // Find and toggle the abstract content
+      const abstractContent = this.nextElementSibling;
+      abstractContent.classList.toggle('show');
+      
+      // Animate the arrow
+      const arrow = this.querySelector('.arrow');
+      if (this.classList.contains('active')) {
+        arrow.textContent = '▼';
+      } else {
+        arrow.textContent = '▶';
+      }
+    });
+  });
+
+  // Resources section interactivity (if present)
+  const searchInput = document.getElementById('resourceSearch');
+  if (searchInput) {
+    const searchButton = document.getElementById('searchButton');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const resourceCards = document.querySelectorAll('.resource-card');
+    const resourceCategories = document.querySelectorAll('.resource-category');
+    const expandCollapseButtons = document.querySelectorAll('.expand-collapse-btn');
+    const noResultsMessage = document.getElementById('noResults');
+    
     // Initial setup - all categories expanded
     expandCollapseButtons.forEach(button => {
       const categoryItems = button.closest('.category-header').nextElementSibling;
