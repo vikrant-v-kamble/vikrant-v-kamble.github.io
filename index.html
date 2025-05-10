@@ -379,320 +379,20 @@
       min-width: 300px;
     }
 
-    /* Styles for the abstract toggle */
-    .abstract-toggle {
-      display: inline-flex;
-      align-items: center;
-      color: #555;
-      cursor: pointer;
-      margin-top: 8px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    
-    .abstract-toggle:hover {
-      color: #3498db;
-    }
-    
-    .abstract-toggle .arrow {
-      display: inline-block;
-      margin-right: 8px;
-      transition: transform 0.3s ease;
-    }
-    
-    .abstract-toggle.active .arrow {
-      transform: rotate(90deg);
-    }
-    
-    .abstract-content {
-      display: none;
-      padding: 12px 15px;
-      margin-top: 8px;
-      margin-bottom: 12px;
-      background-color: #f8f9fa;
-      border-left: 3px solid #3498db;
-      font-style: italic;
-      color: #555;
-      border-radius: 0 5px 5px 0;
-    }
-    
-    .abstract-content.show {
-      display: block;
-    }
-
-    /* NEW: Enhanced Resources Section Styling */
-    /* Resource Search */
-    .search-container {
-      position: relative;
-      margin-bottom: 1.5rem;
-      max-width: 500px;
-    }
-
-    .resource-search {
-      width: 100%;
-      padding: 10px 40px 10px 15px;
-      border: 2px solid #e1e4e8;
-      border-radius: 30px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      outline: none;
-    }
-
-    .resource-search:focus {
-      border-color: var(--secondary-color);
-      box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
-    }
-
-    .search-btn {
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: #777;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .search-btn:hover {
-      color: var(--secondary-color);
-    }
-
-    /* Resource Tabs */
-    .resource-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid #e1e4e8;
-      padding-bottom: 0.5rem;
-    }
-
-    .tab-btn {
-      background: transparent;
-      border: none;
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #555;
-      cursor: pointer;
-      border-radius: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .tab-btn:hover {
-      background-color: #f0f2f5;
-      color: var(--secondary-color);
-    }
-
-    .tab-btn.active {
-      background-color: var(--secondary-color);
-      color: white;
-    }
-
-    /* Resource Categories */
-    .resource-category {
-      display: none;
-      animation: fadeIn 0.4s ease;
-    }
-
-    .resource-category.active {
-      display: block;
-    }
-
-    /* Resource Cards */
-    .resource-card {
-      margin-bottom: 1.5rem;
-      border-radius: var(--border-radius);
-      background-color: var(--light-bg);
-      box-shadow: var(--box-shadow);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .resource-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .resource-header {
-      background-color: var(--secondary-color);
-      color: white;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-
-    .resource-header h3 {
-      color: white;
-      margin: 0;
-    }
-
-    .toggle-icon {
-      font-size: 1.5rem;
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-
-    .resource-card.expanded .toggle-icon {
-      transform: rotate(45deg);
-    }
-
-    .resource-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-
-    .resource-card.expanded .resource-content {
-      max-height: 1000px;
-    }
-
-    /* Resource Links */
-    .resource-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 20px;
-      text-decoration: none;
-      color: var(--text-color);
-      transition: background-color 0.3s ease;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .resource-link:hover {
-      background-color: rgba(74, 111, 165, 0.1);
-    }
-
-    .resource-title {
-      flex: 1;
-    }
-
-    .resource-link .external-icon {
-      opacity: 0.6;
-      transition: opacity 0.3s ease;
-      margin-left: 10px;
-    }
-
-    .resource-link:hover .external-icon {
-      opacity: 1;
-      color: var(--secondary-color);
-    }
-
-    /* Copy Link Button */
-    .copy-btn {
-      background: none;
-      border: none;
-      color: #666;
-      cursor: pointer;
-      margin-left: 10px;
-      padding: 2px 4px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      font-size: 0.8rem;
-    }
-
-    .copy-btn:hover {
-      background-color: rgba(74, 111, 165, 0.1);
-      color: var(--secondary-color);
-    }
-
-    .copy-icon {
-      margin-right: 4px;
-    }
-
-    /* Resource List */
-    .resources-list {
-      padding: 10px;
-    }
-
+    /* Resources section */
     .resources-list li {
-      margin: 0;
-      padding: 0;
+      margin-bottom: 0.7rem;
     }
 
-    .resource-description {
-      padding: 0 20px 12px;
-      font-size: 0.9rem;
-      color: #666;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+    .resources-list a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: var(--transition);
     }
 
-    /* Toast notification for copy */
-    .toast {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--secondary-color);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.3s ease;
-      z-index: 1000;
-    }
-
-    .toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    /* Popular tag */
-    .popular-tag {
-      display: inline-block;
-      background-color: #ff6b6b;
-      color: white;
-      font-size: 0.7rem;
-      padding: 2px 6px;
-      border-radius: 4px;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-
-    /* New tag */
-    .new-tag {
-      display: inline-block;
-      background-color: #51cf66;
-      color: white;
-      font-size: 0.7rem;
-      padding: 2px 6px;
-      border-radius: 4px;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-
-    /* No results message */
-    .no-results {
-      text-align: center;
-      padding: 2rem;
-      color: #777;
-      font-style: italic;
-      display: none;
-    }
-
-    /* Resource counter */
-    .resource-counter {
-      margin-bottom: 1rem;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    /* Footer styling */
-    footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      background-color: var(--light-bg);
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-      border-top: 1px solid rgba(0,0,0,0.1);
+    .resources-list a:hover {
+      text-decoration: underline;
+      color: var(--secondary-color);
     }
 
     /* Responsive Styles */
@@ -729,16 +429,6 @@
       .two-column, .teaching-container {
         flex-direction: column;
       }
-      
-      /* Responsive resource tabs */
-      .resource-tabs {
-        justify-content: center;
-      }
-      
-      .tab-btn {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-      }
     }
 
     @media (max-width: 480px) {
@@ -759,15 +449,59 @@
       .content {
         padding: 0.5rem;
       }
-      
-      .resource-header {
-        padding: 0.75rem 1rem;
-      }
-      
-      .resource-link {
-        padding: 10px 15px;
-      }
     }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      background-color: var(--light-bg);
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+  /* Styles for the abstract toggle */
+  .abstract-toggle {
+    display: inline-flex;
+    align-items: center;
+    color: #555;
+    cursor: pointer;
+    margin-top: 8px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .abstract-toggle:hover {
+    color: #3498db;
+  }
+  
+  .abstract-toggle .arrow {
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .abstract-toggle.active .arrow {
+    transform: rotate(90deg);
+  }
+  
+  .abstract-content {
+    display: none;
+    padding: 12px 15px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    background-color: #f8f9fa;
+    border-left: 3px solid #3498db;
+    font-style: italic;
+    color: #555;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .abstract-content.show {
+    display: block;
+  }
   </style>
 </head>
 <body>
@@ -811,41 +545,41 @@
         </div>
       </div>
       
-      <!-- Interests and Education -->
-      <div class="two-column">
-        <div class="column">
-          <h2>Research Interests</h2>
-          <ul class="interests-list">
-            <li>Health Economics</li>
-            <li>Labor Economics</li>
-            <li>Development Economics</li>
-            <li>Environmental Economics</li>
-          </ul>
-        </div>
-        <div class="column">
-          <h2>Education</h2>
-          <div class="education-item">
-            <div class="degree">
-              <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
-                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
-              </svg>
-              PhD in Economics, 2021-
-            </div>
-            <div class="university">University of Delaware</div>
-          </div>
-          <div class="education-item">
-            <div class="degree">
-              <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
-                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
-              </svg>
-              MS in Economics, 2021
-            </div>
-            <div class="university">University of Wisconsin-Madison</div>
-          </div>
-        </div>
+<!-- Interests and Education -->
+<div class="two-column">
+  <div class="column">
+    <h2>Research Interests</h2>
+    <ul class="interests-list">
+      <li>Health Economics</li>
+      <li>Labor Economics</li>
+      <li>Development Economics</li>
+      <li>Environmental Economics</li>
+    </ul>
+  </div>
+  <div class="column">
+    <h2>Education</h2>
+    <div class="education-item">
+      <div class="degree">
+        <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
+          <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
+        </svg>
+        PhD in Economics, 2021-
       </div>
+      <div class="university">University of Delaware</div>
+    </div>
+    <div class="education-item">
+      <div class="degree">
+        <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
+          <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
+        </svg>
+        MS in Economics, 2021
+      </div>
+      <div class="university">University of Wisconsin-Madison</div>
+    </div>
+  </div>
+</div>
     </section>
 
     <!-- Research Section -->
@@ -860,51 +594,50 @@
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" class="paper-link" target="_blank">View Paper</a>
       </div>
       
-      <h3>Research in Progress</h3>
-      <ul class="working-papers">
-        <li>
-          Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (co-authored with
-          <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a>)
-          <div class="abstract-toggle">
-            <span class="arrow">▶</span> Abstract
-          </div>
-          <div class="abstract-content">
-            This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We find the positive intertemporal elasticity of labor supply for taxicab drivers.
-          </div>
-        </li>
-        <li>
-          Labor Market Consequences of Cycling Program using DiD
-          <div class="abstract-toggle">
-            <span class="arrow">▶</span> Abstract
-          </div>
-          <div class="abstract-content">
-            This study investigates the long term causal effect of cycling program on labor market outcomes using a DDD approach. Preliminary results suggest significant improvements in labor market outcomes.
-          </div>
-        </li>
-        <li>
-          Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (co-authored with 
-          <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank"> Dr. Kenneth Shores</a> and
-          <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank"> Jesse Eze</a>)
-          <div class="abstract-toggle">
-            <span class="arrow">▶</span> Abstract
-          </div>
-          <div class="abstract-content">
-            This research evaluates how different career and technical education (CTE) pathways affect student outcomes across secondary and postsecondary levels. Using Delaware administrative data, we examine heterogeneous effects across different career clusters.
-          </div>
-        </li>
-        <li>
-          Medicaid Expansion, Ride-sharing and Crime: Evidence from US Cities (co-authored with 
-          <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Usman Taj</a>)  
-          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank">SSRN Link</a>
-          <div class="abstract-toggle">
-            <span class="arrow">▶</span> Abstract
-          </div>
-          <div class="abstract-content">
-            Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion and ride-sharing services have influenced crime in major cities, using daily data from the 21 largest U.S. cities. We provide the first causal analysis linking these policies to urban crime trends.
-          </div>
-        </li>
-      </ul>
-    </section>
+
+  <h3>Research in Progress</h3>
+  <ul class="working-papers">
+    <li>
+      Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (co-authored with
+      <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a>)
+      <div class="abstract-toggle">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We find the positive intertemporal elasticity of labor supply for taxicab drivers.
+      </div>
+    </li>
+    <li>
+      Labor Market Consequences of Cycling Program using DiD
+      <div class="abstract-toggle">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        This study investigates the long term causal effect of cycling program on labor market outcomes using a DDD approach. Preliminary results suggest significant improvements in labor market outcomes.
+      </div>
+    </li>
+    <li>
+      Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (co-authored with 
+      <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank"> Dr. Kenneth Shores</a> and
+      <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank"> Jesse Eze</a>)
+      <div class="abstract-toggle">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        This research evaluates how different career and technical education (CTE) pathways affect student outcomes across secondary and postsecondary levels. Using Delaware administrative data, we examine heterogeneous effects across different career clusters.
+      </div>
+    </li>
+    <li>
+      Medicaid Expansion, Ride-sharing and Crime: Evidence from US Cities (co-authored with 
+      <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Usman Taj</a>)  
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank">SSRN Link</a>
+      <div class="abstract-toggle">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion and ride-sharing services have influenced crime in major cities, using daily data from the 21 largest U.S. cities. We provide the first causal analysis linking these policies to urban crime trends.    </li>
+  </ul>
+</section>
 
     <!-- Teaching Section -->
     <section id="teaching" class="section">
@@ -914,3 +647,119 @@
       <ul>
         <li>ECON101: Introduction to Microeconomics <a href="econ101_course_evaluations_winter2025.pdf" target="_blank">(Course evaluations)</a>
           <p class="indent">Winter 2025</p>
+        </li>
+      </ul>
+      
+      <h3>Graduate Courses (Teaching Assistant)</h3>
+      <ul>
+        <li>ECON814: Macroeconomics Theory II
+          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+        </li>
+        <li>ECON824: Econometrics of Cross-Section and Panel Data
+          <p class="indent">Fall 2023, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a></p>
+        </li>
+      </ul>
+      
+      <h3>Undergraduate Courses (Teaching Assistant)</h3>
+      <ul>
+        <li>ECON301: Intermediate Microeconomics with Calculus
+          <p class="indent">Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></p>
+        </li>
+        <li>ECON304: Quantitative Macroeconomic Theory
+          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+        </li>
+        <li>ECON422: Econometric Methods and Models
+          <p class="indent">Fall 2022, Fall 2023, Spring 2024, Fall 2024, Spring 2025 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></p>
+        </li>
+      </ul>
+    </section>
+
+<!-- Resources Section -->
+<section id="resources" class="section">
+  <h2>Resources for Students</h2>
+  <div class="two-column">
+    <div class="column">
+      <h3>Stata Resources</h3>
+      <ul class="resources-list">
+        <li><a href="https://www.ssc.wisc.edu/statistics/" target="_blank">University of Wisconsin - Madison</a></li>
+        <li><a href="https://www.princeton.edu/~otorres/Stata/" target="_blank">Princeton University</a></li>
+        <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a></li>
+        <li><a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank">Harvard University IQSS</a></li>
+      </ul>
+      <h3>LaTeX Resources</h3>
+      <ul class="resources-list">
+        <li><a href="https://www.overleaf.com/latex/templates" target="_blank">Overleaf Templates</a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Data Resources</h3>
+      <ul class="resources-list">
+        <li><a href="https://osf.io/zyaqn/" target="_blank">Crime Open Database (CODE)</a></li>
+        <li><a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank">National Health Interview Survey (NHIS)</a></li>
+        <li><a href="https://www.cdc.gov/brfss/index.html" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a></li>
+        <li><a href="https://fred.stlouisfed.org/" target="_blank">Federal Reserve Economic Data (FRED)</a></li>
+      </ul>
+      <h3>Additional Resources</h3>
+      <ul class="resources-list">
+        <li><a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank">Diff-in-Diff course: Clement De Chaisemartin</a></li>
+        <li><a href="https://asjadnaqvi.github.io/DiD/" target="_blank">Staggered DiD software packages: Asjad Naqvi </a></li>
+        <li><a href="https://neilhe.com/stata-packages" target="_blank">Synthetic Control Method Stata packages: Jialun (Neil) He</a></li>
+        <li><a href="https://jenniferdoleac.com/resources/" target="_blank">Resources: Jennifer Doleac </a></li>
+        <li><a href="https://sebastiantellotrillo.com/resources" target="_blank">Resources: Sebastian Tello Trillo</a></li>
+        <li><a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank">Coding resources: Moshi Alam</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Vikrant V. Kamble | Last updated: May 9, 2025</p>
+  </footer>
+
+<!-- Combined JavaScript for section navigation and abstract toggles -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Navigation functionality
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Remove active class from all links and sections
+        navLinks.forEach(l => l.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        
+        // Add active class to clicked link
+        this.classList.add('active');
+        
+        // Show corresponding section
+        const sectionId = this.getAttribute('data-section');
+        document.getElementById(sectionId).classList.add('active');
+        
+        // Scroll to top for better UX
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Abstract toggle functionality
+    const toggles = document.querySelectorAll('.abstract-toggle');
+    
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        // Toggle active class
+        this.classList.toggle('active');
+        
+        // Find and toggle the abstract content
+        const content = this.nextElementSibling;
+        content.classList.toggle('show');
+      });
+    });
+  });
+</script>
+</body>
+</html>
