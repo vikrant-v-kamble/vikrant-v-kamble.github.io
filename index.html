@@ -1056,6 +1056,31 @@ Crime rates in the U.S. have fallen over the past two decades, though periods li
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Navigation functionality for the entire site
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('.section');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Remove active class from all links and sections
+      navLinks.forEach(l => l.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      
+      // Add active class to clicked link
+      this.classList.add('active');
+      
+      // Show corresponding section
+      const sectionId = this.getAttribute('data-section');
+      document.getElementById(sectionId).classList.add('active');
+      
+      // Scroll to top for better UX
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+
   // Resources section interactivity
   const searchInput = document.getElementById('resourceSearch');
   const searchButton = document.getElementById('searchButton');
@@ -1065,150 +1090,153 @@ document.addEventListener('DOMContentLoaded', function() {
   const expandCollapseButtons = document.querySelectorAll('.expand-collapse-btn');
   const noResultsMessage = document.getElementById('noResults');
   
-  // Initial setup - all categories expanded
-  expandCollapseButtons.forEach(button => {
-    const categoryItems = button.closest('.category-header').nextElementSibling;
-    categoryItems.style.display = 'grid'; // Initially expanded
-  });
-  
-  // Expand/Collapse functionality
-  expandCollapseButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const categoryItems = this.closest('.category-header').nextElementSibling;
-      this.classList.toggle('collapsed');
-      
-      if (this.classList.contains('collapsed')) {
-        categoryItems.style.display = 'none';
-      } else {
-        categoryItems.style.display = 'grid';
-      }
-    });
-  });
-  
-  // Search functionality
-  function performSearch() {
-    const searchTerm = searchInput.value.toLowerCase().trim();
-    let resultsFound = false;
-    
-    resourceCards.forEach(card => {
-      const cardTitle = card.querySelector('h4').textContent.toLowerCase();
-      const cardDesc = card.querySelector('p').textContent.toLowerCase();
-      const cardTags = card.getAttribute('data-tags').toLowerCase();
-      
-      if (cardTitle.includes(searchTerm) || cardDesc.includes(searchTerm) || cardTags.includes(searchTerm)) {
-        card.classList.remove('filtered-out');
-        resultsFound = true;
-      } else {
-        card.classList.add('filtered-out');
-      }
+  // Only proceed with resources interactions if elements exist
+  if (searchInput && resourceCards.length > 0) {
+    // Initial setup - all categories expanded
+    expandCollapseButtons.forEach(button => {
+      const categoryItems = button.closest('.category-header').nextElementSibling;
+      categoryItems.style.display = 'grid'; // Initially expanded
     });
     
-    // Update category visibility - hide empty categories
-    resourceCategories.forEach(category => {
-      const visibleCards = category.querySelectorAll('.resource-card:not(.filtered-out)');
-      if (visibleCards.length === 0) {
-        category.style.display = 'none';
-      } else {
-        category.style.display = 'block';
-      }
-    });
-    
-    // Show no results message if needed
-    noResultsMessage.style.display = resultsFound ? 'none' : 'block';
-  }
-  
-  // Search event listeners
-  searchButton.addEventListener('click', performSearch);
-  searchInput.addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-      performSearch();
-    }
-    
-    // Clear filter if search is empty
-    if (searchInput.value === '') {
-      resetFilters();
-    }
-  });
-  
-  // Filter functionality
-  filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // Remove active class from all buttons
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      
-      // Add active class to clicked button
-      this.classList.add('active');
-      
-      const filterValue = this.getAttribute('data-filter');
-      
-      // Reset search
-      searchInput.value = '';
-      
-      // Filter categories
-      if (filterValue === 'all') {
-        resourceCategories.forEach(category => {
-          category.style.display = 'block';
-        });
+    // Expand/Collapse functionality
+    expandCollapseButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const categoryItems = this.closest('.category-header').nextElementSibling;
+        this.classList.toggle('collapsed');
         
-        resourceCards.forEach(card => {
+        if (this.classList.contains('collapsed')) {
+          categoryItems.style.display = 'none';
+        } else {
+          categoryItems.style.display = 'grid';
+        }
+      });
+    });
+    
+    // Search functionality
+    function performSearch() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      let resultsFound = false;
+      
+      resourceCards.forEach(card => {
+        const cardTitle = card.querySelector('h4').textContent.toLowerCase();
+        const cardDesc = card.querySelector('p').textContent.toLowerCase();
+        const cardTags = card.getAttribute('data-tags').toLowerCase();
+        
+        if (cardTitle.includes(searchTerm) || cardDesc.includes(searchTerm) || cardTags.includes(searchTerm)) {
           card.classList.remove('filtered-out');
-        });
-      } else {
-        resourceCategories.forEach(category => {
-          if (category.getAttribute('data-category') === filterValue) {
-            category.style.display = 'block';
-            const cards = category.querySelectorAll('.resource-card');
-            cards.forEach(card => card.classList.remove('filtered-out'));
-          } else {
-            category.style.display = 'none';
-          }
-        });
+          resultsFound = true;
+        } else {
+          card.classList.add('filtered-out');
+        }
+      });
+      
+      // Update category visibility - hide empty categories
+      resourceCategories.forEach(category => {
+        const visibleCards = category.querySelectorAll('.resource-card:not(.filtered-out)');
+        if (visibleCards.length === 0) {
+          category.style.display = 'none';
+        } else {
+          category.style.display = 'block';
+        }
+      });
+      
+      // Show no results message if needed
+      noResultsMessage.style.display = resultsFound ? 'none' : 'block';
+    }
+    
+    // Search event listeners
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        performSearch();
       }
+      
+      // Clear filter if search is empty
+      if (searchInput.value === '') {
+        resetFilters();
+      }
+    });
+    
+    // Filter functionality
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Reset search
+        searchInput.value = '';
+        
+        // Filter categories
+        if (filterValue === 'all') {
+          resourceCategories.forEach(category => {
+            category.style.display = 'block';
+          });
+          
+          resourceCards.forEach(card => {
+            card.classList.remove('filtered-out');
+          });
+        } else {
+          resourceCategories.forEach(category => {
+            if (category.getAttribute('data-category') === filterValue) {
+              category.style.display = 'block';
+              const cards = category.querySelectorAll('.resource-card');
+              cards.forEach(card => card.classList.remove('filtered-out'));
+            } else {
+              category.style.display = 'none';
+            }
+          });
+        }
+        
+        noResultsMessage.style.display = 'none';
+      });
+    });
+    
+    // Reset filters and search
+    function resetFilters() {
+      filterButtons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === 'all') {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      
+      resourceCategories.forEach(category => {
+        category.style.display = 'block';
+      });
+      
+      resourceCards.forEach(card => {
+        card.classList.remove('filtered-out');
+      });
       
       noResultsMessage.style.display = 'none';
-    });
-  });
-  
-  // Reset filters and search
-  function resetFilters() {
-    filterButtons.forEach(btn => {
-      if (btn.getAttribute('data-filter') === 'all') {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
+    }
     
-    resourceCategories.forEach(category => {
-      category.style.display = 'block';
+    // Add animation effect when hovering over category headers
+    const categoryHeaders = document.querySelectorAll('.category-header');
+    categoryHeaders.forEach(header => {
+      header.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = '#e9ecef';
+      });
+      
+      header.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = '#f8f9fa';
+      });
+      
+      // Make entire header clickable for expand/collapse
+      header.addEventListener('click', function(e) {
+        if (e.target === this || e.target.tagName !== 'BUTTON') {
+          const button = this.querySelector('.expand-collapse-btn');
+          button.click();
+        }
+      });
     });
-    
-    resourceCards.forEach(card => {
-      card.classList.remove('filtered-out');
-    });
-    
-    noResultsMessage.style.display = 'none';
   }
-  
-  // Add animation effect when hovering over category headers
-  const categoryHeaders = document.querySelectorAll('.category-header');
-  categoryHeaders.forEach(header => {
-    header.addEventListener('mouseenter', function() {
-      this.style.backgroundColor = '#e9ecef';
-    });
-    
-    header.addEventListener('mouseleave', function() {
-      this.style.backgroundColor = '#f8f9fa';
-    });
-    
-    // Make entire header clickable for expand/collapse
-    header.addEventListener('click', function(e) {
-      if (e.target === this || e.target.tagName !== 'BUTTON') {
-        const button = this.querySelector('.expand-collapse-btn');
-        button.click();
-      }
-    });
-  });
 });
 </script>
 </body>
