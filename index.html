@@ -677,89 +677,539 @@ Crime rates in the U.S. have fallen over the past two decades, though periods li
 <!-- Resources Section -->
 <section id="resources" class="section">
   <h2>Resources for Students</h2>
-  <div class="two-column">
-    <div class="column">
-      <h3>Stata Resources</h3>
-      <ul class="resources-list">
-        <li><a href="https://www.ssc.wisc.edu/statistics/" target="_blank">University of Wisconsin - Madison</a></li>
-        <li><a href="https://www.princeton.edu/~otorres/Stata/" target="_blank">Princeton University</a></li>
-        <li><a href="https://stats.oarc.ucla.edu/stata/" target="_blank">UCLA Statistical Consulting Group</a></li>
-        <li><a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank">Harvard University IQSS</a></li>
-      </ul>
-      <h3>LaTeX Resources</h3>
-      <ul class="resources-list">
-        <li><a href="https://www.overleaf.com/latex/templates" target="_blank">Overleaf Templates</a></li>
-      </ul>
+  
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="resourceSearch" placeholder="Search resources..." class="resource-search-input">
+    <button id="searchButton" class="search-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Category Filters -->
+  <div class="filter-container">
+    <span class="filter-label">Filter by: </span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="stata">Stata</button>
+    <button class="filter-btn" data-filter="latex">LaTeX</button>
+    <button class="filter-btn" data-filter="data">Data</button>
+    <button class="filter-btn" data-filter="additional">Additional</button>
+  </div>
+  
+  <div class="resources-wrapper">
+    <!-- Resource Category: Stata -->
+    <div class="resource-category" data-category="stata">
+      <div class="category-header">
+        <h3>Stata Resources</h3>
+        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="resource-items">
+        <div class="resource-card" data-tags="stata tutorial guide">
+          <h4>University of Wisconsin - Madison</h4>
+          <p>Comprehensive Stata tutorials and resources for beginners and advanced users.</p>
+          <a href="https://www.ssc.wisc.edu/statistics/" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="stata guide econometrics">
+          <h4>Princeton University</h4>
+          <p>Stata guide for economic analysis and econometrics applications.</p>
+          <a href="https://www.princeton.edu/~otorres/Stata/" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="stata statistics analysis">
+          <h4>UCLA Statistical Consulting Group</h4>
+          <p>Extensive Stata resources with examples for statistical analysis.</p>
+          <a href="https://stats.oarc.ucla.edu/stata/" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="stata basics introduction">
+          <h4>Harvard University IQSS</h4>
+          <p>Introduction to basic Stata commands and operations.</p>
+          <a href="https://sociology.fas.harvard.edu/need-help-basic-stata" target="_blank" class="resource-link">View Resource</a>
+        </div>
+      </div>
     </div>
-    <div class="column">
-      <h3>Data Resources</h3>
-      <ul class="resources-list">
-        <li><a href="https://osf.io/zyaqn/" target="_blank">Crime Open Database (CODE)</a></li>
-        <li><a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank">National Health Interview Survey (NHIS)</a></li>
-        <li><a href="https://www.cdc.gov/brfss/index.html" target="_blank">Behavioral Risk Factor Surveillance System (BRFSS)</a></li>
-        <li><a href="https://fred.stlouisfed.org/" target="_blank">Federal Reserve Economic Data (FRED)</a></li>
-      </ul>
-      <h3>Additional Resources</h3>
-      <ul class="resources-list">
-        <li><a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank">Diff-in-Diff course: Clement De Chaisemartin</a></li>
-        <li><a href="https://asjadnaqvi.github.io/DiD/" target="_blank">Staggered DiD software packages: Asjad Naqvi </a></li>
-        <li><a href="https://neilhe.com/stata-packages" target="_blank">Synthetic Control Method Stata packages: Jialun (Neil) He</a></li>
-        <li><a href="https://jenniferdoleac.com/resources/" target="_blank">Resources: Jennifer Doleac </a></li>
-        <li><a href="https://sebastiantellotrillo.com/resources" target="_blank">Resources: Sebastian Tello Trillo</a></li>
-        <li><a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank">Coding resources: Moshi Alam</a></li>
-      </ul>
+    
+    <!-- Resource Category: LaTeX -->
+    <div class="resource-category" data-category="latex">
+      <div class="category-header">
+        <h3>LaTeX Resources</h3>
+        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="resource-items">
+        <div class="resource-card" data-tags="latex templates academic papers">
+          <h4>Overleaf Templates</h4>
+          <p>Collection of LaTeX templates for academic papers, theses, and presentations.</p>
+          <a href="https://www.overleaf.com/latex/templates" target="_blank" class="resource-link">View Resource</a>
+        </div>
+      </div>
     </div>
+    
+    <!-- Resource Category: Data Resources -->
+    <div class="resource-category" data-category="data">
+      <div class="category-header">
+        <h3>Data Resources</h3>
+        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="resource-items">
+        <div class="resource-card" data-tags="crime data statistics">
+          <h4>Crime Open Database (CODE)</h4>
+          <p>Open access database of crime statistics and related data.</p>
+          <a href="https://osf.io/zyaqn/" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="health survey data">
+          <h4>National Health Interview Survey (NHIS)</h4>
+          <p>Comprehensive health survey data from the CDC.</p>
+          <a href="https://www.cdc.gov/nchs/nhis/index.htm" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="health behavior risk factors">
+          <h4>Behavioral Risk Factor Surveillance System (BRFSS)</h4>
+          <p>Health risk behavior data collection system.</p>
+          <a href="https://www.cdc.gov/brfss/index.html" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="economic data statistics">
+          <h4>Federal Reserve Economic Data (FRED)</h4>
+          <p>Economic time series data from the Federal Reserve.</p>
+          <a href="https://fred.stlouisfed.org/" target="_blank" class="resource-link">View Resource</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Resource Category: Additional Resources -->
+    <div class="resource-category" data-category="additional">
+      <div class="category-header">
+        <h3>Additional Resources</h3>
+        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="resource-items">
+        <div class="resource-card" data-tags="diff-in-diff econometrics course">
+          <h4>Diff-in-Diff course: Clement De Chaisemartin</h4>
+          <p>Video course on difference-in-differences methodology.</p>
+          <a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="did staggered packages">
+          <h4>Staggered DiD software packages: Asjad Naqvi</h4>
+          <p>Software packages for staggered difference-in-differences analysis.</p>
+          <a href="https://asjadnaqvi.github.io/DiD/" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="synthetic control method stata">
+          <h4>Synthetic Control Method Stata packages: Jialun (Neil) He</h4>
+          <p>Stata packages for implementing synthetic control methods.</p>
+          <a href="https://neilhe.com/stata-packages" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="economics resources">
+          <h4>Resources: Jennifer Doleac</h4>
+          <p>Curated economics resources and research materials.</p>
+          <a href="https://jenniferdoleac.com/resources/" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="economics resources">
+          <h4>Resources: Sebastian Tello Trillo</h4>
+          <p>Economics resources focused on health economics.</p>
+          <a href="https://sebastiantellotrillo.com/resources" target="_blank" class="resource-link">View Resource</a>
+        </div>
+        <div class="resource-card" data-tags="coding resources undergraduate">
+          <h4>Coding resources: Moshi Alam</h4>
+          <p>Programming and coding resources for undergraduate students.</p>
+          <a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank" class="resource-link">View Resource</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- No Results Message -->
+  <div id="noResults" class="no-results-message" style="display:none;">
+    <p>No resources match your search. Try different keywords.</p>
   </div>
 </section>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Vikrant V. Kamble | Last updated: May, 2025</p>
-  </footer>
+<style>
+  /* Search Styles */
+  .search-container {
+    display: flex;
+    margin: 1.5rem 0;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .resource-search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e1e4e8;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  
+  .resource-search-input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+  }
+  
+  .search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Filter Styles */
+  .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .filter-label {
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .filter-btn {
+    background-color: #f1f3f5;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-btn:hover {
+    background-color: #e9ecef;
+  }
+  
+  .filter-btn.active {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+  }
+  
+  /* Resource Category Styles */
+  .resources-wrapper {
+    transition: all 0.3s ease;
+  }
+  
+  .resource-category {
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  .category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e1e4e8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-header:hover {
+    background-color: #e9ecef;
+  }
+  
+  .category-header h3 {
+    margin: 0;
+    color: var(--primary-color);
+  }
+  
+  .expand-collapse-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+  
+  .expand-collapse-btn.collapsed svg {
+    transform: rotate(180deg);
+  }
+  
+  .resource-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  /* Resource Card Styles */
+  .resource-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .resource-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
+  }
+  
+  .resource-card h4 {
+    margin: 0 0 10px 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+  }
+  
+  .resource-card p {
+    margin: 0 0 15px 0;
+    color: #555;
+    font-size: 0.9rem;
+    flex-grow: 1;
+  }
+  
+  .resource-link {
+    display: inline-block;
+    color: white;
+    background-color: var(--secondary-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .resource-link:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+  }
+  
+  /* Animation for Filtering and Searching */
+  .resource-card.filtered-out {
+    opacity: 0;
+    transform: scale(0.9);
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+  }
+  
+  /* No Results Message */
+  .no-results-message {
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .no-results-message p {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .resource-items {
+      grid-template-columns: 1fr;
+    }
+    
+    .filter-container {
+      justify-content: center;
+    }
+  }
+</style>
 
-<!-- Combined JavaScript for section navigation and abstract toggles -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Navigation functionality
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
-    
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        // Remove active class from all links and sections
-        navLinks.forEach(l => l.classList.remove('active'));
-        sections.forEach(s => s.classList.remove('active'));
-        
-        // Add active class to clicked link
-        this.classList.add('active');
-        
-        // Show corresponding section
-        const sectionId = this.getAttribute('data-section');
-        document.getElementById(sectionId).classList.add('active');
-        
-        // Scroll to top for better UX
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-    });
-    
-    // Abstract toggle functionality
-    const toggles = document.querySelectorAll('.abstract-toggle');
-    
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', function() {
-        // Toggle active class
-        this.classList.toggle('active');
-        
-        // Find and toggle the abstract content
-        const content = this.nextElementSibling;
-        content.classList.toggle('show');
-      });
+document.addEventListener('DOMContentLoaded', function() {
+  // Resources section interactivity
+  const searchInput = document.getElementById('resourceSearch');
+  const searchButton = document.getElementById('searchButton');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const resourceCards = document.querySelectorAll('.resource-card');
+  const resourceCategories = document.querySelectorAll('.resource-category');
+  const expandCollapseButtons = document.querySelectorAll('.expand-collapse-btn');
+  const noResultsMessage = document.getElementById('noResults');
+  
+  // Initial setup - all categories expanded
+  expandCollapseButtons.forEach(button => {
+    const categoryItems = button.closest('.category-header').nextElementSibling;
+    categoryItems.style.display = 'grid'; // Initially expanded
+  });
+  
+  // Expand/Collapse functionality
+  expandCollapseButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const categoryItems = this.closest('.category-header').nextElementSibling;
+      this.classList.toggle('collapsed');
+      
+      if (this.classList.contains('collapsed')) {
+        categoryItems.style.display = 'none';
+      } else {
+        categoryItems.style.display = 'grid';
+      }
     });
   });
+  
+  // Search functionality
+  function performSearch() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    let resultsFound = false;
+    
+    resourceCards.forEach(card => {
+      const cardTitle = card.querySelector('h4').textContent.toLowerCase();
+      const cardDesc = card.querySelector('p').textContent.toLowerCase();
+      const cardTags = card.getAttribute('data-tags').toLowerCase();
+      
+      if (cardTitle.includes(searchTerm) || cardDesc.includes(searchTerm) || cardTags.includes(searchTerm)) {
+        card.classList.remove('filtered-out');
+        resultsFound = true;
+      } else {
+        card.classList.add('filtered-out');
+      }
+    });
+    
+    // Update category visibility - hide empty categories
+    resourceCategories.forEach(category => {
+      const visibleCards = category.querySelectorAll('.resource-card:not(.filtered-out)');
+      if (visibleCards.length === 0) {
+        category.style.display = 'none';
+      } else {
+        category.style.display = 'block';
+      }
+    });
+    
+    // Show no results message if needed
+    noResultsMessage.style.display = resultsFound ? 'none' : 'block';
+  }
+  
+  // Search event listeners
+  searchButton.addEventListener('click', performSearch);
+  searchInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      performSearch();
+    }
+    
+    // Clear filter if search is empty
+    if (searchInput.value === '') {
+      resetFilters();
+    }
+  });
+  
+  // Filter functionality
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      const filterValue = this.getAttribute('data-filter');
+      
+      // Reset search
+      searchInput.value = '';
+      
+      // Filter categories
+      if (filterValue === 'all') {
+        resourceCategories.forEach(category => {
+          category.style.display = 'block';
+        });
+        
+        resourceCards.forEach(card => {
+          card.classList.remove('filtered-out');
+        });
+      } else {
+        resourceCategories.forEach(category => {
+          if (category.getAttribute('data-category') === filterValue) {
+            category.style.display = 'block';
+            const cards = category.querySelectorAll('.resource-card');
+            cards.forEach(card => card.classList.remove('filtered-out'));
+          } else {
+            category.style.display = 'none';
+          }
+        });
+      }
+      
+      noResultsMessage.style.display = 'none';
+    });
+  });
+  
+  // Reset filters and search
+  function resetFilters() {
+    filterButtons.forEach(btn => {
+      if (btn.getAttribute('data-filter') === 'all') {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    
+    resourceCategories.forEach(category => {
+      category.style.display = 'block';
+    });
+    
+    resourceCards.forEach(card => {
+      card.classList.remove('filtered-out');
+    });
+    
+    noResultsMessage.style.display = 'none';
+  }
+  
+  // Add animation effect when hovering over category headers
+  const categoryHeaders = document.querySelectorAll('.category-header');
+  categoryHeaders.forEach(header => {
+    header.addEventListener('mouseenter', function() {
+      this.style.backgroundColor = '#e9ecef';
+    });
+    
+    header.addEventListener('mouseleave', function() {
+      this.style.backgroundColor = '#f8f9fa';
+    });
+    
+    // Make entire header clickable for expand/collapse
+    header.addEventListener('click', function(e) {
+      if (e.target === this || e.target.tagName !== 'BUTTON') {
+        const button = this.querySelector('.expand-collapse-btn');
+        button.click();
+      }
+    });
+  });
+});
 </script>
 </body>
 </html>
