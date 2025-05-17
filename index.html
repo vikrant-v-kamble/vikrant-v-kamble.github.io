@@ -451,6 +451,36 @@
       }
     }
 
+    /*This is for the image on left side and information on right side*/
+
+    .home-container {
+  display: flex;
+}
+
+.profile-container {
+  flex-shrink: 0;
+  margin-right: 2rem;
+}
+
+.right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-content {
+  margin-bottom: 2rem;
+}
+
+.two-column {
+  display: flex;
+  gap: 2rem;
+}
+
+.column {
+  flex: 1;
+}
+
     /* Footer styling */
     footer {
       text-align: center;
@@ -526,54 +556,60 @@
   <!-- Content -->
   <div class="content">
     <!-- Home Section -->
+
     <section id="home" class="section active">
   <div class="home-container">
     <div class="profile-container">
       <img src="vikrant1.png" alt="Profile photo of Vikrant Kamble" class="profile-photo" width="100" height="200">
     </div>
-    <div class="home-content">
-      <p>Welcome to my website!</p>
-      <p>My name is Vikrant. I am a 4th-year Economics PhD candidate at the University of Delaware. I work on labor and health topics. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime.</p>
-      <p>My work has been published in Social Science Research.</p>
-      <div class="social-links">
-        <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
-        <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">LinkedIn</a>
-        <a href="https://x.com/home" target="_blank">Twitter</a>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Interests and Education -->
-  <div class="two-column">
-    <div class="column">
-      <h2>Research Interests</h2>
-      <ul class="interests-list">
-        <li>Health Economics</li>
-        <li>Labor Economics</li>
-        <li>Development Economics</li>
-      </ul>
-    </div>
-    <div class="column">
-      <h2>Education</h2>
-      <div class="education-item">
-        <div class="degree">
-          <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
-            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
-          </svg>
-          PhD in Economics, 2021-
+    
+    <div class="right-content">
+      <!-- Introduction text at the top right -->
+      <div class="home-content">
+        <p>Welcome to my website!</p>
+        <p>My name is Vikrant. I am a 4th-year Economics PhD candidate at the University of Delaware. I work on labor and health topics. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime.</p>
+        <p>My work has been published in Social Science Research.</p>
+        <div class="social-links">
+          <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">LinkedIn</a>
+          <a href="https://x.com/home" target="_blank">Twitter</a>
         </div>
-        <div class="university">University of Delaware</div>
       </div>
-      <div class="education-item">
-        <div class="degree">
-          <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
-            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
-          </svg>
-          MS in Economics, 2021
+      
+      <!-- Interests and Education below the text but still on the right side -->
+      <div class="two-column">
+        <div class="column">
+          <h2>Research Interests</h2>
+          <ul class="interests-list">
+            <li>Health Economics</li>
+            <li>Labor Economics</li>
+            <li>Development Economics</li>
+            <li>Environmental Economics</li>
+          </ul>
         </div>
-        <div class="university">University of Wisconsin-Madison</div>
+        <div class="column">
+          <h2>Education</h2>
+          <div class="education-item">
+            <div class="degree">
+              <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
+              </svg>
+              PhD in Economics, 2021-
+            </div>
+            <div class="university">University of Delaware</div>
+          </div>
+          <div class="education-item">
+            <div class="degree">
+              <svg class="degree-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 3L1 9l11 6l11-6z" fill="currentColor"/>
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="currentColor"/>
+              </svg>
+              MS in Economics, 2021
+            </div>
+            <div class="university">University of Wisconsin-Madison</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
