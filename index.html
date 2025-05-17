@@ -154,7 +154,61 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-  
+    
+    /* Home page layout with picture on left and content on right */
+    .home-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .profile-container {
+      flex: 0 0 auto;
+      max-width: 400px;
+    }
+
+    .home-content {
+      flex: 1 1 auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h1, h2, h3 {
+      text-align: left;
+      color: var(--primary-color);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+      border-bottom: 1px solid var(--secondary-color);
+      padding-bottom: 0.2em;
+      margin-bottom: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+      margin-top: 1.2rem;
+    }
+
+    p {
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
 
     /* Interests List - Blue dots only */
     .interests-list li {
@@ -397,36 +451,6 @@
       }
     }
 
-    /*This is for the image on left side and information on right side*/
-
-    .home-container {
-  display: flex;
-}
-
-.profile-container {
-  flex-shrink: 0;
-  margin-right: 2rem;
-}
-
-.right-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.home-content {
-  margin-bottom: 2rem;
-}
-
-.two-column {
-  display: flex;
-  gap: 2rem;
-}
-
-.column {
-  flex: 1;
-}
-
     /* Footer styling */
     footer {
       text-align: center;
@@ -502,17 +526,17 @@
   <!-- Content -->
   <div class="content">
     <!-- Home Section -->
-
-  <section id="home" class="section active">
+    <section id="home" class="section active">
       <div class="home-container">
         <div class="profile-container">
-          <img src="vikrant1.png" alt="Profile photo of Vikrant Kamble" class="profile-photo" width="100" height="200">
+          <img src="vikrantpic.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
         </div>
         <div class="home-content">
           <p>Welcome to my website!</p>
           <p>My name is Vikrant. I am a 4th-year Economics PhD candidate at the University of Delaware. I work on labor and health topics. My research employs econometric techniques to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime.</p>
             
           <p>My work has been published in Social Science Research.</p>
+
           <div class="social-links">
             <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
             <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">LinkedIn</a>
@@ -529,7 +553,6 @@
       <li>Health Economics</li>
       <li>Labor Economics</li>
       <li>Development Economics</li>
-      <li>Environmental Economics</li>
     </ul>
   </div>
   <div class="column">
@@ -557,7 +580,7 @@
   </div>
 </div>
     </section>
-    
+
     <!-- Research Section -->
     <section id="research" class="section">
       <h2>Research</h2>
