@@ -400,6 +400,31 @@
       color: var(--secondary-color);
     }
 
+    .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #f8f9fa; /* optional background */
+  font-family: sans-serif;
+}
+
+.header-name {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.header-info {
+  font-size: 1em;
+  text-align: right;
+}
+
+.header-info a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+
     /* Responsive Styles */
     @media (max-width: 768px) {
       :root {
@@ -513,13 +538,14 @@
   <!-- Header Container -->
 <header class="header-container">
   <div class="header-name">Vikrant V. Kamble</div>
-  <p class="header-info">
+  <div class="header-info">
     Economics PhD Candidate &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
     &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="CV_Vikrant_V_Kamble.pdf" target="_blank">CV</a>
-  </p>
+  </div>
 </header>
+
 
 
   <nav class="navbar">
