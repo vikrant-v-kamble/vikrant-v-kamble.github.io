@@ -402,26 +402,34 @@
 
 /*For the header container, making the small font of my name and also the verticle space reduction*/
 .header-container {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 30px;
+  font-family: sans-serif;
 }
 
-.header-name {
-  font-weight: bold;
-  font-size: 2em;
+.header-left,
+.header-right {
   margin: 0;
   line-height: 1.2;
 }
 
-.header-info {
-  margin-top: 5px; /* reduce from default ~20px */
-  line-height: 1.2;
+.header-left {
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
-.header-info a {
+.header-right {
+  font-size: 1em;
+  text-align: right;
+}
+
+.header-right a {
   text-decoration: none;
   color: #0077cc;
 }
+
 
 
 
@@ -537,14 +545,15 @@
 <body>
   <!-- Header Container -->
 <header class="header-container">
-  <div class="header-name">Vikrant V. Kamble</div>
-  <div class="header-info">
+  <div class="header-left">Vikrant V. Kamble</div>
+  <div class="header-right">
     Economics PhD Candidate &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
     &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="CV_Vikrant_V_Kamble.pdf" target="_blank">CV</a>
   </div>
 </header>
+
 
 
 
