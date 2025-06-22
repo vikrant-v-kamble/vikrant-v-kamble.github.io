@@ -99,7 +99,7 @@
     }
 
     .header-name {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-size: clamp(1.5rem, 3vw, 2rem);
       font-weight: normal;
       color: var(--primary-color);
       margin: 0;
@@ -114,9 +114,13 @@
       color: var(--text-color);
       margin: 0;
       text-align: right;
-      line-height: 1.4;
+      line-height: 1.6;
       flex: 1;
       margin-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3rem;
     }
 
     .header-info a {
@@ -530,16 +534,16 @@
 
 
 
+
   
-  <!-- Header Container -->
+<!-- Header Container -->
 <header class="header-container">
   <div class="header-name">Vikrant V. Kamble</div>
-  <p class="header-info">
-    Economics PhD Candidate &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <div class="header-info">
+    <div>Economics PhD Candidate</div>
     <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
-    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="CV_Vikrant_V_Kamble.pdf" target="_blank">CV</a>
-  </p>
+  </div>
 </header>
 
 
