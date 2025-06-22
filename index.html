@@ -403,36 +403,27 @@
 /*For the header container, making the small font of my name and also the verticle space reduction*/
 .header-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* ← allows independent vertical control of each side */
-  padding: 10px 30px;
-  margin: 0;
+  justify-content: space-between; /* ← left/right alignment */
+  align-items: flex-start;        /* ← lets you vertically nudge each item */
+  padding: 20px 30px 10px;        /* ↑ top space added with 20px */
   font-family: sans-serif;
-  /* Remove fixed height for flexibility */
 }
 
-/* === LEFT SIDE: Name === */
 .header-left {
   font-weight: bold;
   font-size: 1.6em;
   margin: 0;
-  line-height: 1;
-
-  /* Control vertical position of the name */
-  margin-top: 3px;         /* Move name down by increasing this */
-  margin-bottom: 0px;      /* Optional, if anything follows vertically */
+  line-height: 1.2;
+  margin-top: 0;                 /* fine-tune vertical alignment */
 }
 
-/* === RIGHT SIDE: Info === */
 .header-right {
   font-size: 1em;
-  line-height: 1;
+  margin: 0;
+  line-height: 1.2;
   display: flex;
   align-items: center;
-
-  /* Control vertical position of the info */
-  margin-top: 5px;        /* ← This controls space between name and info */
-  margin-bottom: 0;
+  justify-content: flex-end;
 }
 
 .header-right a {
@@ -440,10 +431,10 @@
   color: #0077cc;
 }
 
-/* === Entire Page === */
 body {
-  margin: 0;
+  margin: 0;  /* remove default browser space */
 }
+
 
 
 
@@ -571,6 +562,7 @@ body {
     <a href="CV_Vikrant_V_Kamble.pdf" target="_blank">CV</a>
   </div>
 </header>
+
 
 
 
