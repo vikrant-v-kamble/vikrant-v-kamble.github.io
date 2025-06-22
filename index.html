@@ -404,26 +404,35 @@
 .header-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* ← allows independent vertical control of each side */
   padding: 10px 30px;
   margin: 0;
   font-family: sans-serif;
-  height: 60px; /* optional: fixes header height */
+  /* Remove fixed height for flexibility */
 }
 
+/* === LEFT SIDE: Name === */
 .header-left {
   font-weight: bold;
   font-size: 1.6em;
   margin: 0;
   line-height: 1;
+
+  /* Control vertical position of the name */
+  margin-top: 3px;         /* Move name down by increasing this */
+  margin-bottom: 0px;      /* Optional, if anything follows vertically */
 }
 
+/* === RIGHT SIDE: Info === */
 .header-right {
   font-size: 1em;
-  margin: 0;
   line-height: 1;
   display: flex;
   align-items: center;
+
+  /* Control vertical position of the info */
+  margin-top: 5px;        /* ← This controls space between name and info */
+  margin-bottom: 0;
 }
 
 .header-right a {
@@ -431,9 +440,11 @@
   color: #0077cc;
 }
 
+/* === Entire Page === */
 body {
-  margin: 0; /* prevents extra space at top if not already done */
+  margin: 0;
 }
+
 
 
 
