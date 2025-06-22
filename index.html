@@ -403,27 +403,27 @@
 /*For the header container, making the small font of my name and also the verticle space reduction*/
 .header-container {
   display: flex;
-  justify-content: space-between; /* ← left/right alignment */
-  align-items: flex-start;        /* ← lets you vertically nudge each item */
-  padding: 20px 30px 10px;        /* ↑ top space added with 20px */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  margin: 0;
   font-family: sans-serif;
+  height: 60px; /* optional: fixes header height */
 }
 
 .header-left {
   font-weight: bold;
   font-size: 1.6em;
   margin: 0;
-  line-height: 1.2;
-  margin-top: 0;                 /* fine-tune vertical alignment */
+  line-height: 1;
 }
 
 .header-right {
   font-size: 1em;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .header-right a {
@@ -432,8 +432,9 @@
 }
 
 body {
-  margin: 0;  /* remove default browser space */
+  margin: 0; /* prevents extra space at top if not already done */
 }
+
 
 
 
