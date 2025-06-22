@@ -406,29 +406,35 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  font-family: sans-serif;
-}
-
-.header-left,
-.header-right {
   margin: 0;
-  line-height: 1.2;
+  font-family: sans-serif;
+  height: 60px; /* optional: fixes header height */
 }
 
 .header-left {
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.6em;
+  margin: 0;
+  line-height: 1;
 }
 
 .header-right {
   font-size: 1em;
-  text-align: right;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .header-right a {
   text-decoration: none;
   color: #0077cc;
 }
+
+body {
+  margin: 0; /* prevents extra space at top if not already done */
+}
+
 
 
 
@@ -547,12 +553,14 @@
 <header class="header-container">
   <div class="header-left">Vikrant V. Kamble</div>
   <div class="header-right">
-    Economics PhD Candidate &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <span>Economics PhD Candidate</span>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
     &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="CV_Vikrant_V_Kamble.pdf" target="_blank">CV</a>
   </div>
 </header>
+
 
 
 
