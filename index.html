@@ -89,47 +89,44 @@
     /* ===== HEADER SECTION ===== */
     .header-container {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
-      height: var(--header-height);
-      text-align: center;
-      padding: 3rem 0 2rem;
+      justify-content: space-between;
+      max-width: var(--content-width);
+      margin: 50px auto 0;
+      padding: 2rem 1rem 1.5rem;
       border-bottom: 1px solid var(--secondary-color);
-      margin-top: 50px;
     }
 
     .header-name {
       font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       font-weight: normal;
       color: var(--primary-color);
-      margin-bottom: 0.5rem;
+      margin: 0;
       line-height: 1.2;
       text-transform: uppercase;
       font-family: 'Roboto', sans-serif;
+      flex: 0 0 auto;
     }
 
-    .header-role {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      color: var(--secondary-color);
-      font-weight: 500;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    .header-email {
-      font-size: 1rem;
+    .header-info {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
       color: var(--text-color);
-      margin-top: 0.5rem;
+      margin: 0;
+      text-align: right;
+      line-height: 1.4;
+      flex: 1;
+      margin-left: 2rem;
     }
 
-    .header-email a {
+    .header-info a {
       color: var(--link-color);
       text-decoration: none;
       font-weight: 500;
       transition: var(--transition);
     }
 
-    .header-email a:hover {
+    .header-info a:hover {
       text-decoration: underline;
     }
 
@@ -465,7 +462,21 @@
       }
 
       .header-container {
-        padding: 1.5rem 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+      }
+
+      .header-name {
+        text-align: center;
+      }
+
+      .header-info {
+        text-align: center;
+        margin-left: 0;
+        font-size: clamp(0.85rem, 2.5vw, 1rem);
       }
 
       .social-links {
@@ -501,7 +512,12 @@
       }
 
       .header-container {
-        padding: 1rem 0;
+        padding: 1rem 0.5rem;
+      }
+
+      .header-info {
+        font-size: 0.9rem;
+        line-height: 1.6;
       }
 
       .content {
