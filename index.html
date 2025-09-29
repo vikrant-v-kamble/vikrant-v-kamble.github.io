@@ -327,7 +327,7 @@
       color: var(--secondary-color);
     }
 
-    /* ===== RESEARCH PAPER STYLING ===== */
+    /* ===== RESEARCH PAPER STYLING (OLD - KEEP FOR COMPATIBILITY) ===== */
     .research-paper {
       background-color: var(--light-bg);
       padding: 1.5rem 2rem;
@@ -362,45 +362,113 @@
       text-decoration: underline;
     }
 
-    /* ===== ABSTRACT TOGGLE ===== */
+    /* ===== NEW RESEARCH SECTION STYLES ===== */
+    .paper-item {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #fafafa;
+      border-left: 4px solid #2c5aa0;
+      transition: all 0.3s ease;
+    }
+
+    .paper-item:hover {
+      background: #f0f4f8;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .paper-item .paper-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .paper-authors {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 8px;
+      font-size: 0.95em;
+    }
+
+    .paper-item .paper-journal {
+      color: #666;
+      margin-bottom: 12px;
+      font-size: 0.95em;
+    }
+
+    .paper-status {
+      display: inline-block;
+      background: #e8f4f8;
+      color: #2c5aa0;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .paper-links {
+      margin-top: 12px;
+    }
+
+    .paper-links .paper-link {
+      display: inline-block;
+      color: #2c5aa0;
+      text-decoration: none;
+      padding: 6px 16px;
+      border: 1px solid #2c5aa0;
+      border-radius: 4px;
+      font-size: 0.9em;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .paper-links .paper-link:hover {
+      background: #2c5aa0;
+      color: white;
+    }
+
+    /* ===== ABSTRACT TOGGLE (UPDATED) ===== */
     .abstract-toggle {
       display: inline-flex;
       align-items: center;
-      color: #555;
+      color: #2c5aa0;
       cursor: pointer;
-      margin-top: 8px;
-      font-weight: 500;
-      transition: color 0.3s ease;
+      font-size: 0.9em;
+      margin-top: 10px;
+      user-select: none;
     }
     
     .abstract-toggle:hover {
-      color: #3498db;
+      color: #1a3a6b;
     }
     
     .abstract-toggle .arrow {
-      display: inline-block;
-      margin-right: 8px;
+      margin-right: 6px;
       transition: transform 0.3s ease;
+      font-size: 0.8em;
     }
     
-    .abstract-toggle.active .arrow {
+    .abstract-toggle .arrow.expanded {
       transform: rotate(90deg);
     }
     
     .abstract-content {
-      display: none;
-      padding: 12px 15px;
-      margin-top: 8px;
-      margin-bottom: 12px;
-      background-color: #f8f9fa;
-      border-left: 3px solid #3498db;
-      font-style: italic;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      margin-top: 15px;
+      padding-left: 20px;
+      border-left: 2px solid #ddd;
       color: #555;
-      border-radius: 0 5px 5px 0;
+      font-size: 0.95em;
+      line-height: 1.8;
     }
     
-    .abstract-content.show {
-      display: block;
+    .abstract-content.expanded {
+      max-height: 500px;
+      margin-bottom: 10px;
     }
 
     /* ===== LAYOUT COLUMNS ===== */
@@ -558,6 +626,8 @@
   </style>
 </head>
 <body>
+
+
   
 <!-- Header Container -->
 <header class="header-container">
@@ -629,63 +699,117 @@
   </div>
 </section>
 
-    <!-- Research Section -->
-    <section id="research" class="section">
+<div class="container">
+    <section id="research">
       <h2>Research</h2>
       
-      <h3>Publications</h3>
-      <div class="research-paper">
+      <!-- Publication Section -->
+      <h3>Publication</h3>
+      <div class="paper-item">
         <div class="paper-title">"Noncustodial parents, instrumental networks, and child support compliance"</div>
-        <div class="paper-author">with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger</div>
+        <div class="paper-authors">with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger</div>
         <div class="paper-journal">Social Science Research, Volume 110, February 2023, 102850</div>
-        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" class="paper-link" target="_blank">View Paper</a>
+        <div class="paper-links">
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" class="paper-link" target="_blank">View Paper</a>
+        </div>
       </div>
+
+      <!-- Working Papers Section -->
+      <h3>Working Papers</h3>
       
+      <div class="paper-item">
+        <div class="paper-title">"Intertemporal Elasticity of Labor Supply for Taxicab Drivers"</div>
+        <div class="paper-authors">with <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a></div>
+        <div class="abstract-toggle" onclick="toggleAbstract(this)">
+          <span class="arrow">▶</span> Abstract
+        </div>
+        <div class="abstract-content">
+          This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We leverage exogenous variation in earnings opportunities to identify labor supply responses. Our findings suggest positive intertemporal elasticity, indicating that drivers increase their labor supply when expected future wages are lower. These results have important implications for understanding labor market dynamics in the gig economy.
+        </div>
+      </div>
 
-  <h3>Research in Progress</h3>
-  <ul class="working-papers">
-    <li>
-      Intertemporal Elasticity of Labor Supply for Taxicab drivers: Evidence using a new instrument (co-authored with
-      <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a>)
-      <div class="abstract-toggle">
-        <span class="arrow">▶</span> Abstract
+      <div class="paper-item">
+        <div class="paper-title">"Labor Market Consequences of Cycling Program: Evidence from Bihar, India"</div>
+        <div class="abstract-toggle" onclick="toggleAbstract(this)">
+          <span class="arrow">▶</span> Abstract
+        </div>
+        <div class="abstract-content">
+          This study investigates the long-term causal effects of a government cycling program in Bihar, India on labor market outcomes using a difference-in-differences-in-differences (DDD) approach. The program provided bicycles to students to improve school attendance. We examine whether this intervention had lasting impacts on employment, wages, and labor force participation. Preliminary results suggest significant improvements in labor market outcomes, particularly for women and rural populations.
+        </div>
       </div>
-      <div class="abstract-content">
-        This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We find the positive intertemporal elasticity of labor supply for taxicab drivers.
-      </div>
-    </li>
-    <li>
-      Labor Market Consequences of Cycling Program using DiD
-      <div class="abstract-toggle">
-        <span class="arrow">▶</span> Abstract
-      </div>
-      <div class="abstract-content">
-        This study investigates the long term causal effect of cycling program on labor market outcomes using a DDD approach. Preliminary results suggest significant improvements in labor market outcomes.
-      </div>
-    </li>
-    <li>
-      Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes (co-authored with 
-      <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank"> Dr. Kenneth Shores</a> and
-      <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank"> Jesse Eze</a>)
-      <div class="abstract-toggle">
-        <span class="arrow">▶</span> Abstract
-      </div>
-      <div class="abstract-content">
-        This research evaluates how different career and technical education (CTE) pathways affect student outcomes across secondary and postsecondary levels. Using Delaware administrative data, we examine heterogeneous effects across different career clusters.
-      </div>
-    </li>
-    <li>
-      Medicaid Expansion, Ride-sharing and Crime: Evidence from US Cities (co-authored with 
-      <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Usman Taj</a>)  
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank">SSRN Link</a>
-      <div class="abstract-toggle">
-        <span class="arrow">▶</span> Abstract
-      </div>
-      <div class="abstract-content">
-Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion and ride-sharing services have influenced crime in major cities, using daily data from the 21 largest U.S. cities. We provide the first causal analysis linking these policies to urban crime trends.    </li>
-  </ul>
-</section>
 
+      <div class="paper-item">
+        <div class="paper-title">"Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes"</div>
+        <div class="paper-authors">with <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank">Kenneth Shores</a> and <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank">Jesse Eze</a></div>
+        <div class="paper-links">
+          <a href="#" class="paper-link" target="_blank">Abstract</a>
+        </div>
+        <div class="abstract-toggle" onclick="toggleAbstract(this)">
+          <span class="arrow">▶</span> Abstract
+        </div>
+        <div class="abstract-content">
+          This research evaluates how different career and technical education (CTE) pathways affect student outcomes across secondary and postsecondary levels. Using Delaware administrative data, we examine heterogeneous effects across different career clusters including health sciences, information technology, and manufacturing. We employ matching methods and panel fixed effects to identify causal impacts on graduation rates, college enrollment, and early career earnings.
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">"Medicaid Expansion and Crime: Evidence from U.S Cities"</div>
+        <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a></div>
+        <div class="paper-links">
+          <a href="#" class="paper-link" target="_blank">Link</a>
+        </div>
+        <div class="abstract-toggle" onclick="toggleAbstract(this)">
+          <span class="arrow">▶</span> Abstract
+        </div>
+        <div class="abstract-content">
+          Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion influenced crime in major cities, using daily crime data from the 21 largest U.S. cities. We provide the first causal analysis linking Medicaid expansion to urban crime trends, exploiting variation in state adoption timing to identify effects on violent and property crime rates.
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">"Ride-sharing and Crime: Evidence from U.S Cities"</div>
+        <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a></div>
+        <div class="paper-status">R&R Transportation Research Interdisciplinary Perspectives</div>
+        <div class="paper-links">
+          <a href="#" class="paper-link" target="_blank">Link</a>
+        </div>
+        <div class="abstract-toggle" onclick="toggleAbstract(this)">
+          <span class="arrow">▶</span> Abstract
+        </div>
+        <div class="abstract-content">
+          This paper investigates the causal impact of ride-sharing services (Uber and Lyft) on urban crime rates in major U.S. cities. Using the staggered rollout of ride-sharing services across cities, we employ a difference-in-differences framework to estimate effects on various crime categories. Our findings suggest that ride-sharing availability reduces certain types of crime, potentially through improved transportation options and reduced alcohol-related incidents, while having differential effects across neighborhoods with varying socioeconomic characteristics.
+        </div>
+      </div>
+
+      <!-- Work-in-Progress Section -->
+      <h3>Work-in-Progress</h3>
+      
+      <div class="paper-item">
+        <div class="paper-title">"Fueling or Failing: Evidence from Oil Price Decline"</div>
+        <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a></div>
+        <div class="paper-status">Manuscript Submitted</div>
+        <div class="abstract-toggle" onclick="toggleAbstract(this)">
+          <span class="arrow">▶</span> Abstract
+        </div>
+        <div class="abstract-content">
+          This study examines the economic consequences of oil price declines on oil-dependent economies and industries. We analyze how sudden drops in oil prices affect employment, business formation, and regional economic growth using variation in regional exposure to oil extraction. Our preliminary findings indicate significant heterogeneous effects across different sectors and regions, with implications for economic policy and diversification strategies.
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">"Forced Immigration and Borrowing Constraint"</div>
+        <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a> and Derrick Liang</div>
+        <div class="abstract-toggle" onclick="toggleAbstract(this)">
+          <span class="arrow">▶</span> Abstract
+        </div>
+        <div class="abstract-content">
+          This paper investigates how forced immigration affects borrowing constraints and financial access for displaced populations. We examine the mechanisms through which forced migration impacts credit availability, savings behavior, and financial inclusion. Using novel administrative data, we explore how policy interventions can mitigate financial constraints faced by forced immigrants and improve their economic integration outcomes.
+        </div>
+      </div>
+
+    </section>
+  </div>
+    
     <!-- Teaching Section -->
     <section id="teaching" class="section">
       <h2>Teaching Experience</h2>
@@ -1279,6 +1403,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-</script>
+
+    // Abstract toggle function for new research section
+    function toggleAbstract(element) {
+      const arrow = element.querySelector('.arrow');
+      const abstractContent = element.nextElementSibling;
+      
+      arrow.classList.toggle('expanded');
+      abstractContent.classList.toggle('expanded');
+    }
+  </script>
+
 </body>
 </html>
