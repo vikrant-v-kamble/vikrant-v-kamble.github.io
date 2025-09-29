@@ -540,6 +540,209 @@
       border-top: 1px solid rgba(0,0,0,0.1);
     }
 
+    /* Search Styles */
+    .search-container {
+      display: flex;
+      margin: 1.5rem 0;
+      max-width: 500px;
+      position: relative;
+    }
+    
+    .resource-search-input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 2px solid #e1e4e8;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+    
+    .resource-search-input:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+    }
+    
+    .search-button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #666;
+      cursor: pointer;
+      padding: 5px;
+      transition: color 0.3s ease;
+    }
+    
+    .search-button:hover {
+      color: var(--secondary-color);
+    }
+    
+    /* Filter Styles */
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    
+    .filter-label {
+      font-weight: 500;
+      color: #555;
+    }
+    
+    .filter-btn {
+      background-color: #f1f3f5;
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-btn:hover {
+      background-color: #e9ecef;
+    }
+    
+    .filter-btn.active {
+      background-color: var(--secondary-color);
+      color: white;
+      border-color: var(--secondary-color);
+    }
+    
+    /* Resource Category Styles */
+    .resources-wrapper {
+      transition: all 0.3s ease;
+    }
+    
+    .resource-category {
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #e1e4e8;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .category-header:hover {
+      background-color: #e9ecef;
+    }
+    
+    .category-header h3 {
+      margin: 0;
+      color: var(--primary-color);
+    }
+    
+    .expand-collapse-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+    }
+    
+    .expand-collapse-btn.collapsed svg {
+      transform: rotate(180deg);
+    }
+    
+    .resource-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      background-color: white;
+    }
+    
+    /* Resource Card Styles */
+    .resource-card {
+      border: 1px solid #e1e4e8;
+      border-radius: 8px;
+      padding: 15px;
+      transition: all 0.3s ease;
+      background-color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .resource-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border-color: var(--secondary-color);
+    }
+    
+    .resource-card h4 {
+      margin: 0 0 10px 0;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+    }
+    
+    .resource-card p {
+      margin: 0 0 15px 0;
+      color: #555;
+      font-size: 0.9rem;
+      flex-grow: 1;
+    }
+    
+    .resource-link {
+      display: inline-block;
+      color: white;
+      background-color: var(--secondary-color);
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .resource-link:hover {
+      background-color: var(--primary-color);
+      transform: scale(1.05);
+    }
+    
+    /* Animation for Filtering and Searching */
+    .resource-card.filtered-out {
+      opacity: 0;
+      transform: scale(0.9);
+      height: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+    }
+    
+    /* No Results Message */
+    .no-results-message {
+      text-align: center;
+      padding: 30px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    
+    .no-results-message p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
     /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 768px) {
       :root {
@@ -592,6 +795,14 @@
       .two-column, .teaching-container {
         flex-direction: column;
       }
+
+      .resource-items {
+        grid-template-columns: 1fr;
+      }
+      
+      .filter-container {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 480px) {
@@ -627,8 +838,6 @@
 </head>
 <body>
 
-
-  
 <!-- Header Container -->
 <header class="header-container">
   <div class="header-name">Vikrant V. Kamble</div>
@@ -639,565 +848,333 @@
   </div>
 </header>
 
-  <nav class="navbar">
-    <a data-section="home" class="nav-link active">Home</a>
-    <a data-section="research" class="nav-link">Research</a>
-    <a data-section="teaching" class="nav-link">Teaching</a>
-    <a data-section="resources" class="nav-link">Resources</a>
-  </nav>
+<nav class="navbar">
+  <a data-section="home" class="nav-link active">Home</a>
+  <a data-section="research" class="nav-link">Research</a>
+  <a data-section="teaching" class="nav-link">Teaching</a>
+  <a data-section="resources" class="nav-link">Resources</a>
+</nav>
 
-  <!-- Content -->
-  <div class="content">
-    <!-- Home Section -->
-    <section id="home" class="section active">
-      <div class="home-container">
+<!-- Content -->
+<div class="content">
+  <!-- Home Section -->
+  <section id="home" class="section active">
+    <div class="home-container">
+      
+      <!-- Left side: Profile photo, social links, and research interests -->
+      <div class="profile-container">
+        <!-- Circular Profile Image -->
+        <img src="vikrant1.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
         
-        <!-- Left side: Profile photo, social links, and research interests -->
-        <div class="profile-container">
-          <!-- Circular Profile Image -->
-          <img src="vikrant1.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank">
+            <i class="fas fa-graduation-cap fa-lg"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+        
+        <!-- Research Interests -->
+        <div class="research-interests">
+          <p><b><u>Research Interests:</u></b></p>
+          <p>• Health Economics<br>
+          • Labor Economics<br>
+          • Development Economics</p>
+        </div>
+      </div>
+
+      <!-- Right side: Main content -->
+      <div class="home-content">
+        <p>Welcome to my website!</p>
+        <p>My name is Vikrant. I am a 5th-year Economics PhD job market candidate at the University of Delaware. I work on labor and health topics. My research employs econometric causal methods to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime.</p>
           
-          <!-- Social Links -->
-          <div class="social-links">
-            <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank">
-              <i class="fas fa-graduation-cap fa-lg"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">
-              <i class="fab fa-linkedin fa-lg"></i>
-            </a>
+        <p>My work has been published in <em>Social Science Research</em>.</p>
+        <p>Outside of my studies, I love cooking tasty meals, singing with passion, and taking long refreshing walks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section - FIXED: Added class="section" -->
+  <section id="research" class="section">
+    <h2>Research</h2>
+    
+    <!-- Publication Section -->
+    <h3>Publication</h3>
+    <div class="paper-item">
+      <div class="paper-title">"Noncustodial parents, instrumental networks, and child support compliance"</div>
+      <div class="paper-authors">with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger</div>
+      <div class="paper-journal">Social Science Research, Volume 110, February 2023, 102850</div>
+      <div class="paper-links">
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" class="paper-link" target="_blank">View Paper</a>
+      </div>
+    </div>
+
+    <!-- Working Papers Section -->
+    <h3>Working Papers</h3>
+    
+    <div class="paper-item">
+      <div class="paper-title">"Intertemporal Elasticity of Labor Supply for Taxicab Drivers"</div>
+      <div class="paper-authors">with <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a></div>
+      <div class="abstract-toggle" onclick="toggleAbstract(this)">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We leverage exogenous variation in earnings opportunities to identify labor supply responses. Our findings suggest positive intertemporal elasticity, indicating that drivers increase their labor supply when expected future wages are lower. These results have important implications for understanding labor market dynamics in the gig economy.
+      </div>
+    </div>
+
+    <div class="paper-item">
+      <div class="paper-title">"Labor Market Consequences of Cycling Program: Evidence from Bihar, India"</div>
+      <div class="abstract-toggle" onclick="toggleAbstract(this)">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        This study investigates the long-term causal effects of a government cycling program in Bihar, India on labor market outcomes using a difference-in-differences-in-differences (DDD) approach. The program provided bicycles to students to improve school attendance. We examine whether this intervention had lasting impacts on employment, wages, and labor force participation. Preliminary results suggest significant improvements in labor market outcomes, particularly for women and rural populations.
+      </div>
+    </div>
+
+    <div class="paper-item">
+      <div class="paper-title">"Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes"</div>
+      <div class="paper-authors">with <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank">Kenneth Shores</a> and <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank">Jesse Eze</a></div>
+      <div class="paper-links">
+        <a href="#" class="paper-link" target="_blank">Abstract</a>
+      </div>
+      <div class="abstract-toggle" onclick="toggleAbstract(this)">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        This research evaluates how different career and technical education (CTE) pathways affect student outcomes across secondary and postsecondary levels. Using Delaware administrative data, we examine heterogeneous effects across different career clusters including health sciences, information technology, and manufacturing. We employ matching methods and panel fixed effects to identify causal impacts on graduation rates, college enrollment, and early career earnings.
+      </div>
+    </div>
+
+    <div class="paper-item">
+      <div class="paper-title">"Medicaid Expansion and Crime: Evidence from U.S Cities"</div>
+      <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a></div>
+      <div class="paper-links">
+        <a href="#" class="paper-link" target="_blank">Link</a>
+      </div>
+      <div class="abstract-toggle" onclick="toggleAbstract(this)">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion influenced crime in major cities, using daily crime data from the 21 largest U.S. cities. We provide the first causal analysis linking Medicaid expansion to urban crime trends, exploiting variation in state adoption timing to identify effects on violent and property crime rates.
+      </div>
+    </div>
+
+    <div class="paper-item">
+      <div class="paper-title">"Ride-sharing and Crime: Evidence from U.S Cities"</div>
+      <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a></div>
+      <div class="paper-status">R&R Transportation Research Interdisciplinary Perspectives</div>
+      <div class="paper-links">
+        <a href="#" class="paper-link" target="_blank">Link</a>
+      </div>
+      <div class="abstract-toggle" onclick="toggleAbstract(this)">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        This paper investigates the causal impact of ride-sharing services (Uber and Lyft) on urban crime rates in major U.S. cities. Using the staggered rollout of ride-sharing services across cities, we employ a difference-in-differences framework to estimate effects on various crime categories. Our findings suggest that ride-sharing availability reduces certain types of crime, potentially through improved transportation options and reduced alcohol-related incidents, while having differential effects across neighborhoods with varying socioeconomic characteristics.
+      </div>
+    </div>
+
+    <!-- Work-in-Progress Section -->
+    <h3>Work-in-Progress</h3>
+    
+    <div class="paper-item">
+      <div class="paper-title">"Fueling or Failing: Evidence from Oil Price Decline"</div>
+      <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a></div>
+      <div class="paper-status">Manuscript Submitted</div>
+      <div class="abstract-toggle" onclick="toggleAbstract(this)">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        This study examines the economic consequences of oil price declines on oil-dependent economies and industries. We analyze how sudden drops in oil prices affect employment, business formation, and regional economic growth using variation in regional exposure to oil extraction. Our preliminary findings indicate significant heterogeneous effects across different sectors and regions, with implications for economic policy and diversification strategies.
+      </div>
+    </div>
+
+    <div class="paper-item">
+      <div class="paper-title">"Forced Immigration and Borrowing Constraint"</div>
+      <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a> and Derrick Liang</div>
+      <div class="abstract-toggle" onclick="toggleAbstract(this)">
+        <span class="arrow">▶</span> Abstract
+      </div>
+      <div class="abstract-content">
+        This paper investigates how forced immigration affects borrowing constraints and financial access for displaced populations. We examine the mechanisms through which forced migration impacts credit availability, savings behavior, and financial inclusion. Using novel administrative data, we explore how policy interventions can mitigate financial constraints faced by forced immigrants and improve their economic integration outcomes.
+      </div>
+    </div>
+  </section>
+  
+  <!-- Teaching Section -->
+  <section id="teaching" class="section">
+    <h2>Teaching Experience</h2>
+    
+    <h3>Instructor</h3>
+    <ul>
+      <li>ECON101: Introduction to Microeconomics <a href="econ101_course_evaluations_winter2025.pdf" target="_blank">(Course evaluations)</a>
+        <p class="indent"> Winter 2025 | Textbook Used: Principles of Microconomics, 2nd edition by Stevenson and Wolfers</p>
+      </li>
+    </ul>
+    
+    <h3>Graduate Courses (Teaching Assistant)</h3>
+    <ul>
+      <li>ECON814: Macroeconomics Theory II
+        <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+      </li>
+      <li>ECON824: Econometrics of Cross-Section and Panel Data
+        <p class="indent">Fall 2023, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a></p>
+      </li>
+    </ul>
+    
+    <h3>Undergraduate Courses (Teaching Assistant)</h3>
+    <ul>
+      <li>ECON301: Intermediate Microeconomics with Calculus
+        <p class="indent">Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></p>
+      </li>
+      <li>ECON304: Quantitative Macroeconomic Theory
+        <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+      </li>
+      <li>ECON422: Econometric Methods and Models
+        <p class="indent">Fall 2022, Fall 2023, Spring 2024, Fall 2024, Spring 2025 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Resources Section -->
+  <section id="resources" class="section">
+    <h2>Resources for Students</h2>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="resourceSearch" placeholder="Search resources..." class="resource-search-input">
+      <button id="searchButton" class="search-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Category Filters -->
+    <div class="filter-container">
+      <span class="filter-label">Filter by: </span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="stata">Stata</button>
+      <button class="filter-btn" data-filter="latex">LaTeX</button>
+      <button class="filter-btn" data-filter="additional">Additional</button>
+    </div>
+    
+    <div class="resources-wrapper">
+      <!-- Resource Category: Stata -->
+      <div class="resource-category" data-category="stata">
+        <div class="category-header">
+          <h3>Stata Resources</h3>
+          <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
+        <div class="resource-items">
+          <div class="resource-card" data-tags="stata tutorial guide">
+            <h4>University of Wisconsin - Madison</h4>
+            <p>Comprehensive Stata tutorials and resources for beginners and advanced users.</p>
+            <a href="https://www.ssc.wisc.edu/statistics/" target="_blank" class="resource-link">View Resource</a>
           </div>
-          
-          <!-- Research Interests -->
-          <div class="research-interests">
-            <p><b><u>Research Interests:</u></b></p>
-            <p>• Health Economics<br>
-            • Labor Economics<br>
-            • Development Economics</p>
+          <div class="resource-card" data-tags="stata guide econometrics">
+            <h4>Princeton University</h4>
+            <p>Stata guide for economic analysis and econometrics applications.</p>
+            <a href="https://www.princeton.edu/~otorres/Stata/" target="_blank" class="resource-link">View Resource</a>
+          </div>
+          <div class="resource-card" data-tags="stata statistics analysis">
+            <h4>UCLA Statistical Consulting Group</h4>
+            <p>Extensive Stata resources with examples for statistical analysis.</p>
+            <a href="https://stats.oarc.ucla.edu/stata/" target="_blank" class="resource-link">View Resource</a>
+          </div>
+          <div class="resource-card" data-tags="stata basics introduction">
+            <h4>Top 25 Stata Visualizations </h4>
+            <p>With Full Stata Code (by Fahad Mirza) </p>
+            <a href="https://medium.com/the-stata-gallery/top-25-stata-visualizations-with-full-code-668b5df114b6" target="_blank" class="resource-link">View Resource</a>
           </div>
         </div>
-
-        <!-- Right side: Main content -->
-        <div class="home-content">
-          <p>Welcome to my website!</p>
-          <p>My name is Vikrant. I am a 5th-year Economics PhD job market candidate at the University of Delaware. I work on labor and health topics. My research employs econometric causal methods to understand policy impacts on communities, including studies on labor market behavior, career education outcomes, and Medicaid expansion effects on crime.</p>
-            
-          <p>My work has been published in <em>Social Science Research</em>.</p>
-          <p>Outside of my studies, I love cooking tasty meals, singing with passion, and taking long refreshing walks.</p>
-
-
-<!-- 
-  This is commented out
-  <p><b><u>Education:</u></b><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>PhD in Economics</strong>, 2021 – present<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University of Delaware<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• <strong>MS in Economics</strong>, 2021<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University of Wisconsin–Madison
-  </p>
--->
-
-    </div>
-  </div>
-</section>
-
-<div class="container">
-    <section id="research">
-      <h2>Research</h2>
+      </div>
       
-      <!-- Publication Section -->
-      <h3>Publication</h3>
-      <div class="paper-item">
-        <div class="paper-title">"Noncustodial parents, instrumental networks, and child support compliance"</div>
-        <div class="paper-authors">with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger</div>
-        <div class="paper-journal">Social Science Research, Volume 110, February 2023, 102850</div>
-        <div class="paper-links">
-          <a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" class="paper-link" target="_blank">View Paper</a>
+      <!-- Resource Category: LaTeX -->
+      <div class="resource-category" data-category="latex">
+        <div class="category-header">
+          <h3>LaTeX Resources</h3>
+          <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
+        <div class="resource-items">
+          <div class="resource-card" data-tags="latex templates academic papers">
+            <h4>Overleaf Templates</h4>
+            <p>Collection of LaTeX templates for academic papers, theses, and presentations.</p>
+            <a href="https://www.overleaf.com/latex/templates" target="_blank" class="resource-link">View Resource</a>
+          </div>
         </div>
       </div>
-
-      <!-- Working Papers Section -->
-      <h3>Working Papers</h3>
       
-      <div class="paper-item">
-        <div class="paper-title">"Intertemporal Elasticity of Labor Supply for Taxicab Drivers"</div>
-        <div class="paper-authors">with <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a></div>
-        <div class="abstract-toggle" onclick="toggleAbstract(this)">
-          <span class="arrow">▶</span> Abstract
+      <!-- Resource Category: Additional Resources -->
+      <div class="resource-category" data-category="additional">
+        <div class="category-header">
+          <h3>Additional Resources</h3>
+          <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
         </div>
-        <div class="abstract-content">
-          This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We leverage exogenous variation in earnings opportunities to identify labor supply responses. Our findings suggest positive intertemporal elasticity, indicating that drivers increase their labor supply when expected future wages are lower. These results have important implications for understanding labor market dynamics in the gig economy.
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-title">"Labor Market Consequences of Cycling Program: Evidence from Bihar, India"</div>
-        <div class="abstract-toggle" onclick="toggleAbstract(this)">
-          <span class="arrow">▶</span> Abstract
-        </div>
-        <div class="abstract-content">
-          This study investigates the long-term causal effects of a government cycling program in Bihar, India on labor market outcomes using a difference-in-differences-in-differences (DDD) approach. The program provided bicycles to students to improve school attendance. We examine whether this intervention had lasting impacts on employment, wages, and labor force participation. Preliminary results suggest significant improvements in labor market outcomes, particularly for women and rural populations.
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-title">"Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes"</div>
-        <div class="paper-authors">with <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank">Kenneth Shores</a> and <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank">Jesse Eze</a></div>
-        <div class="paper-links">
-          <a href="#" class="paper-link" target="_blank">Abstract</a>
-        </div>
-        <div class="abstract-toggle" onclick="toggleAbstract(this)">
-          <span class="arrow">▶</span> Abstract
-        </div>
-        <div class="abstract-content">
-          This research evaluates how different career and technical education (CTE) pathways affect student outcomes across secondary and postsecondary levels. Using Delaware administrative data, we examine heterogeneous effects across different career clusters including health sciences, information technology, and manufacturing. We employ matching methods and panel fixed effects to identify causal impacts on graduation rates, college enrollment, and early career earnings.
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-title">"Medicaid Expansion and Crime: Evidence from U.S Cities"</div>
-        <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a></div>
-        <div class="paper-links">
-          <a href="#" class="paper-link" target="_blank">Link</a>
-        </div>
-        <div class="abstract-toggle" onclick="toggleAbstract(this)">
-          <span class="arrow">▶</span> Abstract
-        </div>
-        <div class="abstract-content">
-          Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion influenced crime in major cities, using daily crime data from the 21 largest U.S. cities. We provide the first causal analysis linking Medicaid expansion to urban crime trends, exploiting variation in state adoption timing to identify effects on violent and property crime rates.
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-title">"Ride-sharing and Crime: Evidence from U.S Cities"</div>
-        <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a></div>
-        <div class="paper-status">R&R Transportation Research Interdisciplinary Perspectives</div>
-        <div class="paper-links">
-          <a href="#" class="paper-link" target="_blank">Link</a>
-        </div>
-        <div class="abstract-toggle" onclick="toggleAbstract(this)">
-          <span class="arrow">▶</span> Abstract
-        </div>
-        <div class="abstract-content">
-          This paper investigates the causal impact of ride-sharing services (Uber and Lyft) on urban crime rates in major U.S. cities. Using the staggered rollout of ride-sharing services across cities, we employ a difference-in-differences framework to estimate effects on various crime categories. Our findings suggest that ride-sharing availability reduces certain types of crime, potentially through improved transportation options and reduced alcohol-related incidents, while having differential effects across neighborhoods with varying socioeconomic characteristics.
-        </div>
-      </div>
-
-      <!-- Work-in-Progress Section -->
-      <h3>Work-in-Progress</h3>
-      
-      <div class="paper-item">
-        <div class="paper-title">"Fueling or Failing: Evidence from Oil Price Decline"</div>
-        <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a></div>
-        <div class="paper-status">Manuscript Submitted</div>
-        <div class="abstract-toggle" onclick="toggleAbstract(this)">
-          <span class="arrow">▶</span> Abstract
-        </div>
-        <div class="abstract-content">
-          This study examines the economic consequences of oil price declines on oil-dependent economies and industries. We analyze how sudden drops in oil prices affect employment, business formation, and regional economic growth using variation in regional exposure to oil extraction. Our preliminary findings indicate significant heterogeneous effects across different sectors and regions, with implications for economic policy and diversification strategies.
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-title">"Forced Immigration and Borrowing Constraint"</div>
-        <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a> and Derrick Liang</div>
-        <div class="abstract-toggle" onclick="toggleAbstract(this)">
-          <span class="arrow">▶</span> Abstract
-        </div>
-        <div class="abstract-content">
-          This paper investigates how forced immigration affects borrowing constraints and financial access for displaced populations. We examine the mechanisms through which forced migration impacts credit availability, savings behavior, and financial inclusion. Using novel administrative data, we explore how policy interventions can mitigate financial constraints faced by forced immigrants and improve their economic integration outcomes.
-        </div>
-      </div>
-
-    </section>
-  </div>
-    
-    <!-- Teaching Section -->
-    <section id="teaching" class="section">
-      <h2>Teaching Experience</h2>
-      
-      <h3>Instructor</h3>
-      <ul>
-        <li>ECON101: Introduction to Microeconomics <a href="econ101_course_evaluations_winter2025.pdf" target="_blank">(Course evaluations)</a>
-          <p class="indent"> Winter 2025 | Textbook Used: Principles of Microconomics, 2nd edition by Stevenson and Wolfers</p>
-        </li>
-      </ul>
-      
-      <h3>Graduate Courses (Teaching Assistant)</h3>
-      <ul>
-        <li>ECON814: Macroeconomics Theory II
-          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
-        </li>
-        <li>ECON824: Econometrics of Cross-Section and Panel Data
-          <p class="indent">Fall 2023, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a></p>
-        </li>
-      </ul>
-      
-      <h3>Undergraduate Courses (Teaching Assistant)</h3>
-      <ul>
-        <li>ECON301: Intermediate Microeconomics with Calculus
-          <p class="indent">Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></p>
-        </li>
-        <li>ECON304: Quantitative Macroeconomic Theory
-          <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
-        </li>
-        <li>ECON422: Econometric Methods and Models
-          <p class="indent">Fall 2022, Fall 2023, Spring 2024, Fall 2024, Spring 2025 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></p>
-        </li>
-      </ul>
-    </section>
-
-<!-- Resources Section -->
-<section id="resources" class="section">
-  <h2>Resources for Students</h2>
-  
-  <!-- Search Bar -->
-  <div class="search-container">
-    <input type="text" id="resourceSearch" placeholder="Search resources..." class="resource-search-input">
-    <button id="searchButton" class="search-button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-    </button>
-  </div>
-  
-  <!-- Category Filters -->
-  <div class="filter-container">
-    <span class="filter-label">Filter by: </span>
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="stata">Stata</button>
-    <button class="filter-btn" data-filter="latex">LaTeX</button>
-    <button class="filter-btn" data-filter="additional">Additional</button>
-  </div>
-  
-  <div class="resources-wrapper">
-    <!-- Resource Category: Stata -->
-    <div class="resource-category" data-category="stata">
-      <div class="category-header">
-        <h3>Stata Resources</h3>
-        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-      </div>
-      <div class="resource-items">
-        <div class="resource-card" data-tags="stata tutorial guide">
-          <h4>University of Wisconsin - Madison</h4>
-          <p>Comprehensive Stata tutorials and resources for beginners and advanced users.</p>
-          <a href="https://www.ssc.wisc.edu/statistics/" target="_blank" class="resource-link">View Resource</a>
-        </div>
-        <div class="resource-card" data-tags="stata guide econometrics">
-          <h4>Princeton University</h4>
-          <p>Stata guide for economic analysis and econometrics applications.</p>
-          <a href="https://www.princeton.edu/~otorres/Stata/" target="_blank" class="resource-link">View Resource</a>
-        </div>
-        <div class="resource-card" data-tags="stata statistics analysis">
-          <h4>UCLA Statistical Consulting Group</h4>
-          <p>Extensive Stata resources with examples for statistical analysis.</p>
-          <a href="https://stats.oarc.ucla.edu/stata/" target="_blank" class="resource-link">View Resource</a>
-        </div>
-        <div class="resource-card" data-tags="stata basics introduction">
-          <h4>Top 25 Stata Visualizations </h4>
-          <p>With Full Stata Code (by Fahad Mirza) </p>
-          <a href="https://medium.com/the-stata-gallery/top-25-stata-visualizations-with-full-code-668b5df114b6" target="_blank" class="resource-link">View Resource</a>
+        <div class="resource-items">
+          <div class="resource-card" data-tags="DiD Resources">
+            <h4>DiD Resources: Pedro H. C. Sant'Anna</h4>
+            <p>A Comprehensive Course on DiD</p>
+            <a href="https://psantanna.com/did-resources/" target="_blank" class="resource-link">View Resource</a>
+          </div>
+          <div class="resource-card" data-tags="diff-in-diff econometrics course">
+            <h4>Diff-in-Diff course: Clement De Chaisemartin</h4>
+            <p>Video course on difference-in-differences methodology.</p>
+            <a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank" class="resource-link">View Resource</a>
+          </div>
+          <div class="resource-card" data-tags="did staggered packages">
+            <h4>Staggered DiD software packages: Asjad Naqvi</h4>
+            <p>Software packages for staggered difference-in-differences analysis.</p>
+            <a href="https://asjadnaqvi.github.io/DiD/" target="_blank" class="resource-link">View Resource</a>
+          </div>
+          <div class="resource-card" data-tags="synthetic control method stata">
+            <h4>Synthetic Control Method Stata packages: Jialun (Neil) He</h4>
+            <p>Stata packages for implementing synthetic control methods.</p>
+            <a href="https://neilhe.com/stata-packages" target="_blank" class="resource-link">View Resource</a>
+          </div>
+          <div class="resource-card" data-tags="economics resources">
+            <h4>Resources: Jennifer Doleac</h4>
+            <p>Curated economics resources and research materials.</p>
+            <a href="https://jenniferdoleac.com/resources/" target="_blank" class="resource-link">View Resource</a>
+          </div>
+          <div class="resource-card" data-tags="economics resources">
+            <h4>Resources: Sebastian Tello Trillo</h4>
+            <p>Economics resources -- Almost all.</p>
+            <a href="https://sebastiantellotrillo.com/resources" target="_blank" class="resource-link">View Resource</a>
+          </div>
+          <div class="resource-card" data-tags="coding resources undergraduate">
+            <h4>Coding resources: Moshi Alam</h4>
+            <p>Programming and coding resources for undergraduate students.</p>
+            <a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank" class="resource-link">View Resource</a>
+          </div>
         </div>
       </div>
     </div>
     
-    <!-- Resource Category: LaTeX -->
-    <div class="resource-category" data-category="latex">
-      <div class="category-header">
-        <h3>LaTeX Resources</h3>
-        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-      </div>
-      <div class="resource-items">
-        <div class="resource-card" data-tags="latex templates academic papers">
-          <h4>Overleaf Templates</h4>
-          <p>Collection of LaTeX templates for academic papers, theses, and presentations.</p>
-          <a href="https://www.overleaf.com/latex/templates" target="_blank" class="resource-link">View Resource</a>
-        </div>
-      </div>
+    <!-- No Results Message -->
+    <div id="noResults" class="no-results-message" style="display:none;">
+      <p>No resources match your search. Try different keywords.</p>
     </div>
-    
+  </section>
+</div>
 
-    
-    <!-- Resource Category: Additional Resources -->
-    <div class="resource-category" data-category="additional">
-      <div class="category-header">
-        <h3>Additional Resources</h3>
-        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-      </div>
-      <div class="resource-items">
-        <div class="resource-card" data-tags="DiD Resources">
-          <h4>DiD Resources: Pedro H. C. Sant'Anna</h4>
-          <p>A Comprehensive Course on DiD</p>
-          <a href="https://psantanna.com/did-resources/" target="_blank" class="resource-link">View Resource</a>
-        </div>
-        <div class="resource-card" data-tags="diff-in-diff econometrics course">
-          <h4>Diff-in-Diff course: Clement De Chaisemartin</h4>
-          <p>Video course on difference-in-differences methodology.</p>
-          <a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank" class="resource-link">View Resource</a>
-        </div>
-        <div class="resource-card" data-tags="did staggered packages">
-          <h4>Staggered DiD software packages: Asjad Naqvi</h4>
-          <p>Software packages for staggered difference-in-differences analysis.</p>
-          <a href="https://asjadnaqvi.github.io/DiD/" target="_blank" class="resource-link">View Resource</a>
-        </div>
-        <div class="resource-card" data-tags="synthetic control method stata">
-          <h4>Synthetic Control Method Stata packages: Jialun (Neil) He</h4>
-          <p>Stata packages for implementing synthetic control methods.</p>
-          <a href="https://neilhe.com/stata-packages" target="_blank" class="resource-link">View Resource</a>
-        </div>
-        <div class="resource-card" data-tags="economics resources">
-          <h4>Resources: Jennifer Doleac</h4>
-          <p>Curated economics resources and research materials.</p>
-          <a href="https://jenniferdoleac.com/resources/" target="_blank" class="resource-link">View Resource</a>
-        </div>
-        <div class="resource-card" data-tags="economics resources">
-          <h4>Resources: Sebastian Tello Trillo</h4>
-          <p>Economics resources -- Almost all.</p>
-          <a href="https://sebastiantellotrillo.com/resources" target="_blank" class="resource-link">View Resource</a>
-        </div>
-        <div class="resource-card" data-tags="coding resources undergraduate">
-          <h4>Coding resources: Moshi Alam</h4>
-          <p>Programming and coding resources for undergraduate students.</p>
-          <a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank" class="resource-link">View Resource</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- No Results Message -->
-  <div id="noResults" class="no-results-message" style="display:none;">
-    <p>No resources match your search. Try different keywords.</p>
-  </div>
-</section>
-
-<style>
-  /* Search Styles */
-  .search-container {
-    display: flex;
-    margin: 1.5rem 0;
-    max-width: 500px;
-    position: relative;
-  }
-  
-  .resource-search-input {
-    width: 100%;
-    padding: 10px 15px;
-    border: 2px solid #e1e4e8;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    outline: none;
-  }
-  
-  .resource-search-input:focus {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
-  }
-  
-  .search-button {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    padding: 5px;
-    transition: color 0.3s ease;
-  }
-  
-  .search-button:hover {
-    color: var(--secondary-color);
-  }
-  
-  /* Filter Styles */
-  .filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
-    align-items: center;
-  }
-  
-  .filter-label {
-    font-weight: 500;
-    color: #555;
-  }
-  
-  .filter-btn {
-    background-color: #f1f3f5;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
-    padding: 6px 12px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .filter-btn:hover {
-    background-color: #e9ecef;
-  }
-  
-  .filter-btn.active {
-    background-color: var(--secondary-color);
-    color: white;
-    border-color: var(--secondary-color);
-  }
-  
-  /* Resource Category Styles */
-  .resources-wrapper {
-    transition: all 0.3s ease;
-  }
-  
-  .resource-category {
-    margin-bottom: 2rem;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-  }
-  
-  .category-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e1e4e8;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .category-header:hover {
-    background-color: #e9ecef;
-  }
-  
-  .category-header h3 {
-    margin: 0;
-    color: var(--primary-color);
-  }
-  
-  .expand-collapse-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-  }
-  
-  .expand-collapse-btn.collapsed svg {
-    transform: rotate(180deg);
-  }
-  
-  .resource-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    background-color: white;
-  }
-  
-  /* Resource Card Styles */
-  .resource-card {
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 15px;
-    transition: all 0.3s ease;
-    background-color: white;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .resource-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-color: var(--secondary-color);
-  }
-  
-  .resource-card h4 {
-    margin: 0 0 10px 0;
-    color: var(--primary-color);
-    font-size: 1.1rem;
-  }
-  
-  .resource-card p {
-    margin: 0 0 15px 0;
-    color: #555;
-    font-size: 0.9rem;
-    flex-grow: 1;
-  }
-  
-  .resource-link {
-    display: inline-block;
-    color: white;
-    background-color: var(--secondary-color);
-    padding: 8px 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    text-align: center;
-  }
-  
-  .resource-link:hover {
-    background-color: var(--primary-color);
-    transform: scale(1.05);
-  }
-  
-  /* Animation for Filtering and Searching */
-  .resource-card.filtered-out {
-    opacity: 0;
-    transform: scale(0.9);
-    height: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-  }
-  
-  /* No Results Message */
-  .no-results-message {
-    text-align: center;
-    padding: 30px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-  
-  .no-results-message p {
-    color: #555;
-    font-size: 1.1rem;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .resource-items {
-      grid-template-columns: 1fr;
-    }
-    
-    .filter-container {
-      justify-content: center;
-    }
-  }
-</style>
-
-<!-- This is just the JavaScript part you need to make the abstracts work correctly -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Navigation functionality for the entire site
@@ -1222,28 +1199,6 @@ document.addEventListener('DOMContentLoaded', function() {
         top: 0,
         behavior: 'smooth'
       });
-    });
-  });
-
-  // Abstract toggle functionality for Research section
-  const abstractToggles = document.querySelectorAll('.abstract-toggle');
-  
-  abstractToggles.forEach(toggle => {
-    toggle.addEventListener('click', function() {
-      // Toggle active class
-      this.classList.toggle('active');
-      
-      // Find and toggle the abstract content
-      const abstractContent = this.nextElementSibling;
-      abstractContent.classList.toggle('show');
-      
-      // Animate the arrow
-      const arrow = this.querySelector('.arrow');
-      if (this.classList.contains('active')) {
-        arrow.textContent = '▼';
-      } else {
-        arrow.textContent = '▶';
-      }
     });
   });
 
@@ -1404,15 +1359,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-    // Abstract toggle function for new research section
-    function toggleAbstract(element) {
-      const arrow = element.querySelector('.arrow');
-      const abstractContent = element.nextElementSibling;
-      
-      arrow.classList.toggle('expanded');
-      abstractContent.classList.toggle('expanded');
-    }
-  </script>
+// Abstract toggle function for research section
+function toggleAbstract(element) {
+  const arrow = element.querySelector('.arrow');
+  const abstractContent = element.nextElementSibling;
+  
+  arrow.classList.toggle('expanded');
+  abstractContent.classList.toggle('expanded');
+}
+</script>
 
 </body>
 </html>
