@@ -667,15 +667,17 @@
     
     /* Resource Card Styles */
     .resource-card {
-      border: 1px solid #e1e4e8;
-      border-radius: 8px;
-      padding: 15px;
-      transition: all 0.3s ease;
-      background-color: white;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  background-color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;  /* Add this */
+  color: inherit;         /* Add this */
+}
     
     .resource-card:hover {
       transform: translateY(-3px);
@@ -1039,132 +1041,121 @@
   </section>
 
   <!-- Resources Section -->
-  <section id="resources" class="section">
-    <h2>Resources for Students</h2>
-    
-    <!-- Search Bar -->
-    <div class="search-container">
-      <input type="text" id="resourceSearch" placeholder="Search resources..." class="resource-search-input">
-      <button id="searchButton" class="search-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
-    </div>
-    
-    <!-- Category Filters -->
-    <div class="filter-container">
-      <span class="filter-label">Filter by: </span>
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="stata">Stata</button>
-      <button class="filter-btn" data-filter="latex">LaTeX</button>
-      <button class="filter-btn" data-filter="additional">Additional</button>
-    </div>
-    
-    <div class="resources-wrapper">
-      <!-- Resource Category: Stata -->
-      <div class="resource-category" data-category="stata">
-        <div class="category-header">
-          <h3>Stata Resources</h3>
-          <button class="expand-collapse-btn" aria-label="Expand or collapse section">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-        </div>
-        <div class="resource-items">
-          <div class="resource-card" data-tags="stata tutorial guide">
-            <h4>University of Wisconsin - Madison</h4>
-            <p>Comprehensive Stata tutorials and resources for beginners and advanced users.</p>
-            <a href="https://www.ssc.wisc.edu/statistics/" target="_blank" class="resource-link">View Resource</a>
-          </div>
-          <div class="resource-card" data-tags="stata guide econometrics">
-            <h4>Princeton University</h4>
-            <p>Stata guide for economic analysis and econometrics applications.</p>
-            <a href="https://www.princeton.edu/~otorres/Stata/" target="_blank" class="resource-link">View Resource</a>
-          </div>
-          <div class="resource-card" data-tags="stata statistics analysis">
-            <h4>UCLA Statistical Consulting Group</h4>
-            <p>Extensive Stata resources with examples for statistical analysis.</p>
-            <a href="https://stats.oarc.ucla.edu/stata/" target="_blank" class="resource-link">View Resource</a>
-          </div>
-          <div class="resource-card" data-tags="stata basics introduction">
-            <h4>Top 25 Stata Visualizations </h4>
-            <p>With Full Stata Code (by Fahad Mirza) </p>
-            <a href="https://medium.com/the-stata-gallery/top-25-stata-visualizations-with-full-code-668b5df114b6" target="_blank" class="resource-link">View Resource</a>
-          </div>
-        </div>
+<section id="resources" class="section">
+  <h2>Resources for Students</h2>
+  
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="resourceSearch" placeholder="Search resources..." class="resource-search-input">
+    <button id="searchButton" class="search-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Category Filters -->
+  <div class="filter-container">
+    <span class="filter-label">Filter by: </span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="stata">Stata</button>
+    <button class="filter-btn" data-filter="latex">LaTeX</button>
+    <button class="filter-btn" data-filter="additional">Additional</button>
+  </div>
+  
+  <div class="resources-wrapper">
+    <!-- Resource Category: Stata -->
+    <div class="resource-category" data-category="stata">
+      <div class="category-header">
+        <h3>Stata Resources</h3>
+        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
       </div>
-      
-      <!-- Resource Category: LaTeX -->
-      <div class="resource-category" data-category="latex">
-        <div class="category-header">
-          <h3>LaTeX Resources</h3>
-          <button class="expand-collapse-btn" aria-label="Expand or collapse section">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-        </div>
-        <div class="resource-items">
-          <div class="resource-card" data-tags="latex templates academic papers">
-            <h4>Overleaf Templates</h4>
-            <p>Collection of LaTeX templates for academic papers, theses, and presentations.</p>
-            <a href="https://www.overleaf.com/latex/templates" target="_blank" class="resource-link">View Resource</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Resource Category: Additional Resources -->
-      <div class="resource-category" data-category="additional">
-        <div class="category-header">
-          <h3>Additional Resources</h3>
-          <button class="expand-collapse-btn" aria-label="Expand or collapse section">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-        </div>
-        <div class="resource-items">
-          <div class="resource-card" data-tags="DiD Resources">
-            <h4>DiD Resources: Pedro H. C. Sant'Anna</h4>
-            <p>A Comprehensive Course on DiD</p>
-            <a href="https://psantanna.com/did-resources/" target="_blank" class="resource-link">View Resource</a>
-          </div>
-          <div class="resource-card" data-tags="diff-in-diff econometrics course">
-            <h4>Diff-in-Diff course: Clement De Chaisemartin</h4>
-            <p>Video course on difference-in-differences methodology.</p>
-            <a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank" class="resource-link">View Resource</a>
-          </div>
-          <div class="resource-card" data-tags="did staggered packages">
-            <h4>Staggered DiD software packages: Asjad Naqvi</h4>
-            <p>Software packages for staggered difference-in-differences analysis.</p>
-            <a href="https://asjadnaqvi.github.io/DiD/" target="_blank" class="resource-link">View Resource</a>
-          </div>
-          <div class="resource-card" data-tags="synthetic control method stata">
-            <h4>Synthetic Control Method Stata packages: Jialun (Neil) He</h4>
-            <p>Stata packages for implementing synthetic control methods.</p>
-            <a href="https://neilhe.com/stata-packages" target="_blank" class="resource-link">View Resource</a>
-          </div>
-          <div class="resource-card" data-tags="economics resources">
-            <h4>Resources: Jennifer Doleac</h4>
-            <p>Curated economics resources and research materials.</p>
-            <a href="https://jenniferdoleac.com/resources/" target="_blank" class="resource-link">View Resource</a>
-          </div>
-          <div class="resource-card" data-tags="economics resources">
-            <h4>Resources: Sebastian Tello Trillo</h4>
-            <p>Economics resources -- Almost all.</p>
-            <a href="https://sebastiantellotrillo.com/resources" target="_blank" class="resource-link">View Resource</a>
-          </div>
-          <div class="resource-card" data-tags="coding resources undergraduate">
-            <h4>Coding resources: Moshi Alam</h4>
-            <p>Programming and coding resources for undergraduate students.</p>
-            <a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank" class="resource-link">View Resource</a>
-          </div>
-        </div>
+      <div class="resource-items">
+        <a href="https://www.ssc.wisc.edu/statistics/" target="_blank" class="resource-card" data-tags="stata tutorial guide">
+          <h4>University of Wisconsin - Madison</h4>
+          <p>Comprehensive Stata tutorials and resources for beginners and advanced users.</p>
+        </a>
+        <a href="https://www.princeton.edu/~otorres/Stata/" target="_blank" class="resource-card" data-tags="stata guide econometrics">
+          <h4>Princeton University</h4>
+          <p>Stata guide for economic analysis and econometrics applications.</p>
+        </a>
+        <a href="https://stats.oarc.ucla.edu/stata/" target="_blank" class="resource-card" data-tags="stata statistics analysis">
+          <h4>UCLA Statistical Consulting Group</h4>
+          <p>Extensive Stata resources with examples for statistical analysis.</p>
+        </a>
+        <a href="https://medium.com/the-stata-gallery/top-25-stata-visualizations-with-full-code-668b5df114b6" target="_blank" class="resource-card" data-tags="stata basics introduction">
+          <h4>Top 25 Stata Visualizations</h4>
+          <p>With Full Stata Code (by Fahad Mirza)</p>
+        </a>
       </div>
     </div>
+    
+    <!-- Resource Category: LaTeX -->
+    <div class="resource-category" data-category="latex">
+      <div class="category-header">
+        <h3>LaTeX Resources</h3>
+        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="resource-items">
+        <a href="https://www.overleaf.com/latex/templates" target="_blank" class="resource-card" data-tags="latex templates academic papers">
+          <h4>Overleaf Templates</h4>
+          <p>Collection of LaTeX templates for academic papers, theses, and presentations.</p>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Resource Category: Additional Resources -->
+    <div class="resource-category" data-category="additional">
+      <div class="category-header">
+        <h3>Additional Resources</h3>
+        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="resource-items">
+        <a href="https://psantanna.com/did-resources/" target="_blank" class="resource-card" data-tags="DiD Resources">
+          <h4>DiD Resources: Pedro H. C. Sant'Anna</h4>
+          <p>A Comprehensive Course on DiD</p>
+        </a>
+        <a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank" class="resource-card" data-tags="diff-in-diff econometrics course">
+          <h4>Diff-in-Diff course: Clement De Chaisemartin</h4>
+          <p>Video course on difference-in-differences methodology.</p>
+        </a>
+        <a href="https://asjadnaqvi.github.io/DiD/" target="_blank" class="resource-card" data-tags="did staggered packages">
+          <h4>Staggered DiD software packages: Asjad Naqvi</h4>
+          <p>Software packages for staggered difference-in-differences analysis.</p>
+        </a>
+        <a href="https://neilhe.com/stata-packages" target="_blank" class="resource-card" data-tags="synthetic control method stata">
+          <h4>Synthetic Control Method Stata packages: Jialun (Neil) He</h4>
+          <p>Stata packages for implementing synthetic control methods.</p>
+        </a>
+        <a href="https://jenniferdoleac.com/resources/" target="_blank" class="resource-card" data-tags="economics resources">
+          <h4>Resources: Jennifer Doleac</h4>
+          <p>Curated economics resources and research materials.</p>
+        </a>
+        <a href="https://sebastiantellotrillo.com/resources" target="_blank" class="resource-card" data-tags="economics resources">
+          <h4>Resources: Sebastian Tello Trillo</h4>
+          <p>Economics resources -- Almost all.</p>
+        </a>
+        <a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank" class="resource-card" data-tags="coding resources undergraduate">
+          <h4>Coding resources: Moshi Alam</h4>
+          <p>Programming and coding resources for undergraduate students.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
     
     <!-- No Results Message -->
     <div id="noResults" class="no-results-message" style="display:none;">
