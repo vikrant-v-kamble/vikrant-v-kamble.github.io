@@ -321,295 +321,224 @@
 
     .resources-list a:hover {
       text-decoration: underline;
-      color: var(--secondary-color);
     }
 
-    /* ===== RESEARCH PAPER STYLING (OLD - KEEP FOR COMPATIBILITY) ===== */
-    .research-paper {
+    /* ===== PUBLICATIONS & PAPERS ===== */
+    .paper-item {
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--secondary-color);
       background-color: var(--light-bg);
-      padding: 1.5rem 2rem;
       border-radius: var(--border-radius);
-      margin-bottom: 2rem;
-      border-left: 4px solid var(--secondary-color);
     }
-    
+
     .paper-title {
-      font-weight: 600;
+      font-weight: bold;
       color: var(--primary-color);
       margin-bottom: 0.5rem;
     }
-    
-    .paper-author {
-      margin-bottom: 0.5rem;
-    }
-    
-    .paper-journal {
-      color: var(--secondary-color);
-      margin-bottom: 0.5rem;
-    }
-    
-    .paper-link {
-      color: var(--link-color);
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
-    
-    .paper-link:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== NEW RESEARCH SECTION STYLES ===== */
-    .paper-item {
-      margin-bottom: 30px;
-      padding: 20px;
-      background: #fafafa;
-      border-left: 4px solid #fafafa;  /* Same as background */
-      transition: all 0.3s ease;
-    }
-
-    .paper-item:hover {
-      background: #f0f4f8;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .paper-item .paper-title {
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #1a1a1a;
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
 
     .paper-authors {
+      color: var(--text-color);
       font-style: italic;
-      color: #555;
-      margin-bottom: 8px;
-      font-size: 0.95em;
+      margin-bottom: 0.3rem;
     }
 
-    .paper-item .paper-journal {
-      color: #666;
-      margin-bottom: 12px;
-      font-size: 0.95em;
+    .paper-journal {
+      color: var(--text-color);
+      margin-bottom: 0.3rem;
     }
 
-    .paper-status {
-      display: inline-block;
-      background: #e8f4f8;
-      color: #2c5aa0;
-      padding: 4px 12px;
-      border-radius: 15px;
-      font-size: 0.85em;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .paper-links {
-      margin-top: 12px;
-    }
-
-    .paper-links .paper-link {
-      display: inline-block;
-      color: #2c5aa0;
+    .paper-links a {
+      color: var(--link-color);
       text-decoration: none;
-      padding: 6px 16px;
-      border: 1px solid #2c5aa0;
-      border-radius: 4px;
-      font-size: 0.9em;
-      margin-right: 10px;
-      transition: all 0.3s ease;
+      margin-right: 1rem;
+      transition: var(--transition);
     }
 
-    .paper-links .paper-link:hover {
-      background: #2c5aa0;
-      color: white;
+    .paper-links a:hover {
+      text-decoration: underline;
+      color: var(--secondary-color);
     }
 
-    /* ===== ABSTRACT TOGGLE (UPDATED) ===== */
-    .abstract-toggle {
-      display: inline-flex;
-      align-items: center;
-      color: #2c5aa0;
-      cursor: pointer;
-      font-size: 0.9em;
-      margin-top: 10px;
-      user-select: none;
-    }
-    
-    .abstract-toggle:hover {
-      color: #1a3a6b;
-    }
-    
-    .abstract-toggle .arrow {
-      margin-right: 6px;
-      transition: transform 0.3s ease;
-      font-size: 0.8em;
-    }
-    
-    .abstract-toggle .arrow.expanded {
-      transform: rotate(90deg);
-    }
-    
-    .abstract-content {
-  margin-top: 15px;
-  padding-left: 20px;
-  border-left: 2px solid #ddd;
-  color: #555;
-  font-size: 0.95em;
-  line-height: 1.8;
-  margin-bottom: 10px;
-}
-    
-    .abstract-content.expanded {
-      max-height: 500px;
-      margin-bottom: 10px;
+    /* ===== SECTIONS ===== */
+    .section-title {
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    /* ===== LAYOUT COLUMNS ===== */
-    /* Two-column layout for Education */
-    .two-column {
+    /* ===== TEACHING SECTION ===== */
+    .teaching-container {
       display: flex;
       flex-direction: row;
       gap: 2rem;
-      margin: 2rem 0;
-      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .teaching-course {
+      flex: 1;
+      padding: 1rem;
       background-color: var(--light-bg);
-      padding: 2rem;
       border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    .course-title {
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+      background-color: var(--light-bg);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    /* ===== LINKS & BUTTONS ===== */
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      background-color: var(--secondary-color);
+      color: white;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .button:hover {
+      background-color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    /* ===== TWO-COLUMN LAYOUT ===== */
+    .two-column {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
     }
 
     .column {
       flex: 1;
-      min-width: 300px;
     }
 
-    /* Teaching layout */
-    .teaching-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .teaching-column {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    /* ===== EDUCATION STYLING ===== */
-    .education-item {
+    /* Publication Categories Toggle */
+    .pub-category {
       margin-bottom: 1.5rem;
-    }
-
-    .degree {
-      display: flex;
-      align-items: center;
-      font-weight: 500;
-      margin-bottom: 0.3rem;
-    }
-
-    .degree-icon {
-      margin-right: 10px;
-    }
-
-    .university {
-      color: #666;
-      margin-left: 0;
-    }
-
-    /* ===== TEACHING SECTION ===== */
-    .indent {
-      font-style: italic;
-      color: #666;
-      margin-left: 0.5rem;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      background-color: var(--light-bg);
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-      border-top: 1px solid rgba(0,0,0,0.1);
-    }
-
-    /* Search Styles */
-    .search-container {
-      display: flex;
-      margin: 1.5rem 0;
-      max-width: 500px;
-      position: relative;
+      border: 1px solid #e1e4e8;
+      border-radius: 8px;
+      overflow: hidden;
     }
     
-    .resource-search-input {
-      width: 100%;
+    .pub-category-header {
+      background-color: #f8f9fa;
+      padding: 12px 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .pub-category-header:hover {
+      background-color: #e9ecef;
+    }
+    
+    .pub-category-header h3 {
+      margin: 0;
+      color: var(--primary-color);
+    }
+    
+    .pub-category-content {
+      padding: 15px;
+      background-color: white;
+    }
+    
+    .expand-icon {
+      transition: transform 0.3s ease;
+      display: inline-block;
+      font-weight: bold;
+    }
+    
+    .pub-category.collapsed .expand-icon {
+      transform: rotate(180deg);
+    }
+    
+    .pub-category.collapsed .pub-category-content {
+      display: none;
+    }
+
+    /* ===== SEARCH & FILTER (RESOURCES) ===== */
+    .search-filter-container {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .search-box {
+      flex: 1;
+      min-width: 250px;
       padding: 10px 15px;
       border: 2px solid #e1e4e8;
-      border-radius: 8px;
+      border-radius: 6px;
       font-size: 1rem;
-      transition: all 0.3s ease;
+      transition: border-color 0.3s ease;
+    }
+    
+    .search-box:focus {
       outline: none;
-    }
-    
-    .resource-search-input:focus {
       border-color: var(--secondary-color);
-      box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
     }
     
-    .search-button {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: #666;
-      cursor: pointer;
-      padding: 5px;
-      transition: color 0.3s ease;
-    }
-    
-    .search-button:hover {
-      color: var(--secondary-color);
-    }
-    
-    /* Filter Styles */
     .filter-container {
       display: flex;
+      gap: 0.5rem;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-      align-items: center;
-    }
-    
-    .filter-label {
-      font-weight: 500;
-      color: #555;
     }
     
     .filter-btn {
-      background-color: #f1f3f5;
-      border: 1px solid #e1e4e8;
+      padding: 8px 16px;
+      border: 2px solid var(--secondary-color);
+      background-color: white;
+      color: var(--secondary-color);
       border-radius: 6px;
-      padding: 6px 12px;
-      font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-size: 0.9rem;
     }
     
     .filter-btn:hover {
-      background-color: #e9ecef;
+      background-color: var(--secondary-color);
+      color: white;
     }
     
     .filter-btn.active {
       background-color: var(--secondary-color);
       color: white;
-      border-color: var(--secondary-color);
     }
     
-    /* Resource Category Styles */
+    /* Resources Wrapper */
     .resources-wrapper {
       transition: all 0.3s ease;
     }
@@ -766,6 +695,140 @@
 	  margin-left: 1rem;
 	}
 
+    /* ===== CAROUSEL STYLES ===== */
+    .carousel-container {
+      margin: 2rem 0;
+      position: relative;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 60px;
+    }
+
+    .carousel-slides {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 80px;
+      animation: carouselFadeIn 0.5s ease-in-out;
+    }
+
+    .carousel-slide.active {
+      display: flex;
+    }
+
+    .carousel-slide img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .figure-caption {
+      text-align: center;
+      color: #333;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    /* Navigation Arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(128, 128, 128, 0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+      user-select: none;
+    }
+
+    .arrow:hover {
+      background-color: rgba(100, 100, 100, 0.85);
+    }
+
+    .arrow-left {
+      left: 20px;
+    }
+
+    .arrow-right {
+      right: 20px;
+    }
+
+    .arrow::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    .arrow-left::before {
+      border-width: 12px 18px 12px 0;
+      border-color: transparent white transparent transparent;
+      margin-right: 4px;
+    }
+
+    .arrow-right::before {
+      border-width: 12px 0 12px 18px;
+      border-color: transparent transparent transparent white;
+      margin-left: 4px;
+    }
+
+    /* Pagination Dots */
+    .pagination-dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .dot:hover {
+      transform: scale(1.2);
+    }
+
+    .dot.active {
+      background-color: #333;
+    }
+
+    @keyframes carouselFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     /* ===== RESPONSIVE DESIGN ===== */
     @media (max-width: 768px) {
       :root {
@@ -826,6 +889,23 @@
       .filter-container {
         justify-content: center;
       }
+
+      .carousel-slide {
+        padding: 30px 60px;
+      }
+
+      .arrow {
+        width: 50px;
+        height: 50px;
+      }
+
+      .arrow-left {
+        left: 10px;
+      }
+
+      .arrow-right {
+        right: 10px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -855,6 +935,23 @@
       .profile-photo {
         width: 200px;
         height: 200px;
+      }
+
+      .carousel-slide {
+        padding: 20px 50px;
+      }
+
+      .arrow {
+        width: 40px;
+        height: 40px;
+      }
+
+      .arrow-left::before {
+        border-width: 10px 15px 10px 0;
+      }
+
+      .arrow-right::before {
+        border-width: 10px 0 10px 15px;
       }
     }
   </style>
@@ -925,19 +1022,48 @@
 				</div>
 				
 				<hr style="border: none; border-top: 1px solid #ddd; margin: 1rem 0;">
+
+        <!-- CAROUSEL SECTION STARTS HERE -->
+        <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <div class="carousel-slides">
+              <!-- Slide 1 -->
+              <div class="carousel-slide active">
+                <img src="https://www.dropbox.com/scl/fi/kx7tpp6q5r8im71t9cjll/bootstrap_ci_comparision.pdf?rlkey=3wnubnftdq48e6y134fx6pl8b&st=194bhjno&dl=1" alt="Figure 1">
+                <div class="figure-caption">Figure 1: Improvement in infant weight </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <!-- <div class="carousel-slide">
+                <img src="figure2.png" alt="Figure 2">
+                <div class="figure-caption">Figure 2: Description of your second figure</div>
+              </div> -->
+
+              <!-- Add more slides as needed by copying this pattern:
+              <div class="carousel-slide">
+                <img src="figure3.png" alt="Figure 3">
+                <div class="figure-caption">Figure 3: Description of your third figure</div>
+              </div>
+              -->
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="arrow arrow-left" onclick="changeSlide(-1)"></div>
+            <div class="arrow arrow-right" onclick="changeSlide(1)"></div>
+
+            <!-- Pagination Dots -->
+            <div class="pagination-dots">
+              <span class="dot active" onclick="goToSlide(0)"></span>
+              <span class="dot" onclick="goToSlide(1)"></span>
+              <!-- Add more dots as needed: <span class="dot" onclick="goToSlide(2)"></span> -->
+            </div>
+          </div>
+        </div>
+        <!-- CAROUSEL SECTION ENDS HERE -->
 		  
 	  <p> </p>
 	</div>
   </section>
-
-  <!-- <div class="home-content">
-		<p><strong>Job Market Candidate 2025-2026.</strong></p>  
-        <p>Welcome to my website!</p>
-		<p> I am an Economics PhD candidate at the University of Delaware. My research applies causal inference methods to labor and health economics, examining how policies affect communities.</p>        <p>My work has been published in <em>Social Science Research</em>.</p>
-        <p>Outside of my studies, I love cooking tasty meals, singing with passion, and taking long refreshing walks.</p>
-      </div>
-    </div>
-  </section> -->
 
   <!-- Research Section - FIXED: Added class="section" -->
   <section id="research" class="section">
@@ -1363,6 +1489,73 @@ function toggleAbstract(element) {
   arrow.classList.toggle('expanded');
   abstractContent.classList.toggle('expanded');
 }
+
+  // Navigation functionality
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Update active nav link
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Update active section
+      const sectionId = this.getAttribute('data-section');
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    });
+  });
+
+  // Carousel functionality
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(index) {
+    // Wrap around if index is out of bounds
+    if (index >= slides.length) {
+      currentSlide = 0;
+    } else if (index < 0) {
+      currentSlide = slides.length - 1;
+    } else {
+      currentSlide = index;
+    }
+
+    // Update slides
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === currentSlide) {
+        slide.classList.add('active');
+      }
+    });
+
+    // Update dots
+    dots.forEach((dot, i) => {
+      dot.classList.remove('active');
+      if (i === currentSlide) {
+        dot.classList.add('active');
+      }
+    });
+  }
+
+  function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+  }
+
+  // Keyboard navigation for carousel
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      changeSlide(-1);
+    } else if (e.key === 'ArrowRight') {
+      changeSlide(1);
+    }
+  });	
 </script>
 
 </body>
