@@ -1021,17 +1021,66 @@
 	  <p>Welcome to my website!</p>
 	  <p>I am an Economics PhD candidate at the University of Delaware. My research uses causal inference methods to study labor and health economics, focusing on policy impacts on communities.</p>
 	  <p> </p>
-	            <p><strong>Job Market Paper</strong></p>
-				<hr style="border: none; border-top: 1px solid #ddd; margin: 0.5rem 0;">
-				
-				<div class="paper-item-simple">
-				  <div class="paper-title-simple">"The 1973 Oil Embargo and Infant Health Outcomes: Evidence from a Macroeconomic Shock"</div>
-				  <p><strong>Abstract:</strong> An extensive literature documents that economic shocks affect health outcomes, but mechanisms and distributional effects remain unclear. I study how energy shocks affect infant health using 1968-1979 Vital Statistics data. With an event-study framework that accounts for state-specific pre-trends, I find that states with higher oil dependence have birthweight increases following the 1973 oil embargo. Gains are larger for less-educated, relatively younger, and Black mothers at 2.3-3.5 grams. These improvements result from increased prenatal care use, reduced air pollution, and shifts in maternal composition.</p>
-				</div>
-				
-				<hr style="border: none; border-top: 1px solid #ddd; margin: 1rem 0;">
+	            <!-- Job Market Paper Section -->
+<p><strong>Job Market Paper</strong></p>
+<hr style="border: none; border-top: 1px solid #ddd; margin: 0.5rem 0;">
 
+<div class="paper-item-simple">
+  <div class="paper-title-simple">"The 1973 Oil Embargo and Infant Health Outcomes: Evidence from a Macroeconomic Shock"</div>
+  <p><strong>Abstract:</strong> An extensive literature documents that economic shocks affect health outcomes, but mechanisms and distributional effects remain unclear. I study how energy shocks affect infant health using 1968-1979 Vital Statistics data. With an event-study framework that accounts for state-specific pre-trends, I find that states with higher oil dependence have birthweight increases following the 1973 oil embargo. Gains are larger for less-educated, relatively younger, and Black mothers at 2.3-3.5 grams. These improvements result from increased prenatal care use, reduced air pollution, and shifts in maternal composition.</p>
+</div>
 
+<hr style="border: none; border-top: 1px solid #ddd; margin: 1rem 0;">
+
+<!-- Figure Carousel -->
+<div class="carousel-container">
+  <div class="carousel-wrapper">
+    <div class="carousel-slides">
+      <!-- Slide 1 -->
+      <div class="carousel-slide active">
+        <img src="https://www.dropbox.com/scl/fi/81kc3tx07ydp6bqfah24r/bootstrap_ci_comparision.png" alt="Figure 1">
+        <div class="figure-caption">Figure 1: Birthweight</div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-slide">
+        <img src="https://www.dropbox.com/scl/fi/rel6y3eeg2wxjdccaffll/eq2_birthweight.png" alt="Figure 2">
+        <div class="figure-caption">Figure 2: Birthweight</div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-slide">
+        <img src="https://www.dropbox.com/scl/fi/ap8ffwsolcknoy10civpq/eq2_dgestat.png" alt="Figure 3">
+        <div class="figure-caption">Figure 3: Gestational age</div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="carousel-slide">
+        <img src="https://www.dropbox.com/scl/fi/jxaf0iqxw7n7nc8rgc5q3/eq2_lowbw.png" alt="Figure 4">
+        <div class="figure-caption">Figure 4: Low Birth Weight</div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="carousel-slide">
+        <img src="https://www.dropbox.com/scl/fi/rsfzy55hgsld2mytoc2ga/eq2_preterm.png" alt="Figure 5">
+        <div class="figure-caption">Figure 5: Preterm</div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="arrow arrow-left" onclick="changeSlide(-1)"></div>
+    <div class="arrow arrow-right" onclick="changeSlide(1)"></div>
+
+    <!-- Pagination Dots -->
+    <div class="pagination-dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+      <span class="dot" onclick="goToSlide(3)"></span>
+      <span class="dot" onclick="goToSlide(4)"></span>
+    </div>
+  </div>
+</div>
 
 		  
 	  <p> </p>
@@ -1271,6 +1320,9 @@
   </section>
 </div>
 
+
+<!-- End of content div -->
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Navigation functionality for the entire site
@@ -1464,72 +1516,54 @@ function toggleAbstract(element) {
   abstractContent.classList.toggle('expanded');
 }
 
-  // Navigation functionality
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Update active nav link
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-      
-      // Update active section
-      const sectionId = this.getAttribute('data-section');
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(sectionId).classList.add('active');
-    });
+// Carousel functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+  // Wrap around if index is out of bounds
+  if (index >= slides.length) {
+    currentSlide = 0;
+  } else if (index < 0) {
+    currentSlide = slides.length - 1;
+  } else {
+    currentSlide = index;
+  }
+
+  // Update slides
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (i === currentSlide) {
+      slide.classList.add('active');
+    }
   });
 
-  // Carousel functionality
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.carousel-slide');
-  const dots = document.querySelectorAll('.dot');
-
-  function showSlide(index) {
-    // Wrap around if index is out of bounds
-    if (index >= slides.length) {
-      currentSlide = 0;
-    } else if (index < 0) {
-      currentSlide = slides.length - 1;
-    } else {
-      currentSlide = index;
+  // Update dots
+  dots.forEach((dot, i) => {
+    dot.classList.remove('active');
+    if (i === currentSlide) {
+      dot.classList.add('active');
     }
+  });
+}
 
-    // Update slides
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      if (i === currentSlide) {
-        slide.classList.add('active');
-      }
-    });
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+}
 
-    // Update dots
-    dots.forEach((dot, i) => {
-      dot.classList.remove('active');
-      if (i === currentSlide) {
-        dot.classList.add('active');
-      }
-    });
+function goToSlide(index) {
+  showSlide(index);
+}
+
+// Keyboard navigation for carousel
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    changeSlide(-1);
+  } else if (e.key === 'ArrowRight') {
+    changeSlide(1);
   }
-
-  function changeSlide(direction) {
-    showSlide(currentSlide + direction);
-  }
-
-  function goToSlide(index) {
-    showSlide(index);
-  }
-
-  // Keyboard navigation for carousel
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-      changeSlide(-1);
-    } else if (e.key === 'ArrowRight') {
-      changeSlide(1);
-    }
-  });	
+});
 </script>
 
 </body>
