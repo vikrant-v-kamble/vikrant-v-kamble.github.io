@@ -752,53 +752,53 @@
     }
 
     /* Navigation Arrows */
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 60px;
-      height: 60px;
-      background-color: rgba(128, 128, 128, 0.7);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      z-index: 10;
-      user-select: none;
-    }
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;           /* Changed from 60px */
+  height: 45px;          /* Changed from 60px */
+  background-color: rgba(128, 128, 128, 0.5);  /* Made more transparent */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+  user-select: none;
+}
 
-    .arrow:hover {
-      background-color: rgba(100, 100, 100, 0.85);
-    }
+.arrow:hover {
+  background-color: rgba(100, 100, 100, 0.7);
+}
 
-    .arrow-left {
-      left: 20px;
-    }
+.arrow-left {
+  left: 15px;
+}
 
-    .arrow-right {
-      right: 20px;
-    }
+.arrow-right {
+  right: 15px;
+}
 
-    .arrow::before {
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-    }
+.arrow::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
 
-    .arrow-left::before {
-      border-width: 12px 18px 12px 0;
-      border-color: transparent white transparent transparent;
-      margin-right: 4px;
-    }
+.arrow-left::before {
+  border-width: 10px 14px 10px 0;     /* Made smaller from 12px 18px */
+  border-color: transparent white transparent transparent;
+  margin-right: 3px;
+}
 
-    .arrow-right::before {
-      border-width: 12px 0 12px 18px;
-      border-color: transparent transparent transparent white;
-      margin-left: 4px;
-    }
+.arrow-right::before {
+  border-width: 10px 0 10px 14px;     /* Made smaller from 12px 18px */
+  border-color: transparent transparent transparent white;
+  margin-left: 3px;
+}
 
     /* Pagination Dots */
     .pagination-dots {
