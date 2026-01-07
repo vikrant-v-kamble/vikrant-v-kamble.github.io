@@ -1,1410 +1,1462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vikrant V. Kamble</title>
-  
-  <!-- Favicon Links -->
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="favicon_io/site.webmanifest">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikrant V. Kamble</title>
 
-  <style>
-    /* ===== CSS VARIABLES ===== */
-    :root {
-      --primary-color: #2F3E56;
-      --secondary-color: #4A6FA5;
-      --text-color: #2C3E50;
-      --background-color: #FFFFFF;
-      --light-bg: #f8f9fa;
-      --nav-color: #1a1a2e;
-      --link-color: #3498db;
-      --header-height: 180px;
-      --content-width: min(calc(100% - 12cm), 1000px);
-      --spacing-unit: 0.75rem;
-      --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      --border-radius: 10px;
-      --transition: all 0.3s ease;
-    }
+<!-- Favicon Links -->
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
 
-    /* ===== RESET & BASE STYLES ===== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Open Sans', 'Arial', sans-serif;
-      line-height: 1.8;
-      color: var(--text-color);
-      background-color: var(--background-color);
-      margin: 0;
-      padding: 0;
-    }
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    /* ===== TYPOGRAPHY ===== */
-    h1, h2, h3 {
-      text-align: left;
-      color: var(--primary-color);
-      font-family: 'Roboto', sans-serif;
-    }
-
-    h1 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      margin-bottom: 0.75rem;
-    }
-
-    h2 {
-      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-      border-bottom: 1px solid var(--secondary-color);
-      padding-bottom: 0.2em;
-      margin-bottom: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    h3 {
-      font-size: clamp(1.1rem, 3vw, 1.4rem);
-      color: var(--secondary-color);
-      margin-bottom: 0.5rem;
-      margin-top: 1.2rem;
-    }
-
-    p {
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      margin-bottom: 0.75rem;
-      line-height: 1.6;
-    }
-
-    /* ===== HEADER SECTION ===== */
-    .header-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      max-width: var(--content-width);
-      margin: 05px auto 0; /* Reduced from 50px to 10px to 05px */
-      padding: 2rem 1rem 1.5rem; 
-      border-bottom: 1px solid var(--secondary-color);
-    }
-
-    .header-name {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: normal;
-  color: var(--primary-color);
-  margin: 0;
-  line-height: 1.2;
-  /* text-transform: uppercase; */  
-  font-family: 'Roboto', sans-serif;
-  flex: 0 0 auto;
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+--primary-color: #2F3E56;
+--secondary-color: #4A6FA5;
+--text-color: #2C3E50;
+--background-color: #FFFFFF;
+--light-bg: #f8f9fa;
+--nav-color: #1a1a2e;
+--link-color: #3498db;
+--header-height: 180px;
+--content-width: min(calc(100% - 12cm), 1000px);
+--spacing-unit: 0.75rem;
+--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+--border-radius: 10px;
+--transition: all 0.3s ease;
 }
 
-    .header-info {
-      font-size: clamp(0.9rem, 2vw, 1.1rem);
-      color: var(--text-color);
-      margin: 0;
-      text-align: right;
-      line-height: 1.6;
-      flex: 1;
-      margin-left: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.1rem;
-    }
-
-    .header-info a {
-      color: var(--link-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-    }
-
-
-    .header-info a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== NAVIGATION ===== */
-    .navbar {
-      width: 100%;
-      background-color: transparent;
-      display: flex;
-      justify-content: center;
-      padding: 0.25rem 0;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      background-color: white;
-      z-index: 100;
-    }
-
-    .navbar a {
-      color: #000;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: normal;
-      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      padding: 4px 8px;
-      border-radius: 3px;
-      white-space: nowrap;
-      transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .navbar a:hover {
-      color: var(--secondary-color);
-    }
-    
-    .navbar a.active {
-	  background-color: #E8E8E8;  /* Very light gray */
-	  color: black;
-	}
-
-    /* ===== MAIN CONTENT LAYOUT ===== */
-    .content {
-      width: var(--content-width);
-      margin: 0 auto;
-      padding: clamp(0.75rem, 2vw, 1.5rem);
-      max-width: 1000px;
-      min-height: calc(100vh - var(--header-height) - 60px);
-    }
-    
-    /* Zero left and right side margins for Home tab only */
-    #home.section {
-      padding-left: 0;
-      padding-right: 0;
-      margin-left: -0.75rem;
-      margin-right: -0.75rem;
-    }
-    
-    section {
-      margin-bottom: 2rem;
-    }
-
-    /* ===== SECTION VISIBILITY & ANIMATION ===== */
-    .section {
-      display: none;
-    }
-    
-    .section.active {
-      display: block;
-      animation: fadeIn 0.5s ease;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* ===== HOME PAGE LAYOUT ===== */
-    .home-container {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .profile-container {
-      flex: 0 0 auto;
-      max-width: 300px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .home-content {
-      flex: 1 1 auto;
-      padding-left: 1rem;
-    }
-
-    /* ===== PROFILE PHOTO ===== */
-    .profile-photo {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: var(--box-shadow);
-      transition: transform 0.3s ease;
-      margin-bottom: 1.5rem;
-    }
-
-    .profile-photo:hover {
-      transform: scale(1.03);
-    }
-
-    /* ===== SOCIAL LINKS ===== */
-    .social-links {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 1.5rem;
-      justify-content: center;
-    }
-
-    .social-links a {
-      background: transparent;
-      color: #000000;
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: var(--transition);
-    }
-
-    .social-links a:hover {
-      text-decoration: underline;
-      color: var(--secondary-color);
-    }
-
-    /* ===== RESEARCH INTERESTS STYLING ===== */
-    .research-interests {
-      text-align: center;
-      max-width: 300px;
-    }
-
-    .research-interests p {
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    /* ===== LIST STYLES ===== */
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    /* Interests List - Blue dots only */
-    .interests-list li {
-      margin-bottom: 1rem;
-      position: relative;
-      padding-left: 2.5rem;
-    }
-
-    .interests-list li::before {
-      content: "";
-      position: absolute;
-      left: 1.2rem;
-      top: 0.6rem;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: var(--link-color);
-    }
-
-    /* Research Section Spacing */
-    #research ul li {
-      margin-bottom: 1rem;
-      position: relative;
-      padding-left: 1rem;
-    }
-
-    /* Working Papers - No bullet points */
-    .working-papers li {
-      margin-bottom: 1rem;
-      padding-left: 0;
-    }
-
-    /* Resources section */
-    .resources-list li {
-      margin-bottom: 0.7rem;
-    }
-
-    .resources-list a {
-      color: var(--link-color);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .resources-list a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== PUBLICATIONS & PAPERS ===== */
-    .paper-item {
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-left: 3px solid var(--secondary-color);
-      background-color: var(--light-bg);
-      border-radius: var(--border-radius);
-    }
-
-    .paper-title {
-      font-weight: bold;
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-
-    .paper-authors {
-      color: var(--text-color);
-      font-style: italic;
-      margin-bottom: 0.3rem;
-    }
-
-    .paper-journal {
-      color: var(--text-color);
-      margin-bottom: 0.3rem;
-    }
-
-    .paper-links a {
-      color: var(--link-color);
-      text-decoration: none;
-      margin-right: 1rem;
-      transition: var(--transition);
-    }
-
-    .paper-links a:hover {
-      text-decoration: underline;
-      color: var(--secondary-color);
-    }
-
-    /* ===== SECTIONS ===== */
-    .section-title {
-      border-bottom: 2px solid var(--secondary-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* ===== TEACHING SECTION ===== */
-    .teaching-container {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    .teaching-course {
-      flex: 1;
-      padding: 1rem;
-      background-color: var(--light-bg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-    }
-
-    .course-title {
-      font-weight: bold;
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-      width: 100%;
-      text-align: center;
-      padding: 1rem 0;
-      background-color: var(--light-bg);
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: var(--text-color);
-    }
-
-    /* ===== LINKS & BUTTONS ===== */
-    a {
-      color: var(--link-color);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    a:hover {
-      color: var(--secondary-color);
-      text-decoration: underline;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 0.5rem 1.2rem;
-      background-color: var(--secondary-color);
-      color: white;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      transition: var(--transition);
-      font-weight: 500;
-    }
-
-    .button:hover {
-      background-color: var(--primary-color);
-      text-decoration: none;
-    }
-
-    /* ===== TWO-COLUMN LAYOUT ===== */
-    .two-column {
-      display: flex;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    .column {
-      flex: 1;
-    }
-
-    /* Publication Categories Toggle */
-    .pub-category {
-      margin-bottom: 1.5rem;
-      border: 1px solid #e1e4e8;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    
-    .pub-category-header {
-      background-color: #f8f9fa;
-      padding: 12px 15px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color 0.3s ease;
-    }
-    
-    .pub-category-header:hover {
-      background-color: #e9ecef;
-    }
-    
-    .pub-category-header h3 {
-      margin: 0;
-      color: var(--primary-color);
-    }
-    
-    .pub-category-content {
-      padding: 15px;
-      background-color: white;
-    }
-    
-    .expand-icon {
-      transition: transform 0.3s ease;
-      display: inline-block;
-      font-weight: bold;
-    }
-    
-    .pub-category.collapsed .expand-icon {
-      transform: rotate(180deg);
-    }
-    
-    .pub-category.collapsed .pub-category-content {
-      display: none;
-    }
-
-    /* ===== SEARCH & FILTER (RESOURCES) ===== */
-    .search-filter-container {
-      margin-bottom: 1.5rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    
-    .search-box {
-      flex: 1;
-      min-width: 250px;
-      padding: 10px 15px;
-      border: 2px solid #e1e4e8;
-      border-radius: 6px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-    
-    .search-box:focus {
-      outline: none;
-      border-color: var(--secondary-color);
-    }
-    
-    .filter-container {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    
-    .filter-btn {
-      padding: 8px 16px;
-      border: 2px solid var(--secondary-color);
-      background-color: white;
-      color: var(--secondary-color);
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-    }
-    
-    .filter-btn:hover {
-      background-color: var(--secondary-color);
-      color: white;
-    }
-    
-    .filter-btn.active {
-      background-color: var(--secondary-color);
-      color: white;
-    }
-    
-    /* Resources Wrapper */
-    .resources-wrapper {
-      transition: all 0.3s ease;
-    }
-    
-    .resource-category {
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-    }
-    
-    .category-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background-color: #f8f9fa;
-      border-bottom: 1px solid #e1e4e8;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    
-    .category-header:hover {
-      background-color: #e9ecef;
-    }
-    
-    .category-header h3 {
-      margin: 0;
-      color: var(--primary-color);
-    }
-    
-    .expand-collapse-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 5px;
-    }
-    
-    .expand-collapse-btn.collapsed svg {
-      transform: rotate(180deg);
-    }
-    
-    .resource-items {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 15px;
-      padding: 20px;
-      background-color: white;
-    }
-    
-    /* Resource Card Styles */
-    .resource-card {
-  border: 1px solid #e1e4e8;
-  border-radius: 8px;
-  padding: 15px;
-  transition: all 0.3s ease;
-  background-color: white;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;  /* Add this */
-  color: inherit;         /* Add this */
-}
-    
-    .resource-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      border-color: var(--secondary-color);
-    }
-    
-    .resource-card h4 {
-      margin: 0 0 10px 0;
-      color: var(--primary-color);
-      font-size: 1.1rem;
-    }
-    
-    .resource-card p {
-      margin: 0 0 15px 0;
-      color: #555;
-      font-size: 0.9rem;
-      flex-grow: 1;
-    }
-    
-    .resource-link {
-      display: inline-block;
-      color: white;
-      background-color: var(--secondary-color);
-      padding: 8px 12px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      text-align: center;
-    }
-    
-    .resource-link:hover {
-      background-color: var(--primary-color);
-      transform: scale(1.05);
-    }
-    
-    /* Animation for Filtering and Searching */
-    .resource-card.filtered-out {
-      opacity: 0;
-      transform: scale(0.9);
-      height: 0;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      border: 0;
-    }
-    
-    /* No Results Message */
-    .no-results-message {
-      text-align: center;
-      padding: 30px;
-      background-color: #f8f9fa;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    
-    .no-results-message p {
-      color: #555;
-      font-size: 1.1rem;
-    }
-
-	.paper-item-simple {
-  margin-bottom: 2rem;
+/* ===== RESET & BASE STYLES ===== */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
-	.paper-title-simple {
-	  font-weight: bold;
-	  margin-bottom: 0.3rem;
-	}
-	
-	.paper-authors-simple {
-	  font-style: italic;
-	  margin-bottom: 0.3rem;
-	}
-	
-	.paper-journal-simple {
-	  margin-bottom: 0.3rem;
-	}
-	
-	.paper-status-simple {
-	  font-style: italic;
-	  margin-bottom: 0.3rem;
-	}  
-	  .paper-item-simple p {
-	  margin-left: 1rem;
-	}
+body {
+font-family: 'Open Sans', 'Arial', sans-serif;
+line-height: 1.8;
+color: var(--text-color);
+background-color: var(--background-color);
+margin: 0;
+padding: 0;
+}
 
-    /* ===== CAROUSEL STYLES ===== */
-    .carousel-container {
-      margin: 2rem 0;
-      position: relative;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3 {
+text-align: left;
+color: var(--primary-color);
+font-family: 'Roboto', sans-serif;
+}
 
-    .carousel-wrapper {
-      position: relative;
-      width: 100%;
-      padding-bottom: 60px;
-    }
+h1 {
+font-size: clamp(1.5rem, 4vw, 2rem);
+margin-bottom: 0.75rem;
+}
 
-    .carousel-slides {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
+h2 {
+font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+border-bottom: 1px solid var(--secondary-color);
+padding-bottom: 0.2em;
+margin-bottom: 0.75rem;
+margin-top: 1rem;
+}
 
-    .carousel-slide {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 80px;
-      animation: carouselFadeIn 0.5s ease-in-out;
-    }
+h3 {
+font-size: clamp(1.1rem, 3vw, 1.4rem);
+color: var(--secondary-color);
+margin-bottom: 0.5rem;
+margin-top: 1.2rem;
+}
 
-    .carousel-slide.active {
-      display: flex;
-    }
+p {
+font-size: clamp(0.9rem, 2.5vw, 1rem);
+margin-bottom: 0.75rem;
+line-height: 1.6;
+}
 
-    .carousel-slide img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 4px;
-      margin-bottom: 20px;
-    }
+/* ===== HEADER SECTION ===== */
+.header-container {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+max-width: var(--content-width);
+margin: 05px auto 0; /* Reduced from 50px to 10px to 05px */
+padding: 2rem 1rem 1.5rem;
+border-bottom: 1px solid var(--secondary-color);
+}
 
-    .figure-caption {
-      text-align: center;
-      color: #333;
-      font-size: 16px;
-      margin-top: 10px;
-    }
+.header-name {
+font-size: clamp(1.5rem, 3vw, 2rem);
+font-weight: normal;
+color: var(--primary-color);
+margin: 0;
+line-height: 1.2;
+/* text-transform: uppercase; */
+font-family: 'Roboto', sans-serif;
+flex: 0 0 auto;
+}
 
-    /* Navigation Arrows */
+.header-info {
+font-size: clamp(0.9rem, 2vw, 1.1rem);
+color: var(--text-color);
+margin: 0;
+text-align: right;
+line-height: 1.6;
+flex: 1;
+margin-left: 2rem;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 0.1rem;
+}
+
+.header-info a {
+color: var(--link-color);
+text-decoration: none;
+font-weight: 500;
+transition: var(--transition);
+}
+
+
+.header-info a:hover {
+text-decoration: underline;
+}
+
+/* ===== NAVIGATION ===== */
+.navbar {
+width: 100%;
+background-color: transparent;
+display: flex;
+justify-content: center;
+padding: 0.25rem 0;
+border-bottom: 1px solid rgba(0,0,0,0.1);
+position: sticky;
+top: 0;
+background-color: white;
+z-index: 100;
+}
+
+.navbar a {
+color: #000;
+text-decoration: none;
+margin: 0 8px;
+font-weight: normal;
+font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+padding: 4px 8px;
+border-radius: 3px;
+white-space: nowrap;
+transition: var(--transition);
+cursor: pointer;
+}
+
+.navbar a:hover {
+color: var(--secondary-color);
+}
+
+.navbar a.active {
+background-color: #E8E8E8; /* Very light gray */
+color: black;
+}
+
+/* ===== MAIN CONTENT LAYOUT ===== */
+.content {
+width: var(--content-width);
+margin: 0 auto;
+padding: clamp(0.75rem, 2vw, 1.5rem);
+max-width: 1000px;
+min-height: calc(100vh - var(--header-height) - 60px);
+}
+
+/* Zero left and right side margins for Home tab only */
+#home.section {
+padding-left: 0;
+padding-right: 0;
+margin-left: -0.75rem;
+margin-right: -0.75rem;
+}
+
+section {
+margin-bottom: 2rem;
+}
+
+/* ===== SECTION VISIBILITY & ANIMATION ===== */
+.section {
+display: none;
+}
+
+.section.active {
+display: block;
+animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+/* ===== HOME PAGE LAYOUT ===== */
+.home-container {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: space-between;
+gap: 2rem;
+margin: 2rem 0;
+}
+
+.profile-container {
+flex: 0 0 auto;
+max-width: 300px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.home-content {
+flex: 1 1 auto;
+padding-left: 1rem;
+}
+
+/* ===== PROFILE PHOTO ===== */
+.profile-photo {
+width: 200px;
+height: 200px;
+object-fit: cover;
+border-radius: 50%;
+box-shadow: var(--box-shadow);
+transition: transform 0.3s ease;
+margin-bottom: 1.5rem;
+}
+
+.profile-photo:hover {
+transform: scale(1.03);
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+display: flex;
+gap: 20px;
+margin-bottom: 1.5rem;
+justify-content: center;
+}
+
+.social-links a {
+background: transparent;
+color: #000000;
+text-decoration: none;
+padding: 8px 16px;
+border-radius: 6px;
+font-weight: 500;
+transition: var(--transition);
+}
+
+.social-links a:hover {
+text-decoration: underline;
+color: var(--secondary-color);
+}
+
+/* ===== RESEARCH INTERESTS STYLING ===== */
+.research-interests {
+text-align: center;
+max-width: 300px;
+}
+
+.research-interests p {
+margin-bottom: 0.5rem;
+font-size: 0.95rem;
+}
+
+/* ===== LIST STYLES ===== */
+ul {
+list-style-type: none;
+padding-left: 0;
+}
+
+/* Interests List - Blue dots only */
+.interests-list li {
+margin-bottom: 1rem;
+position: relative;
+padding-left: 2.5rem;
+}
+
+.interests-list li::before {
+content: "";
+position: absolute;
+left: 1.2rem;
+top: 0.6rem;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: var(--link-color);
+}
+
+/* Research Section Spacing */
+#research ul li {
+margin-bottom: 1rem;
+position: relative;
+padding-left: 1rem;
+}
+
+/* Working Papers - No bullet points */
+.working-papers li {
+margin-bottom: 1rem;
+padding-left: 0;
+}
+
+/* Resources section */
+.resources-list li {
+margin-bottom: 0.7rem;
+}
+
+.resources-list a {
+color: var(--link-color);
+text-decoration: none;
+transition: var(--transition);
+}
+
+.resources-list a:hover {
+text-decoration: underline;
+}
+
+/* ===== PUBLICATIONS & PAPERS ===== */
+.paper-item {
+padding: 1rem;
+margin-bottom: 1.5rem;
+border-left: 3px solid var(--secondary-color);
+background-color: var(--light-bg);
+border-radius: var(--border-radius);
+}
+
+.paper-title {
+font-weight: bold;
+color: var(--primary-color);
+margin-bottom: 0.5rem;
+}
+
+.paper-authors {
+color: var(--text-color);
+font-style: italic;
+margin-bottom: 0.3rem;
+}
+
+.paper-journal {
+color: var(--text-color);
+margin-bottom: 0.3rem;
+}
+
+.paper-links a {
+color: var(--link-color);
+text-decoration: none;
+margin-right: 1rem;
+transition: var(--transition);
+}
+
+.paper-links a:hover {
+text-decoration: underline;
+color: var(--secondary-color);
+}
+
+/* ===== SECTIONS ===== */
+.section-title {
+border-bottom: 2px solid var(--secondary-color);
+padding-bottom: 0.5rem;
+margin-bottom: 1.5rem;
+}
+
+/* ===== TEACHING SECTION ===== */
+.teaching-container {
+display: flex;
+flex-direction: row;
+gap: 2rem;
+margin-top: 1.5rem;
+}
+
+.teaching-course {
+flex: 1;
+padding: 1rem;
+background-color: var(--light-bg);
+border-radius: var(--border-radius);
+box-shadow: var(--box-shadow);
+}
+
+.course-title {
+font-weight: bold;
+color: var(--primary-color);
+margin-bottom: 0.5rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+width: 100%;
+text-align: center;
+padding: 1rem 0;
+background-color: var(--light-bg);
+border-top: 1px solid rgba(0, 0, 0, 0.1);
+margin-top: 2rem;
+font-size: 0.9rem;
+color: var(--text-color);
+}
+
+/* ===== LINKS & BUTTONS ===== */
+a {
+color: var(--link-color);
+text-decoration: none;
+transition: var(--transition);
+}
+
+a:hover {
+color: var(--secondary-color);
+text-decoration: underline;
+}
+
+.button {
+display: inline-block;
+padding: 0.5rem 1.2rem;
+background-color: var(--secondary-color);
+color: white;
+border-radius: var(--border-radius);
+text-decoration: none;
+transition: var(--transition);
+font-weight: 500;
+}
+
+.button:hover {
+background-color: var(--primary-color);
+text-decoration: none;
+}
+
+/* ===== TWO-COLUMN LAYOUT ===== */
+.two-column {
+display: flex;
+gap: 2rem;
+margin-top: 1.5rem;
+}
+
+.column {
+flex: 1;
+}
+
+/* Publication Categories Toggle */
+.pub-category {
+margin-bottom: 1.5rem;
+border: 1px solid #e1e4e8;
+border-radius: 8px;
+overflow: hidden;
+}
+
+.pub-category-header {
+background-color: #f8f9fa;
+padding: 12px 15px;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: background-color 0.3s ease;
+}
+
+.pub-category-header:hover {
+background-color: #e9ecef;
+}
+
+.pub-category-header h3 {
+margin: 0;
+color: var(--primary-color);
+}
+
+.pub-category-content {
+padding: 15px;
+background-color: white;
+}
+
+.expand-icon {
+transition: transform 0.3s ease;
+display: inline-block;
+font-weight: bold;
+}
+
+.pub-category.collapsed .expand-icon {
+transform: rotate(180deg);
+}
+
+.pub-category.collapsed .pub-category-content {
+display: none;
+}
+
+/* ===== SEARCH & FILTER (RESOURCES) ===== */
+.search-filter-container {
+margin-bottom: 1.5rem;
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.search-box {
+flex: 1;
+min-width: 250px;
+padding: 10px 15px;
+border: 2px solid #e1e4e8;
+border-radius: 6px;
+font-size: 1rem;
+transition: border-color 0.3s ease;
+}
+
+.search-box:focus {
+outline: none;
+border-color: var(--secondary-color);
+}
+
+.filter-container {
+display: flex;
+gap: 0.5rem;
+flex-wrap: wrap;
+}
+
+.filter-btn {
+padding: 8px 16px;
+border: 2px solid var(--secondary-color);
+background-color: white;
+color: var(--secondary-color);
+border-radius: 6px;
+cursor: pointer;
+transition: all 0.3s ease;
+font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+background-color: var(--secondary-color);
+color: white;
+}
+
+.filter-btn.active {
+background-color: var(--secondary-color);
+color: white;
+}
+
+/* Resources Wrapper */
+.resources-wrapper {
+transition: all 0.3s ease;
+}
+
+.resource-category {
+margin-bottom: 2rem;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+transition: all 0.3s ease;
+}
+
+.category-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 20px;
+background-color: #f8f9fa;
+border-bottom: 1px solid #e1e4e8;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.category-header:hover {
+background-color: #e9ecef;
+}
+
+.category-header h3 {
+margin: 0;
+color: var(--primary-color);
+}
+
+.expand-collapse-btn {
+background: none;
+border: none;
+cursor: pointer;
+transition: transform 0.3s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 5px;
+}
+
+.expand-collapse-btn.collapsed svg {
+transform: rotate(180deg);
+}
+
+.resource-items {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 15px;
+padding: 20px;
+background-color: white;
+}
+
+/* Resource Card Styles */
+.resource-card {
+border: 1px solid #e1e4e8;
+border-radius: 8px;
+padding: 15px;
+transition: all 0.3s ease;
+background-color: white;
+height: 100%;
+display: flex;
+flex-direction: column;
+text-decoration: none; /* Add this */
+color: inherit; /* Add this */
+}
+
+.resource-card:hover {
+transform: translateY(-3px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+border-color: var(--secondary-color);
+}
+
+.resource-card h4 {
+margin: 0 0 10px 0;
+color: var(--primary-color);
+font-size: 1.1rem;
+}
+
+.resource-card p {
+margin: 0 0 15px 0;
+color: #555;
+font-size: 0.9rem;
+flex-grow: 1;
+}
+
+.resource-link {
+display: inline-block;
+color: white;
+background-color: var(--secondary-color);
+padding: 8px 12px;
+border-radius: 6px;
+text-decoration: none;
+font-size: 0.9rem;
+transition: all 0.3s ease;
+text-align: center;
+}
+
+.resource-link:hover {
+background-color: var(--primary-color);
+transform: scale(1.05);
+}
+
+/* Animation for Filtering and Searching */
+.resource-card.filtered-out {
+opacity: 0;
+transform: scale(0.9);
+height: 0;
+margin: 0;
+padding: 0;
+overflow: hidden;
+border: 0;
+}
+
+/* No Results Message */
+.no-results-message {
+text-align: center;
+padding: 30px;
+background-color: #f8f9fa;
+border-radius: 10px;
+margin-top: 20px;
+}
+
+.no-results-message p {
+color: #555;
+font-size: 1.1rem;
+}
+
+.paper-item-simple {
+margin-bottom: 2rem;
+}
+
+.paper-title-simple {
+font-weight: bold;
+margin-bottom: 0.3rem;
+}
+
+.paper-authors-simple {
+font-style: italic;
+margin-bottom: 0.3rem;
+}
+
+.paper-journal-simple {
+margin-bottom: 0.3rem;
+}
+
+.paper-status-simple {
+font-style: italic;
+margin-bottom: 0.3rem;
+}
+.paper-item-simple p {
+margin-left: 1rem;
+}
+
+/* ===== CAROUSEL STYLES ===== */
+.carousel-container {
+margin: 2rem 0;
+position: relative;
+background: white;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+}
+
+.carousel-wrapper {
+position: relative;
+width: 100%;
+padding-bottom: 60px;
+}
+
+.carousel-slides {
+position: relative;
+width: 100%;
+overflow: hidden;
+}
+
+.carousel-slide {
+display: none;
+flex-direction: column;
+align-items: center;
+padding: 40px 80px;
+animation: carouselFadeIn 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+display: flex;
+}
+
+.carousel-slide img {
+max-width: 100%;
+height: auto;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.figure-caption {
+text-align: center;
+color: #333;
+font-size: 16px;
+margin-top: 10px;
+}
+
+/* Navigation Arrows */
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 45px;           /* Changed from 60px */
-  height: 45px;          /* Changed from 60px */
-  background-color: rgba(128, 128, 128, 0.5);  /* Made more transparent */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  z-index: 10;
-  user-select: none;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 45px; /* Changed from 60px */
+height: 45px; /* Changed from 60px */
+background-color: rgba(128, 128, 128, 0.5); /* Made more transparent */
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: background-color 0.3s ease;
+z-index: 10;
+user-select: none;
 }
 
 .arrow:hover {
-  background-color: rgba(100, 100, 100, 0.7);
+background-color: rgba(100, 100, 100, 0.7);
 }
 
 .arrow-left {
-  left: 15px;
+left: 15px;
 }
 
 .arrow-right {
-  right: 15px;
+right: 15px;
 }
 
 .arrow::before {
-  content: '';
-  width: 0;
-  height: 0;
-  border-style: solid;
+content: '';
+width: 0;
+height: 0;
+border-style: solid;
 }
 
 .arrow-left::before {
-  border-width: 10px 14px 10px 0;     /* Made smaller from 12px 18px */
-  border-color: transparent white transparent transparent;
-  margin-right: 3px;
+border-width: 10px 14px 10px 0; /* Made smaller from 12px 18px */
+border-color: transparent white transparent transparent;
+margin-right: 3px;
 }
 
 .arrow-right::before {
-  border-width: 10px 0 10px 14px;     /* Made smaller from 12px 18px */
-  border-color: transparent transparent transparent white;
-  margin-left: 3px;
+border-width: 10px 0 10px 14px; /* Made smaller from 12px 18px */
+border-color: transparent transparent transparent white;
+margin-left: 3px;
 }
 
-    /* Pagination Dots */
-    .pagination-dots {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 12px;
-      z-index: 10;
-    }
+/* Pagination Dots */
+.pagination-dots {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+gap: 12px;
+z-index: 10;
+}
 
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: #ccc;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
+.dot {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background-color: #ccc;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-    .dot:hover {
-      transform: scale(1.2);
-    }
+.dot:hover {
+transform: scale(1.2);
+}
 
-    .dot.active {
-      background-color: #333;
-    }
+.dot.active {
+background-color: #333;
+}
 
-    @keyframes carouselFadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
+@keyframes carouselFadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
 
-	 /* ======	PUBLICATION NUMBERING ======*/ 
-	  /* container that holds all papers */
+/* ====== PUBLICATION NUMBERING ======*/
+/* container that holds all papers */
 .publications-list {
-  counter-reset: pub;            /* start numbering at 0 */
-  padding-left: 0;              /* we control spacing ourselves */
-  margin: 0;
+counter-reset: pub; /* start numbering at 0 */
+padding-left: 0; /* we control spacing ourselves */
+margin: 0;
 }
 
 /* each paper block increments the counter */
 .publications-list .paper-item-simple {
-  counter-increment: pub;       /* increase number for each item */
-  margin-bottom: 1rem;          /* space between items */
-  padding-left: 2.4rem;         /* room for the number on the left */
-  position: relative;
+counter-increment: pub; /* increase number for each item */
+margin-bottom: 1rem; /* space between items */
+padding-left: 2.4rem; /* room for the number on the left */
+position: relative;
 }
 
 /* display the number on the left */
 .publications-list .paper-item-simple::before {
-  content: counter(pub) ".";    /* the number, e.g. 1. */
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-weight: 700;
-  min-width: 2rem;
-  text-align: left;
+content: counter(pub) "."; /* the number, e.g. 1. */
+position: absolute;
+left: 0;
+top: 0;
+font-weight: 700;
+min-width: 2rem;
+text-align: left;
 }
 
 /* small niceties for your existing classes */
 .paper-title-simple { font-weight: 700; display:block; }
 .paper-authors-simple, .paper-journal-simple { display:block; margin-top: 0.18rem; }
 
-    /* ===== RESPONSIVE DESIGN ===== */
-    @media (max-width: 768px) {
-      :root {
-        --content-width: min(calc(100% - 4cm), 1000px);
-        --header-height: 140px;
-      }
-      
-      .navbar {
-        flex-direction: column;
-      }
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+:root {
+--content-width: min(calc(100% - 4cm), 1000px);
+--header-height: 140px;
+}
 
-      .header-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1.5rem 1rem;
-        gap: 1rem;
-      }
+.navbar {
+flex-direction: column;
+}
 
-      .header-name {
-        text-align: center;
-      }
+.header-container {
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding: 1.5rem 1rem;
+gap: 1rem;
+}
 
-      .header-info {
-        text-align: center;
-        margin-left: 0;
-        font-size: clamp(0.85rem, 2.5vw, 1rem);
-      }
+.header-name {
+text-align: center;
+}
 
-      .social-links {
-        flex-direction: row;
-        justify-content: center;
-      }
-      
-      /* Stack the home layout on smaller screens */
-      .home-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .profile-container {
-        max-width: 100%;
-        margin-bottom: 1.5rem;
-      }
+.header-info {
+text-align: center;
+margin-left: 0;
+font-size: clamp(0.85rem, 2.5vw, 1rem);
+}
 
-      .home-content {
-        padding-left: 0;
-      }
-      
-      .two-column, .teaching-container {
-        flex-direction: column;
-      }
+.social-links {
+flex-direction: row;
+justify-content: center;
+}
 
-      .resource-items {
-        grid-template-columns: 1fr;
-      }
-      
-      .filter-container {
-        justify-content: center;
-      }
+/* Stack the home layout on smaller screens */
+.home-container {
+flex-direction: column;
+align-items: center;
+}
 
-      .carousel-slide {
-        padding: 30px 60px;
-      }
+.profile-container {
+max-width: 100%;
+margin-bottom: 1.5rem;
+}
 
-      .arrow {
-        width: 50px;
-        height: 50px;
-      }
+.home-content {
+padding-left: 0;
+}
 
-      .arrow-left {
-        left: 10px;
-      }
+.two-column, .teaching-container {
+flex-direction: column;
+}
 
-      .arrow-right {
-        right: 10px;
-      }
-    }
+.resource-items {
+grid-template-columns: 1fr;
+}
 
-    @media (max-width: 480px) {
-      :root {
-        --content-width: min(calc(100% - 2cm), 1000px);
-        --header-height: 120px;
-      }
-      
-      .navbar a {
-        padding: 3px 6px;
-        margin: 3px;
-      }
+.filter-container {
+justify-content: center;
+}
 
-      .header-container {
-        padding: 1rem 0.5rem;
-      }
+.carousel-slide {
+padding: 30px 60px;
+}
 
-      .header-info {
-        font-size: 0.9rem;
-        line-height: 1.6;
-      }
+.arrow {
+width: 50px;
+height: 50px;
+}
 
-      .content {
-        padding: 0.5rem;
-      }
+.arrow-left {
+left: 10px;
+}
 
-      .profile-photo {
-        width: 200px;
-        height: 200px;
-      }
+.arrow-right {
+right: 10px;
+}
+}
 
-      .carousel-slide {
-        padding: 20px 50px;
-      }
+@media (max-width: 480px) {
+:root {
+--content-width: min(calc(100% - 2cm), 1000px);
+--header-height: 120px;
+}
 
-      .arrow {
-        width: 40px;
-        height: 40px;
-      }
+.navbar a {
+padding: 3px 6px;
+margin: 3px;
+}
 
-      .arrow-left::before {
-        border-width: 10px 15px 10px 0;
-      }
+.header-container {
+padding: 1rem 0.5rem;
+}
 
-      .arrow-right::before {
-        border-width: 10px 0 10px 15px;
-      }
-    }
-  </style>
+.header-info {
+font-size: 0.9rem;
+line-height: 1.6;
+}
+
+.content {
+padding: 0.5rem;
+}
+
+.profile-photo {
+width: 200px;
+height: 200px;
+}
+
+.carousel-slide {
+padding: 20px 50px;
+}
+
+.arrow {
+width: 40px;
+height: 40px;
+}
+
+.arrow-left::before {
+border-width: 10px 15px 10px 0;
+}
+
+.arrow-right::before {
+border-width: 10px 0 10px 15px;
+}
+}
+</style>
 </head>
 <body>
 
 <!-- Header Container -->
 <header class="header-container">
-  <div class="header-name">Vikrant V. Kamble</div>
-  <div class="header-info">
-    <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
-  </div>
+<div class="header-name">Vikrant V. Kamble</div>
+<div class="header-info">
+<a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
+</div>
 </header>
 
 <nav class="navbar">
-  <a data-section="home" class="nav-link active">Home</a>
-  <a data-section="research" class="nav-link">Research</a>
-  <a data-section="teaching" class="nav-link">Teaching</a>
-  <a data-section="resources" class="nav-link">Resources</a>
-  <a href="https://www.dropbox.com/scl/fi/9v37h8k81dgnn651czhvv/CV_Vikrant_V_Kamble.pdf?rlkey=7uexiqrzcibpcqv6jo4r01hus&dl=0" target="_blank" class="nav-link">CV</a>
+<a data-section="home" class="nav-link active">Home</a>
+<a data-section="research" class="nav-link">Research</a>
+<a data-section="teaching" class="nav-link">Teaching</a>
+<a data-section="resources" class="nav-link">Resources</a>
+<a href="https://www.dropbox.com/scl/fi/9v37h8k81dgnn651czhvv/CV_Vikrant_V_Kamble.pdf?rlkey=7uexiqrzcibpcqv6jo4r01hus&dl=0" target="_blank" class="nav-link">CV</a>
+<a data-section="conferences" class="nav-link">Conferences</a>
 </nav>
 
 <!-- Content -->
 <div class="content">
-  <!-- Home Section -->
-  <section id="home" class="section active">
-    <div class="home-container" style="gap: 4rem;">
-      
-      <!-- Left side: Profile photo, social links, and research interests -->
-      <div class="profile-container">
-        <!-- Circular Profile Image -->
-        <img src="vikrant1.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
-        
-        <!-- Social Links -->
-        <div class="social-links">
-          <a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank">
-            <i class="fas fa-graduation-cap fa-lg"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">
-            <i class="fab fa-linkedin fa-lg"></i>
-          </a>
-        </div>
-        
-      
-        
-        <!-- Research Interests -->
-	<div class="research-interests" style="text-align: left; color: #1a5490;">
-	  <p><b><u>Research Interests:</u></b></p>
-	  <p>• Applied Microeconomics<br>
-	  • Health Economics<br>
-	  • Labor Economics<br>
-	  • Development Economics</p>
-	</div>
-      </div>
-      <!-- Right side: Main content -->
-      <div style="position: relative; padding-top: 50px;">
-	<div style="position: absolute; top: 0; right: 0; background-color: #D4EDDA; color: black; padding: 8px 16px; border-radius: 6px; font-weight: bold; font-size: 0.9rem;">	    
-	Job Market Candidate 2025-2026
-	  </div>
-	  <p>Welcome to my website!</p>
-	  <p>I am an Economics PhD candidate at the University of Delaware. My research uses causal inference methods to study labor and health economics, focusing on policy impacts on communities.</p>
-	  <p> </p>
-	            <!-- Job Market Paper Section -->
+<!-- Home Section -->
+<section id="home" class="section active">
+<div class="home-container" style="gap: 4rem;">
+
+<!-- Left side: Profile photo, social links, and research interests -->
+<div class="profile-container">
+<!-- Circular Profile Image -->
+<img src="vikrant1.png" alt="Profile photo of Vikrant Kamble" class="profile-photo">
+
+<!-- Social Links -->
+<div class="social-links">
+<a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank">
+<i class="fas fa-graduation-cap fa-lg"></i>
+</a>
+<a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank">
+<i class="fab fa-linkedin fa-lg"></i>
+</a>
+</div>
+
+
+
+<!-- Research Interests -->
+<div class="research-interests" style="text-align: left; color: #1a5490;">
+<p><b><u>Research Interests:</u></b></p>
+<p>• Applied Microeconomics<br>
+• Health Economics<br>
+• Labor Economics<br>
+• Development Economics</p>
+</div>
+</div>
+<!-- Right side: Main content -->
+<div style="position: relative; padding-top: 50px;">
+<div style="position: absolute; top: 0; right: 0; background-color: #D4EDDA; color: black; padding: 8px 16px; border-radius: 6px; font-weight: bold; font-size: 0.9rem;">
+Job Market Candidate 2025-2026
+</div>
+<p>Welcome to my website!</p>
+<p>I am an Economics PhD candidate at the University of Delaware. My research uses causal inference methods to study labor and health economics, focusing on policy impacts on communities.</p>
+<p> </p>
+<!-- Job Market Paper Section -->
 <p>
-  <strong>Job Market Paper</strong>
-  <a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank">[View PDF]</a>
+<strong>Job Market Paper</strong>
+<a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank">[View PDF]</a>
 </p>
 
 <hr style="border: none; border-top: 1px solid #ddd; margin: 0.5rem 0;">
 
 <div class="paper-item-simple">
-  <div class="paper-title-simple">"The 1973 Oil Embargo and Infant Health Outcomes"</div>
-  <p><strong>Abstract:</strong> An extensive literature documents that economic shocks affect health outcomes, but mechanisms and distributional effects remain unclear. I study how a negative oil supply shock affects infant health using 1968-1973 Vital Statistics data. With an event-study framework that accounts for state-specific pre-trends, I find that states with higher fuel dependence experienced increases in birthweight following the 1973 oil embargo. Gains are larger for less-educated, relatively younger, and Black mothers at 2-3.5 grams. These improvements result from shifts in maternal composition, increased prenatal care use, and reduced air pollution.</p>
+<div class="paper-title-simple">"The 1973 Oil Embargo and Infant Health Outcomes"</div>
+<p><strong>Abstract:</strong> An extensive literature documents that economic shocks affect health outcomes, but mechanisms and distributional effects remain unclear. I study how a negative oil supply shock affects infant health using 1968-1973 Vital Statistics data. With an event-study framework that accounts for state-specific pre-trends, I find that states with higher fuel dependence experienced increases in birthweight following the 1973 oil embargo. Gains are larger for less-educated, relatively younger, and Black mothers at 2-3.5 grams. These improvements result from shifts in maternal composition, increased prenatal care use, and reduced air pollution.</p>
 </div>
 
 <hr style="border: none; border-top: 1px solid #ddd; margin: 1rem 0;">
 
 <!-- Figure Carousel -->
 <div class="carousel-container">
-  <div class="carousel-wrapper">
-    <div class="carousel-slides">
-      <!-- Slide 1 -->
+<div class="carousel-wrapper">
+<div class="carousel-slides">
+<!-- Slide 1 -->
 <div class="carousel-slide active">
-  <img src="https://www.dropbox.com/scl/fi/81kc3tx07ydp6bqfah24r/bootstrap_ci_comparision.png?rlkey=kbgv6dwmmxha4r36v9elf8x21&raw=1" alt="Figure 1">
-  <div class="figure-caption">Figure 1: Birthweight</div>
+<img src="https://www.dropbox.com/scl/fi/81kc3tx07ydp6bqfah24r/bootstrap_ci_comparision.png?rlkey=kbgv6dwmmxha4r36v9elf8x21&raw=1" alt="Figure 1">
+<div class="figure-caption">Figure 1: Birthweight</div>
 </div>
 
 <!-- Slide 2 -->
 <div class="carousel-slide">
-  <img src="https://www.dropbox.com/scl/fi/rel6y3eeg2wxjdccaffll/eq2_birthweight.png?rlkey=cxl5ytgbrvo7t9wxl0kvjco1s&raw=1" alt="Figure 2">
-  <div class="figure-caption">Figure 2: Birthweight</div>
+<img src="https://www.dropbox.com/scl/fi/rel6y3eeg2wxjdccaffll/eq2_birthweight.png?rlkey=cxl5ytgbrvo7t9wxl0kvjco1s&raw=1" alt="Figure 2">
+<div class="figure-caption">Figure 2: Birthweight</div>
 </div>
 
 <!-- Slide 3 -->
 <div class="carousel-slide">
-  <img src="https://www.dropbox.com/scl/fi/ap8ffwsolcknoy10civpq/eq2_dgestat.png?rlkey=r3acly54ihktlc9pb6rccuzuf&raw=1" alt="Figure 3">
-  <div class="figure-caption">Figure 3: Gestational age</div>
+<img src="https://www.dropbox.com/scl/fi/ap8ffwsolcknoy10civpq/eq2_dgestat.png?rlkey=r3acly54ihktlc9pb6rccuzuf&raw=1" alt="Figure 3">
+<div class="figure-caption">Figure 3: Gestational age</div>
 </div>
 
 <!-- Slide 4 -->
 <div class="carousel-slide">
-  <img src="https://www.dropbox.com/scl/fi/jxaf0iqxw7n7nc8rgc5q3/eq2_lowbw.png?rlkey=dxa1sb0mlnhawevtxpho9k4ds&raw=1" alt="Figure 4">
-  <div class="figure-caption">Figure 4: Low Birth Weight</div>
+<img src="https://www.dropbox.com/scl/fi/jxaf0iqxw7n7nc8rgc5q3/eq2_lowbw.png?rlkey=dxa1sb0mlnhawevtxpho9k4ds&raw=1" alt="Figure 4">
+<div class="figure-caption">Figure 4: Low Birth Weight</div>
 </div>
 
 <!-- Slide 5 -->
 <div class="carousel-slide">
-  <img src="https://www.dropbox.com/scl/fi/rsfzy55hgsld2mytoc2ga/eq2_preterm.png?rlkey=by1cz7ijo7kvxjpf6j7k66twa&raw=1" alt="Figure 5">
-  <div class="figure-caption">Figure 5: Preterm</div>
+<img src="https://www.dropbox.com/scl/fi/rsfzy55hgsld2mytoc2ga/eq2_preterm.png?rlkey=by1cz7ijo7kvxjpf6j7k66twa&raw=1" alt="Figure 5">
+<div class="figure-caption">Figure 5: Preterm</div>
 </div>
 
-    <!-- Navigation Arrows -->
-    <div class="arrow arrow-left" onclick="changeSlide(-1)"></div>
-    <div class="arrow arrow-right" onclick="changeSlide(1)"></div>
+<!-- Navigation Arrows -->
+<div class="arrow arrow-left" onclick="changeSlide(-1)"></div>
+<div class="arrow arrow-right" onclick="changeSlide(1)"></div>
 
-    <!-- Pagination Dots -->
-    <div class="pagination-dots">
-      <span class="dot active" onclick="goToSlide(0)"></span>
-      <span class="dot" onclick="goToSlide(1)"></span>
-      <span class="dot" onclick="goToSlide(2)"></span>
-      <span class="dot" onclick="goToSlide(3)"></span>
-      <span class="dot" onclick="goToSlide(4)"></span>
-    </div>
-  </div>
+<!-- Pagination Dots -->
+<div class="pagination-dots">
+<span class="dot active" onclick="goToSlide(0)"></span>
+<span class="dot" onclick="goToSlide(1)"></span>
+<span class="dot" onclick="goToSlide(2)"></span>
+<span class="dot" onclick="goToSlide(3)"></span>
+<span class="dot" onclick="goToSlide(4)"></span>
+</div>
+</div>
 </div>
 
-		  
-	  <p> </p>
-	</div>
-  </section>
 
-  <!-- Research Section - FIXED: Added class="section" -->
-  <section id="research" class="section">
-    <h2>Research</h2>
-    
-    <!-- Publication Section -->
+<p> </p>
+</div>
+</section>
+
+<!-- Research Section - FIXED: Added class="section" -->
+<section id="research" class="section">
+<h2>Research</h2>
+
+<!-- Publication Section -->
 <!-- Publication Section -->
 <h3>Peer-Reviewed Publications</h3>
 
 <div class="publications-list">
-  <div class="paper-item-simple">
-    <div class="paper-title-simple">"Ride-sharing and Crime: Evidence from U.S. Cities"</div>
-    <div class="paper-authors-simple">
-      with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a>
-    </div>
-    <div class="paper-journal-simple">
-      Transportation Research Interdisciplinary Perspectives, Volume 34, 2025, 101707 |
-      <a href="https://www.sciencedirect.com/science/article/pii/S2590198225003860" target="_blank">Link</a>
-    </div>
-  </div>
+<div class="paper-item-simple">
+<div class="paper-title-simple">"Ride-sharing and Crime: Evidence from U.S. Cities"</div>
+<div class="paper-authors-simple">
+with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a>
+</div>
+<div class="paper-journal-simple">
+Transportation Research Interdisciplinary Perspectives, Volume 34, 2025, 101707 |
+<a href="https://www.sciencedirect.com/science/article/pii/S2590198225003860" target="_blank">Link</a>
+</div>
+</div>
 
-  <div class="paper-item-simple">
-    <div class="paper-title-simple">"Noncustodial Parents, Instrumental Networks, and Child Support Compliance"</div>
-    <div class="paper-authors-simple">
-      with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger
-    </div>
-    <div class="paper-journal-simple">
-      Social Science Research, Volume 110, February 2023, 102850 |
-      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" target="_blank">Link</a>
-    </div>
-  </div>
+<div class="paper-item-simple">
+<div class="paper-title-simple">"Noncustodial Parents, Instrumental Networks, and Child Support Compliance"</div>
+<div class="paper-authors-simple">
+with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger
+</div>
+<div class="paper-journal-simple">
+Social Science Research, Volume 110, February 2023, 102850 |
+<a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" target="_blank">Link</a>
+</div>
+</div>
 </div>
 
 
 <!-- Job Market Paper Section -->
 <h3>
-  Job Market Paper
-  <a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" style="font-size: 0.9em; margin-left: 10px;">
-    [View PDF]
-  </a>
+Job Market Paper
+<a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" style="font-size: 0.9em; margin-left: 10px;">
+[View PDF]
+</a>
 </h3>
 
 
 <div class="paper-item-simple">
-  <div class="paper-title-simple">"The 1973 Oil Embargo and Infant Health Outcomes"</div>
-  <p><strong>Abstract:</strong> An extensive literature documents that economic shocks affect health outcomes, but mechanisms and distributional effects remain unclear. I study how a negative oil supply shock affects infant health using 1968-1973 Vital Statistics data. With an event-study framework that accounts for state-specific pre-trends, I find that states with higher fuel dependence experienced increases in birthweight following the 1973 oil embargo. Gains are larger for less-educated, relatively younger, and Black mothers at 2-3.5 grams. These improvements result from shifts in maternal composition, increased prenatal care use, and reduced air pollution.</p>
+<div class="paper-title-simple">"The 1973 Oil Embargo and Infant Health Outcomes"</div>
+<p><strong>Abstract:</strong> An extensive literature documents that economic shocks affect health outcomes, but mechanisms and distributional effects remain unclear. I study how a negative oil supply shock affects infant health using 1968-1973 Vital Statistics data. With an event-study framework that accounts for state-specific pre-trends, I find that states with higher fuel dependence experienced increases in birthweight following the 1973 oil embargo. Gains are larger for less-educated, relatively younger, and Black mothers at 2-3.5 grams. These improvements result from shifts in maternal composition, increased prenatal care use, and reduced air pollution.</p>
 </div>
 
 <!-- Working Papers Section -->
 <h3>Working Papers</h3>
 
 <div class="paper-item-simple">
-  <div class="paper-title-simple">"Fueling or Failing: Evidence from Oil Price Decline"</div>
-  <div class="paper-authors-simple">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a> (Under Review)</div>
-  <p><strong>Abstract:</strong> This study examines the economic consequences of oil price declines using difference-in-differences identification strategy. Educational outcomes are measured using data from the Stanford Education Data Archive (SEDA). We estimate that the shock increased Mathematics and English Language Arts (ELA) scores by approximately 0.02 to 0.06 standard deviations. These gains are concentrated among specific subgroups, including Hispanic, female, Asian, and economically disadvantaged (ECD) students.</p>
+<div class="paper-title-simple">"Fueling or Failing: Evidence from Oil Price Decline"</div>
+<div class="paper-authors-simple">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a> (Under Review)</div>
+<p><strong>Abstract:</strong> This study examines the economic consequences of oil price declines using difference-in-differences identification strategy. Educational outcomes are measured using data from the Stanford Education Data Archive (SEDA). We estimate that the shock increased Mathematics and English Language Arts (ELA) scores by approximately 0.02 to 0.06 standard deviations. These gains are concentrated among specific subgroups, including Hispanic, female, Asian, and economically disadvantaged (ECD) students.</p>
 </div>
 
 <div class="paper-item-simple">
-  <div class="paper-title-simple">"Intertemporal Elasticity of Labor Supply for Taxicab Drivers"</div>
-  <div class="paper-authors-simple">with <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a></div>
-  <p><strong>Abstract:</strong> This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We leverage exogenous variation in earnings opportunities to identify labor supply responses. Our findings suggest positive intertemporal elasticity, indicating that drivers increase their labor supply when wages are more. These results have important implications for understanding labor market dynamics in the gig economy.</p>
+<div class="paper-title-simple">"Intertemporal Elasticity of Labor Supply for Taxicab Drivers"</div>
+<div class="paper-authors-simple">with <a href="https://swapnil-motghare.github.io/" target="_blank">Swapnil Motghare</a></div>
+<p><strong>Abstract:</strong> This paper examines the intertemporal elasticity of labor supply for taxicab drivers using a novel instrument. We leverage exogenous variation in earnings opportunities to identify labor supply responses. Our findings suggest positive intertemporal elasticity, indicating that drivers increase their labor supply when wages are more. These results have important implications for understanding labor market dynamics in the gig economy.</p>
 </div>
 
 <div class="paper-item-simple">
-  <div class="paper-title-simple">"Labor Market Consequences of Cycling Program: Evidence from Bihar, India"</div>
-  <p><strong>Abstract:</strong> I investigate the long-term causal effects of a government cycling program in Bihar, India on labor market outcomes using a difference-in-differences-in-differences (DDD) approach. The program provided bicycles to female students to reduce barriers to school. I examine whether this intervention had lasting impacts on employment, wages, and labor force participation. Results suggest significant improvements in labor market outcomes, particularly for women and rural populations.</p>
+<div class="paper-title-simple">"Labor Market Consequences of Cycling Program: Evidence from Bihar, India"</div>
+<p><strong>Abstract:</strong> I investigate the long-term causal effects of a government cycling program in Bihar, India on labor market outcomes using a difference-in-differences-in-differences (DDD) approach. The program provided bicycles to female students to reduce barriers to school. I examine whether this intervention had lasting impacts on employment, wages, and labor force participation. Results suggest significant improvements in labor market outcomes, particularly for women and rural populations.</p>
 </div>
 
 <div class="paper-item-simple">
-  <div class="paper-title-simple">"Medicaid Expansion and Crime: Evidence from U.S Cities"</div>
-  <div class="paper-authors-simple">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a> (Under Review) | <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank">Link</a></div>
-  <p><strong>Abstract:</strong> Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion influenced crime in major cities, using daily crime data from the 21 largest U.S. cities. We provide the first causal analysis linking Medicaid expansion to urban crime trends, exploiting variation in state adoption timing to identify effects on violent and property crime rates.</p>
+<div class="paper-title-simple">"Medicaid Expansion and Crime: Evidence from U.S Cities"</div>
+<div class="paper-authors-simple">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a> (Under Review) | <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank">Link</a></div>
+<p><strong>Abstract:</strong> Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion influenced crime in major cities, using daily crime data from the 21 largest U.S. cities. We provide the first causal analysis linking Medicaid expansion to urban crime trends, exploiting variation in state adoption timing to identify effects on violent and property crime rates.</p>
 </div>
 
 <!-- Work-in-Progress Section -->
 <h3>Work-in-Progress</h3>
 
 <div class="paper-item-simple">
-  <div class="paper-title-simple">"Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes"</div>
-  <div class="paper-authors-simple">with <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank">Kenneth Shores</a> and <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank">Jesse Eze</a> | <a href="https://eric.ed.gov/?q=cluster&pg=7&id=ED663020" target="_blank">Abstract</a></div>
+<div class="paper-title-simple">"Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes"</div>
+<div class="paper-authors-simple">with <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank">Kenneth Shores</a> and <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank">Jesse Eze</a> | <a href="https://eric.ed.gov/?q=cluster&pg=7&id=ED663020" target="_blank">Abstract</a></div>
 </div>
 
 <div class="paper-item-simple">
-  <div class="paper-title-simple">"Forced Immigration and Borrowing Constraint"</div>
-  <div class="paper-authors-simple">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a> and Derrick Liang</div>
+<div class="paper-title-simple">"Forced Immigration and Borrowing Constraint"</div>
+<div class="paper-authors-simple">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank">Muhammad Usman Taj</a> and Derrick Liang</div>
 </div>
 
 <div class="paper-item-simple">
-  <div class="paper-title-simple">"Marching Through Time: The Enduring Effects of Military Settlements"</div>
+<div class="paper-title-simple">"Marching Through Time: The Enduring Effects of Military Settlements"</div>
 <div class="paper-authors-simple">with <a href="https://www.sarahshaukat.com/" target="_blank" rel="noopener noreferrer">Sarah Shaukat</a> and <a href="https://sites.google.com/view/attique-ur-rehman" target="_blank" rel="noopener noreferrer">Attique Ur Rehman</a></div>
 </div>
 </section>
-  
-  <!-- Teaching Section -->
-  <section id="teaching" class="section">
-    <h2>Teaching Experience</h2>
-    
-    <h3>Instructor of Record</h3>
- 	<ul>
-      <li>ECON101: Introduction to Microeconomics <a href="Complete_Evaluations_Winter2025.pdf" target="_blank">(Course evaluations)</a>
-        <p class="indent"> Winter 2025, Fall 2025 (86 students) | Textbook Used: Principles of Microconomics, 2nd edition by Stevenson and Wolfers</p>
-      </li>
-    </ul> 
 
-    
-    <h3>Graduate Courses (Teaching Assistant)</h3>
-    <ul>
-      <li>ECON814: Macroeconomics Theory II
-        <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
-      </li>
-      <li>ECON824: Econometrics of Cross-Section and Panel Data
-        <p class="indent">Fall 2023, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a></p>
-      </li>
-    </ul>
-    
-    <h3>Undergraduate Courses (Teaching Assistant)</h3>
-    <ul>
-      <li>ECON301: Intermediate Microeconomics with Calculus
-        <p class="indent">Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></p>
-      </li>
-      <li>ECON304: Quantitative Macroeconomic Theory
-        <p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
-      </li>
-      <li>ECON422: Econometric Methods and Models
-        <p class="indent">Fall 2022, Fall 2023, Spring 2024, Fall 2024, Spring 2025 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></p>
-      </li>
-    </ul>
-  </section>
+<!-- Teaching Section -->
+<section id="teaching" class="section">
+<h2>Teaching Experience</h2>
 
-  <!-- Resources Section -->
+<h3>Instructor of Record</h3>
+<ul>
+<li>ECON101: Introduction to Microeconomics <a href="Complete_Evaluations_Winter2025.pdf" target="_blank">(Course evaluations)</a>
+<p class="indent"> Winter 2025, Fall 2025 (86 students) | Textbook Used: Principles of Microconomics, 2nd edition by Stevenson and Wolfers</p>
+</li>
+</ul>
+
+
+<h3>Graduate Courses (Teaching Assistant)</h3>
+<ul>
+<li>ECON814: Macroeconomics Theory II
+<p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+</li>
+<li>ECON824: Econometrics of Cross-Section and Panel Data
+<p class="indent">Fall 2023, Fall 2024 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a></p>
+</li>
+</ul>
+
+<h3>Undergraduate Courses (Teaching Assistant)</h3>
+<ul>
+<li>ECON301: Intermediate Microeconomics with Calculus
+<p class="indent">Fall 2021 | <a href="https://www.udel.edu/faculty-staff/experts/desmond-toohey/" target="_blank">Dr. Desmond Toohey</a></p>
+</li>
+<li>ECON304: Quantitative Macroeconomic Theory
+<p class="indent">Spring 2023 | <a href="https://sites.google.com/site/hansaholter/" target="_blank">Dr. Hans A. Holter</a></p>
+</li>
+<li>ECON422: Econometric Methods and Models
+<p class="indent">Fall 2022, Fall 2023, Spring 2024, Fall 2024, Spring 2025 | <a href="https://www.emilylbattaglia.com/" target="_blank">Dr. Emily Battaglia</a> and <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank">Dr. Olga Gorbachev</a></p>
+</li>
+</ul>
+</section>
+
+<!-- Resources Section -->
 <section id="resources" class="section">
-  <h2>Resources for Students</h2>
-  
-  <!-- Search Bar -->
-  <div class="search-container">
-    <input type="text" id="resourceSearch" placeholder="Search resources..." class="resource-search-input">
-    <button id="searchButton" class="search-button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+<h2>Resources for Students</h2>
+
+<!-- Search Bar -->
+<div class="search-container">
+<input type="text" id="resourceSearch" placeholder="Search resources..." class="resource-search-input">
+<button id="searchButton" class="search-button">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+</button>
+</div>
+
+<!-- Category Filters -->
+<div class="filter-container">
+<span class="filter-label">Filter by: </span>
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="stata">Stata</button>
+<button class="filter-btn" data-filter="latex">LaTeX</button>
+<button class="filter-btn" data-filter="additional">Additional</button>
+</div>
+
+<div class="resources-wrapper">
+<!-- Resource Category: Stata -->
+<div class="resource-category" data-category="stata">
+<div class="category-header">
+<h3>Stata Resources</h3>
+<button class="expand-collapse-btn" aria-label="Expand or collapse section">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="6 9 12 15 18 9"></polyline>
+</svg>
+</button>
+</div>
+<div class="resource-items">
+<a href="https://www.ssc.wisc.edu/statistics/" target="_blank" class="resource-card" data-tags="stata tutorial guide">
+<h4>University of Wisconsin - Madison</h4>
+<p>Comprehensive Stata tutorials and resources for beginners and advanced users.</p>
+</a>
+<a href="https://www.princeton.edu/~otorres/Stata/" target="_blank" class="resource-card" data-tags="stata guide econometrics">
+<h4>Princeton University</h4>
+<p>Stata guide for economic analysis and econometrics applications.</p>
+</a>
+<a href="https://stats.oarc.ucla.edu/stata/" target="_blank" class="resource-card" data-tags="stata statistics analysis">
+<h4>UCLA Statistical Consulting Group</h4>
+<p>Extensive Stata resources with examples for statistical analysis.</p>
+</a>
+<a href="https://medium.com/the-stata-gallery/top-25-stata-visualizations-with-full-code-668b5df114b6" target="_blank" class="resource-card" data-tags="stata basics introduction">
+<h4>Top 25 Stata Visualizations</h4>
+<p>With Full Stata Code (by Fahad Mirza)</p>
+</a>
+</div>
+</div>
+
+<!-- Resource Category: LaTeX -->
+<div class="resource-category" data-category="latex">
+<div class="category-header">
+<h3>LaTeX Resources</h3>
+<button class="expand-collapse-btn" aria-label="Expand or collapse section">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="6 9 12 15 18 9"></polyline>
+</svg>
+</button>
+</div>
+<div class="resource-items">
+<a href="https://www.overleaf.com/latex/templates" target="_blank" class="resource-card" data-tags="latex templates academic papers">
+<h4>Overleaf Templates</h4>
+<p>Collection of LaTeX templates for academic papers, theses, and presentations.</p>
+</a>
+</div>
+</div>
+
+<!-- Resource Category: Additional Resources -->
+<div class="resource-category" data-category="additional">
+  <div class="category-header">
+    <h3>Additional Resources</h3>
+    <button class="expand-collapse-btn" aria-label="Expand or collapse section">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
     </button>
   </div>
-  
-  <!-- Category Filters -->
-  <div class="filter-container">
-    <span class="filter-label">Filter by: </span>
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="stata">Stata</button>
-    <button class="filter-btn" data-filter="latex">LaTeX</button>
-    <button class="filter-btn" data-filter="additional">Additional</button>
+  <div class="resource-items">
+    <a href="https://psantanna.com/did-resources/" target="_blank" class="resource-card" data-tags="DiD Resources">
+      <h4>DiD Resources: Pedro H. C. Sant'Anna</h4>
+      <p>A Comprehensive Course on DiD</p>
+    </a>
+    <a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank" class="resource-card" data-tags="diff-in-diff econometrics course">
+      <h4>Diff-in-Diff course: Clement De Chaisemartin</h4>
+      <p>Video course on difference-in-differences methodology.</p>
+    </a>
+    <a href="https://asjadnaqvi.github.io/DiD/" target="_blank" class="resource-card" data-tags="did staggered packages">
+      <h4>Staggered DiD software packages: Asjad Naqvi</h4>
+      <p>Software packages for staggered difference-in-differences analysis.</p>
+    </a>
+    <a href="https://neilhe.com/stata-packages" target="_blank" class="resource-card" data-tags="synthetic control method stata">
+      <h4>Synthetic Control Method Stata packages: Jialun (Neil) He</h4>
+      <p>Stata packages for implementing synthetic control methods.</p>
+    </a>
+    <a href="https://jenniferdoleac.com/resources/" target="_blank" class="resource-card" data-tags="economics resources">
+      <h4>Resources: Jennifer Doleac</h4>
+      <p>Curated economics resources and research materials.</p>
+    </a>
+    <a href="https://sebastiantellotrillo.com/resources" target="_blank" class="resource-card" data-tags="economics resources">
+      <h4>Resources: Sebastian Tello Trillo</h4>
+      <p>Economics resources -- Almost all.</p>
+    </a>
+    <a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank" class="resource-card" data-tags="coding resources undergraduate">
+      <h4>Coding resources: Moshi Alam</h4>
+      <p>Programming and coding resources for undergraduate students.</p>
+    </a>
   </div>
-  
-  <div class="resources-wrapper">
-    <!-- Resource Category: Stata -->
-    <div class="resource-category" data-category="stata">
-      <div class="category-header">
-        <h3>Stata Resources</h3>
-        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-      </div>
-      <div class="resource-items">
-        <a href="https://www.ssc.wisc.edu/statistics/" target="_blank" class="resource-card" data-tags="stata tutorial guide">
-          <h4>University of Wisconsin - Madison</h4>
-          <p>Comprehensive Stata tutorials and resources for beginners and advanced users.</p>
-        </a>
-        <a href="https://www.princeton.edu/~otorres/Stata/" target="_blank" class="resource-card" data-tags="stata guide econometrics">
-          <h4>Princeton University</h4>
-          <p>Stata guide for economic analysis and econometrics applications.</p>
-        </a>
-        <a href="https://stats.oarc.ucla.edu/stata/" target="_blank" class="resource-card" data-tags="stata statistics analysis">
-          <h4>UCLA Statistical Consulting Group</h4>
-          <p>Extensive Stata resources with examples for statistical analysis.</p>
-        </a>
-        <a href="https://medium.com/the-stata-gallery/top-25-stata-visualizations-with-full-code-668b5df114b6" target="_blank" class="resource-card" data-tags="stata basics introduction">
-          <h4>Top 25 Stata Visualizations</h4>
-          <p>With Full Stata Code (by Fahad Mirza)</p>
-        </a>
-      </div>
-    </div>
-    
-    <!-- Resource Category: LaTeX -->
-    <div class="resource-category" data-category="latex">
-      <div class="category-header">
-        <h3>LaTeX Resources</h3>
-        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-      </div>
-      <div class="resource-items">
-        <a href="https://www.overleaf.com/latex/templates" target="_blank" class="resource-card" data-tags="latex templates academic papers">
-          <h4>Overleaf Templates</h4>
-          <p>Collection of LaTeX templates for academic papers, theses, and presentations.</p>
-        </a>
-      </div>
-    </div>
-    
-    <!-- Resource Category: Additional Resources -->
-    <div class="resource-category" data-category="additional">
-      <div class="category-header">
-        <h3>Additional Resources</h3>
-        <button class="expand-collapse-btn" aria-label="Expand or collapse section">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-      </div>
-      <div class="resource-items">
-        <a href="https://psantanna.com/did-resources/" target="_blank" class="resource-card" data-tags="DiD Resources">
-          <h4>DiD Resources: Pedro H. C. Sant'Anna</h4>
-          <p>A Comprehensive Course on DiD</p>
-        </a>
-        <a href="https://www.youtube.com/playlist?list=PLXs0Z86ZOIlHc8ApDD1v_wFi1GNChN284" target="_blank" class="resource-card" data-tags="diff-in-diff econometrics course">
-          <h4>Diff-in-Diff course: Clement De Chaisemartin</h4>
-          <p>Video course on difference-in-differences methodology.</p>
-        </a>
-        <a href="https://asjadnaqvi.github.io/DiD/" target="_blank" class="resource-card" data-tags="did staggered packages">
-          <h4>Staggered DiD software packages: Asjad Naqvi</h4>
-          <p>Software packages for staggered difference-in-differences analysis.</p>
-        </a>
-        <a href="https://neilhe.com/stata-packages" target="_blank" class="resource-card" data-tags="synthetic control method stata">
-          <h4>Synthetic Control Method Stata packages: Jialun (Neil) He</h4>
-          <p>Stata packages for implementing synthetic control methods.</p>
-        </a>
-        <a href="https://jenniferdoleac.com/resources/" target="_blank" class="resource-card" data-tags="economics resources">
-          <h4>Resources: Jennifer Doleac</h4>
-          <p>Curated economics resources and research materials.</p>
-        </a>
-        <a href="https://sebastiantellotrillo.com/resources" target="_blank" class="resource-card" data-tags="economics resources">
-          <h4>Resources: Sebastian Tello Trillo</h4>
-          <p>Economics resources -- Almost all.</p>
-        </a>
-        <a href="https://moshialam.github.io/morepages/resourcesforugstudents.html" target="_blank" class="resource-card" data-tags="coding resources undergraduate">
-          <h4>Coding resources: Moshi Alam</h4>
-          <p>Programming and coding resources for undergraduate students.</p>
-        </a>
-      </div>
-    </div>
-  </div>
-
-    
-    <!-- No Results Message -->
-    <div id="noResults" class="no-results-message" style="display:none;">
-      <p>No resources match your search. Try different keywords.</p>
-    </div>
-  </section>
 </div>
 
+<!-- No Results Message -->
+<div id="noResults" class="no-results-message" style="display:none;">
+  <p>No resources match your search. Try different keywords.</p>
+</div>
 
-<!-- End of content div -->
+<!-- Conferences Section -->
+<section id="conferences" class="section">
+  <h2>Conferences</h2>
 
+  <div class="two-column">
+    <!-- Example: Year 2024 -->
+    <div class="column">
+      <h3>2024</h3>
+      <div class="conference-carousel" id="carousel2024">
+        <div class="conference-slides">
+          <div class="conference-slide">
+            <img src="conf1_2024.jpg" alt="Conference 1 2024">
+            <div class="figure-caption">Conference A1</div>
+          </div>
+          <div class="conference-slide">
+            <img src="conf2_2024.jpg" alt="Conference 2 2024">
+            <div class="figure-caption">Conference A2</div>
+          </div>
+          <div class="conference-slide">
+            <img src="conf3_2024.jpg" alt="Conference 3 2024">
+            <div class="figure-caption">Conference A3</div>
+          </div>
+        </div>
+        <div class="conf-arrow conf-arrow-left" onclick="prevSlide('carousel2024')">&#10094;</div>
+        <div class="conf-arrow conf-arrow-right" onclick="nextSlide('carousel2024')">&#10095;</div>
+      </div>
+    </div>
+
+    <!-- Example: Year 2023 -->
+    <div class="column">
+      <h3>2023</h3>
+      <div class="conference-carousel" id="carousel2023">
+        <div class="conference-slides">
+          <div class="conference-slide">
+            <img src="conf1_2023.jpg" alt="Conference 1 2023">
+            <div class="figure-caption">Conference B1</div>
+          </div>
+          <div class="conference-slide">
+            <img src="conf2_2023.jpg" alt="Conference 2 2023">
+            <div class="figure-caption">Conference B2</div>
+          </div>
+        </div>
+        <div class="conf-arrow conf-arrow-left" onclick="prevSlide('carousel2023')">&#10094;</div>
+        <div class="conf-arrow conf-arrow-right" onclick="nextSlide('carousel2023')">&#10095;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Conferences Carousel JS -->
+<script>
+  const carouselIndexes = {};
+  function nextSlide(id) {
+    const carousel = document.getElementById(id).querySelector('.conference-slides');
+    if (!carouselIndexes[id]) carouselIndexes[id] = 0;
+    const slides = carousel.children.length;
+    carouselIndexes[id] = (carouselIndexes[id] + 1) % slides;
+    carousel.style.transform = `translateX(-${carouselIndexes[id] * 100}%)`;
+  }
+  function prevSlide(id) {
+    const carousel = document.getElementById(id).querySelector('.conference-slides');
+    if (!carouselIndexes[id]) carouselIndexes[id] = 0;
+    const slides = carousel.children.length;
+    carouselIndexes[id] = (carouselIndexes[id] - 1 + slides) % slides;
+    carousel.style.transform = `translateX(-${carouselIndexes[id] * 100}%)`;
+  }
+</script>
+
+<!-- Main site JS for navigation, resources search, filters, abstracts, and generic carousel -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Navigation functionality for the entire site
+  // Navigation
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('.section');
-  
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
-      // Remove active class from all links and sections
       navLinks.forEach(l => l.classList.remove('active'));
       sections.forEach(s => s.classList.remove('active'));
-      
-      // Add active class to clicked link
       this.classList.add('active');
-      
-      // Show corresponding section
       const sectionId = this.getAttribute('data-section');
       document.getElementById(sectionId).classList.add('active');
-      
-      // Scroll to top for better UX
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({top:0, behavior:'smooth'});
     });
   });
 
-  // Resources section interactivity (if present)
+  // Resources Search & Filters
   const searchInput = document.getElementById('resourceSearch');
   if (searchInput) {
     const searchButton = document.getElementById('searchButton');
@@ -1413,212 +1465,105 @@ document.addEventListener('DOMContentLoaded', function() {
     const resourceCategories = document.querySelectorAll('.resource-category');
     const expandCollapseButtons = document.querySelectorAll('.expand-collapse-btn');
     const noResultsMessage = document.getElementById('noResults');
-    
-    // Initial setup - all categories expanded
+
+    // Expand/Collapse
     expandCollapseButtons.forEach(button => {
       const categoryItems = button.closest('.category-header').nextElementSibling;
-      categoryItems.style.display = 'grid'; // Initially expanded
-    });
-    
-    // Expand/Collapse functionality
-    expandCollapseButtons.forEach(button => {
+      categoryItems.style.display = 'grid';
       button.addEventListener('click', function() {
-        const categoryItems = this.closest('.category-header').nextElementSibling;
         this.classList.toggle('collapsed');
-        
-        if (this.classList.contains('collapsed')) {
-          categoryItems.style.display = 'none';
-        } else {
-          categoryItems.style.display = 'grid';
-        }
+        categoryItems.style.display = this.classList.contains('collapsed') ? 'none' : 'grid';
       });
     });
-    
-    // Search functionality
+
     function performSearch() {
       const searchTerm = searchInput.value.toLowerCase().trim();
       let resultsFound = false;
-      
       resourceCards.forEach(card => {
         const cardTitle = card.querySelector('h4').textContent.toLowerCase();
         const cardDesc = card.querySelector('p').textContent.toLowerCase();
         const cardTags = card.getAttribute('data-tags').toLowerCase();
-        
         if (cardTitle.includes(searchTerm) || cardDesc.includes(searchTerm) || cardTags.includes(searchTerm)) {
-          card.classList.remove('filtered-out');
-          resultsFound = true;
-        } else {
-          card.classList.add('filtered-out');
-        }
+          card.classList.remove('filtered-out'); resultsFound = true;
+        } else { card.classList.add('filtered-out'); }
       });
-      
-      // Update category visibility - hide empty categories
       resourceCategories.forEach(category => {
         const visibleCards = category.querySelectorAll('.resource-card:not(.filtered-out)');
-        if (visibleCards.length === 0) {
-          category.style.display = 'none';
-        } else {
-          category.style.display = 'block';
-        }
+        category.style.display = visibleCards.length === 0 ? 'none' : 'block';
       });
-      
-      // Show no results message if needed
       noResultsMessage.style.display = resultsFound ? 'none' : 'block';
     }
-    
-    // Search event listeners
+
     searchButton.addEventListener('click', performSearch);
-    searchInput.addEventListener('keyup', function(event) {
-      if (event.key === 'Enter') {
-        performSearch();
-      }
-      
-      // Clear filter if search is empty
-      if (searchInput.value === '') {
-        resetFilters();
-      }
-    });
-    
-    // Filter functionality
+    searchInput.addEventListener('keyup', e => { if(e.key==='Enter') performSearch(); if(searchInput.value==='') resetFilters(); });
+
+    function resetFilters() {
+      filterButtons.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-filter')==='all'));
+      resourceCategories.forEach(c => c.style.display='block');
+      resourceCards.forEach(card => card.classList.remove('filtered-out'));
+      noResultsMessage.style.display='none';
+    }
+
+    // Filter buttons
     filterButtons.forEach(button => {
       button.addEventListener('click', function() {
-        // Remove active class from all buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Add active class to clicked button
         this.classList.add('active');
-        
         const filterValue = this.getAttribute('data-filter');
-        
-        // Reset search
-        searchInput.value = '';
-        
-        // Filter categories
-        if (filterValue === 'all') {
-          resourceCategories.forEach(category => {
-            category.style.display = 'block';
-          });
-          
-          resourceCards.forEach(card => {
-            card.classList.remove('filtered-out');
-          });
+        searchInput.value='';
+        if(filterValue==='all'){
+          resourceCategories.forEach(c=>c.style.display='block');
+          resourceCards.forEach(c=>c.classList.remove('filtered-out'));
         } else {
-          resourceCategories.forEach(category => {
-            if (category.getAttribute('data-category') === filterValue) {
-              category.style.display = 'block';
-              const cards = category.querySelectorAll('.resource-card');
-              cards.forEach(card => card.classList.remove('filtered-out'));
-            } else {
-              category.style.display = 'none';
-            }
+          resourceCategories.forEach(c=>{
+            if(c.getAttribute('data-category')===filterValue){
+              c.style.display='block';
+              c.querySelectorAll('.resource-card').forEach(card=>card.classList.remove('filtered-out'));
+            } else { c.style.display='none'; }
           });
         }
-        
-        noResultsMessage.style.display = 'none';
+        noResultsMessage.style.display='none';
       });
     });
-    
-    // Reset filters and search
-    function resetFilters() {
-      filterButtons.forEach(btn => {
-        if (btn.getAttribute('data-filter') === 'all') {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-      
-      resourceCategories.forEach(category => {
-        category.style.display = 'block';
-      });
-      
-      resourceCards.forEach(card => {
-        card.classList.remove('filtered-out');
-      });
-      
-      noResultsMessage.style.display = 'none';
-    }
-    
-    // Add animation effect when hovering over category headers
-    const categoryHeaders = document.querySelectorAll('.category-header');
-    categoryHeaders.forEach(header => {
-      header.addEventListener('mouseenter', function() {
-        this.style.backgroundColor = '#e9ecef';
-      });
-      
-      header.addEventListener('mouseleave', function() {
-        this.style.backgroundColor = '#f8f9fa';
-      });
-      
-      // Make entire header clickable for expand/collapse
-      header.addEventListener('click', function(e) {
-        if (e.target === this || e.target.tagName !== 'BUTTON') {
-          const button = this.querySelector('.expand-collapse-btn');
-          button.click();
+
+    // Header hover & click
+    document.querySelectorAll('.category-header').forEach(header=>{
+      header.addEventListener('mouseenter', ()=>header.style.backgroundColor='#e9ecef');
+      header.addEventListener('mouseleave', ()=>header.style.backgroundColor='#f8f9fa');
+      header.addEventListener('click', e=>{
+        if(e.target===header || e.target.tagName!=='BUTTON'){
+          const btn=header.querySelector('.expand-collapse-btn');
+          btn.click();
         }
       });
     });
   }
-});
 
-// Abstract toggle function for research section
-function toggleAbstract(element) {
-  const arrow = element.querySelector('.arrow');
-  const abstractContent = element.nextElementSibling;
-  
-  arrow.classList.toggle('expanded');
-  abstractContent.classList.toggle('expanded');
-}
+  // Abstract toggle
+  window.toggleAbstract = function(element){
+    const arrow=element.querySelector('.arrow');
+    const abstractContent=element.nextElementSibling;
+    arrow.classList.toggle('expanded');
+    abstractContent.classList.toggle('expanded');
+  };
 
-// Carousel functionality
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const dots = document.querySelectorAll('.dot');
-
-function showSlide(index) {
-  // Wrap around if index is out of bounds
-  if (index >= slides.length) {
-    currentSlide = 0;
-  } else if (index < 0) {
-    currentSlide = slides.length - 1;
-  } else {
-    currentSlide = index;
+  // Generic carousel
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.dot');
+  function showSlide(index){
+    if(index>=slides.length) currentSlide=0;
+    else if(index<0) currentSlide=slides.length-1;
+    else currentSlide=index;
+    slides.forEach((s,i)=>s.classList.toggle('active',i===currentSlide));
+    dots.forEach((d,i)=>d.classList.toggle('active',i===currentSlide));
   }
-
-  // Update slides
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-    if (i === currentSlide) {
-      slide.classList.add('active');
-    }
+  window.changeSlide=(dir)=>showSlide(currentSlide+dir);
+  window.goToSlide=(i)=>showSlide(i);
+  document.addEventListener('keydown', e=>{
+    if(e.key==='ArrowLeft') changeSlide(-1);
+    else if(e.key==='ArrowRight') changeSlide(1);
   });
 
-  // Update dots
-  dots.forEach((dot, i) => {
-    dot.classList.remove('active');
-    if (i === currentSlide) {
-      dot.classList.add('active');
-    }
-  });
-}
-
-function changeSlide(direction) {
-  showSlide(currentSlide + direction);
-}
-
-function goToSlide(index) {
-  showSlide(index);
-}
-
-// Keyboard navigation for carousel
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowLeft') {
-    changeSlide(-1);
-  } else if (e.key === 'ArrowRight') {
-    changeSlide(1);
-  }
 });
 </script>
-
-</body>
-</html>
