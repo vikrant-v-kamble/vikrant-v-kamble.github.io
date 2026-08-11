@@ -102,7 +102,6 @@ a:hover{ color:var(--signal); text-decoration:underline; text-underline-offset:3
   letter-spacing:-0.022em;
   color:var(--ink);
 }
-.masthead-name .given{ display:block; font-size:.44em; font-weight:600; letter-spacing:.24em; text-transform:uppercase; font-family:var(--mono); color:var(--ci); margin-bottom:.55rem; }
 
 .masthead-contact{
   font-family:var(--mono);
@@ -254,7 +253,7 @@ h3.group{
   border-bottom:1px solid var(--rule);
   display:flex; align-items:baseline; justify-content:space-between; gap:1rem;
 }
-h3.group .count{ color:var(--ci); font-weight:400; letter-spacing:.1em; }
+h3.group .head-link{ font-weight:500; letter-spacing:.1em; text-transform:uppercase; }
 h3.group:first-of-type{ margin-top:1.6rem; }
 
 /* =========================================================
@@ -814,7 +813,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 
 <!-- ===================== MASTHEAD ===================== -->
 <header class="masthead">
-  <h1 class="masthead-name"><span class="given">Economist</span>Vikrant V. Kamble</h1>
+  <h1 class="masthead-name">Vikrant V. Kamble</h1>
   <div class="masthead-contact">
     <span class="label">Contact</span>
     <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
@@ -827,8 +826,8 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     <button type="button" class="nav-link active" data-section="home">Home</button>
     <button type="button" class="nav-link" data-section="research">Research</button>
     <button type="button" class="nav-link" data-section="teaching">Teaching</button>
-    <button type="button" class="nav-link" data-section="resources">Resources</button>
     <a class="nav-link" href="https://www.dropbox.com/scl/fi/9v37h8k81dgnn651czhvv/CV_Vikrant_V_Kamble.pdf?rlkey=7uexiqrzcibpcqv6jo4r01hus&dl=0" target="_blank" rel="noopener">CV</a>
+    <button type="button" class="nav-link" data-section="resources">Resources</button>
   </div>
 </nav>
 
@@ -942,7 +941,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     <p class="deck">Published work, software, and papers in progress across health, labor, and applied microeconomics.</p>
   </div>
 
-  <h3 class="group">Peer-Reviewed Publications <span class="count">02</span></h3>
+  <h3 class="group">Peer-Reviewed Publications</h3>
   <div class="numbered">
     <article class="paper">
       <div class="paper-title">&ldquo;Ride-sharing and Crime: Evidence from U.S. Cities&rdquo;</div>
@@ -959,7 +958,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     </article>
   </div>
 
-  <h3 class="group">Software <span class="count">01</span></h3>
+  <h3 class="group">Software</h3>
   <div class="numbered">
     <article class="paper">
       <div class="paper-title">&ldquo;OKPRESERVE: Stata module to implement nested preserve and restore for data workflows (ssc install okpreserve)&rdquo;</div>
@@ -980,7 +979,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     </div>
   </article>
 
-  <h3 class="group">Working Papers <span class="count">03</span></h3>
+  <h3 class="group">Working Papers</h3>
 
   <article class="paper">
     <div class="paper-title">&ldquo;Fueling or Failing: Evidence from Oil Price Decline&rdquo;<span class="tag">Under Review</span></div>
@@ -1010,7 +1009,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     </div>
   </article>
 
-  <h3 class="group">Work-in-Progress <span class="count">03</span></h3>
+  <h3 class="group">Work-in-Progress</h3>
 
   <article class="paper">
     <div class="paper-title">&ldquo;Forced Immigration and Borrowing Constraint&rdquo;</div>
