@@ -29,11 +29,11 @@
 :root{
   --paper:      #ECEFE7;
   --panel:      #FBFCF9;
-  --ink:        #14191C;
-  --ink-soft:   #4E585D;
+  --ink:        #0A0D0F;
+  --ink-soft:   #2E3639;
   --estimate:   #1B4B54;
   --estimate-lo:#2E6F79;
-  --ci:         #9FB0AB;
+  --ci:         #6E7F79;
   --signal:     #B8402A;
 
   --rule:       rgba(20,25,28,.13);
@@ -167,35 +167,23 @@ a:hover{ color:var(--signal); text-decoration:underline; text-underline-offset:3
 }
 .nav-link:hover{ color:var(--estimate); text-decoration:none; }
 
-.nav-link::after{             /* the coefficient dot */
+.nav-link::after{             /* marker sitting on the baseline */
   content:"";
   position:absolute;
-  left:50%; bottom:.9rem;
-  width:9px; height:9px;
-  margin-left:-4.5px; margin-bottom:-4px;
-  border-radius:50%;
-  border:1.5px solid var(--ci);
-  background:var(--paper);
-  z-index:2;
-  transition:all .3s var(--ease);
-}
-.nav-link:hover::after{ border-color:var(--estimate); }
-
-.nav-link.active{ color:var(--ink); }
-.nav-link.active::after{
+  left:.55rem; right:.55rem;
+  bottom:.9rem;
+  height:2px;
+  margin-bottom:-1px;
   background:var(--signal);
-  border-color:var(--signal);
-  transform:scale(1.15);
+  transform:scaleX(0);
+  transform-origin:center;
+  z-index:2;
+  transition:transform .32s var(--ease);
 }
-.nav-link.active::before{     /* dashed drop line */
-  content:"";
-  position:absolute;
-  left:50%; bottom:.9rem;
-  width:1px; height:1.05rem;
-  margin-left:-.5px;
-  background:repeating-linear-gradient(to bottom, var(--signal) 0 3px, transparent 3px 6px);
-  opacity:.8;
-}
+.nav-link:hover::after{ background:var(--estimate); transform:scaleX(.55); }
+
+.nav-link.active{ color:var(--ink); font-weight:600; }
+.nav-link.active::after{ background:var(--signal); transform:scaleX(1); }
 
 /* =========================================================
    LAYOUT
@@ -819,7 +807,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 
 <!-- ===================== MASTHEAD ===================== -->
 <header class="masthead">
-  <h1 class="masthead-name"><span class="given">Economist</span>Vikrant V. Kamble</h1>
+  <h1 class="masthead-name"><span class="given"> </span>Vikrant V. Kamble</h1>
   <div class="masthead-contact">
     <span class="label">Contact</span>
     <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
@@ -873,7 +861,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     <div class="home-main">
       <div class="status-pill"><span class="blip" aria-hidden="true"></span> Job Market Candidate 2025&ndash;2026</div>
 
-      <p class="lede">Welcome to my website. I use causal inference to study how policy shocks move <em>health</em> and <em>labor market</em> outcomes.</p>
+      <p class="lede">Welcome to my website. I use causal inference to study how policy shocks affect health and labor market outcomes.</p>
 
       <div class="intro-copy">
         <p>I am an Economics PhD candidate at the University of Delaware. My research uses causal inference methods to study labor and health economics, focusing on policy impacts on communities.</p>
