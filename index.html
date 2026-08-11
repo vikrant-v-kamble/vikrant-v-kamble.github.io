@@ -392,15 +392,11 @@ h3.group:first-of-type{ margin-top:1.6rem; }
    ========================================================= */
 .paper{
   position:relative;
-  padding:.1rem 0 1.4rem 1.15rem;
+  padding:.1rem 0 1.4rem;
   margin-bottom:1.4rem;
-  border-left:2px solid var(--estimate);
   border-bottom:1px solid var(--rule);
-  transition:border-left-color .3s var(--ease);
 }
 .paper:last-child{ border-bottom:0; }
-.paper:hover{ border-left-color:var(--signal); }
-.paper--flag{ border-left-color:var(--signal); }
 
 .paper-title{
   font-family:var(--display);
@@ -458,12 +454,12 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 
 /* Citation-style numbering for published work */
 .numbered{ counter-reset:pub; }
-.numbered .paper{ padding-left:3.3rem; }
+.numbered .paper{ padding-left:2.2rem; }
 .numbered .paper::before{
   counter-increment:pub;
   content:"[" counter(pub) "]";
   position:absolute;
-  left:1.15rem; top:.12rem;
+  left:0; top:.12rem;
   font-family:var(--mono);
   font-size:.8rem;
   font-weight:600;
@@ -786,7 +782,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
   .arrow{ width:32px; height:32px; }
   .arrow-left{ left:.25rem; }
   .arrow-right{ right:.25rem; }
-  .numbered .paper{ padding-left:1.15rem; }
+  .numbered .paper{ padding-left:0; }
   .numbered .paper::before{ position:static; display:block; margin-bottom:.3rem; }
 }
 
