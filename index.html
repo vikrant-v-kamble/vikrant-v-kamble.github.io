@@ -270,26 +270,17 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 
 .portrait-frame{
   position:relative;
-  padding:10px;
-  background:var(--panel);
-  border:1px solid var(--rule);
-  border-radius:2px;
-}
-.portrait-frame::after{
-  content:"";
-  position:absolute; inset:4px;
-  border:1px solid var(--rule);
-  pointer-events:none;
 }
 .profile-photo{
   display:block;
   width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
+  border-radius:50%;
   filter:grayscale(.18) contrast(1.03);
   transition:filter .5s var(--ease), transform .5s var(--ease);
 }
-.portrait-frame:hover .profile-photo{ filter:grayscale(0) contrast(1); transform:scale(1.01); }
+.portrait-frame:hover .profile-photo{ filter:grayscale(0) contrast(1); transform:scale(1.02); }
 
 .social-links{
   display:flex;
