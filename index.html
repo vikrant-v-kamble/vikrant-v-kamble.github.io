@@ -22,9 +22,6 @@
 <style>
 /* =========================================================
    TOKENS
-   Palette read off an event-study plot: sage graph paper,
-   petrol point estimates, grey confidence bands, one madder
-   red reserved for the treatment marker.
    ========================================================= */
 :root{
   --paper:      #FFFFFF;
@@ -46,6 +43,7 @@
 
   --measure: 1080px;
   --gap: clamp(1rem, 2.2vw, 1.75rem);
+  --nav-h: 4.6rem;
   --ease: cubic-bezier(.22,.61,.36,1);
 }
 
@@ -114,10 +112,8 @@ a:hover{ color:var(--signal); text-decoration:underline; text-underline-offset:3
 .masthead-contact .label{ color:var(--ci); text-transform:uppercase; letter-spacing:.18em; font-size:.68rem; display:block; }
 
 /* =========================================================
-   NAV — the signature: a plot axis.
-   Each tab is a coefficient dot sitting on the baseline;
-   the active tab is the treatment marker (filled, with a
-   dashed vertical rule dropping to the axis).
+   NAV — a plot axis. Links scroll the page; the active
+   marker tracks whichever section is in view.
    ========================================================= */
 .axis{
   position:sticky;
@@ -185,21 +181,21 @@ a:hover{ color:var(--signal); text-decoration:underline; text-underline-offset:3
 .nav-link.active::after{ background:var(--signal); transform:scaleX(1); }
 
 /* =========================================================
-   LAYOUT
+   LAYOUT — sections stacked, page scrolls
    ========================================================= */
 .content{
   max-width:var(--measure);
   margin:0 auto;
-  padding:clamp(1.6rem,4vw,3rem) var(--gap) 0;
-  min-height:60vh;
+  padding:clamp(1.6rem,4vw,2.6rem) var(--gap) 0;
 }
 
-.section{ display:none; }
-.section.active{ display:block; animation:rise .55s var(--ease) both; }
-
-@keyframes rise{
-  from{ opacity:0; transform:translateY(10px); }
-  to  { opacity:1; transform:none; }
+.section{
+  scroll-margin-top:var(--nav-h);      /* clears the sticky nav */
+  padding-bottom:clamp(2.4rem,5vw,3.8rem);
+}
+.section + .section{
+  padding-top:clamp(2rem,4vw,3.2rem);
+  border-top:1px solid var(--rule);
 }
 
 /* Section headers -------------------------------------- */
@@ -253,7 +249,7 @@ h3.group{
   border-bottom:1px solid var(--rule);
   display:flex; align-items:baseline; justify-content:space-between; gap:1rem;
 }
-h3.group .head-link{ font-weight:500; letter-spacing:.1em; text-transform:uppercase; }
+h3.group .count{ font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--ci); }
 h3.group:first-of-type{ margin-top:1.6rem; }
 
 /* =========================================================
@@ -274,9 +270,9 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 }
 
 .portrait-frame{
- position:relative;
- max-width:200px;
- margin:0 auto;
+  position:relative;
+  max-width:200px;
+  margin:0 auto;
 }
 .profile-photo{
   display:block;
@@ -336,7 +332,6 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 }
 .interests li:hover{ padding-left:1.4rem; }
 .interests li:hover::before{ width:12px; background:var(--signal); }
-.interests li:nth-child(1)::before{ background:var(--signal); }
 
 /* Intro ------------------------------------------------- */
 .status-pill{
@@ -368,32 +363,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
   100%{ box-shadow:0 0 0 0 rgba(184,64,42,0); }
 }
 
-.lede{
-  font-family:var(--display);
-  font-optical-sizing:auto;
-  font-weight:400;
-  font-style:italic;
-  font-size:clamp(1.15rem, 1rem + .8vw, 1.5rem);
-  line-height:1.3;
-  letter-spacing:-.012em;
-  color:var(--ink-soft);
-  margin-bottom:.7rem;
-}
-
-.intro-copy{
-  font-family:var(--display);
-  font-optical-sizing:auto;
-  font-weight:400;
-  font-size:clamp(1.05rem, 1rem + .55vw, 1.28rem);
-  line-height:1.5;
-  letter-spacing:-.006em;
-  color:var(--ink);
-}
-.intro-copy p + p{ margin-top:.8rem; }
-
-/* ---- Education timeline (vertical, in the rail) ---------
-   Runs down a drawn axis; markers ride the line, current
-   degree filled and lit.                                    */
+/* ---- Education timeline (vertical, in the rail) --------- */
 .timeline{
   position:relative;
   list-style:none;
@@ -552,7 +522,6 @@ h3.group:first-of-type{ margin-top:1.6rem; }
   vertical-align:2px;
   margin-left:.35rem;
 }
-.tag--quiet{ color:var(--ink-soft); border-color:var(--rule-hard); background:transparent; }
 
 .abstract{
   margin-top:.7rem;
@@ -585,109 +554,6 @@ h3.group:first-of-type{ margin-top:1.6rem; }
   font-weight:600;
   color:var(--ci);
 }
-
-/* =========================================================
-   FIGURE PLATE (carousel)
-   ========================================================= */
-.plate{
-  margin:2rem 0 1rem;
-  background:var(--panel);
-  border:1px solid var(--rule-hard);
-}
-.plate-head{
-  display:flex; align-items:center; justify-content:space-between; gap:1rem;
-  padding:.6rem .9rem;
-  border-bottom:1px solid var(--rule);
-  font-family:var(--mono);
-  font-size:.66rem;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:var(--ci);
-}
-.plate-head .plate-count{ color:var(--ink-soft); letter-spacing:.1em; }
-
-.plate-stage{ position:relative; }
-.carousel-slides{ position:relative; }
-.carousel-slide{
-  display:none;
-  padding:1.6rem clamp(2.6rem,7vw,4.2rem) 1.1rem;
-}
-.carousel-slide.active{ display:block; animation:plateIn .45s var(--ease) both; }
-@keyframes plateIn{ from{opacity:0} to{opacity:1} }
-
-.carousel-slide img{
-  display:block;
-  width:100%;
-  height:auto;
-  margin:0 auto;
-}
-
-.figure-caption{
-  margin-top:.9rem;
-  text-align:center;
-  font-family:var(--mono);
-  font-size:.74rem;
-  letter-spacing:.06em;
-  color:var(--ink-soft);
-}
-.figure-caption strong{ color:var(--estimate); font-weight:600; }
-
-.arrow{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:38px; height:38px;
-  border:1px solid var(--rule-hard);
-  background:rgba(251,252,249,.9);
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  cursor:pointer;
-  z-index:6;
-  transition:all .28s var(--ease);
-}
-.arrow:hover{ background:var(--estimate); border-color:var(--estimate); }
-.arrow::before{
-  content:"";
-  width:8px; height:8px;
-  border-top:1.5px solid var(--estimate);
-  border-right:1.5px solid var(--estimate);
-  transition:border-color .28s var(--ease);
-}
-.arrow:hover::before{ border-color:var(--panel); }
-.arrow-left{ left:.7rem; }
-.arrow-left::before{ transform:rotate(-135deg); margin-left:3px; }
-.arrow-right{ right:.7rem; }
-.arrow-right::before{ transform:rotate(45deg); margin-right:3px; }
-
-/* pagination echoes the nav axis */
-.pagination-dots{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  gap:1.4rem;
-  padding:1rem 0 1.3rem;
-}
-.pagination-dots::before{
-  content:"";
-  position:absolute;
-  left:50%; transform:translateX(-50%);
-  top:1.35rem;
-  width:calc(100% - 6rem); max-width:260px;
-  height:1px;
-  background:var(--rule-hard);
-}
-.dot{
-  position:relative;
-  width:9px; height:9px;
-  border-radius:50%;
-  border:1.5px solid var(--ci);
-  background:var(--panel);
-  cursor:pointer;
-  z-index:2;
-  transition:all .28s var(--ease);
-}
-.dot:hover{ border-color:var(--estimate); }
-.dot.active{ background:var(--signal); border-color:var(--signal); transform:scale(1.2); }
 
 /* =========================================================
    TEACHING
@@ -862,7 +728,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
   letter-spacing:.15em;
   text-transform:uppercase;
   color:var(--estimate);
-  transition:transform .28s var(--ease);
+  transition:color .28s var(--ease);
 }
 .resource-card:hover .go{ color:var(--signal); }
 
@@ -877,11 +743,43 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 .no-results-message p{ color:var(--ink-soft); font-family:var(--mono); font-size:.82rem; letter-spacing:.04em; }
 
 /* =========================================================
+   BACK TO TOP
+   ========================================================= */
+.to-top{
+  position:fixed;
+  right:clamp(1rem,3vw,2rem);
+  bottom:clamp(1rem,3vw,2rem);
+  width:40px; height:40px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--rule-hard);
+  background:var(--paper);
+  border-radius:50%;
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(8px);
+  transition:all .3s var(--ease);
+  z-index:110;
+}
+.to-top.show{ opacity:1; visibility:visible; transform:none; }
+.to-top:hover{ background:var(--estimate); border-color:var(--estimate); }
+.to-top::before{
+  content:"";
+  width:8px; height:8px;
+  margin-top:3px;
+  border-top:1.5px solid var(--estimate);
+  border-right:1.5px solid var(--estimate);
+  transform:rotate(-45deg);
+  transition:border-color .3s var(--ease);
+}
+.to-top:hover::before{ border-color:var(--paper); }
+
+/* =========================================================
    FOOTER
    ========================================================= */
 .footer{
   max-width:var(--measure);
-  margin:4rem auto 0;
+  margin:2rem auto 0;
   padding:1.3rem var(--gap) 2.4rem;
   border-top:1px solid var(--rule-hard);
   display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
@@ -905,20 +803,17 @@ h3.group:first-of-type{ margin-top:1.6rem; }
   .masthead-contact{ text-align:left; }
   .course{ grid-template-columns:1fr; gap:.35rem; }
   .course-code{ padding-top:0; }
-  .carousel-slide{ padding:1.1rem 1rem .8rem; }
-  .arrow{ width:32px; height:32px; }
-  .arrow-left{ left:.25rem; }
-  .arrow-right{ right:.25rem; }
   .numbered .paper{ padding-left:0; }
   .numbered .paper::before{ position:static; display:block; margin-bottom:.3rem; }
+  .to-top{ display:none; }
 }
 
 @media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
   *,*::before,*::after{
     animation-duration:.01ms !important;
     animation-iteration-count:1 !important;
     transition-duration:.01ms !important;
-    scroll-behavior:auto !important;
   }
 }
 </style>
@@ -937,18 +832,18 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 <!-- ===================== NAV (plot axis) ===================== -->
 <nav class="axis" aria-label="Site sections">
   <div class="axis-inner">
-    <button type="button" class="nav-link active" data-section="home">Home</button>
-    <button type="button" class="nav-link" data-section="research">Research</button>
-    <button type="button" class="nav-link" data-section="teaching">Teaching</button>
+    <a class="nav-link active" href="#home">Home</a>
+    <a class="nav-link" href="#research">Research</a>
+    <a class="nav-link" href="#teaching">Teaching</a>
     <a class="nav-link" href="https://www.dropbox.com/scl/fi/9v37h8k81dgnn651czhvv/CV_Vikrant_V_Kamble.pdf?rlkey=7uexiqrzcibpcqv6jo4r01hus&dl=0" target="_blank" rel="noopener">CV</a>
-    <button type="button" class="nav-link" data-section="resources">Resources</button>
+    <a class="nav-link" href="#resources">Resources</a>
   </div>
 </nav>
 
 <main class="content">
 
 <!-- ===================== HOME ===================== -->
-<section id="home" class="section active">
+<section id="home" class="section">
   <div class="home-grid">
 
     <!-- Rail -->
@@ -1001,74 +896,26 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 
     <!-- Main column -->
     <div class="home-main">
-     <!-- <div class="status-pill"><span class="blip" aria-hidden="true"></span> Job Market Candidate 2025&ndash;2026</div> -->
+      <!-- <div class="status-pill"><span class="blip" aria-hidden="true"></span> Job Market Candidate 2025&ndash;2026</div> -->
 
-     <p>Welcome to my website.</p>
+      <p>Welcome to my website.</p>
 
-   <div>
-     <p>I am an Economics PhD candidate at the University of Delaware. My research uses causal inference methods to study labor and health economics, focusing on policy impacts on communities.</p>
-   </div>
-
-
-
-
+      <div>
+        <p>I am an Economics PhD candidate at the University of Delaware. My research uses causal inference methods to study labor and health economics, focusing on policy impacts on communities.</p>
+      </div>
 
       <h3 class="group">
         Job Market Paper
         <span class="count"><a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" rel="noopener">View PDF &rarr;</a></span>
       </h3>
 
-      <article class="paper paper--flag">
+      <article class="paper">
         <div class="paper-title">&ldquo;The 1973 Oil Embargo and Infant Health Outcomes&rdquo;</div>
         <div class="abstract">
           <span class="abstract-label">Abstract</span>
           An extensive literature documents that economic shocks affect health outcomes, but mechanisms and distributional effects remain unclear. I study how a negative oil supply shock affects infant health using 1968&ndash;1979 Vital Statistics data. With an event-study framework that accounts for state-specific pre-trends, I find that states with higher fuel dependence experienced increases in birthweight following the 1973 oil embargo. Gains are larger for less-educated, relatively younger, and Black mothers at 2&ndash;3.5 grams. These improvements result from shifts in maternal composition, increased prenatal care use, and reduced air pollution.
         </div>
       </article>
-
-      <!-- Figure plate -->
-      <!-- <div class="plate">
-        <div class="plate-head">
-          <span>Results &mdash; Event study estimates</span>
-          <span class="plate-count"><span id="plateNow">1</span>&thinsp;/&thinsp;5</span>
-        </div>
-
-        <div class="plate-stage">
-          <div class="carousel-slides">
-            <div class="carousel-slide active">
-              <img src="https://www.dropbox.com/scl/fi/81kc3tx07ydp6bqfah24r/bootstrap_ci_comparision.png?rlkey=kbgv6dwmmxha4r36v9elf8x21&raw=1" alt="Figure 1: Birthweight">
-              <div class="figure-caption"><strong>Figure 1</strong> &middot; Birthweight</div>
-            </div>
-            <div class="carousel-slide">
-              <img src="https://www.dropbox.com/scl/fi/rel6y3eeg2wxjdccaffll/eq2_birthweight.png?rlkey=cxl5ytgbrvo7t9wxl0kvjco1s&raw=1" alt="Figure 2: Birthweight">
-              <div class="figure-caption"><strong>Figure 2</strong> &middot; Birthweight</div>
-            </div>
-            <div class="carousel-slide">
-              <img src="https://www.dropbox.com/scl/fi/ap8ffwsolcknoy10civpq/eq2_dgestat.png?rlkey=r3acly54ihktlc9pb6rccuzuf&raw=1" alt="Figure 3: Gestational age">
-              <div class="figure-caption"><strong>Figure 3</strong> &middot; Gestational age</div>
-            </div>
-            <div class="carousel-slide">
-              <img src="https://www.dropbox.com/scl/fi/jxaf0iqxw7n7nc8rgc5q3/eq2_lowbw.png?rlkey=dxa1sb0mlnhawevtxpho9k4ds&raw=1" alt="Figure 4: Low Birth Weight">
-              <div class="figure-caption"><strong>Figure 4</strong> &middot; Low Birth Weight</div>
-            </div>
-            <div class="carousel-slide">
-              <img src="https://www.dropbox.com/scl/fi/rsfzy55hgsld2mytoc2ga/eq2_preterm.png?rlkey=by1cz7ijo7kvxjpf6j7k66twa&raw=1" alt="Figure 5: Preterm">
-              <div class="figure-caption"><strong>Figure 5</strong> &middot; Preterm</div>
-            </div>
-          </div>
-
-          <button type="button" class="arrow arrow-left" data-step="-1" aria-label="Previous figure"></button>
-          <button type="button" class="arrow arrow-right" data-step="1" aria-label="Next figure"></button>
-        </div>
-
-        <div class="pagination-dots" role="tablist" aria-label="Figures">
-          <button type="button" class="dot active" data-index="0" aria-label="Figure 1"></button>
-          <button type="button" class="dot" data-index="1" aria-label="Figure 2"></button>
-          <button type="button" class="dot" data-index="2" aria-label="Figure 3"></button>
-          <button type="button" class="dot" data-index="3" aria-label="Figure 4"></button>
-          <button type="button" class="dot" data-index="4" aria-label="Figure 5"></button>
-        </div> -->
-      </div>
     </div>
   </div>
 </section>
@@ -1111,7 +958,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     Job Market Paper
     <span class="count"><a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" rel="noopener">View PDF &rarr;</a></span>
   </h3>
-  <article class="paper paper--flag">
+  <article class="paper">
     <div class="paper-title">&ldquo;The 1973 Oil Embargo and Infant Health Outcomes&rdquo;</div>
     <div class="abstract">
       <span class="abstract-label">Abstract</span>
@@ -1153,16 +1000,7 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 
   <article class="paper">
     <div class="paper-title">&ldquo;Impact of Forced Immigration on Borrowing Constraints&rdquo;</div>
-     <div class="paper-authors">
-  with
-  <a href="https://sites.google.com/udel.edu/usmantaj"
-     target="_blank"
-     rel="noopener">Muhammad Usman Taj</a>
-  and
-  <a href="https://business.rice.edu/person/dong-derrick-liang"
-     target="_blank"
-     rel="noopener">Derrick Liang</a>
-</div>
+    <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Muhammad Usman Taj</a> and <a href="https://business.rice.edu/person/dong-derrick-liang" target="_blank" rel="noopener">Derrick Liang</a></div>
   </article>
 
   <article class="paper">
@@ -1395,6 +1233,8 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 
 </main>
 
+<button type="button" class="to-top" id="toTop" aria-label="Back to top"></button>
+
 <footer class="footer">
   <span>Vikrant V. Kamble</span>
   <span><a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a></span>
@@ -1403,57 +1243,45 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ---------------- Section navigation ---------------- */
-  const navLinks = document.querySelectorAll('.nav-link[data-section]');
-  const sections = document.querySelectorAll('.section');
+  /* ------- Nav: highlight whichever section is in view ------- */
+  const navLinks = Array.from(document.querySelectorAll('.nav-link[href^="#"]'));
+  const sections = navLinks
+    .map(l => document.querySelector(l.getAttribute('href')))
+    .filter(Boolean);
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-      navLinks.forEach(l => l.classList.remove('active'));
-      sections.forEach(s => s.classList.remove('active'));
-      this.classList.add('active');
-      const target = document.getElementById(this.getAttribute('data-section'));
-      if (target) target.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  });
-
-  /* ---------------- Figure carousel ---------------- */
-  const slides = document.querySelectorAll('.carousel-slide');
-  const dots   = document.querySelectorAll('.dot');
-  const nowEl  = document.getElementById('plateNow');
-  let current  = 0;
-
-  function showSlide(index) {
-    if (!slides.length) return;
-    current = (index + slides.length) % slides.length;
-    slides.forEach((s, i) => s.classList.toggle('active', i === current));
-    dots.forEach((d, i) => d.classList.toggle('active', i === current));
-    if (nowEl) nowEl.textContent = current + 1;
+  function setActive(id) {
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
   }
 
-  document.querySelectorAll('.arrow').forEach(btn => {
-    btn.addEventListener('click', () => showSlide(current + parseInt(btn.dataset.step, 10)));
-  });
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index, 10)));
-  });
+  if ('IntersectionObserver' in window && sections.length) {
+    const seen = new Map();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => seen.set(e.target.id, e.intersectionRatio));
+      let best = null, bestRatio = 0;
+      seen.forEach((ratio, id) => { if (ratio > bestRatio) { bestRatio = ratio; best = id; } });
+      if (best) setActive(best);
+    }, {
+      rootMargin: '-20% 0px -55% 0px',
+      threshold: [0, .1, .25, .5, .75, 1]
+    });
+    sections.forEach(s => observer.observe(s));
+  }
 
-  document.addEventListener('keydown', e => {
-    const typing = ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName);
-    const homeOpen = document.getElementById('home').classList.contains('active');
-    if (typing || !homeOpen) return;
-    if (e.key === 'ArrowLeft')  showSlide(current - 1);
-    if (e.key === 'ArrowRight') showSlide(current + 1);
-  });
+  /* ------- Back to top ------- */
+  const toTop = document.getElementById('toTop');
+  if (toTop) {
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    const toggleTop = () => toTop.classList.toggle('show', window.scrollY > 500);
+    window.addEventListener('scroll', toggleTop, { passive: true });
+    toggleTop();
+  }
 
-  /* ---------------- Resources: search, filter, collapse ---------------- */
-  const searchInput   = document.getElementById('resourceSearch');
+  /* ------- Resources: search, filter, collapse ------- */
+  const searchInput = document.getElementById('resourceSearch');
   if (!searchInput) return;
 
   const searchButton  = document.getElementById('searchButton');
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const cards         = document.querySelectorAll('.resource-card');
   const categories    = document.querySelectorAll('.resource-category');
   const toggles       = document.querySelectorAll('.expand-collapse-btn');
   const noResults     = document.getElementById('noResults');
@@ -1500,7 +1328,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* Expand / collapse */
   toggles.forEach(btn => {
     const items = btn.closest('.category-header').nextElementSibling;
     items.style.display = 'grid';
