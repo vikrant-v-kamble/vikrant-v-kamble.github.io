@@ -363,47 +363,60 @@ h3.group:first-of-type{ margin-top:1.6rem; }
   100%{ box-shadow:0 0 0 0 rgba(184,64,42,0); }
 }
 
-/* ---- Education timeline (vertical, in the rail) --------- */
+/* ---- Education timeline (horizontal) -------------------
+   One line across the page: axis, ringed markers, current
+   degree filled and lit.                                   */
 .timeline{
   position:relative;
   list-style:none;
-  margin:1rem 0 .3rem;
-  padding-left:1.15rem;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.4rem;
+  margin:1.3rem 0 .2rem;
+  padding-top:2.3rem;
 }
 .timeline::before{                       /* the axis */
   content:"";
   position:absolute;
-  left:0; top:.4rem; bottom:.4rem;
-  width:1px;
-  background:linear-gradient(180deg,
+  left:0; right:0;
+  top:2.3rem;
+  height:1px;
+  background:linear-gradient(90deg,
     transparent 0,
-    var(--rule-hard) 6%,
-    var(--rule-hard) 88%,
+    var(--rule-hard) 3%,
+    var(--rule-hard) 90%,
     transparent 100%);
-  transform:scaleY(0);
-  transform-origin:top center;
+  transform:scaleX(0);
+  transform-origin:left center;
   animation:axisDraw 1s var(--ease) .1s forwards;
 }
-@keyframes axisDraw{ to{ transform:scaleY(1); } }
+@keyframes axisDraw{ to{ transform:scaleX(1); } }
 
 .tl-stop{
   position:relative;
-  padding:0 0 1.25rem .35rem;
+  padding:1.15rem .8rem 0 0;
   opacity:0;
   animation:stopIn .6s var(--ease) forwards;
 }
-.tl-stop:last-child{ padding-bottom:0; }
 .tl-stop:nth-child(1){ animation-delay:.3s; }
 .tl-stop:nth-child(2){ animation-delay:.45s; }
 .tl-stop:nth-child(3){ animation-delay:.6s; }
 @keyframes stopIn{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
 
+.tl-stop::before{                        /* tick dropping from the axis */
+  content:"";
+  position:absolute;
+  left:0; top:0;
+  width:1px; height:.75rem;
+  background:var(--rule-hard);
+  transition:background .3s var(--ease), height .3s var(--ease);
+}
 .tl-stop::after{                         /* marker on the axis */
   content:"";
   position:absolute;
-  left:-1.15rem; top:.42rem;
+  left:0; top:0;
   width:9px; height:9px;
-  margin-left:-4px;
+  margin-left:-4px; margin-top:-4.5px;
   border-radius:50%;
   border:1.5px solid var(--ci);
   background:var(--paper);
@@ -423,17 +436,21 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 .tl-stop:hover::after{
   border-color:var(--signal);
   background:var(--signal);
-  transform:scale(1.2);
+  transform:scale(1.22);
   animation:none;
   box-shadow:none;
 }
+.tl-stop:hover::before{ background:var(--signal); height:.9rem; }
 .tl-stop:hover .tl-year{ color:var(--signal); }
 
 .tl-year{
+  position:absolute;
+  top:-1.85rem; left:0;
   font-family:var(--mono);
-  font-size:.66rem;
+  font-size:.69rem;
   font-weight:600;
   letter-spacing:.1em;
+  white-space:nowrap;
   color:var(--ink-soft);
   transition:color .3s var(--ease);
 }
@@ -442,15 +459,15 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 .tl-degree{
   display:inline-block;
   font-family:var(--mono);
-  font-size:.58rem;
+  font-size:.6rem;
   font-weight:600;
   letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--ci);
   border:1px solid var(--rule-hard);
   border-radius:999px;
-  padding:.02rem .42rem;
-  margin:.25rem 0 .3rem;
+  padding:.02rem .45rem;
+  margin-bottom:.35rem;
 }
 .tl-stop--now .tl-degree{ color:var(--estimate); border-color:rgba(27,75,84,.4); }
 
@@ -458,8 +475,8 @@ h3.group:first-of-type{ margin-top:1.6rem; }
   font-family:var(--display);
   font-optical-sizing:auto;
   font-weight:600;
-  font-size:.88rem;
-  line-height:1.32;
+  font-size:.93rem;
+  line-height:1.3;
   letter-spacing:-.004em;
   margin-bottom:.12rem;
 }
@@ -472,9 +489,33 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 .tl-place a:hover{ color:var(--signal); border-bottom-color:var(--signal); text-decoration:none; }
 
 .tl-field{
-  font-size:.78rem;
+  font-size:.82rem;
   line-height:1.4;
   color:var(--ink-soft);
+}
+
+@media (max-width:700px){                /* stack into a vertical timeline */
+  .timeline{
+    grid-template-columns:1fr;
+    gap:1.4rem;
+    padding-top:0;
+    padding-left:1.15rem;
+  }
+  .timeline::before{
+    top:.4rem; bottom:.4rem;
+    left:0; right:auto;
+    width:1px; height:auto;
+    background:linear-gradient(180deg,
+      transparent 0, var(--rule-hard) 6%, var(--rule-hard) 88%, transparent 100%);
+    transform:scaleY(0);
+    transform-origin:top center;
+    animation:axisDrawY 1s var(--ease) .1s forwards;
+  }
+  @keyframes axisDrawY{ to{ transform:scaleY(1); } }
+  .tl-stop{ padding:0 0 0 .35rem; }
+  .tl-stop::before{ display:none; }
+  .tl-stop::after{ left:-1.15rem; top:.45rem; margin-top:0; }
+  .tl-year{ position:static; display:block; margin-bottom:.2rem; }
 }
 
 /* =========================================================
@@ -870,28 +911,6 @@ h3.group:first-of-type{ margin-top:1.6rem; }
         <li>Development Economics</li>
       </ul>
 
-      <h3 class="group">Education</h3>
-
-      <ol class="timeline">
-        <li class="tl-stop">
-          <div class="tl-year">May 2017</div>
-          <div class="tl-degree">B.Tech.</div>
-          <div class="tl-place"><a href="https://dbatu.ac.in/department-of-electronics-telecommunications-engineering/" target="_blank" rel="noopener">Dr. Babasaheb Ambedkar Technological University</a></div>
-          <div class="tl-field">Electronics &amp; Telecommunication Engineering</div>
-        </li>
-        <li class="tl-stop">
-          <div class="tl-year">May 2021</div>
-          <div class="tl-degree">M.S.</div>
-          <div class="tl-place"><a href="https://econ.wisc.edu/" target="_blank" rel="noopener">University of Wisconsin&ndash;Madison</a></div>
-          <div class="tl-field">Economics</div>
-        </li>
-        <li class="tl-stop tl-stop--now">
-          <div class="tl-year">Summer 2026</div>
-          <div class="tl-degree">Ph.D.</div>
-          <div class="tl-place"><a href="https://lerner.udel.edu/programs/graduate-programs/phd-programs/economics-phd/" target="_blank" rel="noopener">University of Delaware</a></div>
-          <div class="tl-field">Economics</div>
-        </li>
-      </ol>
     </aside>
 
     <!-- Main column -->
@@ -918,6 +937,29 @@ h3.group:first-of-type{ margin-top:1.6rem; }
       </article>
     </div>
   </div>
+
+    <h3 class="group">Education</h3>
+
+    <ol class="timeline">
+      <li class="tl-stop">
+        <div class="tl-year">May 2017</div>
+        <div class="tl-degree">B.Tech.</div>
+        <div class="tl-place"><a href="https://dbatu.ac.in/department-of-electronics-telecommunications-engineering/" target="_blank" rel="noopener">Dr. Babasaheb Ambedkar Technological University</a></div>
+        <div class="tl-field">Electronics &amp; Telecommunication Engineering</div>
+      </li>
+      <li class="tl-stop">
+        <div class="tl-year">May 2021</div>
+        <div class="tl-degree">M.S.</div>
+        <div class="tl-place"><a href="https://econ.wisc.edu/" target="_blank" rel="noopener">University of Wisconsin&ndash;Madison</a></div>
+        <div class="tl-field">Economics</div>
+      </li>
+      <li class="tl-stop tl-stop--now">
+        <div class="tl-year">Summer 2026</div>
+        <div class="tl-degree">Ph.D.</div>
+        <div class="tl-place"><a href="https://lerner.udel.edu/programs/graduate-programs/phd-programs/economics-phd/" target="_blank" rel="noopener">University of Delaware</a></div>
+        <div class="tl-field">Economics</div>
+      </li>
+    </ol>
 </section>
 
 <!-- ===================== RESEARCH ===================== -->
