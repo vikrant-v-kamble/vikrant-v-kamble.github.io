@@ -863,7 +863,28 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     transition-duration:.01ms !important;
   }
 }
+/* =========================================================
+   DARK THEME — visitors switch with the button in the masthead
+   ========================================================= */
+:root[data-theme="dark"]{
+  --paper:#12161C; --panel:#1A2029; --ink:#E8ECF1; --ink-soft:#B4BDC8;
+  --estimate:#5EC2C9; --estimate-lo:#7FD3D8; --ci:#8A96A3; --signal:#F2A65A;
+  --rule:rgba(232,236,241,.12); --rule-hard:rgba(232,236,241,.25);
+  color-scheme:dark;
+}
+.theme-toggle{
+  margin-top:.35rem;
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-soft); background:none; cursor:pointer;
+  border:1px solid var(--rule-hard); border-radius:999px; padding:.25rem .7rem;
+  transition:color .25s var(--ease), border-color .25s var(--ease);
+}
+.theme-toggle:hover{ color:var(--estimate); border-color:var(--estimate); }
+.theme-toggle i{ margin-right:.35rem; }
 </style>
+<script>
+  try { if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+</script>
 </head>
 <body>
 
@@ -872,7 +893,8 @@ h3.group:first-of-type{ margin-top:1.6rem; }
   <h1 class="masthead-name">Vikrant V. Kamble</h1>
   <div class="masthead-contact">
     <span class="label">Contact</span>
-    <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a>
+    <a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a><br>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch light or dark theme"></button>
   </div>
 </header>
 
@@ -1409,5 +1431,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<script>
+  // Light / dark switch; the visitor's choice is remembered on their device
+  (function () {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    const root = document.documentElement;
+    const paint = () => {
+      const dark = root.dataset.theme === 'dark';
+      btn.innerHTML = dark ? '<i class="fas fa-sun"></i>Light' : '<i class="fas fa-moon"></i>Dark';
+    };
+    btn.addEventListener('click', () => {
+      if (root.dataset.theme === 'dark') delete root.dataset.theme; else root.dataset.theme = 'dark';
+      try { localStorage.setItem('theme', root.dataset.theme || 'light'); } catch (e) {}
+      paint();
+    });
+    paint();
+  })();
+</script>
 </body>
 </html>
