@@ -863,6 +863,31 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     transition-duration:.01ms !important;
   }
 }
+
+/* =========================================================
+   COMPACT LAYOUT — tighter spacing, one-line paper details, smaller photo
+   ========================================================= */
+/* Compact research list: less vertical space; authors · journal · link share one line when they fit */
+.section{ padding-bottom:clamp(1.6rem,3vw,2.4rem); }
+.section + .section{ padding-top:clamp(1.4rem,3vw,2.2rem); }
+.section-head{ margin-bottom:1.2rem; padding-bottom:.7rem; }
+h3.group{ margin:1.9rem 0 .7rem; padding-bottom:.35rem; }
+h3.group:first-of-type{ margin-top:1.1rem; }
+
+.paper{ padding:0 0 .75rem; margin-bottom:.75rem; }
+.paper-title{ margin-bottom:.2rem; }
+.paper-authors, .paper-meta, .paper-links{ display:inline; margin:0; }
+.paper-authors + .paper-meta::before,
+.paper-authors + .paper-links::before,
+.paper-meta + .paper-links::before{ content:"\00B7"; margin:0 .55rem; color:var(--ci); }
+.abstract{ margin-top:.45rem; padding-top:.45rem; }
+.paper-links{ white-space:nowrap; }
+.course{ padding:.6rem 0; }
+.resource-category{ margin-bottom:1rem; }
+/* Slightly smaller profile picture (was ~240px wide) */
+.portrait-frame{ max-width:195px; }
+.profile-photo{ width:100%; }
+
 /* =========================================================
    DARK THEME — visitors switch with the button in the masthead
    ========================================================= */
