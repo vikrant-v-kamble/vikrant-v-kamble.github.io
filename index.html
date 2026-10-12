@@ -391,14 +391,13 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 .timeline::before{                       /* the axis */
   content:"";
   position:absolute;
-  left:0; right:0;
+  left:0; right:calc((100% - 2.8rem) / 3);   /* stops at the last marker */
   top:2.3rem;
   height:1px;
   background:linear-gradient(90deg,
     transparent 0,
     var(--rule-hard) 3%,
-    var(--rule-hard) 90%,
-    transparent 100%);
+    var(--rule-hard) 100%);
   transform:scaleX(0);
   transform-origin:left center;
   animation:axisDraw 1s var(--ease) .1s forwards;
@@ -525,8 +524,16 @@ h3.group:first-of-type{ margin-top:1.6rem; }
     animation:axisDrawY 1s var(--ease) .1s forwards;
   }
   @keyframes axisDrawY{ to{ transform:scaleY(1); } }
+  .timeline::before{ display:none; }
   .tl-stop{ padding:0 0 0 .35rem; }
   .tl-stop::before{ display:none; }
+  .tl-stop:not(:last-child)::before{     /* segment down to the next marker */
+    display:block; left:-1.15rem; top:calc(.45rem + 4.5px);
+    width:1px; height:calc(100% + 1.4rem);
+    transform:scaleY(0); transform-origin:top center;
+    animation:axisDrawY .6s var(--ease) .3s forwards;
+  }
+  .tl-stop:not(:last-child):hover::before{ height:calc(100% + 1.4rem); }
   .tl-stop::after{ left:-1.15rem; top:.45rem; margin-top:0; }
   .tl-year{ position:static; display:block; margin-bottom:.2rem; }
 }
@@ -988,11 +995,10 @@ h3.group:first-of-type{ margin-top:1.1rem; }
 
       <h3 class="group">
         Job Market Paper
-        <span class="count"><a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" rel="noopener">View PDF &rarr;</a></span>
       </h3>
 
       <article class="paper">
-        <div class="paper-title">&ldquo;The 1973 Oil Embargo and Infant Health Outcomes&rdquo;</div>
+        <div class="paper-title"><a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" rel="noopener">&ldquo;The 1973 Oil Embargo and Infant Health Outcomes&rdquo;</a></div>
         <div class="abstract">
           <span class="abstract-label">Abstract</span>
           An extensive literature documents that economic shocks affect health outcomes, but mechanisms and distributional effects remain unclear. I study how a negative oil supply shock affects infant health using 1968&ndash;1979 Vital Statistics data. With an event-study framework that accounts for state-specific pre-trends, I find that states with higher fuel dependence experienced increases in birthweight following the 1973 oil embargo. Gains are larger for less-educated, relatively younger, and Black mothers at 2&ndash;3.5 grams. These improvements result from shifts in maternal composition, increased prenatal care use, and reduced air pollution.
