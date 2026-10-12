@@ -33,6 +33,7 @@
   --estimate-lo:#2E6F79;
   --ci:         #6E7F79;
   --signal:     #B8402A;
+  --title-blue: #1F4E99;
 
   --rule:       rgba(20,25,28,.13);
   --rule-hard:  rgba(20,25,28,.26);
@@ -544,11 +545,14 @@ h3.group:first-of-type{ margin-top:1.6rem; }
 .paper-title{
   font-family:var(--display);
   font-optical-sizing:auto;
-  font-weight:600;
+  font-weight:400;
+  color:var(--title-blue);
   font-size:clamp(1.02rem,.95rem + .45vw,1.24rem);
   line-height:1.3;
   margin-bottom:.4rem;
 }
+.paper-title a{ color:inherit; }
+.paper-title a:hover{ color:inherit; text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px; }
 .paper-authors{ font-size:.9rem; color:var(--ink-soft); margin-bottom:.25rem; }
 .paper-authors em{ font-style:italic; }
 .paper-meta{
@@ -901,6 +905,7 @@ h3.group:first-of-type{ margin-top:1.1rem; }
   --paper:#12161C; --panel:#1A2029; --ink:#E8ECF1; --ink-soft:#B4BDC8;
   --estimate:#5EC2C9; --estimate-lo:#7FD3D8; --ci:#8A96A3; --signal:#F2A65A;
   --rule:rgba(232,236,241,.12); --rule-hard:rgba(232,236,241,.25);
+  --title-blue:#8DB4F0;
   color-scheme:dark;
 }
 .theme-toggle{
@@ -1041,34 +1046,30 @@ h3.group:first-of-type{ margin-top:1.1rem; }
   <h3 class="group">Peer-Reviewed Publications</h3>
   <div class="numbered">
  <article class="paper">
-     <div class="paper-title">&ldquo;Fueling or Failing? The Educational Consequences of Oil Price Declines&rdquo;</div>
+     <div class="paper-title"><a href="https://link.springer.com/article/10.1057/s41302-026-00344-w" target="_blank" rel="noopener">&ldquo;Fueling or Failing? The Educational Consequences of Oil Price Declines&rdquo;</a></div>
      <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a></div>
      <div class="paper-meta">Eastern Economic Journal, 2026, pp. 1&ndash;36</div>
-     <div class="paper-links"><a href="https://link.springer.com/article/10.1057/s41302-026-00344-w" target="_blank" rel="noopener">Link &rarr;</a></div>
    </article>
 
 
     <article class="paper">
-      <div class="paper-title">&ldquo;Ride-sharing and Crime: Evidence from U.S. Cities&rdquo;</div>
+      <div class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S2590198225003860" target="_blank" rel="noopener">&ldquo;Ride-sharing and Crime: Evidence from U.S. Cities&rdquo;</a></div>
       <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a></div>
       <div class="paper-meta">Transportation Research Interdisciplinary Perspectives, Volume 34, 2025, 101707</div>
-      <div class="paper-links"><a href="https://www.sciencedirect.com/science/article/pii/S2590198225003860" target="_blank" rel="noopener">Link &rarr;</a></div>
     </article>
 
     <article class="paper">
-      <div class="paper-title">&ldquo;Noncustodial Parents, Instrumental Networks, and Child Support Compliance&rdquo;</div>
+      <div class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" target="_blank" rel="noopener">&ldquo;Noncustodial Parents, Instrumental Networks, and Child Support Compliance&rdquo;</a></div>
       <div class="paper-authors">with Quentin H. Riser, Daniel R. Meyer, and Lawrence M. Berger</div>
       <div class="paper-meta">Social Science Research, Volume 110, February 2023, 102850</div>
-      <div class="paper-links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" target="_blank" rel="noopener">Link &rarr;</a></div>
     </article>
   </div>
 
   <h3 class="group">Software</h3>
   <div class="numbered">
     <article class="paper">
-      <div class="paper-title">&ldquo;OKPRESERVE: Stata module to implement nested preserve and restore for data workflows&rdquo;<br><span style="font-family:var(--mono); font-weight:normal; font-size:.8em;">ssc install okpreserve</span></div>
+      <div class="paper-title"><a href="https://econpapers.repec.org/software/bocbocode/s459799.htm" target="_blank" rel="noopener">&ldquo;OKPRESERVE: Stata module to implement nested preserve and restore for data workflows&rdquo;</a><br><span style="font-family:var(--mono); font-weight:normal; font-size:.8em;">ssc install okpreserve</span></div>
       <div class="paper-meta">Statistical Software Components S459799, Boston College Department of Economics, 2026</div>
-      <div class="paper-links"><a href="https://econpapers.repec.org/software/bocbocode/s459799.htm" target="_blank" rel="noopener">Link &rarr;</a></div>
     </article>
   </div>
 
@@ -1086,7 +1087,7 @@ h3.group:first-of-type{ margin-top:1.1rem; }
   </article>
 
   <article class="paper">
-    <div class="paper-title">&ldquo;Intertemporal Elasticity of Labor Supply: Evidence from New York City Taxicab Drivers Using a New Instrument&rdquo; <span style="font-weight: normal;">(GLO Discussion Paper, No. 1809, <a href="https://www.econstor.eu/handle/10419/343304" target="_blank" rel="noopener">LINK</a>)</span></div>
+    <div class="paper-title"><a href="https://www.econstor.eu/handle/10419/343304" target="_blank" rel="noopener">&ldquo;Intertemporal Elasticity of Labor Supply: Evidence from New York City Taxicab Drivers Using a New Instrument&rdquo;</a> <span style="font-weight: normal;">(GLO Discussion Paper, No. 1809)</span></div>
     <div class="paper-authors">with <a href="https://swapnil-motghare.github.io/" target="_blank" rel="noopener">Swapnil Motghare</a></div>
     <div class="abstract">
       <span class="abstract-label">Abstract</span>
@@ -1095,9 +1096,8 @@ h3.group:first-of-type{ margin-top:1.1rem; }
   </article>
 
   <article class="paper">
-    <div class="paper-title">&ldquo;Medicaid Expansion and Crime: Evidence from U.S Cities&rdquo;<span class="tag">Resting</span></div>
+    <div class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank" rel="noopener">&ldquo;Medicaid Expansion and Crime: Evidence from U.S Cities&rdquo;</a><span class="tag">Resting</span></div>
     <div class="paper-authors">with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a></div>
-    <div class="paper-links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank" rel="noopener">Link &rarr;</a></div>
     <div class="abstract">
       <span class="abstract-label">Abstract</span>
       Crime rates in the U.S. have fallen over the past two decades, though periods like the pandemic saw sharp increases. This paper examines how the 2014 Medicaid expansion influenced crime in major cities, using daily crime data from the 21 largest U.S. cities. We provide the first causal analysis linking Medicaid expansion to urban crime trends, exploiting variation in state adoption timing to identify effects on violent and property crime rates.
@@ -1121,9 +1121,8 @@ h3.group:first-of-type{ margin-top:1.1rem; }
   </article>
 
   <article class="paper">
-    <div class="paper-title">&ldquo;Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes&rdquo;</div>
+    <div class="paper-title"><a href="https://eric.ed.gov/?q=cluster&pg=7&id=ED663020" target="_blank" rel="noopener">&ldquo;Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes&rdquo;</a></div>
     <div class="paper-authors">with <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank" rel="noopener">Kenneth Shores</a> and <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank" rel="noopener">Jesse Eze</a></div>
-    <div class="paper-links"><a href="https://eric.ed.gov/?q=cluster&pg=7&id=ED663020" target="_blank" rel="noopener">Abstract &rarr;</a></div>
   </article>
 </section>
 
