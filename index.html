@@ -29,7 +29,11 @@
   .theme-btn:hover{ color:var(--link); border-color:var(--link); }
   .intro{ display:flex; align-items:center; gap:1.5rem; }   /* photo centred beside name..interests */
   .intro-text{ flex:1; } .intro-text p:last-child{ margin-bottom:0; }
-  .intro img{ flex:0 0 auto; width:195px; max-width:38%; }
+  .intro .photo{ flex:0 0 auto; width:195px; max-width:38%; text-align:center; }
+  .intro .photo img{ display:block; width:100%; }
+  .intro .photo p{ margin:.4rem 0 0; font-size:.9rem; }
+  .jump{ font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:.8rem; letter-spacing:.04em; }
+  html{ scroll-behavior:smooth; } h2{ scroll-margin-top:1rem; }
   header p{ margin:.2rem 0; }
 </style>
 </head>
@@ -39,20 +43,23 @@
 <div class="intro-text">
 <header>
   <h1>Vikrant V. Kamble</h1>
-  <p><a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a></p>
-  <p><a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar</a> &middot; <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://www.dropbox.com/scl/fi/9v37h8k81dgnn651czhvv/CV_Vikrant_V_Kamble.pdf?rlkey=7uexiqrzcibpcqv6jo4r01hus&dl=0" target="_blank" rel="noopener">CV</a></p>
+  <p><a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a> &middot; <a href="https://www.dropbox.com/scl/fi/9v37h8k81dgnn651czhvv/CV_Vikrant_V_Kamble.pdf?rlkey=7uexiqrzcibpcqv6jo4r01hus&dl=0" target="_blank" rel="noopener">CV</a></p>
+  <p class="jump"><a href="#research">Research</a> &middot; <a href="#teaching">Teaching</a> &middot; <a href="#education">Education</a> &middot; <a href="#resources">Resources</a></p>
 </header>
 <p>Welcome!<br>I am a Postdoctoral Fellow at the Child Health and Development Institute (CHDI).<br>I received my PhD in Economics from the University of Delaware in August 2026. My research uses causal inference methods to study population health, mental health, and labor economics, focusing on policy impacts on communities.</p>
 <p><small>Research interests: Applied Microeconomics: Health, Mental Health, Labor, and Development</small></p>
 </div>
-<img src="vikrant_picture.png" alt="Photo of Vikrant V. Kamble">
+<div class="photo">
+  <img src="vikrant_picture.png" alt="Photo of Vikrant V. Kamble">
+  <p><a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar</a> &middot; <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank" rel="noopener">LinkedIn</a></p>
+</div>
 </div>
 
 <h2>Job Market Paper</h2>
 <p class="titles"><a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" rel="noopener">&ldquo;The 1973 Oil Embargo and Infant Health Outcomes&rdquo;</a></p>
 <p><small>Committee: <a href="https://www.bartonwillage.com/" target="_blank" rel="noopener">Barton J. Willage</a> (Chair), <a href="https://mariafrosales.com/" target="_blank" rel="noopener">Maria Rosales-Rueda</a>, <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank" rel="noopener">Olga Gorbachev</a>, <a href="https://sites.google.com/view/dtoohey/home" target="_blank" rel="noopener">Desmond J. Toohey</a></small></p>
 
-<h2>Research</h2>
+<h2 id="research">Research</h2>
 <h3>Peer-Reviewed Publications</h3>
 <ul class="titles">
 <li><a href="https://link.springer.com/article/10.1057/s41302-026-00344-w" target="_blank" rel="noopener">&ldquo;Fueling or Failing? The Educational Consequences of Oil Price Declines&rdquo;</a><br><small>with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a> &middot; Eastern Economic Journal, 2026, pp. 1&ndash;36</small></li>
@@ -78,7 +85,7 @@
 <li><a href="https://eric.ed.gov/?q=cluster&pg=7&id=ED663020" target="_blank" rel="noopener">&ldquo;Causal Effects of CTE Pathways and Career Clusters on Secondary and Postsecondary Outcomes&rdquo;</a><br><small>with <a href="https://scholar.google.com/citations?user=x1gyyigAAAAJ&hl=en" target="_blank" rel="noopener">Kenneth Shores</a> and <a href="https://www.education.udel.edu/grad-student/jesse-eze/" target="_blank" rel="noopener">Jesse Eze</a></small></li>
 </ul>
 
-<h2>Teaching</h2>
+<h2 id="teaching">Teaching</h2>
 <h3>Instructor of Record</h3>
 <ul class="titles">
 <li>ECON&thinsp;101: Introduction to Microeconomics <small>(Winter 2025, Fall 2025 (86 students) &middot; <a href="Complete_Evaluations_Winter2025.pdf" target="_blank" rel="noopener">Course evaluations</a>)</small></li>
@@ -100,13 +107,13 @@
 </ul>
 <p><small>&dagger; Held weekly recitations.</small></p>
 
-<h2>Education</h2>
+<h2 id="education">Education</h2>
 <ul>
 <li>Ph.D., University of Delaware (Economics), August 2026</li>
 <li>M.S., University of Wisconsin&ndash;Madison (Economics), May 2021</li>
 <li>B.Tech., Dr. Babasaheb Ambedkar Technological University (Electronics &amp; Telecommunication Engineering), May 2017</li>
 </ul>
-<h2>Resources for Students</h2>
+<h2 id="resources">Resources for Students</h2>
 <h3>Stata Resources</h3>
 <ul>
 <li><a href="https://www.ssc.wisc.edu/statistics/" target="_blank" rel="noopener">University of Wisconsin &ndash; Madison</a> <small>&ndash; Comprehensive Stata tutorials and resources for beginners and advanced users.</small></li>
