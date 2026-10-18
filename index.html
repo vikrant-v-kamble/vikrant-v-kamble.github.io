@@ -8,17 +8,23 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
 <link rel="manifest" href="favicon_io/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root{ --bg:#fff; --text:#111; --muted:#555; --faint:#888; --line:#ddd; --link:#1F4E99; }
   :root[data-theme="dark"]{ --bg:#14171c; --text:#e6e8eb; --muted:#a9b0ba; --faint:#8a929c; --line:#333a44; --link:#8DB4F0; color-scheme:dark; }
-  body{ max-width:760px; margin:40px auto; padding:0 16px; font:17px/1.6 Georgia, 'Times New Roman', serif; color:var(--text); background:var(--bg); }
+  body{ max-width:760px; margin:40px auto; padding:0 16px; font:16.5px/1.65 'IBM Plex Sans', system-ui, sans-serif; color:var(--text); background:var(--bg); }
   a{ color:var(--link); text-decoration:none; } a:hover{ text-decoration:underline; }
-  h1{ font-size:1.8rem; font-weight:normal; margin:0 0 .2rem; }
-  h2{ font-size:1.15rem; font-weight:normal; text-transform:uppercase; letter-spacing:.08em; border-bottom:1px solid var(--line); margin:2.2rem 0 .6rem; }
+  h1{ font-family:'Fraunces', Georgia, serif; font-size:2rem; font-weight:500; margin:0 0 .2rem; }
+  h2{ font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:.95rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em; border-bottom:1px solid var(--line); margin:2.2rem 0 .6rem; }
   h3{ font-size:1rem; font-style:italic; font-weight:normal; margin:1.2rem 0 .3rem; }
   ul{ padding-left:1.2rem; margin:0; } li{ margin:.45rem 0; }
+  .titles li, p.titles{ font-family:'Fraunces', Georgia, serif; font-size:1.05rem; }   /* paper titles + course names */
+  .titles small, .titles .tag{ font-family:'IBM Plex Sans', system-ui, sans-serif; }
+  .titles .code{ font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:.85rem; }
   small{ color:var(--muted); font-size:.85rem; } .tag{ color:var(--faint); font-size:.85rem; }
-  .theme-btn{ position:fixed; top:14px; right:16px; font:inherit; font-size:.8rem; color:var(--muted); background:var(--bg);
+  .theme-btn{ position:fixed; top:14px; right:16px; font-family:'IBM Plex Mono', ui-monospace, monospace; font-size:.75rem; color:var(--muted); background:var(--bg);
               border:1px solid var(--line); border-radius:999px; padding:.2rem .75rem; cursor:pointer; }
   .theme-btn:hover{ color:var(--link); border-color:var(--link); }
   .intro{ display:flex; align-items:center; gap:1.5rem; }   /* photo centred beside name..interests */
@@ -36,36 +42,36 @@
   <p><a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a></p>
   <p><a href="https://scholar.google.com/citations?user=LGHCqEMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar</a> &middot; <a href="https://www.linkedin.com/in/vikrant-vilas-kamble-20779a134/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://www.dropbox.com/scl/fi/9v37h8k81dgnn651czhvv/CV_Vikrant_V_Kamble.pdf?rlkey=7uexiqrzcibpcqv6jo4r01hus&dl=0" target="_blank" rel="noopener">CV</a></p>
 </header>
-<p>Welcome!<br>I am a Postdoctoral Fellow at the Child Health and Development Institute (CHDI).<br>I received my PhD in Economics from the University of Delaware. My research uses causal inference methods to study population health, mental health, and labor economics, focusing on policy impacts on communities.</p>
+<p>Welcome!<br>I am a Postdoctoral Fellow at the Child Health and Development Institute (CHDI).<br>I received my PhD in Economics from the University of Delaware in August 2026. My research uses causal inference methods to study population health, mental health, and labor economics, focusing on policy impacts on communities.</p>
 <p><small>Research interests: Applied Microeconomics: Health, Mental Health, Labor, and Development</small></p>
 </div>
 <img src="vikrant_picture.png" alt="Photo of Vikrant V. Kamble">
 </div>
 
 <h2>Job Market Paper</h2>
-<p><a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" rel="noopener">&ldquo;The 1973 Oil Embargo and Infant Health Outcomes&rdquo;</a></p>
+<p class="titles"><a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" rel="noopener">&ldquo;The 1973 Oil Embargo and Infant Health Outcomes&rdquo;</a></p>
 <p><small>Committee: <a href="https://www.bartonwillage.com/" target="_blank" rel="noopener">Barton J. Willage</a> (Chair), <a href="https://mariafrosales.com/" target="_blank" rel="noopener">Maria Rosales-Rueda</a>, <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank" rel="noopener">Olga Gorbachev</a>, <a href="https://sites.google.com/view/dtoohey/home" target="_blank" rel="noopener">Desmond J. Toohey</a></small></p>
 
 <h2>Research</h2>
 <h3>Peer-Reviewed Publications</h3>
-<ul>
+<ul class="titles">
 <li><a href="https://link.springer.com/article/10.1057/s41302-026-00344-w" target="_blank" rel="noopener">&ldquo;Fueling or Failing? The Educational Consequences of Oil Price Declines&rdquo;</a><br><small>with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a> &middot; Eastern Economic Journal, 2026, pp. 1&ndash;36</small></li>
 <li><a href="https://www.sciencedirect.com/science/article/pii/S2590198225003860" target="_blank" rel="noopener">&ldquo;Ride-sharing and Crime: Evidence from U.S. Cities&rdquo;</a><br><small>with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a> &middot; Transportation Research Interdisciplinary Perspectives, Volume 34, 2025, 101707</small></li>
 <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0049089X23000054" target="_blank" rel="noopener">&ldquo;Noncustodial Parents, Instrumental Networks, and Child Support Compliance&rdquo;</a><br><small>with <a href="https://humanecology.wisc.edu/staff/riser-quentin/" target="_blank" rel="noopener">Quentin H. Riser</a>, <a href="https://socwork.wisc.edu/staff/daniel-r-meyer-msw-phd/" target="_blank" rel="noopener">Daniel R. Meyer</a>, and <a href="https://socwork.wisc.edu/staff/lawrence-m-berger-msw-phd/" target="_blank" rel="noopener">Lawrence M. Berger</a> &middot; Social Science Research, Volume 110, February 2023, 102850</small></li>
 </ul>
 <h3>Software</h3>
-<ul>
-<li><a href="https://econpapers.repec.org/software/bocbocode/s459799.htm" target="_blank" rel="noopener">&ldquo;OKPRESERVE: Stata module to implement nested preserve and restore for data workflows&rdquo;</a><br><span>ssc install okpreserve</span><br><small>Statistical Software Components S459799, Boston College Department of Economics, 2026</small></li>
+<ul class="titles">
+<li><a href="https://econpapers.repec.org/software/bocbocode/s459799.htm" target="_blank" rel="noopener">&ldquo;OKPRESERVE: Stata module to implement nested preserve and restore for data workflows&rdquo;</a><br><span class="code">ssc install okpreserve</span><br><small>Statistical Software Components S459799, Boston College Department of Economics, 2026</small></li>
 </ul>
 <h3>Working Papers</h3>
-<ul>
+<ul class="titles">
 <li>&ldquo;Mental Health Costs of the Oil Bust: Evidence from Oil Price Decline&rdquo; <span class="tag">(Under Review)</span><br><small>with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a></small></li>
 <li>&ldquo;Pregnancy Accommodation Laws and Women's Mental Health&rdquo; <span class="tag">(Draft is ready)</span><br><small>with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a></small></li>
 <li><a href="https://www.econstor.eu/handle/10419/343304" target="_blank" rel="noopener">&ldquo;Intertemporal Elasticity of Labor Supply: Evidence from New York City Taxicab Drivers Using a New Instrument&rdquo;</a> <span>(GLO Discussion Paper, No. 1809)</span><br><small>with <a href="https://swapnil-motghare.github.io/" target="_blank" rel="noopener">Swapnil Motghare</a></small></li>
 <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5115271" target="_blank" rel="noopener">&ldquo;Medicaid Expansion and Crime: Evidence from U.S Cities&rdquo;</a> <span class="tag">(Resting)</span><br><small>with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a></small></li>
 </ul>
 <h3>Work-in-Progress</h3>
-<ul>
+<ul class="titles">
 <li>&ldquo;Lost Futures: Local Economic Collapse and Suicide in Young Adulthood&rdquo;</li>
 <li>&ldquo;Impact of Forced Immigration on Borrowing Constraints&rdquo;<br><small>with <a href="https://sites.google.com/udel.edu/usmantaj" target="_blank" rel="noopener">Usman Taj</a> and <a href="https://business.rice.edu/person/dong-derrick-liang" target="_blank" rel="noopener">Derrick Liang</a></small></li>
 <li>&ldquo;Marching Through Time: The Enduring Effects of Military Settlements&rdquo;<br><small>with <a href="https://www.sarahshaukat.com/" target="_blank" rel="noopener">Sarah Shaukat</a> and <a href="https://sites.google.com/view/attique-ur-rehman" target="_blank" rel="noopener">Attique Ur Rehman</a></small></li>
@@ -74,24 +80,25 @@
 
 <h2>Teaching</h2>
 <h3>Instructor of Record</h3>
-<ul>
+<ul class="titles">
 <li>ECON&thinsp;101: Introduction to Microeconomics <small>(Winter 2025, Fall 2025 (86 students) &middot; <a href="Complete_Evaluations_Winter2025.pdf" target="_blank" rel="noopener">Course evaluations</a>)</small></li>
 </ul>
 <h3>Graduate Courses</h3>
-<ul>
+<ul class="titles">
 <li>ECON&thinsp;824: Econometrics of Cross-Section &amp; Panel Data <small>(Fall 2023, Fall 2024 &middot; <a href="https://www.emilylbattaglia.com/" target="_blank" rel="noopener">Dr. Battaglia</a>)</small></li>
 <li>ECON&thinsp;814: Macroeconomic Theory II&dagger; <small>(Spring 2023 &middot; <a href="https://sites.google.com/site/hansaholter/" target="_blank" rel="noopener">Dr. Holter</a>)</small></li>
-<li>ECON&thinsp;813: Microeconomic Theory II&dagger; <small>(Spring 2026 &middot; Dr. Eisenberg)</small></li>
+<li>ECON&thinsp;813: Microeconomic Theory II&dagger; <small>(Spring 2026 &middot; <a href="https://www.tomeisenberg.com" target="_blank" rel="noopener">Dr. Eisenberg</a>)</small></li>
 </ul>
 <h3>Undergraduate Courses</h3>
-<ul>
-<li>ECON&thinsp;436: Seminar in Public Economics <small>(Spring 2026 &middot; Dr. Tobacman)</small></li>
+<ul class="titles">
+<li>ECON&thinsp;436: Seminar in Public Economics <small>(Spring 2026 &middot; <a href="https://sites.google.com/view/tobacman/" target="_blank" rel="noopener">Dr. Tobacman</a>)</small></li>
 <li>ECON&thinsp;422: Econometric Methods &amp; Models <small>(Fall 2022, Fall 2023, Fall 2024 &middot; <a href="https://www.emilylbattaglia.com/" target="_blank" rel="noopener">Dr. Battaglia</a>)</small></li>
 <li>ECON&thinsp;422: Econometric Methods &amp; Models <small>(Spring 2024, Spring 2025 &middot; <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank" rel="noopener">Dr. Gorbachev</a>)</small></li>
-<li>ECON&thinsp;370: Economics of Artificial Intelligence <small>(Spring 2026 &middot; Dr. Tobacman)</small></li>
+<li>ECON&thinsp;370: Economics of Artificial Intelligence <small>(Spring 2026 &middot; <a href="https://sites.google.com/view/tobacman/" target="_blank" rel="noopener">Dr. Tobacman</a>)</small></li>
 <li>ECON&thinsp;304: Quantitative Macroeconomic Theory <small>(Spring 2023 &middot; <a href="https://sites.google.com/site/hansaholter/" target="_blank" rel="noopener">Dr. Holter</a>)</small></li>
 <li>ECON&thinsp;301: Intermediate Micro with Calculus <small>(Fall 2021 &middot; <a href="https://sites.google.com/view/dtoohey/home" target="_blank" rel="noopener">Dr. Toohey</a>)</small></li>
 </ul>
+<p><small>&dagger; Held weekly recitations.</small></p>
 
 <h2>Education</h2>
 <ul>
