@@ -17,14 +17,14 @@
   body{ max-width:840px; margin:40px auto; padding:0 16px; font:19.5px/1.65 'IBM Plex Sans', system-ui, sans-serif; color:var(--text); background:var(--bg); }
   a{ color:var(--link); text-decoration:none; } a:hover{ text-decoration:underline; }
   h1{ font-size:2rem; font-weight:500; margin:0 0 .2rem; }
-  h2{ font-size:.95rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em; border-bottom:1px solid var(--line); margin:2.2rem 0 .6rem; }
+  h2{ font-size:1rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em; border-bottom:1px solid var(--line); margin:2.2rem 0 .6rem; }
   h3{ font-size:1rem; font-style:italic; font-weight:normal; margin:1.2rem 0 .3rem; }
   ul{ padding-left:1.2rem; margin:0; } li{ margin:.45rem 0; }
-  .titles li, p.titles{ font-size:1.05rem; }   /* paper titles + course names */
+  .titles li, p.titles{ font-size:inherit; }   /* paper titles + course names: same as main text */
   .titles small, .titles .tag{ font-family:'IBM Plex Sans', system-ui, sans-serif; }
   .titles .code{ font-size:1rem; }
   small{ color:var(--muted); font-size:1rem; } .tag{ color:var(--faint); font-size:1rem; }
-  .theme-btn{ position:fixed; top:14px; right:16px; font-family:inherit; font-size:.8rem; color:var(--muted); background:var(--bg);
+  .theme-btn{ position:fixed; top:14px; right:16px; font-family:inherit; font-size:1rem; color:var(--muted); background:var(--bg);
               border:1px solid var(--line); border-radius:999px; padding:.2rem .75rem; cursor:pointer; }
   .theme-btn:hover{ color:var(--link); border-color:var(--link); }
   .intro{ display:flex; align-items:center; gap:1.5rem; }   /* photo centred beside name..interests */
@@ -40,7 +40,7 @@
     .intro .photo{ order:2; align-self:center; width:180px; max-width:60%; margin:1rem 0 .4rem; }
     .intro-text > p{ order:3; }
   }
-  .jump{ font-size:.8rem; letter-spacing:.04em; }
+  .jump{ font-size:1rem; letter-spacing:.04em; }
   .updated{ margin-top:2.5rem; padding-top:.6rem; border-top:1px solid var(--line); }
   html{ scroll-behavior:smooth; } h2{ scroll-margin-top:1rem; }
   header p{ margin:.2rem 0; }
