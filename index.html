@@ -8,20 +8,22 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
 <link rel="manifest" href="favicon_io/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
+  /* Latin Modern Roman: the same font as the CV (LaTeX Computer Modern) */
+  @font-face{ font-family:'LM Roman'; src:url('fonts/lmroman10-regular.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face{ font-family:'LM Roman'; src:url('fonts/lmroman10-italic.otf') format('opentype'); font-weight:400; font-style:italic; font-display:swap; }
+  @font-face{ font-family:'LM Roman'; src:url('fonts/lmroman10-bold.otf') format('opentype'); font-weight:700; font-style:normal; font-display:swap; }
+  @font-face{ font-family:'LM Roman'; src:url('fonts/lmroman10-bolditalic.otf') format('opentype'); font-weight:700; font-style:italic; font-display:swap; }
   :root{ --bg:#fff; --text:#111; --muted:#555; --faint:#888; --line:#ddd; --link:#1F4E99; }
   :root[data-theme="dark"]{ --bg:#14171c; --text:#e6e8eb; --muted:#a9b0ba; --faint:#8a929c; --line:#333a44; --link:#8DB4F0; color-scheme:dark; }
-  body{ max-width:840px; margin:40px auto; padding:0 16px; font:19.5px/1.65 'IBM Plex Sans', system-ui, sans-serif; color:var(--text); background:var(--bg); }
+  body{ max-width:840px; margin:40px auto; padding:0 16px; font:19.5px/1.65 'LM Roman', 'Latin Modern Roman', 'Times New Roman', serif; color:var(--text); background:var(--bg); }
   a{ color:var(--link); text-decoration:none; } a:hover{ text-decoration:underline; }
-  h1{ font-size:2rem; font-weight:500; margin:0 0 .2rem; }
-  h2{ font-size:1rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em; border-bottom:1px solid var(--line); margin:2.2rem 0 .6rem; }
+  h1{ font-size:2rem; font-weight:700; margin:0 0 .2rem; }
+  h2{ font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; border-bottom:1px solid var(--line); margin:2.2rem 0 .6rem; }
   h3{ font-size:1rem; font-style:italic; font-weight:normal; margin:1.2rem 0 .3rem; }
   ul{ padding-left:1.2rem; margin:0; } li{ margin:.45rem 0; }
   .titles li, p.titles{ font-size:inherit; }   /* paper titles + course names: same as main text */
-  .titles small, .titles .tag{ font-family:'IBM Plex Sans', system-ui, sans-serif; }
+  .titles small, .titles .tag{ font-family:inherit; }
   .titles .code{ font-size:1rem; }
   small{ color:var(--muted); font-size:1rem; } .tag{ color:var(--faint); font-size:1rem; }
   .theme-btn{ position:fixed; top:14px; right:16px; font-family:inherit; font-size:1rem; color:var(--muted); background:var(--bg);
@@ -55,7 +57,7 @@
   <p><a href="mailto:vvkamble@udel.edu">vvkamble@udel.edu</a> &middot; <a href="https://www.dropbox.com/scl/fi/9v37h8k81dgnn651czhvv/CV_Vikrant_V_Kamble.pdf?rlkey=7uexiqrzcibpcqv6jo4r01hus&dl=0" target="_blank" rel="noopener">CV</a></p>
   <p class="jump"><a href="#research">Research</a> &middot; <a href="#teaching">Teaching</a> &middot; <a href="#education">Education</a> &middot; <a href="#resources">Resources</a></p>
 </header>
-<p>Welcome!<br>I am a Postdoctoral Fellow at the Child Health and Development Institute (CHDI), where I study the mental and behavioral health of children and youth.<br>I received my PhD in Economics from the University of Delaware in August 2026. I use causal inference methods to study how public policies shape health and labor market outcomes.<br>Please feel free to contact me.</p>
+<p>Welcome!<br>I am a Postdoctoral Fellow at the Child Health and Development Institute (CHDI), where I study the mental and behavioral health of children and youth.<br><br>I received my PhD in Economics from the University of Delaware in August 2026. I use causal inference methods to study how public policies shape health and labor market outcomes.<br>Please feel free to contact me.</p>
 <p><small>Research interests: Applied Microeconomics: Health, Mental and Behavioral Health, Labor, Development, and Public Policy</small></p>
 <p><small><a href="https://www.dropbox.com/scl/fi/jftjc4rvgr7cur8pssb86/JMP_Kamble_Oil_Embargo_Infant_Health.pdf?rlkey=mipr3xanimygasj7crc6be6ev&dl=0" target="_blank" rel="noopener">Job Market Paper</a> &middot; Committee: <a href="https://www.bartonwillage.com/" target="_blank" rel="noopener">Barton J. Willage</a> (Chair), <a href="https://mariafrosales.com/" target="_blank" rel="noopener">Maria Rosales-Rueda</a>, <a href="https://lerner.udel.edu/faculty-staff-directory/olga-gorbachev/" target="_blank" rel="noopener">Olga Gorbachev</a>, <a href="https://sites.google.com/view/dtoohey/home" target="_blank" rel="noopener">Desmond J. Toohey</a></small></p>
 </div>
