@@ -10,8 +10,8 @@
 <link rel="manifest" href="favicon_io/site.webmanifest">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{ --bg:#fff; --text:#111; --muted:#333; --faint:#555; --line:#ddd; --link:#1F4E99; --person:#800000; }
-  :root[data-theme="dark"]{ --bg:#14171c; --text:#e6e8eb; --muted:#a9b0ba; --faint:#8a929c; --line:#333a44; --link:#8DB4F0; --person:#E39A9A; color-scheme:dark; }
+  :root{ --bg:#F4F3EF; --text:#111; --muted:#333; --faint:#555; --line:#ddd; --link:#1F4E99; --person:#800000; --frame:#fff; }
+  :root[data-theme="dark"]{ --bg:#14171c; --text:#e6e8eb; --muted:#a9b0ba; --faint:#8a929c; --line:#333a44; --link:#8DB4F0; --person:#E39A9A; --frame:#2a2f37; color-scheme:dark; }
   body{ max-width:840px; margin:40px auto; padding:0 16px; font:400 19.5px/1.35 'Source Sans 3', Arial, sans-serif; color:var(--text); background:var(--bg); }
   a{ color:var(--link); text-decoration:none; } a:hover{ text-decoration:underline; }
   h1{ font-size:2rem; font-weight:700; margin:0 0 .2rem; }
@@ -26,11 +26,12 @@
   .theme-btn{ position:fixed; top:14px; right:16px; font-family:inherit; font-size:1rem; color:var(--muted); background:var(--bg);
               border:1px solid var(--line); border-radius:999px; padding:.2rem .75rem; cursor:pointer; }
   .theme-btn:hover{ color:var(--link); border-color:var(--link); }
-  .intro{ display:flex; align-items:center; gap:1.5rem; }   /* photo centred beside name..interests */
+  .intro{ display:flex; align-items:flex-start; gap:1.5rem; }   /* photo spans Welcome..committee line (sized by script) */
   .intro-text{ flex:1; } .intro-text p:last-child{ margin-bottom:0; }
   .intro .photo{ flex:0 0 auto; width:195px; max-width:38%; text-align:center; }
   .intro .photo img{ display:block; width:100%; }
-  .intro .photo p{ margin:.4rem 0 0; font-size:1rem; }
+  .intro .photo img{ border-radius:10px; box-shadow:0 0 0 5px var(--frame), 0 10px 24px rgba(0,0,0,.18); }
+  .intro .photo p{ margin:.9rem 0 0; font-size:1rem; position:relative; z-index:1; }
   /* Phones: name + menu, then the photo, then Welcome and the rest */
   @media (max-width:600px){
     .intro{ flex-direction:column; align-items:stretch; gap:0; }
@@ -156,6 +157,30 @@
     paint();
   });
   paint();
+</script>
+<script>
+  // Desktop: make the photo run from the top of "Welcome!" to the bottom of the committee line
+  (function () {
+    const intro = document.querySelector('.intro'), photo = document.querySelector('.intro .photo');
+    const img = photo && photo.querySelector('img');
+    if (!intro || !img) return;
+    const fit = () => {
+      photo.style.marginTop = ''; photo.style.width = ''; photo.style.maxWidth = ''; img.style.height = '';
+      if (window.innerWidth <= 600 || !img.naturalWidth) return;       // phones keep the stacked layout
+      const ps = intro.querySelectorAll('.intro-text > p');
+      for (let k = 0; k < 3; k++) {                                     // repeat: text reflows as the photo widens
+        const top = ps[0].getBoundingClientRect().top, bottom = ps[ps.length - 1].getBoundingClientRect().bottom;
+        const h = bottom - top;
+        photo.style.marginTop = (top - intro.getBoundingClientRect().top) + 'px';
+        img.style.height = h + 'px';
+        photo.style.width = (h * img.naturalWidth / img.naturalHeight) + 'px';
+        photo.style.maxWidth = 'none';
+      }
+    };
+    if (img.complete) fit(); else img.addEventListener('load', fit);
+    if (document.fonts) document.fonts.ready.then(fit);
+    window.addEventListener('resize', fit);
+  })();
 </script>
 </body>
 </html>
