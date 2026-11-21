@@ -10,8 +10,8 @@
 <link rel="manifest" href="favicon_io/site.webmanifest">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{ --bg:#F4F3EF; --text:#111; --muted:#333; --faint:#555; --line:#ddd; --link:#1F4E99; --person:#800000; --frame:#fff; }
-  :root[data-theme="dark"]{ --bg:#14171c; --text:#e6e8eb; --muted:#a9b0ba; --faint:#8a929c; --line:#333a44; --link:#8DB4F0; --person:#E39A9A; --frame:#2a2f37; color-scheme:dark; }
+  :root{ --bg:#F4F3EF; --text:#111; --muted:#333; --faint:#555; --line:#ddd; --link:#1F4E99; --person:#800000; }
+  :root[data-theme="dark"]{ --bg:#14171c; --text:#e6e8eb; --muted:#a9b0ba; --faint:#8a929c; --line:#333a44; --link:#8DB4F0; --person:#E39A9A; color-scheme:dark; }
   body{ max-width:840px; margin:40px auto; padding:0 16px; font:400 19.5px/1.35 'Source Sans 3', Arial, sans-serif; color:var(--text); background:var(--bg); }
   a{ color:var(--link); text-decoration:none; } a:hover{ text-decoration:underline; }
   h1{ font-size:2rem; font-weight:700; margin:0 0 .2rem; }
@@ -30,8 +30,7 @@
   .intro-text{ flex:1; } .intro-text p:last-child{ margin-bottom:0; }
   .intro .photo{ flex:0 0 auto; width:195px; max-width:38%; text-align:center; }
   .intro .photo img{ display:block; width:100%; }
-  .intro .photo img{ border-radius:10px; box-shadow:0 0 0 5px var(--frame), 0 10px 24px rgba(0,0,0,.18); }
-  .intro .photo p{ margin:.9rem 0 0; font-size:1rem; position:relative; z-index:1; }
+  .intro .photo p{ margin:.4rem 0 0; font-size:1rem; }
   /* Phones: name + menu, then the photo, then Welcome and the rest */
   @media (max-width:600px){
     .intro{ flex-direction:column; align-items:stretch; gap:0; }
