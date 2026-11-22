@@ -26,17 +26,17 @@
   .theme-btn{ position:fixed; top:14px; right:16px; font-family:inherit; font-size:1rem; color:var(--muted); background:var(--bg);
               border:1px solid var(--line); border-radius:999px; padding:.2rem .75rem; cursor:pointer; }
   .theme-btn:hover{ color:var(--link); border-color:var(--link); }
-  .intro{ display:flex; align-items:flex-start; gap:1.5rem; }   /* photo spans Welcome..committee line (sized by script) */
+  .intro{ display:flex; align-items:flex-start; gap:1.5rem; }   /* photo spans Welcome..research interests line (sized by script) */
   .intro-text{ flex:1; } .intro-text p:last-child{ margin-bottom:0; }
   .intro .photo{ flex:0 0 auto; width:195px; max-width:38%; text-align:center; }
   .intro .photo img{ display:block; width:100%; }
   .intro .photo p{ margin:.4rem 0 0; font-size:1rem; }
   /* Phones: name + menu, then the photo, then Welcome and the rest */
-  @media (max-width:600px){
+  @media (max-width:871px){   /* narrower than the full page: photo moves up above the text, same size */
     .intro{ flex-direction:column; align-items:stretch; gap:0; }
     .intro-text{ display:contents; }
     .intro header{ order:1; }
-    .intro .photo{ order:2; align-self:center; width:180px; max-width:60%; margin:1rem 0 .4rem; }
+    .intro .photo{ order:2; align-self:center; width:var(--photo-w, 234px); max-width:80%; margin:1rem 0 .4rem; }
     .intro-text > p{ order:3; }
   }
   .jump{ font-size:1rem; letter-spacing:.04em; }
@@ -158,23 +158,25 @@
   paint();
 </script>
 <script>
-  // Desktop: make the photo run from the top of "Welcome!" to the bottom of the committee line
+  // Full-width page: the photo runs from the top of "Welcome!" to the bottom of the research interests line.
+  // Narrower screens: the photo keeps that size and moves up above the text (no resizing with the text).
   (function () {
     const intro = document.querySelector('.intro'), photo = document.querySelector('.intro .photo');
     const img = photo && photo.querySelector('img');
     if (!intro || !img) return;
     const fit = () => {
       photo.style.marginTop = ''; photo.style.width = ''; photo.style.maxWidth = ''; img.style.height = '';
-      if (window.innerWidth <= 600 || !img.naturalWidth) return;       // phones keep the stacked layout
+      if (window.innerWidth <= 871 || !img.naturalWidth) return;       // narrower screens use the stacked layout
       const ps = intro.querySelectorAll('.intro-text > p');
       for (let k = 0; k < 3; k++) {                                     // repeat: text reflows as the photo widens
-        const top = ps[0].getBoundingClientRect().top, bottom = ps[ps.length - 1].getBoundingClientRect().bottom;
+        const top = ps[0].getBoundingClientRect().top, bottom = ps[1].getBoundingClientRect().bottom;
         const h = bottom - top;
         photo.style.marginTop = (top - intro.getBoundingClientRect().top) + 'px';
         img.style.height = h + 'px';
         photo.style.width = (h * img.naturalWidth / img.naturalHeight) + 'px';
         photo.style.maxWidth = 'none';
       }
+      document.documentElement.style.setProperty('--photo-w', photo.style.width);   // same size when stacked
     };
     if (img.complete) fit(); else img.addEventListener('load', fit);
     if (document.fonts) document.fonts.ready.then(fit);
